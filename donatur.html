@@ -447,12 +447,45 @@
 
     <!-- JavaScript -->
     <script>
-        // Mobile Menu Toggle
+        // Mobile Menu Toggle with Auto-Close
         const mobileMenuButton = document.getElementById('mobile-menu-button');
         const mobileMenu = document.getElementById('mobile-menu');
-        
-        mobileMenuButton.addEventListener('click', () => {
+
+        // Toggle mobile menu
+        const toggleMobileMenu = () => {
             mobileMenu.classList.toggle('hidden');
+            document.body.classList.toggle('overflow-hidden', !mobileMenu.classList.contains('hidden'));
+        };
+
+        // Close mobile menu
+        const closeMobileMenu = () => {
+            mobileMenu.classList.add('hidden');
+            document.body.classList.remove('overflow-hidden');
+        };
+
+        // Toggle when button clicked
+        mobileMenuButton.addEventListener('click', toggleMobileMenu);
+
+        // Close when clicking outside
+        document.addEventListener('click', (e) => {
+            const isClickInsideMenu = mobileMenu.contains(e.target) || mobileMenuButton.contains(e.target);
+            if (!isClickInsideMenu && !mobileMenu.classList.contains('hidden')) {
+                closeMobileMenu();
+            }
+        });
+
+        // Close when scrolling
+        document.addEventListener('scroll', () => {
+            if (!mobileMenu.classList.contains('hidden')) {
+                closeMobileMenu();
+            }
+        });
+
+        // Close when menu item clicked (for smooth navigation)
+        mobileMenu.querySelectorAll('a').forEach(menuItem => {
+            menuItem.addEventListener('click', () => {
+                closeMobileMenu();
+            });
         });
 
         // Dark Mode Toggle
