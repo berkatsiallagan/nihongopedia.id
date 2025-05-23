@@ -58,118 +58,52 @@
     class="bg-white dark:bg-gray-900 font-sans transition-colors duration-300"
   >
     <!-- Header & Navigation -->
-    <header class="fixed top-0 w-full z-50 bg-white shadow-sm dark:bg-gray-900">
-      <div
-        class="container mx-auto px-4 py-3 flex justify-between items-center"
-      >
+  <header class="fixed top-0 w-full z-50 bg-white shadow-sm dark:bg-gray-900">
+    <div class="container mx-auto px-4 py-3 flex justify-between items-center">
         <!-- Logo -->
-        <a href="../../../index.html" class="flex items-center space-x-2">
-          <span class="text-2xl font-bold text-blue-600 dark:text-blue-400"
-            >Cardo</span
-          >
+        <a href="../index.html" class="flex items-center space-x-2">
+            <span class="text-2xl font-bold text-blue-600 dark:text-blue-400">Cardo</span>
         </a>
-
+        
         <!-- Desktop Navigation -->
         <nav class="hidden md:flex space-x-8">
-          <a
-            href="../../../index.html"
-            class="text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition"
-            >Beranda</a
-          >
-          <a
-            href="../../../hiragana.html"
-            class="text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition"
-            >Hiragana</a
-          >
-          <a
-            href="../../../katakana.html"
-            class="text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition"
-            >Katakana</a
-          >
-          <a
-            href="../../index.html"
-            class="text-blue-600 dark:text-blue-400 font-medium"
-            >N5</a
-          >
-          <a
-            href="../../../n4/"
-            class="text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition"
-            >N4</a
-          >
-          <a
-            href="../../../n3/"
-            class="text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition"
-            >N3</a
-          >
-          <a
-            href="../../../n2/"
-            class="text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition"
-            >N2</a
-          >
-          <a
-            href="../../../n1/"
-            class="text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition"
-            >N1</a
-          >
+            <a href="../index.html" class="text-blue-600 dark:text-blue-400 font-medium">Beranda</a>
+            <a href="../hiragana.html" class="text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition">Hiragana</a>
+            <a href="../katakana.html" class="text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition">Katakana</a>
+            <a href="../n5" class="text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition">N5</a>
+            <a href="../n4" class="text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition">N4</a>
+            <a href="../n3" class="text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition">N3</a>
+            <a href="../n2" class="text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition">N2</a>
+            <a href="../n1" class="text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition">N1</a>
+            <a href="../donatur.html" class="text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition">Donatur</a>
         </nav>
-
+        
         <!-- Dark Mode Toggle -->
         <button id="theme-toggle" class="p-2 rounded-full focus:outline-none">
-          <i class="fas fa-moon text-gray-600 dark:text-yellow-300"></i>
+            <i class="fas fa-moon text-gray-600 dark:text-yellow-300"></i>
         </button>
-
+        
         <!-- Mobile Menu Button -->
-        <button
-          id="mobile-menu-button"
-          class="md:hidden p-2 rounded-full focus:outline-none"
-        >
-          <i class="fas fa-bars text-gray-600 dark:text-gray-300"></i>
+        <button id="mobile-menu-button" class="md:hidden p-2 rounded-full focus:outline-none">
+            <i class="fas fa-bars text-gray-600 dark:text-gray-300"></i>
         </button>
-      </div>
-
-      <!-- Mobile Navigation -->
-      <div
-        id="mobile-menu"
-        class="hidden md:hidden bg-white dark:bg-gray-800 shadow-lg"
-      >
+    </div>
+    
+    <!-- Mobile Navigation -->
+    <div id="mobile-menu" class="hidden md:hidden bg-white dark:bg-gray-800 shadow-lg">
         <div class="container mx-auto px-4 py-3 flex flex-col space-y-3">
-          <a
-            href="../../../index.html"
-            class="text-gray-600 dark:text-gray-300 py-2 border-t border-gray-200 dark:border-gray-700"
-            >Beranda</a
-          >
-          <a
-            href="../../../hiragana.html"
-            class="text-gray-600 dark:text-gray-300 py-2"
-            >Hiragana</a
-          >
-          <a
-            href="../../../katakana.html"
-            class="text-gray-600 dark:text-gray-300 py-2"
-            >Katakana</a
-          >
-          <a
-            href="../../index.html"
-            class="text-blue-600 dark:text-blue-400 font-medium py-2"
-            >N5</a
-          >
-          <a href="../../../n4/" class="text-gray-600 dark:text-gray-300 py-2"
-            >N4</a
-          >
-          <a href="../../../n3/" class="text-gray-600 dark:text-gray-300 py-2"
-            >N3</a
-          >
-          <a href="../../../n2/" class="text-gray-600 dark:text-gray-300 py-2"
-            >N2</a
-          >
-          <a
-            href="../../../n1/"
-            class="text-gray-600 dark:text-gray-300 py-2 border-b border-gray-200 dark:border-gray-700"
-            >N1</a
-          >
+            <a href="../index.html" class="text-blue-600 dark:text-blue-400 font-medium py-2">Beranda</a>
+            <a href="../hiragana.html" class="text-gray-600 dark:text-gray-300 py-2 border-t border-gray-200 dark:border-gray-700">Hiragana</a>
+            <a href="../katakana.html" class="text-gray-600 dark:text-gray-300 py-2">Katakana</a>
+            <a href="../n5" class="text-gray-600 dark:text-gray-300 py-2">N5</a>
+            <a href="../n4" class="text-gray-600 dark:text-gray-300 py-2">N4</a>
+            <a href="../n3" class="text-gray-600 dark:text-gray-300 py-2">N3</a>
+            <a href="../n2" class="text-gray-600 dark:text-gray-300 py-2">N2</a>
+            <a href="../n1" class="text-gray-600 dark:text-gray-300 py-2">N1</a>
+            <a href="../donatur.html" class="text-gray-600 dark:text-gray-300 py-2 border-b border-gray-200 dark:border-gray-700">Donatur</a>
         </div>
-      </div>
-    </header>
+    </div>
+  </header>
 
     <main class="pt-24 pb-12">
         <div class="container mx-auto px-4 max-w-4xl">
