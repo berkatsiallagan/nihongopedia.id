@@ -11,6 +11,13 @@ document.addEventListener('DOMContentLoaded', function() {
     // Tambahkan kondisi untuk halaman tata bahasa lainnya di sini
 });
 
+document.addEventListener('DOMContentLoaded', function() {
+    // Cek apakah berada di halaman tata-bahasa-1
+    if (document.querySelector('article h1').textContent.includes('Kalimat Tanya dengan ～は～ですか')) {
+        setupTataBahasa2();
+    }
+    // Tambahkan kondisi untuk halaman tata bahasa lainnya di sini
+});
 function setupTataBahasa1() {
     const answers = {
         1: "これはほんです。",
