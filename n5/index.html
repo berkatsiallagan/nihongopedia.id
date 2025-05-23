@@ -36,6 +36,10 @@
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
+    <!-- SweetAlert2 -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
     <style>
         .jlpt-card:hover {
             transform: translateY(-5px);
@@ -209,7 +213,7 @@
                 </a>
                 
                 <!-- Kanji Card -->
-                <a href="kanji.html" class="jlpt-card bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 p-6 rounded-xl shadow-md transition duration-300 hover:border-green-500">
+                <a href="#" onclick="CommingSoonAlert()" class="jlpt-card bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 p-6 rounded-xl shadow-md transition duration-300 hover:border-green-500">
                     <div class="text-center">
                         <div class="bg-green-100 dark:bg-green-900 text-green-600 dark:text-green-300 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
                             <i class="fas fa-kanji text-2xl"></i>
@@ -225,7 +229,7 @@
                 </a>
                 
                 <!-- Kosakata Card -->
-                <a href="kosakata.html" class="jlpt-card bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 p-6 rounded-xl shadow-md transition duration-300 hover:border-purple-500">
+                <a href="#" onclick="CommingSoonAlert()" class="jlpt-card bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 p-6 rounded-xl shadow-md transition duration-300 hover:border-purple-500">
                     <div class="text-center">
                         <div class="bg-purple-100 dark:bg-purple-900 text-purple-600 dark:text-purple-300 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
                             <i class="fas fa-book text-2xl"></i>
@@ -486,6 +490,15 @@
             if (event.target == modal) {
                 closeGrammarModal();
             }
+        }
+
+        function CommingSoonAlert() {
+            Swal.fire({
+                title: 'Coming Soon',
+                text: 'Fitur ini masih dalam tahap pengembangan. Silakan coba lagi nanti!',
+                icon: 'warning',
+                confirmButtonText: 'OK'
+            });
         }
     </script>
 </body>
