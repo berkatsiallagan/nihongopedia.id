@@ -13,34 +13,29 @@ document.addEventListener('DOMContentLoaded', function() {
 
 function setupTataBahasa1() {
     const answers = {
-        1: "これはえんぴつです。",
-        2: "私はいしゃです。",
-        3: "それはくるまです。"
+        1: "これはほんです。",
+        2: "これはえんぴつです。",
+        3: "これはつくえです。",
+        4: "これはいすです。",
+        5: "これはくるまです。",
+        6: "わたしはせんせいです。",
+        7: "わたしはいしゃです。",
+        8: "これはねこです。",
+        9: "これはいぬです。",
+        10:"これはじてんしゃです。"
     };
-
+    
     const alternativeAnswers = {
-        1: [
-            "これはえんぴつです。", "これはえんぴつです",
-            "これはエンピツです。", "これはエンピツです",
-            "これは鉛筆です。", "これは鉛筆です",
-            "kore wa enpitsu desu.", "kore wa enpitsu desu", "korewaenpitsudesu",
-            "enpitsu desu", "これはえんぴつだ", "これは鉛筆だ"
-        ],
-        2: [
-            "私はいしゃです。", "私はいしゃです",
-            "わたしはいしゃです。", "わたしはいしゃです",
-            "私は医者です。", "私は医者です",
-            "わたしは医者です。", "わたしは医者です",
-            "watashi wa isha desu.", "watashi wa isha desu", "watashiwaishadesu",
-            "isha desu", "医者です", "私はいしゃだ", "私は医者だ"
-        ],
-        3: [
-            "それはくるまです。", "それはくるまです",
-            "それはクルマです。", "それはクルマです",
-            "それは車です。", "それは車です",
-            "sore wa kuruma desu.", "sore wa kuruma desu", "sorewakurumadesu",
-            "kuruma desu", "車です", "それはくるまだ", "それは車だ"
-        ]
+        1: ["これはほんです","これは本です","kore wa hon desu","korewahondesu","これはほんだ","これは本だ"],
+        2: ["これはえんぴつです","これは鉛筆です","kore wa enpitsu desu","korewaenpitsudesu","これはえんぴつだ","これは鉛筆だ"],
+        3: ["これはつくえです","これは机です","kore wa tsukue desu","korewatsukuedesu","これはつくえだ","これは机だ"],
+        4: ["これはいすです","これは椅子です","kore wa isu desu","korewaisudesu","これはいすだ","これは椅子だ"],
+        5: ["これはくるまです","これは車です","kore wa kuruma desu","korewakurumadesu","これはくるまだ","これは車だ"],
+        6: ["わたしはせんせいです","私は先生です","watashi wa sensei desu","watashiwasenseidesu","わたしはせんせいだ","私は先生だ"],
+        7: ["わたしはいしゃです","私は医者です","watashi wa isha desu","watashiwaishadesu","わたしはいしゃだ","私は医者だ"],
+        8: ["これはねこです","これは猫です","kore wa neko desu","korewanekodesu","これはねこだ","これは猫だ"],
+        9: ["これはいぬです","これは犬です","kore wa inu desu","korewainudesu","これはいぬだ","これは犬だ"],
+        10:["これはじてんしゃです","これは自転車です","kore wa jitensha desu","korewajitenshadesu","これはじてんしゃだ","これは自転車だ"]
     };
 
     const checkButton = document.querySelector('.bg-gray-50 button');
