@@ -1,0 +1,518 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kosakata Tempat & Lokasi N5 | Nihongopedia</title>
+  <meta name="description" content="Pelajari kosakata JLPT N5 tentang tempat dan lokasi dalam bahasa Jepang.">
+  
+  <!-- Logo Web -->
+  <link rel="icon" href="/assets/img/nihongopedia.png" type="image/png">
+    
+  <!-- Google Adsense -->
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1435241846420582" crossorigin="anonymous"></script>
+  
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['"Noto Sans"', '"Noto Sans JP"', 'sans-serif'],
+          },
+          animation: {
+            'bounce-slow': 'bounce 3s infinite',
+            'float': 'float 6s ease-in-out infinite',
+          },
+          keyframes: {
+            float: {
+              '0%, 100%': { transform: 'translateY(0)' },
+              '50%': { transform: 'translateY(-10px)' },
+            }
+          }
+        }
+      }
+    }
+  </script>
+  
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
+  <!-- SweetAlert2 -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css">
+  
+  <style>
+    .vocab-card {
+      transition: all 0.3s ease;
+      transform-style: preserve-3d;
+    }
+    
+    .vocab-card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+    }
+    
+    .particle {
+      position: absolute;
+      background-size: contain;
+      opacity: 0.6;
+      z-index: -1;
+      animation: float 8s ease-in-out infinite;
+    }
+    
+    .kanji {
+      font-family: '"Noto Sans JP"', sans-serif;
+    }
+    
+    .location-icon {
+      font-size: 2rem;
+      color: #3B82F6;
+    }
+    
+    .dark .location-icon {
+      color: #60A5FA;
+    }
+  </style>
+</head>
+
+<body class="bg-white dark:bg-gray-900 font-sans">
+  <!-- Header -->
+  <header class="bg-white dark:bg-gray-800 shadow-sm">
+    <div class="container mx-auto px-4 py-4 flex justify-between items-center">
+      <a href="/" class="text-2xl font-bold text-blue-600 dark:text-blue-400 flex items-center">
+        <i class="fas fa-book mr-2"></i> Nihongopedia
+      </a>
+      <div class="flex items-center space-x-4">
+        <a href="/n5/kosakata" class="text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400">
+          <i class="fas fa-arrow-left mr-1"></i> Kembali
+        </a>
+        <button id="theme-toggle" class="p-2 rounded-full focus:outline-none">
+          <i class="fas fa-moon text-gray-600 dark:text-yellow-300"></i>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main class="container mx-auto px-4 py-8">
+    <!-- Hero Section -->
+    <section class="text-center mb-12 relative overflow-hidden">
+      <div class="absolute -top-20 -left-20 w-40 h-40 bg-blue-200 dark:bg-blue-800 rounded-full opacity-20"></div>
+      <div class="absolute -bottom-10 -right-10 w-60 h-60 bg-purple-200 dark:bg-purple-800 rounded-full opacity-20"></div>
+      
+      <h1 class="text-4xl md:text-5xl font-bold text-gray-800 dark:text-white mb-4">
+        <span class="text-blue-600 dark:text-blue-400">Tempat & Lokasi</span> - JLPT N5
+      </h1>
+      <p class="text-xl text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
+        Kosakata dasar tentang tempat dan lokasi dalam bahasa Jepang
+      </p>
+    </section>
+
+    <!-- Particles Background -->
+    <div id="particles" class="fixed top-0 left-0 w-full h-full pointer-events-none z-0"></div>
+
+    <!-- Vocabulary List -->
+    <section class="relative z-10">
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        <!-- Vocabulary Card 1 -->
+        <div class="vocab-card bg-white dark:bg-gray-800 rounded-lg shadow-md p-6 border-b-4 border-blue-500">
+          <div class="flex justify-between items-start mb-4">
+            <div>
+              <h3 class="text-2xl font-bold kanji text-gray-800 dark:text-white">家</h3>
+              <p class="text-gray-600 dark:text-gray-300">いえ (ie)</p>
+            </div>
+            <div class="location-icon">
+              <i class="fas fa-home"></i>
+            </div>
+          </div>
+          <p class="text-gray-700 dark:text-gray-300">Rumah (bentuk netral)</p>
+          <div class="mt-4 pt-4 border-t border-gray-200 dark:border-gray-700">
+            <p class="text-sm text-gray-500 dark:text-gray-400"><span class="font-semibold">Contoh:</span> 私の家は大きいです。(Watashi no ie wa ookii desu) - Rumah saya besar.</p>
+          </div>
+        </div>
+
+        <!-- Vocabulary Card 2 -->
+        <div class="vocab-card bg-white dark:bg-gray-800 rounded-lg shadow-md p-6 border-b-4 border-blue-500">
+          <div class="flex justify-between items-start mb-4">
+            <div>
+              <h3 class="text-2xl font-bold kanji text-gray-800 dark:text-white">家</h3>
+              <p class="text-gray-600 dark:text-gray-300">うち (uchi)</p>
+            </div>
+            <div class="location-icon">
+              <i class="fas fa-home"></i>
+            </div>
+          </div>
+          <p class="text-gray-700 dark:text-gray-300">Rumah (bentuk informal, lebih personal)</p>
+          <div class="mt-4 pt-4 border-t border-gray-200 dark:border-gray-700">
+            <p class="text-sm text-gray-500 dark:text-gray-400"><span class="font-semibold">Contoh:</span> うちに来ませんか。(Uchi ni kimasen ka) - Mau datang ke rumahku?</p>
+          </div>
+        </div>
+
+        <!-- Vocabulary Card 3 -->
+        <div class="vocab-card bg-white dark:bg-gray-800 rounded-lg shadow-md p-6 border-b-4 border-blue-500">
+          <div class="flex justify-between items-start mb-4">
+            <div>
+              <h3 class="text-2xl font-bold kanji text-gray-800 dark:text-white">学校</h3>
+              <p class="text-gray-600 dark:text-gray-300">がっこう (gakkou)</p>
+            </div>
+            <div class="location-icon">
+              <i class="fas fa-school"></i>
+            </div>
+          </div>
+          <p class="text-gray-700 dark:text-gray-300">Sekolah</p>
+          <div class="mt-4 pt-4 border-t border-gray-200 dark:border-gray-700">
+            <p class="text-sm text-gray-500 dark:text-gray-400"><span class="font-semibold">Contoh:</span> 学校は8時からです。(Gakkou wa hachiji kara desu) - Sekolah mulai jam 8.</p>
+          </div>
+        </div>
+
+        <!-- Vocabulary Card 4 -->
+        <div class="vocab-card bg-white dark:bg-gray-800 rounded-lg shadow-md p-6 border-b-4 border-blue-500">
+          <div class="flex justify-between items-start mb-4">
+            <div>
+              <h3 class="text-2xl font-bold kanji text-gray-800 dark:text-white">駅</h3>
+              <p class="text-gray-600 dark:text-gray-300">えき (eki)</p>
+            </div>
+            <div class="location-icon">
+              <i class="fas fa-train"></i>
+            </div>
+          </div>
+          <p class="text-gray-700 dark:text-gray-300">Stasiun</p>
+          <div class="mt-4 pt-4 border-t border-gray-200 dark:border-gray-700">
+            <p class="text-sm text-gray-500 dark:text-gray-400"><span class="font-semibold">Contoh:</span> 駅はどこですか。(Eki wa doko desu ka) - Di mana stasiunnya?</p>
+          </div>
+        </div>
+
+        <!-- Vocabulary Card 5 -->
+        <div class="vocab-card bg-white dark:bg-gray-800 rounded-lg shadow-md p-6 border-b-4 border-blue-500">
+          <div class="flex justify-between items-start mb-4">
+            <div>
+              <h3 class="text-2xl font-bold kanji text-gray-800 dark:text-white">店</h3>
+              <p class="text-gray-600 dark:text-gray-300">みせ (mise)</p>
+            </div>
+            <div class="location-icon">
+              <i class="fas fa-store"></i>
+            </div>
+          </div>
+          <p class="text-gray-700 dark:text-gray-300">Toko</p>
+          <div class="mt-4 pt-4 border-t border-gray-200 dark:border-gray-700">
+            <p class="text-sm text-gray-500 dark:text-gray-400"><span class="font-semibold">Contoh:</span> この店は安いです。(Kono mise wa yasui desu) - Toko ini murah.</p>
+          </div>
+        </div>
+
+        <!-- Vocabulary Card 6 -->
+        <div class="vocab-card bg-white dark:bg-gray-800 rounded-lg shadow-md p-6 border-b-4 border-blue-500">
+          <div class="flex justify-between items-start mb-4">
+            <div>
+              <h3 class="text-2xl font-bold kanji text-gray-800 dark:text-white">レストラン</h3>
+              <p class="text-gray-600 dark:text-gray-300">resutoran</p>
+            </div>
+            <div class="location-icon">
+              <i class="fas fa-utensils"></i>
+            </div>
+          </div>
+          <p class="text-gray-700 dark:text-gray-300">Restoran</p>
+          <div class="mt-4 pt-4 border-t border-gray-200 dark:border-gray-700">
+            <p class="text-sm text-gray-500 dark:text-gray-400"><span class="font-semibold">Contoh:</span> レストランで食べます。(Resutoran de tabemasu) - Makan di restoran.</p>
+          </div>
+        </div>
+
+        <!-- Vocabulary Card 7 -->
+        <div class="vocab-card bg-white dark:bg-gray-800 rounded-lg shadow-md p-6 border-b-4 border-blue-500">
+          <div class="flex justify-between items-start mb-4">
+            <div>
+              <h3 class="text-2xl font-bold kanji text-gray-800 dark:text-white">病院</h3>
+              <p class="text-gray-600 dark:text-gray-300">びょういん (byouin)</p>
+            </div>
+            <div class="location-icon">
+              <i class="fas fa-hospital"></i>
+            </div>
+          </div>
+          <p class="text-gray-700 dark:text-gray-300">Rumah sakit</p>
+          <div class="mt-4 pt-4 border-t border-gray-200 dark:border-gray-700">
+            <p class="text-sm text-gray-500 dark:text-gray-400"><span class="font-semibold">Contoh:</span> 病院へ行きます。(Byouin e ikimasu) - Pergi ke rumah sakit.</p>
+          </div>
+        </div>
+
+        <!-- Vocabulary Card 8 -->
+        <div class="vocab-card bg-white dark:bg-gray-800 rounded-lg shadow-md p-6 border-b-4 border-blue-500">
+          <div class="flex justify-between items-start mb-4">
+            <div>
+              <h3 class="text-2xl font-bold kanji text-gray-800 dark:text-white">公園</h3>
+              <p class="text-gray-600 dark:text-gray-300">こうえん (kouen)</p>
+            </div>
+            <div class="location-icon">
+              <i class="fas fa-tree"></i>
+            </div>
+          </div>
+          <p class="text-gray-700 dark:text-gray-300">Taman</p>
+          <div class="mt-4 pt-4 border-t border-gray-200 dark:border-gray-700">
+            <p class="text-sm text-gray-500 dark:text-gray-400"><span class="font-semibold">Contoh:</span> 公園で散歩します。(Kouen de sanpo shimasu) - Jalan-jalan di taman.</p>
+          </div>
+        </div>
+
+        <!-- Vocabulary Card 9 -->
+        <div class="vocab-card bg-white dark:bg-gray-800 rounded-lg shadow-md p-6 border-b-4 border-blue-500">
+          <div class="flex justify-between items-start mb-4">
+            <div>
+              <h3 class="text-2xl font-bold kanji text-gray-800 dark:text-white">スーパー</h3>
+              <p class="text-gray-600 dark:text-gray-300">suupaa</p>
+            </div>
+            <div class="location-icon">
+              <i class="fas fa-shopping-cart"></i>
+            </div>
+          </div>
+          <p class="text-gray-700 dark:text-gray-300">Supermarket</p>
+          <div class="mt-4 pt-4 border-t border-gray-200 dark:border-gray-700">
+            <p class="text-sm text-gray-500 dark:text-gray-400"><span class="font-semibold">Contoh:</span> スーパーで買い物します。(Suupaa de kaimono shimasu) - Berbelanja di supermarket.</p>
+          </div>
+        </div>
+
+        <!-- Vocabulary Card 10 -->
+        <div class="vocab-card bg-white dark:bg-gray-800 rounded-lg shadow-md p-6 border-b-4 border-blue-500">
+          <div class="flex justify-between items-start mb-4">
+            <div>
+              <h3 class="text-2xl font-bold kanji text-gray-800 dark:text-white">図書館</h3>
+              <p class="text-gray-600 dark:text-gray-300">としょかん (toshokan)</p>
+            </div>
+            <div class="location-icon">
+              <i class="fas fa-book"></i>
+            </div>
+          </div>
+          <p class="text-gray-700 dark:text-gray-300">Perpustakaan</p>
+          <div class="mt-4 pt-4 border-t border-gray-200 dark:border-gray-700">
+            <p class="text-sm text-gray-500 dark:text-gray-400"><span class="font-semibold">Contoh:</span> 図書館で勉強します。(Toshokan de benkyou shimasu) - Belajar di perpustakaan.</p>
+          </div>
+        </div>
+
+        <!-- Vocabulary Card 11 -->
+        <div class="vocab-card bg-white dark:bg-gray-800 rounded-lg shadow-md p-6 border-b-4 border-blue-500">
+          <div class="flex justify-between items-start mb-4">
+            <div>
+              <h3 class="text-2xl font-bold kanji text-gray-800 dark:text-white">銀行</h3>
+              <p class="text-gray-600 dark:text-gray-300">ぎんこう (ginkou)</p>
+            </div>
+            <div class="location-icon">
+              <i class="fas fa-money-bill-wave"></i>
+            </div>
+          </div>
+          <p class="text-gray-700 dark:text-gray-300">Bank</p>
+          <div class="mt-4 pt-4 border-t border-gray-200 dark:border-gray-700">
+            <p class="text-sm text-gray-500 dark:text-gray-400"><span class="font-semibold">Contoh:</span> 銀行でお金をおろします。(Ginkou de okane o oroshimasu) - Mengambil uang di bank.</p>
+          </div>
+        </div>
+
+        <!-- Vocabulary Card 12 -->
+        <div class="vocab-card bg-white dark:bg-gray-800 rounded-lg shadow-md p-6 border-b-4 border-blue-500">
+          <div class="flex justify-between items-start mb-4">
+            <div>
+              <h3 class="text-2xl font-bold kanji text-gray-800 dark:text-white">会社</h3>
+              <p class="text-gray-600 dark:text-gray-300">かいしゃ (kaisha)</p>
+            </div>
+            <div class="location-icon">
+              <i class="fas fa-building"></i>
+            </div>
+          </div>
+          <p class="text-gray-700 dark:text-gray-300">Perusahaan/Kantor</p>
+          <div class="mt-4 pt-4 border-t border-gray-200 dark:border-gray-700">
+            <p class="text-sm text-gray-500 dark:text-gray-400"><span class="font-semibold">Contoh:</span> 会社で働きます。(Kaisha de hatarakimasu) - Bekerja di perusahaan.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Study Tips Section -->
+    <section class="mt-16 bg-blue-50 dark:bg-blue-900 rounded-xl p-8">
+      <div class="text-center mb-6">
+        <h2 class="text-2xl font-bold text-gray-800 dark:text-white mb-2">Tips Belajar Kosakata Tempat</h2>
+        <p class="text-gray-600 dark:text-gray-300">Beberapa saran untuk membantu menghafal kosakata tempat dalam bahasa Jepang</p>
+      </div>
+      
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div class="bg-white dark:bg-gray-800 p-6 rounded-lg shadow">
+          <div class="flex items-center mb-4">
+            <div class="bg-blue-100 dark:bg-blue-800 text-blue-600 dark:text-blue-300 w-10 h-10 rounded-full flex items-center justify-center mr-4">
+              <i class="fas fa-map-marked-alt"></i>
+            </div>
+            <h3 class="text-lg font-semibold text-gray-800 dark:text-white">Buat Peta Mental</h3>
+          </div>
+          <p class="text-gray-600 dark:text-gray-300">Gambarlah peta sederhana dari daerah Anda dan beri label tempat-tempat penting dengan kosakata Jepang. Ini akan membantu mengasosiasikan kata dengan lokasi nyata.</p>
+        </div>
+        
+        <div class="bg-white dark:bg-gray-800 p-6 rounded-lg shadow">
+          <div class="flex items-center mb-4">
+            <div class="bg-blue-100 dark:bg-blue-800 text-blue-600 dark:text-blue-300 w-10 h-10 rounded-full flex items-center justify-center mr-4">
+              <i class="fas fa-route"></i>
+            </div>
+            <h3 class="text-lg font-semibold text-gray-800 dark:text-white">Latihan Arah</h3>
+          </div>
+          <p class="text-gray-600 dark:text-gray-300">Buat kalimat yang menjelaskan perjalanan dari satu tempat ke tempat lain. Contoh: "家から駅まで歩きます。(Ie kara eki made arukimasu)" - Berjalan dari rumah ke stasiun.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Related Vocabulary -->
+    <section class="mt-16">
+      <h2 class="text-2xl font-bold text-gray-800 dark:text-white mb-6">Kosakata Terkait</h2>
+      <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-4">
+        <a href="/n5/kosakata/tempat-lokasi" class="bg-white dark:bg-gray-800 p-4 rounded-lg shadow text-center hover:shadow-md transition">
+          <div class="text-xl font-bold kanji text-blue-600 dark:text-blue-400 mb-1">町</div>
+          <div class="text-gray-600 dark:text-gray-300">まち (machi)</div>
+          <div class="text-sm text-gray-500 dark:text-gray-400 mt-1">Kota/Kota kecil</div>
+        </a>
+        <a href="/n5/kosakata/tempat-lokasi" class="bg-white dark:bg-gray-800 p-4 rounded-lg shadow text-center hover:shadow-md transition">
+          <div class="text-xl font-bold kanji text-blue-600 dark:text-blue-400 mb-1">市</div>
+          <div class="text-gray-600 dark:text-gray-300">し (shi)</div>
+          <div class="text-sm text-gray-500 dark:text-gray-400 mt-1">Kota (administratif)</div>
+        </a>
+        <a href="/n5/kosakata/tempat-lokasi" class="bg-white dark:bg-gray-800 p-4 rounded-lg shadow text-center hover:shadow-md transition">
+          <div class="text-xl font-bold kanji text-blue-600 dark:text-blue-400 mb-1">国</div>
+          <div class="text-gray-600 dark:text-gray-300">くに (kuni)</div>
+          <div class="text-sm text-gray-500 dark:text-gray-400 mt-1">Negara</div>
+        </a>
+        <a href="/n5/kosakata/tempat-lokasi" class="bg-white dark:bg-gray-800 p-4 rounded-lg shadow text-center hover:shadow-md transition">
+          <div class="text-xl font-bold kanji text-blue-600 dark:text-blue-400 mb-1">部屋</div>
+          <div class="text-gray-600 dark:text-gray-300">へや (heya)</div>
+          <div class="text-sm text-gray-500 dark:text-gray-400 mt-1">Ruang/Kamar</div>
+        </a>
+        <a href="/n5/kosakata/tempat-lokasi" class="bg-white dark:bg-gray-800 p-4 rounded-lg shadow text-center hover:shadow-md transition">
+          <div class="text-xl font-bold kanji text-blue-600 dark:text-blue-400 mb-1">台所</div>
+          <div class="text-gray-600 dark:text-gray-300">だいどころ (daidokoro)</div>
+          <div class="text-sm text-gray-500 dark:text-gray-400 mt-1">Dapur</div>
+        </a>
+        <a href="/n5/kosakata/tempat-lokasi" class="bg-white dark:bg-gray-800 p-4 rounded-lg shadow text-center hover:shadow-md transition">
+          <div class="text-xl font-bold kanji text-blue-600 dark:text-blue-400 mb-1">トイレ</div>
+          <div class="text-gray-600 dark:text-gray-300">toire</div>
+          <div class="text-sm text-gray-500 dark:text-gray-400 mt-1">Toilet</div>
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <!-- Ad Space -->
+  <section class="container mx-auto px-4 mt-16">
+    <div class="bg-gray-200 dark:bg-gray-700 rounded-lg p-4 text-center">
+      <!-- Google AdSense Ad Unit -->
+      <ins class="adsbygoogle"
+          style="display:block"
+          data-ad-client="ca-pub-1435241846420582"
+          data-ad-slot="1876763807"
+          data-ad-format="auto"
+          data-full-width-responsive="true"></ins>
+      <script>
+          (adsbygoogle = window.adsbygoogle || []).push({});
+      </script>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-gray-100 dark:bg-gray-800 mt-16">
+    <div class="container mx-auto px-4 py-8">
+      <div class="text-center text-sm text-gray-500 dark:text-gray-400">
+        <p>© 2025 Nihongopedia. All rights reserved.</p>
+        <p class="mt-2">Belajar bahasa Jepang dengan mudah dan menyenangkan</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- JavaScript -->
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <script>
+    // Theme Toggle
+    const themeToggle = document.getElementById('theme-toggle');
+    const icon = themeToggle.querySelector('i');
+
+    if (localStorage.getItem('color-theme') === 'dark' || (!localStorage.getItem('color-theme') && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+      document.documentElement.classList.add('dark');
+      icon.classList.remove('fa-moon');
+      icon.classList.add('fa-sun');
+    } else {
+      document.documentElement.classList.remove('dark');
+      icon.classList.remove('fa-sun');
+      icon.classList.add('fa-moon');
+    }
+
+    themeToggle.addEventListener('click', () => {
+      icon.classList.toggle('fa-moon');
+      icon.classList.toggle('fa-sun');
+
+      if (document.documentElement.classList.contains('dark')) {
+        document.documentElement.classList.remove('dark');
+        localStorage.setItem('color-theme', 'light');
+      } else {
+        document.documentElement.classList.add('dark');
+        localStorage.setItem('color-theme', 'dark');
+      }
+    });
+
+    // Particles Background
+    function createParticles() {
+      const particlesContainer = document.getElementById('particles');
+      const particleCount = 20;
+      const hiraganaChars = ['あ', 'い', 'う', 'え', 'お', 'か', 'き', 'く', 'け', 'こ', 'さ', 'し', 'す', 'せ', 'そ'];
+      
+      for (let i = 0; i < particleCount; i++) {
+          const particle = document.createElement('div');
+          particle.className = 'particle text-gray-300 dark:text-gray-600';
+          
+          // Random properties
+          const size = Math.random() * 24 + 16;
+          const posX = Math.random() * 100;
+          const posY = Math.random() * 100;
+          const delay = Math.random() * 5;
+          const duration = Math.random() * 10 + 10;
+          const char = hiraganaChars[Math.floor(Math.random() * hiraganaChars.length)];
+          
+          particle.style.width = `${size}px`;
+          particle.style.height = `${size}px`;
+          particle.style.left = `${posX}%`;
+          particle.style.top = `${posY}%`;
+          particle.style.fontSize = `${size}px`;
+          particle.style.animationDelay = `${delay}s`;
+          particle.style.animationDuration = `${duration}s`;
+          particle.textContent = char;
+          
+          particlesContainer.appendChild(particle);
+      }
+    }
+
+    // Initialize particles when page loads
+    document.addEventListener('DOMContentLoaded', function() {
+      createParticles();
+      
+      // Show welcome message
+      setTimeout(() => {
+          Swal.fire({
+          title: 'Kosakata Tempat & Lokasi',
+          text: 'Pelajari kosakata tentang tempat dan lokasi dalam bahasa Jepang',
+          icon: 'info',
+          confirmButtonText: 'Mulai Belajar',
+          background: localStorage.getItem('color-theme') === 'dark' ? '#1f2937' : '#ffffff',
+          color: localStorage.getItem('color-theme') === 'dark' ? '#ffffff' : '#000000',
+          });
+      }, 1000);
+    });
+
+    // Keyboard shortcuts
+    document.addEventListener('keydown', function(event) {
+      // Escape key closes modals
+      if (event.key === 'Escape') {
+          const modals = document.querySelectorAll('.modal');
+          modals.forEach(modal => {
+          if (!modal.classList.contains('hidden')) {
+              modal.classList.add('hidden');
+              document.body.classList.remove('overflow-hidden');
+          }
+          });
+      }
+      
+      // Dark mode toggle with Ctrl+D
+      if (event.ctrlKey && event.key === 'd') {
+          event.preventDefault();
+          themeToggle.click();
+      }
+    });
+  </script>
+</body>
+</html>
