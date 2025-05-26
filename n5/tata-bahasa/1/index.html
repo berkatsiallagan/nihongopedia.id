@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="id" class="scroll-smooth">
 
-<!-- komponen/head.html -->
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -58,9 +57,16 @@
             padding-left: 1rem;
             margin: 1.5rem 0;
         }
+        .correct-answer {
+            background-color: #d1fae5 !important;
+            border-color: #10b981 !important;
+        }
+        .wrong-answer {
+            background-color: #fee2e2 !important;
+            border-color: #ef4444 !important;
+        }
     </style>
 </head>
-<!-- ^komponen.head.html^ -->
 
 <body class="bg-white dark:bg-gray-900 font-sans transition-colors duration-300">
     <!-- komponen/header.html -->
@@ -68,13 +74,13 @@
         <div class="container mx-auto px-4 py-3 flex justify-between items-center">
             <!-- Logo -->
             <a href="#" class="flex items-center space-x-2">
-                <span class="text-2xl font-bold text-blue-600 dark:text-blue-400">Cardo</span>
+                <span class="text-2xl font-bold text-blue-600 dark:text-blue-400">Nihongopedia</span>
             </a>
             
             <!-- Desktop Navigation -->
             <nav class="hidden md:flex space-x-8">
                 <a href="/" class="text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition">Beranda</a>
-            <!-- Aktif --><a href="/hiragana" class="text-blue-600 dark:text-blue-400 font-medium">Hiragana</a>
+                <a href="/hiragana" class="text-blue-600 dark:text-blue-400 font-medium">Hiragana</a>
                 <a href="/katakana" class="text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition">Katakana</a>
                 <a href="/n5" class="text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition">N5</a>
                 <a href="/n4" class="text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition">N4</a>
@@ -82,7 +88,7 @@
                 <a href="/n2" class="text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition">N2</a>
                 <a href="/n1" class="text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition">N1</a>
                 <a href="/donatur" class="text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition">Donatur</a>
-                <a href="/nihongopedia" class="text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition">Nihongopedia</a>
+                <a href="/tentang" class="text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition">Tentang</a>
             </nav>
             
             <!-- Dark Mode Toggle -->
@@ -100,7 +106,7 @@
         <div id="mobile-menu" class="hidden md:hidden bg-white dark:bg-gray-800 shadow-lg">
             <div class="container mx-auto px-4 py-3 flex flex-col space-y-3">
                 <a href="/" class="text-gray-600 dark:text-gray-300 py-2 border-b border-gray-200 dark:border-gray-700">Beranda</a>
-        <!-- Aktif --><a href="/hiragana" class="text-blue-600 dark:text-blue-400 font-medium py-2 border-b border-gray-200 dark:border-gray-700">Hiragana</a>
+                <a href="/hiragana" class="text-blue-600 dark:text-blue-400 font-medium py-2 border-b border-gray-200 dark:border-gray-700">Hiragana</a>
                 <a href="/katakana" class="text-gray-600 dark:text-gray-300 py-2 border-b border-gray-200 dark:border-gray-700">Katakana</a>
                 <a href="/n5" class="text-gray-600 dark:text-gray-300 py-2 border-b border-gray-200 dark:border-gray-700">N5</a>
                 <a href="/n4" class="text-gray-600 dark:text-gray-300 py-2 border-b border-gray-200 dark:border-gray-700">N4</a>
@@ -108,11 +114,10 @@
                 <a href="/n2" class="text-gray-600 dark:text-gray-300 py-2 border-b border-gray-200 dark:border-gray-700">N2</a>
                 <a href="/n1" class="text-gray-600 dark:text-gray-300 py-2 border-b border-gray-200 dark:border-gray-700">N1</a>
                 <a href="/donatur" class="text-gray-600 dark:text-gray-300 py-2 border-b border-gray-200 dark:border-gray-700">Donatur</a>
-                <a href="/nihongopedia" class="text-gray-600 dark:text-gray-300 py-2 border-b border-gray-200 dark:border-gray-700">Nihongopedia</a>
+                <a href="/tentang" class="text-gray-600 dark:text-gray-300 py-2 border-b border-gray-200 dark:border-gray-700">Tentang</a>
             </div>
         </div>
     </header>
-    <!-- ^komponen/header.html^ -->
 
     <!-- Main Content -->
     <main class="pt-24">
@@ -135,7 +140,7 @@
                     <li aria-current="page">
                         <div class="flex items-center">
                             <i class="fas fa-chevron-right text-gray-400 mx-2"></i>
-                            <span class="ml-1 text-sm font-medium text-blue-500 md:ml-2 dark:text-blue-400">Tata Bahasa 1</span>
+                            <span class="ml-1 text-sm font-medium text-blue-500 md:ml-2 dark:text-blue-400">Tata Bahasa 1: ～です</span>
                         </div>
                     </li>
                 </ol>
@@ -143,129 +148,236 @@
 
             <!-- Article Content -->
             <article class="prose dark:prose-invert max-w-none dark:text-white">
-                <h1 class="text-3xl font-bold text-gray-800 dark:text-white mb-6">Struktur Dasar ～です</h1>
+                <h1 class="text-3xl font-bold text-gray-800 dark:text-white mb-6">Pelajaran Pertama: Struktur Dasar ～です</h1>
                 
                 <div class="bg-blue-50 dark:bg-blue-900 rounded-lg p-4 mb-6">
                     <p class="text-blue-800 dark:text-blue-200">
                         <i class="fas fa-info-circle mr-2"></i>
-                        Struktur ～です sangat penting dalam bahasa Jepang untuk membuat pernyataan yang jelas dan formal.
+                        <strong>Untuk Pemula:</strong> Pelajaran ini adalah dasar paling penting dalam bahasa Jepang. Mari pelajari perlahan-lahan!
                     </p>
                 </div>
                 
-                <h2 class="text-2xl font-semibold text-gray-800 dark:text-white mt-8 mb-4">Pengertian Dasar</h2>
-                <p>Struktur ～です digunakan untuk:</p>
-                <ul>
-                    <li>Membuat pernyataan yang jelas dan formal</li>
-                    <li>Mengidentifikasi benda atau orang</li>
-                    <li>Mengungkapkan keadaan atau sifat</li>
-                </ul>
+                <h2 class="text-2xl font-semibold text-gray-800 dark:text-white mt-8 mb-4">Apa itu ～です?</h2>
+                <p>Struktur <span class="japanese-text">～です</span> adalah bentuk paling dasar dan penting dalam bahasa Jepang. Ini seperti kata "adalah" dalam bahasa Indonesia, tetapi lebih sopan dan formal.</p>
                 
                 <div class="grammar-point">
-                    <h3 class="text-xl font-semibold text-gray-800 dark:text-white mb-3">Pola Kalimat</h3>
+                    <h3 class="text-xl font-semibold text-gray-800 dark:text-white mb-3">Pola Kalimat Sederhana</h3>
                     <div class="bg-gray-100 dark:bg-gray-800 p-4 rounded-lg mb-4">
                         <p class="japanese-text text-2xl mb-2">[Kata Benda] は [Kata Benda/Kata Sifat] です。</p>
                         <p class="text-gray-600 dark:text-gray-300">[Kata Benda] adalah [Kata Benda/Kata Sifat].</p>
                     </div>
+                    <p><strong>Contoh:</strong></p>
+                    <ul class="list-disc pl-6">
+                        <li><span class="japanese-text">わたし は がくせい です。</span> (Watashi wa gakusei desu.) = Saya adalah pelajar.</li>
+                        <li><span class="japanese-text">これ は ほん です。</span> (Kore wa hon desu.) = Ini adalah buku.</li>
+                    </ul>
                 </div>
                 
-                <h2 class="text-2xl font-semibold text-gray-800 dark:text-white mt-8 mb-4">Contoh Penggunaan</h2>
+                <h2 class="text-2xl font-semibold text-gray-800 dark:text-white mt-8 mb-4">Penjelasan Detail untuk Pemula</h2>
+                
+                <h3 class="text-xl font-semibold text-gray-800 dark:text-white mt-6 mb-3">1. Partikel は (wa)</h3>
+                <p>Partikel <span class="japanese-text">は</span> (dibaca "wa") adalah penanda topik kalimat. Fungsinya:</p>
+                <ul class="list-disc pl-6">
+                    <li>Menunjukkan apa yang sedang kita bicarakan</li>
+                    <li>Seperti kata "tentang" dalam bahasa Indonesia</li>
+                    <li><strong>Contoh:</strong> <span class="japanese-text">わたし は</span> = tentang saya/saya adalah...</li>
+                </ul>
+                
+                <div class="bg-yellow-50 dark:bg-yellow-900 rounded-lg p-4 my-4">
+                    <h4 class="font-semibold mb-2"><i class="fas fa-exclamation-triangle mr-2"></i>Perhatian!</h4>
+                    <p>Meskipun ditulis dengan huruf <span class="japanese-text">は</span> (ha), partikel ini selalu dibaca "wa". Ini adalah pengecualian dalam bahasa Jepang.</p>
+                </div>
+                
+                <h3 class="text-xl font-semibold text-gray-800 dark:text-white mt-6 mb-3">2. Akhiran です (desu)</h3>
+                <p><span class="japanese-text">です</span> adalah kata penutup yang membuat kalimat menjadi formal dan sopan. Karakteristiknya:</p>
+                <ul class="list-disc pl-6">
+                    <li>Selalu di akhir kalimat</li>
+                    <li>Membuat kalimat terdengar lebih sopan</li>
+                    <li>Tidak memiliki arti harfiah dalam bahasa Indonesia</li>
+                    <li><strong>Contoh:</strong> <span class="japanese-text">ほん です。</span> = ...adalah buku (formal)</li>
+                </ul>
+                
+                <h3 class="text-xl font-semibold text-gray-800 dark:text-white mt-6 mb-3">3. Kata Ganti Dasar</h3>
+                <p>Berikut beberapa kata ganti yang sering digunakan:</p>
+                <div class="overflow-x-auto">
+                    <table class="min-w-full bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700">
+                        <thead>
+                            <tr class="bg-gray-100 dark:bg-gray-700">
+                                <th class="py-2 px-4 border-b">Bahasa Jepang</th>
+                                <th class="py-2 px-4 border-b">Pelafalan</th>
+                                <th class="py-2 px-4 border-b">Artinya</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="py-2 px-4 border-b japanese-text">わたし</td>
+                                <td class="py-2 px-4 border-b">watashi</td>
+                                <td class="py-2 px-4 border-b">saya (netral)</td>
+                            </tr>
+                            <tr class="bg-gray-50 dark:bg-gray-700">
+                                <td class="py-2 px-4 border-b japanese-text">あなた</td>
+                                <td class="py-2 px-4 border-b">anata</td>
+                                <td class="py-2 px-4 border-b">kamu (jarang digunakan)</td>
+                            </tr>
+                            <tr>
+                                <td class="py-2 px-4 border-b japanese-text">これ</td>
+                                <td class="py-2 px-4 border-b">kore</td>
+                                <td class="py-2 px-4 border-b">ini (dekat pembicara)</td>
+                            </tr>
+                            <tr class="bg-gray-50 dark:bg-gray-700">
+                                <td class="py-2 px-4 border-b japanese-text">それ</td>
+                                <td class="py-2 px-4 border-b">sore</td>
+                                <td class="py-2 px-4 border-b">itu (dekat lawan bicara)</td>
+                            </tr>
+                            <tr>
+                                <td class="py-2 px-4 border-b japanese-text">あれ</td>
+                                <td class="py-2 px-4 border-b">are</td>
+                                <td class="py-2 px-4 border-b">itu (jauh dari keduanya)</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                
+                <h2 class="text-2xl font-semibold text-gray-800 dark:text-white mt-8 mb-4">Contoh Kalimat Lain</h2>
                 
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
                     <!-- Example 1 -->
                     <div class="bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 p-4 rounded-lg">
-                        <p class="japanese-text text-xl mb-2">これは本です。</p>
-                        <p class="text-gray-600 dark:text-gray-300 font-medium mb-2">Kore wa hon desu.</p>
-                        <p class="text-gray-600 dark:text-gray-300">Ini adalah buku.</p>
+                        <p class="japanese-text text-xl mb-2">これはペンです。</p>
+                        <p class="text-gray-600 dark:text-gray-300 font-medium mb-2">Kore wa pen desu.</p>
+                        <p class="text-gray-600 dark:text-gray-300">Ini adalah pulpen.</p>
                     </div>
                     
                     <!-- Example 2 -->
                     <div class="bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 p-4 rounded-lg">
-                        <p class="japanese-text text-xl mb-2">私は学生です。</p>
-                        <p class="text-gray-600 dark:text-gray-300 font-medium mb-2">Watashi wa gakusei desu.</p>
-                        <p class="text-gray-600 dark:text-gray-300">Saya adalah pelajar.</p>
+                        <p class="japanese-text text-xl mb-2">私はインドネシア人です。</p>
+                        <p class="text-gray-600 dark:text-gray-300 font-medium mb-2">Watashi wa Indoneshia-jin desu.</p>
+                        <p class="text-gray-600 dark:text-gray-300">Saya adalah orang Indonesia.</p>
                     </div>
                     
                     <!-- Example 3 -->
                     <div class="bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 p-4 rounded-lg">
-                        <p class="japanese-text text-xl mb-2">山田さんは先生です。</p>
-                        <p class="text-gray-600 dark:text-gray-300 font-medium mb-2">Yamada-san wa sensei desu.</p>
-                        <p class="text-gray-600 dark:text-gray-300">Herr Yamada adalah guru.</p>
+                        <p class="japanese-text text-xl mb-2">あれは木です。</p>
+                        <p class="text-gray-600 dark:text-gray-300 font-medium mb-2">Are wa ki desu.</p>
+                        <p class="text-gray-600 dark:text-gray-300">Itu adalah pohon.</p>
                     </div>
                     
                     <!-- Example 4 -->
                     <div class="bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 p-4 rounded-lg">
-                        <p class="japanese-text text-xl mb-2">この猫は白いです。</p>
-                        <p class="text-gray-600 dark:text-gray-300 font-medium mb-2">Kono neko wa shiroi desu.</p>
-                        <p class="text-gray-600 dark:text-gray-300">Kucing ini berwarna putih.</p>
+                        <p class="japanese-text text-xl mb-2">山田さんは日本人です。</p>
+                        <p class="text-gray-600 dark:text-gray-300 font-medium mb-2">Yamada-san wa Nihon-jin desu.</p>
+                        <p class="text-gray-600 dark:text-gray-300">Tuan Yamada adalah orang Jepang.</p>
                     </div>
                 </div>
                 
-                <h2 class="text-2xl font-semibold text-gray-800 dark:text-white mt-8 mb-4">Penjelasan Detail</h2>
-                
-                <h3 class="text-xl font-semibold text-gray-800 dark:text-white mt-6 mb-3">Partikel は (wa)</h3>
-                <p>Partikel は (dibaca "wa") digunakan untuk menunjukkan topik kalimat. Fungsi utamanya adalah:</p>
-                <ul>
-                    <li>Menandai apa atau siapa yang sedang dibicarakan</li>
-                    <li>Membuat kontras dengan informasi lain (dalam beberapa konteks)</li>
-                </ul>
-                
-                <h3 class="text-xl font-semibold text-gray-800 dark:text-white mt-6 mb-3">Akhiran です (desu)</h3>
-                <p>です adalah bentuk formal dari kata kerja "to be" dalam bahasa Jepang. Beberapa karakteristiknya:</p>
-                <ul>
-                    <li>Memberikan kesan sopan dan formal</li>
-                    <li>Tidak memiliki arti harfiah dalam bahasa Indonesia</li>
-                    <li>Selalu di akhir kalimat</li>
-                </ul>
-                
-                <div class="bg-yellow-50 dark:bg-yellow-900 rounded-lg p-4 my-6">
+                <div class="bg-green-50 dark:bg-green-900 rounded-lg p-4 my-6">
                     <h3 class="text-lg font-semibold text-gray-800 dark:text-white mb-2">
-                        <i class="fas fa-lightbulb text-yellow-500 dark:text-yellow-300 mr-2"></i>
-                        Tips Penting
+                        <i class="fas fa-lightbulb text-green-500 dark:text-green-300 mr-2"></i>
+                        Tips Belajar untuk Pemula
                     </h3>
-                    <ul class="list-disc list-inside">
-                        <li>Gunakan <span class="font-semibold">wa (は)</span> untuk menunjukkan topik kalimat</li>
-                        <li><span class="font-semibold">Desu (です)</span> digunakan untuk memberi kesan formal dan tidak perlu diterjemahkan secara langsung ke dalam bahasa Indonesia</li>
-                        <li>Dalam percakapan santai, です sering disingkat menjadi だ (da)</li>
-                        <li>Untuk kalimat negatif, gunakan bentuk ではありません (dewa arimasen) atau じゃありません (ja arimasen)</li>
-                    </ul>
+                    <ol class="list-decimal list-inside">
+                        <li><strong>Pelajari pelafalan dengan benar:</strong> Dengarkan audio dan tirukan berkali-kali</li>
+                        <li><strong>Hafalkan pola dasar:</strong> [Kata Benda] + は + [Kata Benda] + です</li>
+                        <li><strong>Latihan sehari-hari:</strong> Buat 5 kalimat sederhana tentang benda di sekitar Anda</li>
+                        <li><strong>Jangan terburu-buru:</strong> Kuasai dasar ini sebelum lanjut ke materi berikutnya</li>
+                        <li><strong>Gunakan aplikasi belajar:</strong> Coba aplikasi seperti Duolingo atau Anki untuk latihan</li>
+                    </ol>
                 </div>
                 
-                <h2 class="text-2xl font-semibold text-gray-800 dark:text-white mt-8 mb-4">Latihan</h2>
+                <h2 class="text-2xl font-semibold text-gray-800 dark:text-white mt-8 mb-4">Latihan Pemahaman</h2>
                 
                 <div class="bg-gray-50 dark:bg-gray-800 rounded-lg p-6">
-                    <h3 class="text-xl font-semibold text-gray-800 dark:text-white mb-4">Terjemahkan kalimat berikut:</h3>
+                    <h3 class="text-xl font-semibold text-gray-800 dark:text-white mb-4">Pilih jawaban yang benar:</h3>
                     
                     <div class="space-y-4">
                         <!-- Question 1 -->
-                        <div class="bg-white dark:bg-gray-700 p-4 rounded-lg">
-                            <p class="font-medium mb-2">1. Ini adalah pensil.</p>
-                            <input type="text" class="w-full px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-lg dark:bg-gray-800" placeholder="Tulis dalam bahasa Jepang...">
+                        <div class="bg-white dark:bg-gray-700 p-4 rounded-lg border border-gray-200 dark:border-gray-600">
+                            <p class="font-medium mb-3">1. Bagaimana cara mengatakan "Ini adalah buku" dalam bahasa Jepang?</p>
+                            <div class="space-y-2">
+                                <label class="flex items-center p-2 rounded border border-gray-200 dark:border-gray-600 cursor-pointer hover:bg-gray-100 dark:hover:bg-gray-600 answer-option" data-correct="2">
+                                    <input type="radio" name="q1" class="mr-2" value="1">
+                                    <span class="japanese-text">ほん です これ は</span>
+                                </label>
+                                <label class="flex items-center p-2 rounded border border-gray-200 dark:border-gray-600 cursor-pointer hover:bg-gray-100 dark:hover:bg-gray-600 answer-option" data-correct="2">
+                                    <input type="radio" name="q1" class="mr-2" value="2">
+                                    <span class="japanese-text">これ は ほん です</span>
+                                </label>
+                                <label class="flex items-center p-2 rounded border border-gray-200 dark:border-gray-600 cursor-pointer hover:bg-gray-100 dark:hover:bg-gray-600 answer-option" data-correct="2">
+                                    <input type="radio" name="q1" class="mr-2" value="3">
+                                    <span class="japanese-text">です これ は ほん</span>
+                                </label>
+                                <label class="flex items-center p-2 rounded border border-gray-200 dark:border-gray-600 cursor-pointer hover:bg-gray-100 dark:hover:bg-gray-600 answer-option" data-correct="2">
+                                    <input type="radio" name="q1" class="mr-2" value="4">
+                                    <span class="japanese-text">ほん は これ です</span>
+                                </label>
+                            </div>
+                            <div class="feedback mt-2 hidden text-sm"></div>
                         </div>
                         
                         <!-- Question 2 -->
-                        <div class="bg-white dark:bg-gray-700 p-4 rounded-lg">
-                            <p class="font-medium mb-2">2. Saya adalah dokter.</p>
-                            <input type="text" class="w-full px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-lg dark:bg-gray-800" placeholder="Tulis dalam bahasa Jepang...">
+                        <div class="bg-white dark:bg-gray-700 p-4 rounded-lg border border-gray-200 dark:border-gray-600">
+                            <p class="font-medium mb-3">2. Manakah yang artinya "Saya adalah guru"?</p>
+                            <div class="space-y-2">
+                                <label class="flex items-center p-2 rounded border border-gray-200 dark:border-gray-600 cursor-pointer hover:bg-gray-100 dark:hover:bg-gray-600 answer-option" data-correct="3">
+                                    <input type="radio" name="q2" class="mr-2" value="1">
+                                    <span class="japanese-text">わたし は がくせい です</span>
+                                </label>
+                                <label class="flex items-center p-2 rounded border border-gray-200 dark:border-gray-600 cursor-pointer hover:bg-gray-100 dark:hover:bg-gray-600 answer-option" data-correct="3">
+                                    <input type="radio" name="q2" class="mr-2" value="2">
+                                    <span class="japanese-text">わたし は いしゃ です</span>
+                                </label>
+                                <label class="flex items-center p-2 rounded border border-gray-200 dark:border-gray-600 cursor-pointer hover:bg-gray-100 dark:hover:bg-gray-600 answer-option" data-correct="3">
+                                    <input type="radio" name="q2" class="mr-2" value="3">
+                                    <span class="japanese-text">わたし は せんせい です</span>
+                                </label>
+                                <label class="flex items-center p-2 rounded border border-gray-200 dark:border-gray-600 cursor-pointer hover:bg-gray-100 dark:hover:bg-gray-600 answer-option" data-correct="3">
+                                    <input type="radio" name="q2" class="mr-2" value="4">
+                                    <span class="japanese-text">わたし は えんぎん です</span>
+                                </label>
+                            </div>
+                            <div class="feedback mt-2 hidden text-sm"></div>
                         </div>
                         
                         <!-- Question 3 -->
-                        <div class="bg-white dark:bg-gray-700 p-4 rounded-lg">
-                            <p class="font-medium mb-2">3. Itu adalah mobil.</p>
-                            <input type="text" class="w-full px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-lg dark:bg-gray-800" placeholder="Tulis dalam bahasa Jepang...">
+                        <div class="bg-white dark:bg-gray-700 p-4 rounded-lg border border-gray-200 dark:border-gray-600">
+                            <p class="font-medium mb-3">3. Bagaimana membaca partikel は dalam kalimat "わたしは学生です"?</p>
+                            <div class="space-y-2">
+                                <label class="flex items-center p-2 rounded border border-gray-200 dark:border-gray-600 cursor-pointer hover:bg-gray-100 dark:hover:bg-gray-600 answer-option" data-correct="1">
+                                    <input type="radio" name="q3" class="mr-2" value="1">
+                                    <span>wa</span>
+                                </label>
+                                <label class="flex items-center p-2 rounded border border-gray-200 dark:border-gray-600 cursor-pointer hover:bg-gray-100 dark:hover:bg-gray-600 answer-option" data-correct="1">
+                                    <input type="radio" name="q3" class="mr-2" value="2">
+                                    <span>ha</span>
+                                </label>
+                                <label class="flex items-center p-2 rounded border border-gray-200 dark:border-gray-600 cursor-pointer hover:bg-gray-100 dark:hover:bg-gray-600 answer-option" data-correct="1">
+                                    <input type="radio" name="q3" class="mr-2" value="3">
+                                    <span>o</span>
+                                </label>
+                                <label class="flex items-center p-2 rounded border border-gray-200 dark:border-gray-600 cursor-pointer hover:bg-gray-100 dark:hover:bg-gray-600 answer-option" data-correct="1">
+                                    <input type="radio" name="q3" class="mr-2" value="4">
+                                    <span>no</span>
+                                </label>
+                            </div>
+                            <div class="feedback mt-2 hidden text-sm"></div>
                         </div>
                     </div>
                     
-                    <button class="mt-4 bg-blue-600 hover:bg-blue-700 text-white font-medium py-2 px-4 rounded-lg transition">
+                    <button id="check-answers" class="mt-6 bg-blue-600 hover:bg-blue-700 text-white font-medium py-2 px-6 rounded-lg transition">
                         Periksa Jawaban
+                    </button>
+                    
+                    <button id="reset-answers" class="mt-4 bg-gray-200 hover:bg-gray-300 text-gray-800 font-medium py-2 px-6 rounded-lg transition dark:bg-gray-700 dark:hover:bg-gray-600 dark:text-white ml-4">
+                        Ulangi Latihan
                     </button>
                 </div>
                 
                 <div class="flex justify-between mt-8">
                     <a href="/n5/#materi" class="text-blue-600 hover:text-blue-800 dark:text-blue-400 dark:hover:text-blue-300 font-medium">
-                        <i class="fas fa-arrow-left mr-2"></i> Materi N5
+                        <i class="fas fa-arrow-left mr-2"></i> Kembali ke Materi N5
                     </a>
                     <a href="/n5/tata-bahasa-2.html" class="text-blue-600 hover:text-blue-800 dark:text-blue-400 dark:hover:text-blue-300 font-medium">
-                        Selanjutnya <i class="fas fa-arrow-right ml-2"></i>
+                        Pelajaran Selanjutnya: ～ですか <i class="fas fa-arrow-right ml-2"></i>
                     </a>
                 </div>
             </article>
@@ -290,12 +402,12 @@
 
     <!-- Footer -->
     <footer class="bg-gray-100 dark:bg-gray-800 mt-16">
-    <div class="container mx-auto px-4 py-8">
-        <div class="text-center text-sm text-gray-500 dark:text-gray-400 py-6">
-            <p class="mb-2">© 2025 by Nihongopedia | Belajar Bahasa Jepang. All rights reserved.</p>
-            <p class="mb-4">Dibuat dengan <i class="fas fa-heart text-red-500"></i> untuk pembelajar bahasa Jepang</p>
+        <div class="container mx-auto px-4 py-8">
+            <div class="text-center text-sm text-gray-500 dark:text-gray-400 py-6">
+                <p class="mb-2">© 2025 by Nihongopedia | Belajar Bahasa Jepang. All rights reserved.</p>
+                <p class="mb-4">Dibuat dengan <i class="fas fa-heart text-red-500"></i> untuk pembelajar bahasa Jepang</p>
+            </div>
         </div>
-    </div>
     </footer>
 
     <!-- JavaScript -->
@@ -369,6 +481,107 @@
                 document.documentElement.classList.add('dark');
                 localStorage.setItem('color-theme', 'dark');
             }
+        });
+
+        // Quiz Functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const checkAnswersBtn = document.getElementById('check-answers');
+            const resetAnswersBtn = document.getElementById('reset-answers');
+            const answerOptions = document.querySelectorAll('.answer-option');
+            
+            // Correct answers for each question
+            const correctAnswers = {
+                q1: '2', // Kore wa hon desu
+                q2: '3', // Watashi wa sensei desu
+                q3: '1'  // wa
+            };
+            
+            // Check answers
+            checkAnswersBtn.addEventListener('click', function() {
+                let allAnswered = true;
+                
+                // Check each question
+                for (let i = 1; i <= 3; i++) {
+                    const questionName = 'q' + i;
+                    const selectedOption = document.querySelector(`input[name="${questionName}"]:checked`);
+                    const questionDiv = document.querySelector(`input[name="${questionName}"]`).closest('.bg-white, .dark\\:bg-gray-700');
+                    const feedbackDiv = questionDiv.querySelector('.feedback');
+                    
+                    if (!selectedOption) {
+                        allAnswered = false;
+                        feedbackDiv.textContent = 'Silakan pilih jawaban terlebih dahulu.';
+                        feedbackDiv.classList.remove('hidden');
+                        continue;
+                    }
+                    
+                    const isCorrect = selectedOption.value === correctAnswers[questionName];
+                    const selectedLabel = selectedOption.closest('.answer-option');
+                    
+                    if (isCorrect) {
+                        selectedLabel.classList.add('correct-answer');
+                        feedbackDiv.textContent = 'Jawaban Anda benar! 👍';
+                        feedbackDiv.classList.remove('hidden');
+                    } else {
+                        selectedLabel.classList.add('wrong-answer');
+                        // Find and highlight the correct answer
+                        const correctOption = questionDiv.querySelector(`.answer-option input[value="${correctAnswers[questionName]}"]`).closest('.answer-option');
+                        correctOption.classList.add('correct-answer');
+                        feedbackDiv.textContent = 'Jawaban yang benar adalah pilihan yang disorot hijau.';
+                        feedbackDiv.classList.remove('hidden');
+                    }
+                }
+                
+                if (!allAnswered) {
+                    Swal.fire({
+                        title: 'Perhatian!',
+                        text: 'Anda belum menjawab semua pertanyaan.',
+                        icon: 'warning',
+                        confirmButtonText: 'OK'
+                    });
+                } else {
+                    Swal.fire({
+                        title: 'Bagus!',
+                        text: 'Anda telah menyelesaikan latihan ini.',
+                        icon: 'success',
+                        confirmButtonText: 'OK'
+                    });
+                }
+            });
+            
+            // Reset answers
+            resetAnswersBtn.addEventListener('click', function() {
+                // Uncheck all radio buttons
+                document.querySelectorAll('input[type="radio"]').forEach(radio => {
+                    radio.checked = false;
+                });
+                
+                // Remove all styling
+                answerOptions.forEach(option => {
+                    option.classList.remove('correct-answer', 'wrong-answer');
+                });
+                
+                // Hide all feedback
+                document.querySelectorAll('.feedback').forEach(feedback => {
+                    feedback.classList.add('hidden');
+                });
+            });
+            
+            // Highlight selected answer
+            answerOptions.forEach(option => {
+                const radio = option.querySelector('input[type="radio"]');
+                radio.addEventListener('change', function() {
+                    if (this.checked) {
+                        // Remove highlight from other options in the same question
+                        const otherOptions = this.closest('.bg-white, .dark\\:bg-gray-700').querySelectorAll('.answer-option');
+                        otherOptions.forEach(opt => {
+                            opt.classList.remove('bg-blue-100', 'dark:bg-blue-800');
+                        });
+                        
+                        // Add highlight to selected option
+                        option.classList.add('bg-blue-100', 'dark:bg-blue-800');
+                    }
+                });
+            });
         });
     </script>
 </body>
