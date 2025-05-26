@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kosakata Orang & Keluarga N5 | Nihongopedia</title>
+  <meta name="description" content="Pelajari kosakata JLPT N5 tentang orang dan hubungan keluarga dalam bahasa Jepang.">
+  
+  <!-- Logo Web -->
+  <link rel="icon" href="/assets/img/nihongopedia.png" type="image/png">
+    
+  <!-- Google Adsense -->
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1435241846420582" crossorigin="anonymous"></script>
+  
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['"Noto Sans"', '"Noto Sans JP"', 'sans-serif'],
+          },
+          animation: {
+            'bounce-slow': 'bounce 3s infinite',
+            'float': 'float 6s ease-in-out infinite',
+          },
+          keyframes: {
+            float: {
+              '0%, 100%': { transform: 'translateY(0)' },
+              '50%': { transform: 'translateY(-10px)' },
+            }
+          }
+        }
+      }
+    }
+  </script>
+  
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
+  <!-- SweetAlert2 -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css">
+  
+  <style>
+    .vocab-card {
+      transition: all 0.3s ease;
+      transform-style: preserve-3d;
+    }
+    
+    .vocab-card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+    }
+    
+    .particle {
+      position: absolute;
+      background-size: contain;
+      opacity: 0.6;
+      z-index: -1;
+      animation: float 8s ease-in-out infinite;
+    }
+    
+    .kanji {
+      font-family: '"Noto Sans JP"', sans-serif;
+    }
+  </style>
+</head>
+
+<body class="bg-white dark:bg-gray-900 font-sans">
+  <!-- Header -->
+  <header class="bg-white dark:bg-gray-800 shadow-sm">
+    <div class="container mx-auto px-4 py-4 flex justify-between items-center">
+      <a href="/" class="text-2xl font-bold text-blue-600 dark:text-blue-400 flex items-center">
+        <i class="fas fa-book mr-2"></i> Nihongopedia
+      </a>
+      <div class="flex items-center space-x-4">
+        <a href="/n5/kosakata" class="text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400">
+          <i class="fas fa-arrow-left mr-1"></i> Kembali ke Kosakata
+        </a>
+        <button id="theme-toggle" class="p-2 rounded-full focus:outline-none">
+          <i class="fas fa-moon text-gray-600 dark:text-yellow-300"></i>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main class="container mx-auto px-4 py-8">
+    <!-- Hero Section -->
+    <section class="text-center mb-12 relative overflow-hidden">
+      <div class="absolute -top-20 -left-20 w-40 h-40 bg-blue-200 dark:bg-blue-800 rounded-full opacity-20"></div>
+      <div class="absolute -bottom-10 -right-10 w-60 h-60 bg-purple-200 dark:bg-purple-800 rounded-full opacity-20"></div>
+      
+      <h1 class="text-4xl md:text-5xl font-bold text-gray-800 dark:text-white mb-4">
+        <span class="text-blue-600 dark:text-blue-400">Orang & Keluarga</span> - JLPT N5
+      </h1>
+      <p class="text-xl text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
+        Kosakata dasar tentang orang dan hubungan keluarga dalam bahasa Jepang
+      </p>
+    </section>
+
+    <!-- Particles Background -->
+    <div id="particles" class="fixed top-0 left-0 w-full h-full pointer-events-none z-0"></div>
+
+    <!-- Vocabulary List -->
+    <section class="relative z-10">
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        <!-- Vocabulary Card 1 -->
+        <div class="vocab-card bg-white dark:bg-gray-800 rounded-lg shadow-md p-6 border-b-4 border-blue-500">
+          <div class="flex justify-between items-start mb-4">
+            <div>
+              <h3 class="text-2xl font-bold kanji text-gray-800 dark:text-white">私</h3>
+              <p class="text-gray-600 dark:text-gray-300">わたし (watashi)</p>
+            </div>
+            <span class="bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 text-xs px-2 py-1 rounded">Pronoun</span>
+          </div>
+          <p class="text-gray-700 dark:text-gray-300">Saya (bentuk netral, digunakan oleh pria dan wanita)</p>
+          <div class="mt-4 pt-4 border-t border-gray-200 dark:border-gray-700">
+            <p class="text-sm text-gray-500 dark:text-gray-400"><span class="font-semibold">Contoh:</span> 私は学生です。(Watashi wa gakusei desu) - Saya adalah pelajar.</p>
+          </div>
+        </div>
+
+        <!-- Vocabulary Card 2 -->
+        <div class="vocab-card bg-white dark:bg-gray-800 rounded-lg shadow-md p-6 border-b-4 border-blue-500">
+          <div class="flex justify-between items-start mb-4">
+            <div>
+              <h3 class="text-2xl font-bold kanji text-gray-800 dark:text-white">あなた</h3>
+              <p class="text-gray-600 dark:text-gray-300">あなた (anata)</p>
+            </div>
+            <span class="bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 text-xs px-2 py-1 rounded">Pronoun</span>
+          </div>
+          <p class="text-gray-700 dark:text-gray-300">Kamu/Anda (bentuk sopan untuk menyapa lawan bicara)</p>
+          <div class="mt-4 pt-4 border-t border-gray-200 dark:border-gray-700">
+            <p class="text-sm text-gray-500 dark:text-gray-400"><span class="font-semibold">Catatan:</span> Kurang umum digunakan dibanding "nama orang + さん".</p>
+          </div>
+        </div>
+
+        <!-- Vocabulary Card 3 -->
+        <div class="vocab-card bg-white dark:bg-gray-800 rounded-lg shadow-md p-6 border-b-4 border-blue-500">
+          <div class="flex justify-between items-start mb-4">
+            <div>
+              <h3 class="text-2xl font-bold kanji text-gray-800 dark:text-white">人</h3>
+              <p class="text-gray-600 dark:text-gray-300">ひと (hito)</p>
+            </div>
+            <span class="bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 text-xs px-2 py-1 rounded">Kata Benda</span>
+          </div>
+          <p class="text-gray-700 dark:text-gray-300">Orang (umum)</p>
+          <div class="mt-4 pt-4 border-t border-gray-200 dark:border-gray-700">
+            <p class="text-sm text-gray-500 dark:text-gray-400"><span class="font-semibold">Contoh:</span> あの人はだれですか。(Ano hito wa dare desu ka) - Siapakah orang itu?</p>
+          </div>
+        </div>
+
+        <!-- Vocabulary Card 4 -->
+        <div class="vocab-card bg-white dark:bg-gray-800 rounded-lg shadow-md p-6 border-b-4 border-blue-500">
+          <div class="flex justify-between items-start mb-4">
+            <div>
+              <h3 class="text-2xl font-bold kanji text-gray-800 dark:text-white">男</h3>
+              <p class="text-gray-600 dark:text-gray-300">おとこ (otoko)</p>
+            </div>
+            <span class="bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 text-xs px-2 py-1 rounded">Kata Benda</span>
+          </div>
+          <p class="text-gray-700 dark:text-gray-300">Laki-laki</p>
+          <div class="mt-4 pt-4 border-t border-gray-200 dark:border-gray-700">
+            <p class="text-sm text-gray-500 dark:text-gray-400"><span class="font-semibold">Contoh:</span> 男の子 (otoko no ko) - Anak laki-laki</p>
+          </div>
+        </div>
+
+        <!-- Vocabulary Card 5 -->
+        <div class="vocab-card bg-white dark:bg-gray-800 rounded-lg shadow-md p-6 border-b-4 border-blue-500">
+          <div class="flex justify-between items-start mb-4">
+            <div>
+              <h3 class="text-2xl font-bold kanji text-gray-800 dark:text-white">女</h3>
+              <p class="text-gray-600 dark:text-gray-300">おんな (onna)</p>
+            </div>
+            <span class="bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 text-xs px-2 py-1 rounded">Kata Benda</span>
+          </div>
+          <p class="text-gray-700 dark:text-gray-300">Perempuan</p>
+          <div class="mt-4 pt-4 border-t border-gray-200 dark:border-gray-700">
+            <p class="text-sm text-gray-500 dark:text-gray-400"><span class="font-semibold">Contoh:</span> 女の人 (onna no hito) - Perempuan (orang perempuan)</p>
+          </div>
+        </div>
+
+        <!-- Vocabulary Card 6 -->
+        <div class="vocab-card bg-white dark:bg-gray-800 rounded-lg shadow-md p-6 border-b-4 border-blue-500">
+          <div class="flex justify-between items-start mb-4">
+            <div>
+              <h3 class="text-2xl font-bold kanji text-gray-800 dark:text-white">子供</h3>
+              <p class="text-gray-600 dark:text-gray-300">こども (kodomo)</p>
+            </div>
+            <span class="bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 text-xs px-2 py-1 rounded">Kata Benda</span>
+          </div>
+          <p class="text-gray-700 dark:text-gray-300">Anak</p>
+          <div class="mt-4 pt-4 border-t border-gray-200 dark:border-gray-700">
+            <p class="text-sm text-gray-500 dark:text-gray-400"><span class="font-semibold">Contoh:</span> 子供が二人います。(Kodomo ga futari imasu) - Saya memiliki dua anak.</p>
+          </div>
+        </div>
+
+        <!-- Vocabulary Card 7 -->
+        <div class="vocab-card bg-white dark:bg-gray-800 rounded-lg shadow-md p-6 border-b-4 border-blue-500">
+          <div class="flex justify-between items-start mb-4">
+            <div>
+              <h3 class="text-2xl font-bold kanji text-gray-800 dark:text-white">お父さん</h3>
+              <p class="text-gray-600 dark:text-gray-300">おとうさん (otousan)</p>
+            </div>
+            <span class="bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 text-xs px-2 py-1 rounded">Kata Benda</span>
+          </div>
+          <p class="text-gray-700 dark:text-gray-300">Ayah (digunakan untuk menyebut ayah sendiri atau ayah orang lain)</p>
+          <div class="mt-4 pt-4 border-t border-gray-200 dark:border-gray-700">
+            <p class="text-sm text-gray-500 dark:text-gray-400"><span class="font-semibold">Catatan:</span> 父 (chichi) digunakan untuk menyebut ayah sendiri saat berbicara dengan orang lain.</p>
+          </div>
+        </div>
+
+        <!-- Vocabulary Card 8 -->
+        <div class="vocab-card bg-white dark:bg-gray-800 rounded-lg shadow-md p-6 border-b-4 border-blue-500">
+          <div class="flex justify-between items-start mb-4">
+            <div>
+              <h3 class="text-2xl font-bold kanji text-gray-800 dark:text-white">お母さん</h3>
+              <p class="text-gray-600 dark:text-gray-300">おかあさん (okaasan)</p>
+            </div>
+            <span class="bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 text-xs px-2 py-1 rounded">Kata Benda</span>
+          </div>
+          <p class="text-gray-700 dark:text-gray-300">Ibu (digunakan untuk menyebut ibu sendiri atau ibu orang lain)</p>
+          <div class="mt-4 pt-4 border-t border-gray-200 dark:border-gray-700">
+            <p class="text-sm text-gray-500 dark:text-gray-400"><span class="font-semibold">Catatan:</span> 母 (haha) digunakan untuk menyebut ibu sendiri saat berbicara dengan orang lain.</p>
+          </div>
+        </div>
+
+        <!-- Vocabulary Card 9 -->
+        <div class="vocab-card bg-white dark:bg-gray-800 rounded-lg shadow-md p-6 border-b-4 border-blue-500">
+          <div class="flex justify-between items-start mb-4">
+            <div>
+              <h3 class="text-2xl font-bold kanji text-gray-800 dark:text-white">兄さん</h3>
+              <p class="text-gray-600 dark:text-gray-300">にいさん (niisan)</p>
+            </div>
+            <span class="bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 text-xs px-2 py-1 rounded">Kata Benda</span>
+          </div>
+          <p class="text-gray-700 dark:text-gray-300">Kakak laki-laki (digunakan untuk menyebut kakak sendiri atau kakak orang lain)</p>
+          <div class="mt-4 pt-4 border-t border-gray-200 dark:border-gray-700">
+            <p class="text-sm text-gray-500 dark:text-gray-400"><span class="font-semibold">Catatan:</span> 兄 (ani) digunakan untuk menyebut kakak laki-laki sendiri saat berbicara dengan orang lain.</p>
+          </div>
+        </div>
+
+        <!-- Vocabulary Card 10 -->
+        <div class="vocab-card bg-white dark:bg-gray-800 rounded-lg shadow-md p-6 border-b-4 border-blue-500">
+          <div class="flex justify-between items-start mb-4">
+            <div>
+              <h3 class="text-2xl font-bold kanji text-gray-800 dark:text-white">姉さん</h3>
+              <p class="text-gray-600 dark:text-gray-300">ねえさん (neesan)</p>
+            </div>
+            <span class="bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 text-xs px-2 py-1 rounded">Kata Benda</span>
+          </div>
+          <p class="text-gray-700 dark:text-gray-300">Kakak perempuan (digunakan untuk menyebut kakak sendiri atau kakak orang lain)</p>
+          <div class="mt-4 pt-4 border-t border-gray-200 dark:border-gray-700">
+            <p class="text-sm text-gray-500 dark:text-gray-400"><span class="font-semibold">Catatan:</span> 姉 (ane) digunakan untuk menyebut kakak perempuan sendiri saat berbicara dengan orang lain.</p>
+          </div>
+        </div>
+
+        <!-- Vocabulary Card 11 -->
+        <div class="vocab-card bg-white dark:bg-gray-800 rounded-lg shadow-md p-6 border-b-4 border-blue-500">
+          <div class="flex justify-between items-start mb-4">
+            <div>
+              <h3 class="text-2xl font-bold kanji text-gray-800 dark:text-white">妹</h3>
+              <p class="text-gray-600 dark:text-gray-300">いもうと (imouto)</p>
+            </div>
+            <span class="bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 text-xs px-2 py-1 rounded">Kata Benda</span>
+          </div>
+          <p class="text-gray-700 dark:text-gray-300">Adik perempuan (bisa digunakan untuk menyebut adik sendiri atau orang lain)</p>
+          <div class="mt-4 pt-4 border-t border-gray-200 dark:border-gray-700">
+            <p class="text-sm text-gray-500 dark:text-gray-400"><span class="font-semibold">Contoh:</span> 妹は高校生です。(Imouto wa koukousei desu) - Adik perempuan saya adalah siswa SMA.</p>
+          </div>
+        </div>
+
+        <!-- Vocabulary Card 12 -->
+        <div class="vocab-card bg-white dark:bg-gray-800 rounded-lg shadow-md p-6 border-b-4 border-blue-500">
+          <div class="flex justify-between items-start mb-4">
+            <div>
+              <h3 class="text-2xl font-bold kanji text-gray-800 dark:text-white">弟</h3>
+              <p class="text-gray-600 dark:text-gray-300">おとうと (otouto)</p>
+            </div>
+            <span class="bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 text-xs px-2 py-1 rounded">Kata Benda</span>
+          </div>
+          <p class="text-gray-700 dark:text-gray-300">Adik laki-laki (bisa digunakan untuk menyebut adik sendiri atau orang lain)</p>
+          <div class="mt-4 pt-4 border-t border-gray-200 dark:border-gray-700">
+            <p class="text-sm text-gray-500 dark:text-gray-400"><span class="font-semibold">Contoh:</span> 弟は中学生です。(Otouto wa chuugakusei desu) - Adik laki-laki saya adalah siswa SMP.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Study Tips Section -->
+    <section class="mt-16 bg-blue-50 dark:bg-blue-900 rounded-xl p-8">
+      <div class="text-center mb-6">
+        <h2 class="text-2xl font-bold text-gray-800 dark:text-white mb-2">Tips Belajar Kosakata Keluarga</h2>
+        <p class="text-gray-600 dark:text-gray-300">Beberapa saran untuk membantu menghafal kosakata keluarga dalam bahasa Jepang</p>
+      </div>
+      
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div class="bg-white dark:bg-gray-800 p-6 rounded-lg shadow">
+          <div class="flex items-center mb-4">
+            <div class="bg-blue-100 dark:bg-blue-800 text-blue-600 dark:text-blue-300 w-10 h-10 rounded-full flex items-center justify-center mr-4">
+              <i class="fas fa-users"></i>
+            </div>
+            <h3 class="text-lg font-semibold text-gray-800 dark:text-white">Buat Pohon Keluarga</h3>
+          </div>
+          <p class="text-gray-600 dark:text-gray-300">Gambarlah pohon keluarga Anda dan beri label setiap anggota keluarga dengan kosakata Jepang. Ini akan membantu mengasosiasikan kata dengan orang yang nyata.</p>
+        </div>
+        
+        <div class="bg-white dark:bg-gray-800 p-6 rounded-lg shadow">
+          <div class="flex items-center mb-4">
+            <div class="bg-blue-100 dark:bg-blue-800 text-blue-600 dark:text-blue-300 w-10 h-10 rounded-full flex items-center justify-center mr-4">
+              <i class="fas fa-microphone"></i>
+            </div>
+            <h3 class="text-lg font-semibold text-gray-800 dark:text-white">Latihan Percakapan</h3>
+          </div>
+          <p class="text-gray-600 dark:text-gray-300">Buat kalimat sederhana yang memperkenalkan anggota keluarga Anda. Contoh: "これは私のお母さんです。(Kore wa watashi no okaasan desu)" - Ini adalah ibu saya.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Related Vocabulary -->
+    <section class="mt-16">
+      <h2 class="text-2xl font-bold text-gray-800 dark:text-white mb-6">Kosakata Terkait</h2>
+      <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-4">
+        <a href="/n5/kosakata/orang-keluarga" class="bg-white dark:bg-gray-800 p-4 rounded-lg shadow text-center hover:shadow-md transition">
+          <div class="text-xl font-bold kanji text-blue-600 dark:text-blue-400 mb-1">家族</div>
+          <div class="text-gray-600 dark:text-gray-300">かぞく (kazoku)</div>
+          <div class="text-sm text-gray-500 dark:text-gray-400 mt-1">Keluarga</div>
+        </a>
+        <a href="/n5/kosakata/orang-keluarga" class="bg-white dark:bg-gray-800 p-4 rounded-lg shadow text-center hover:shadow-md transition">
+          <div class="text-xl font-bold kanji text-blue-600 dark:text-blue-400 mb-1">友達</div>
+          <div class="text-gray-600 dark:text-gray-300">ともだち (tomodachi)</div>
+          <div class="text-sm text-gray-500 dark:text-gray-400 mt-1">Teman</div>
+        </a>
+        <a href="/n5/kosakata/orang-keluarga" class="bg-white dark:bg-gray-800 p-4 rounded-lg shadow text-center hover:shadow-md transition">
+          <div class="text-xl font-bold kanji text-blue-600 dark:text-blue-400 mb-1">先生</div>
+          <div class="text-gray-600 dark:text-gray-300">せんせい (sensei)</div>
+          <div class="text-sm text-gray-500 dark:text-gray-400 mt-1">Guru</div>
+        </a>
+        <a href="/n5/kosakata/orang-keluarga" class="bg-white dark:bg-gray-800 p-4 rounded-lg shadow text-center hover:shadow-md transition">
+          <div class="text-xl font-bold kanji text-blue-600 dark:text-blue-400 mb-1">学生</div>
+          <div class="text-gray-600 dark:text-gray-300">がくせい (gakusei)</div>
+          <div class="text-sm text-gray-500 dark:text-gray-400 mt-1">Pelajar/Mahasiswa</div>
+        </a>
+        <a href="/n5/kosakata/orang-keluarga" class="bg-white dark:bg-gray-800 p-4 rounded-lg shadow text-center hover:shadow-md transition">
+          <div class="text-xl font-bold kanji text-blue-600 dark:text-blue-400 mb-1">社員</div>
+          <div class="text-gray-600 dark:text-gray-300">しゃいん (shain)</div>
+          <div class="text-sm text-gray-500 dark:text-gray-400 mt-1">Karyawan</div>
+        </a>
+        <a href="/n5/kosakata/orang-keluarga" class="bg-white dark:bg-gray-800 p-4 rounded-lg shadow text-center hover:shadow-md transition">
+          <div class="text-xl font-bold kanji text-blue-600 dark:text-blue-400 mb-1">医者</div>
+          <div class="text-gray-600 dark:text-gray-300">いしゃ (isha)</div>
+          <div class="text-sm text-gray-500 dark:text-gray-400 mt-1">Dokter</div>
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <!-- Ad Space -->
+  <section class="container mx-auto px-4 mt-16">
+    <div class="bg-gray-200 dark:bg-gray-700 rounded-lg p-4 text-center">
+      <!-- Google AdSense Ad Unit -->
+      <ins class="adsbygoogle"
+          style="display:block"
+          data-ad-client="ca-pub-1435241846420582"
+          data-ad-slot="1876763807"
+          data-ad-format="auto"
+          data-full-width-responsive="true"></ins>
+      <script>
+          (adsbygoogle = window.adsbygoogle || []).push({});
+      </script>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-gray-100 dark:bg-gray-800 mt-16">
+    <div class="container mx-auto px-4 py-8">
+      <div class="text-center text-sm text-gray-500 dark:text-gray-400">
+        <p>© 2025 Nihongopedia. All rights reserved.</p>
+        <p class="mt-2">Belajar bahasa Jepang dengan mudah dan menyenangkan</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- JavaScript -->
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <script>
+    // Theme Toggle
+    const themeToggle = document.getElementById('theme-toggle');
+    const icon = themeToggle.querySelector('i');
+
+    if (localStorage.getItem('color-theme') === 'dark' || (!localStorage.getItem('color-theme') && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+      document.documentElement.classList.add('dark');
+      icon.classList.remove('fa-moon');
+      icon.classList.add('fa-sun');
+    } else {
+      document.documentElement.classList.remove('dark');
+      icon.classList.remove('fa-sun');
+      icon.classList.add('fa-moon');
+    }
+
+    themeToggle.addEventListener('click', () => {
+      icon.classList.toggle('fa-moon');
+      icon.classList.toggle('fa-sun');
+
+      if (document.documentElement.classList.contains('dark')) {
+        document.documentElement.classList.remove('dark');
+        localStorage.setItem('color-theme', 'light');
+      } else {
+        document.documentElement.classList.add('dark');
+        localStorage.setItem('color-theme', 'dark');
+      }
+    });
+
+    // Particles Background
+    function createParticles() {
+      const particlesContainer = document.getElementById('particles');
+      const particleCount = 20;
+      const hiraganaChars = ['あ', 'い', 'う', 'え', 'お', 'か', 'き', 'く', 'け', 'こ', 'さ', 'し', 'す', 'せ', 'そ'];
+      
+      for (let i = 0; i < particleCount; i++) {
+          const particle = document.createElement('div');
+          particle.className = 'particle text-gray-300 dark:text-gray-600';
+          
+          // Random properties
+          const size = Math.random() * 24 + 16;
+          const posX = Math.random() * 100;
+          const posY = Math.random() * 100;
+          const delay = Math.random() * 5;
+          const duration = Math.random() * 10 + 10;
+          const char = hiraganaChars[Math.floor(Math.random() * hiraganaChars.length)];
+          
+          particle.style.width = `${size}px`;
+          particle.style.height = `${size}px`;
+          particle.style.left = `${posX}%`;
+          particle.style.top = `${posY}%`;
+          particle.style.fontSize = `${size}px`;
+          particle.style.animationDelay = `${delay}s`;
+          particle.style.animationDuration = `${duration}s`;
+          particle.textContent = char;
+          
+          particlesContainer.appendChild(particle);
+      }
+    }
+
+    // Initialize particles when page loads
+    document.addEventListener('DOMContentLoaded', function() {
+      createParticles();
+      
+      // Show welcome message
+      setTimeout(() => {
+          Swal.fire({
+          title: 'Kosakata Keluarga',
+          text: 'Pelajari kosakata tentang orang dan hubungan keluarga dalam bahasa Jepang',
+          icon: 'info',
+          confirmButtonText: 'Mulai Belajar',
+          background: localStorage.getItem('color-theme') === 'dark' ? '#1f2937' : '#ffffff',
+          color: localStorage.getItem('color-theme') === 'dark' ? '#ffffff' : '#000000',
+          });
+      }, 1000);
+    });
+
+    // Keyboard shortcuts
+    document.addEventListener('keydown', function(event) {
+      // Escape key closes modals
+      if (event.key === 'Escape') {
+          const modals = document.querySelectorAll('.modal');
+          modals.forEach(modal => {
+          if (!modal.classList.contains('hidden')) {
+              modal.classList.add('hidden');
+              document.body.classList.remove('overflow-hidden');
+          }
+          });
+      }
+      
+      // Dark mode toggle with Ctrl+D
+      if (event.ctrlKey && event.key === 'd') {
+          event.preventDefault();
+          themeToggle.click();
+      }
+    });
+  </script>
+</body>
+</html>
