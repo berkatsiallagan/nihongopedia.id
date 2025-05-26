@@ -1,10 +1,18 @@
 <!DOCTYPE html>
 <html lang="id" class="scroll-smooth">
+<!-- komponen/head.html -->
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Belajar Hiragana | Dasar Bahasa Jepang</title>
-    <meta name="description" content="Pelajari sistem penulisan Hiragana dengan panduan lengkap dan latihan interaktif">
+    <title>Belajar Katakana | Nihongopedia</title>
+    <meta name="description" content="Nihongopedia.id - Portal lengkap belajar bahasa Jepang. Pelajari hiragana, katakana, kanji, tata bahasa, kosakata, dan budaya Jepang dengan metode interaktif. Sumber terpercaya untuk pemula hingga mahir.">
+    <meta name="keywords" content="nihongopedia, belajar bahasa jepang, kursus jepang online, hiragana, katakana, kanji, tata bahasa jepang, kosakata jepang, budaya jepang, nihongo, JLPT, bahasa jepang pemula, nihongopedia.id">
+    
+    <!-- Logo Web -->
+    <link rel="icon" href="../assets/img/nihongopedia.png" type="image/png">
+    
+    <!-- Google Adsense -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1435241846420582" crossorigin="anonymous"></script>
     
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
@@ -39,9 +47,10 @@
     <!-- SweetAlert2 -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css">
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-    
+
+    <!-- Custom CSS -->
     <style>
-        .hiragana-char {
+        .katakana-char {
             font-family: 'Noto Sans JP', sans-serif;
         }
         .dakuten {
@@ -65,27 +74,29 @@
         }
     </style>
 </head>
+<!-- ^komponen.head.html^ -->
+
 <body class="bg-white dark:bg-gray-900 font-sans transition-colors duration-300">
-    <!-- Header & Navigation -->
-    <header class="fixed top-0 w-full z-50 bg-white shadow-sm dark:bg-gray-900">
+    <!-- komponen/header.html -->
+    <header>
         <div class="container mx-auto px-4 py-3 flex justify-between items-center">
             <!-- Logo -->
-            <a href="../index.html" class="flex items-center space-x-2">
+            <a href="#" class="flex items-center space-x-2">
                 <span class="text-2xl font-bold text-blue-600 dark:text-blue-400">Cardo</span>
             </a>
             
             <!-- Desktop Navigation -->
             <nav class="hidden md:flex space-x-8">
-                <a href="../index.html" class="text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition">Beranda</a>
-                <a href="../hiragana.html" class="text-blue-600 dark:text-blue-400 font-medium">Hiragana</a>
-                <a href="../katakana.html" class="text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition">Katakana</a>
+                <a href="../" class="text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition">Beranda</a>
+                <a href="../hiragana" class="text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition">Hiragana</a>
+            <!-- Aktif --><a href="../katakana" class="text-blue-600 dark:text-blue-400 font-medium">Katakana</a>
                 <a href="../n5" class="text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition">N5</a>
                 <a href="../n4" class="text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition">N4</a>
                 <a href="../n3" class="text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition">N3</a>
                 <a href="../n2" class="text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition">N2</a>
                 <a href="../n1" class="text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition">N1</a>
-                <a href="../donatur.html" class="text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition">Donatur</a>
-                <a href="../nihongopedia.html" class="text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition">Nihongopedia</a>
+                <a href="../donatur" class="text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition">Donatur</a>
+                <a href="../nihongopedia" class="text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition">Nihongopedia</a>
             </nav>
             
             <!-- Dark Mode Toggle -->
@@ -98,32 +109,33 @@
                 <i class="fas fa-bars text-gray-600 dark:text-gray-300"></i>
             </button>
         </div>
-        
+
         <!-- Mobile Navigation -->
         <div id="mobile-menu" class="hidden md:hidden bg-white dark:bg-gray-800 shadow-lg">
             <div class="container mx-auto px-4 py-3 flex flex-col space-y-3">
-                <a href="../index.html" class="text-gray-600 dark:text-gray-300 py-2 border-b border-gray-200 dark:border-gray-700">Beranda</a>
-                <a href="../hiragana.html" class="text-blue-600 dark:text-blue-400 font-medium py-2 border-b border-gray-200 dark:border-gray-700">Hiragana</a>
-                <a href="../katakana.html" class="text-gray-600 dark:text-gray-300 py-2 border-b border-gray-200 dark:border-gray-700">Katakana</a>
+                <a href="../" class="text-gray-600 dark:text-gray-300 py-2 border-b border-gray-200 dark:border-gray-700">Beranda</a>
+                <a href="../hiragana" class="text-gray-600 dark:text-gray-300 py-2 border-b border-gray-200 dark:border-gray-700">Hiragana</a>
+        <!-- Aktif --><a href="../katakana" class="text-blue-600 dark:text-blue-400 font-medium py-2 border-b border-gray-200 dark:border-gray-700">Katakana</a>
                 <a href="../n5" class="text-gray-600 dark:text-gray-300 py-2 border-b border-gray-200 dark:border-gray-700">N5</a>
                 <a href="../n4" class="text-gray-600 dark:text-gray-300 py-2 border-b border-gray-200 dark:border-gray-700">N4</a>
                 <a href="../n3" class="text-gray-600 dark:text-gray-300 py-2 border-b border-gray-200 dark:border-gray-700">N3</a>
                 <a href="../n2" class="text-gray-600 dark:text-gray-300 py-2 border-b border-gray-200 dark:border-gray-700">N2</a>
                 <a href="../n1" class="text-gray-600 dark:text-gray-300 py-2 border-b border-gray-200 dark:border-gray-700">N1</a>
-                <a href="../donatur.html" class="text-gray-600 dark:text-gray-300 py-2 border-b border-gray-200 dark:border-gray-700">Donatur</a>
-                <a href="../nihongopedia.html" class="text-gray-600 dark:text-gray-300 py-2 border-b border-gray-200 dark:border-gray-700">Nihongopedia</a>
+                <a href="../donatur" class="text-gray-600 dark:text-gray-300 py-2 border-b border-gray-200 dark:border-gray-700">Donatur</a>
+                <a href="../nihongopedia" class="text-gray-600 dark:text-gray-300 py-2 border-b border-gray-200 dark:border-gray-700">Nihongopedia</a>
             </div>
         </div>
     </header>
+    <!-- ^komponen/header.html^ -->
 
     <!-- Main Content -->
     <main class="pt-24 pb-12">
         <!-- Hero Section -->
         <section class="container mx-auto px-4">
             <div class="bg-blue-50 dark:bg-blue-900 rounded-xl p-8 mb-12">
-                <h1 class="text-3xl md:text-4xl font-bold text-gray-800 dark:text-white mb-4">Belajar Hiragana</h1>
+                <h1 class="text-3xl md:text-4xl font-bold text-gray-800 dark:text-white mb-4">Belajar Katakana</h1>
                 <p class="text-lg text-gray-600 dark:text-gray-300 mb-6">
-                    Hiragana adalah salah satu dari tiga sistem penulisan bahasa Jepang. Pelajari semua karakter hiragana dengan panduan visual dan audio.
+                    Katakana digunakan untuk menulis kata-kata asing, nama orang/benda asing, dan onomatopoeia. Pelajari semua karakter katakana dengan panduan visual dan audio.
                 </p>
                 <div class="flex flex-wrap gap-4">
                     <a href="#dasar" class="bg-blue-600 hover:bg-blue-700 text-white font-medium py-2 px-4 rounded-lg transition">
@@ -145,19 +157,19 @@
             </div>
         </section>
 
-        <!-- Basic Hiragana -->
+        <!-- Basic Katakana -->
         <section id="dasar" class="container mx-auto px-4 mb-16 dark:text-white">
             <h2 class="text-2xl font-bold text-gray-800 dark:text-white mb-6 flex items-center">
                 <i class="fas fa-book mr-3 text-blue-600 dark:text-blue-400"></i>
-                Karakter Hiragana Dasar
+                Karakter Katakana Dasar
             </h2>
             
             <div class="bg-white dark:bg-gray-800 rounded-lg shadow-md p-6 mb-8">
                 <p class="text-gray-600 dark:text-gray-300 mb-4">
-                    Hiragana dasar terdiri dari 46 karakter yang mewakili semua suara dalam bahasa Jepang. Klik karakter untuk mendengar pengucapannya.
+                    Katakana dasar terdiri dari 46 karakter yang sama dengan hiragana tetapi dengan bentuk yang berbeda. Klik karakter untuk mendengar pengucapannya.
                 </p>
                 
-                <!-- Basic Hiragana Table -->
+                <!-- Basic Katakana Table -->
                 <div class="overflow-x-auto">
                     <table class="w-full text-center">
                         <thead>
@@ -170,35 +182,35 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <!-- K Row -->
+                            <!-- A Row -->
                             <tr>
                                 <td class="p-3 border border-gray-200 dark:border-gray-700">
                                     <button class="char-card w-full h-full p-4 rounded-lg hover:bg-blue-50 dark:hover:bg-gray-700">
-                                        <div class="hiragana-char text-4xl mb-2">あ</div>
+                                        <div class="katakana-char text-4xl mb-2">ア</div>
                                         <div class="text-gray-600 dark:text-gray-300">a</div>
                                     </button>
                                 </td>
                                 <td class="p-3 border border-gray-200 dark:border-gray-700">
                                     <button class="char-card w-full h-full p-4 rounded-lg hover:bg-blue-50 dark:hover:bg-gray-700">
-                                        <div class="hiragana-char text-4xl mb-2">い</div>
+                                        <div class="katakana-char text-4xl mb-2">イ</div>
                                         <div class="text-gray-600 dark:text-gray-300">i</div>
                                     </button>
                                 </td>
                                 <td class="p-3 border border-gray-200 dark:border-gray-700">
                                     <button class="char-card w-full h-full p-4 rounded-lg hover:bg-blue-50 dark:hover:bg-gray-700">
-                                        <div class="hiragana-char text-4xl mb-2">う</div>
+                                        <div class="katakana-char text-4xl mb-2">ウ</div>
                                         <div class="text-gray-600 dark:text-gray-300">u</div>
                                     </button>
                                 </td>
                                 <td class="p-3 border border-gray-200 dark:border-gray-700">
                                     <button class="char-card w-full h-full p-4 rounded-lg hover:bg-blue-50 dark:hover:bg-gray-700">
-                                        <div class="hiragana-char text-4xl mb-2">え</div>
+                                        <div class="katakana-char text-4xl mb-2">エ</div>
                                         <div class="text-gray-600 dark:text-gray-300">e</div>
                                     </button>
                                 </td>
                                 <td class="p-3 border border-gray-200 dark:border-gray-700">
                                     <button class="char-card w-full h-full p-4 rounded-lg hover:bg-blue-50 dark:hover:bg-gray-700">
-                                        <div class="hiragana-char text-4xl mb-2">お</div>
+                                        <div class="katakana-char text-4xl mb-2">オ</div>
                                         <div class="text-gray-600 dark:text-gray-300">o</div>
                                     </button>
                                 </td>
@@ -208,31 +220,31 @@
                             <tr>
                                 <td class="p-3 border border-gray-200 dark:border-gray-700">
                                     <button class="char-card w-full h-full p-4 rounded-lg hover:bg-blue-50 dark:hover:bg-gray-700">
-                                        <div class="hiragana-char text-4xl mb-2">か</div>
+                                        <div class="katakana-char text-4xl mb-2">カ</div>
                                         <div class="text-gray-600 dark:text-gray-300">ka</div>
                                     </button>
                                 </td>
                                 <td class="p-3 border border-gray-200 dark:border-gray-700">
                                     <button class="char-card w-full h-full p-4 rounded-lg hover:bg-blue-50 dark:hover:bg-gray-700">
-                                        <div class="hiragana-char text-4xl mb-2">き</div>
+                                        <div class="katakana-char text-4xl mb-2">キ</div>
                                         <div class="text-gray-600 dark:text-gray-300">ki</div>
                                     </button>
                                 </td>
                                 <td class="p-3 border border-gray-200 dark:border-gray-700">
                                     <button class="char-card w-full h-full p-4 rounded-lg hover:bg-blue-50 dark:hover:bg-gray-700">
-                                        <div class="hiragana-char text-4xl mb-2">く</div>
+                                        <div class="katakana-char text-4xl mb-2">ク</div>
                                         <div class="text-gray-600 dark:text-gray-300">ku</div>
                                     </button>
                                 </td>
                                 <td class="p-3 border border-gray-200 dark:border-gray-700">
                                     <button class="char-card w-full h-full p-4 rounded-lg hover:bg-blue-50 dark:hover:bg-gray-700">
-                                        <div class="hiragana-char text-4xl mb-2">け</div>
+                                        <div class="katakana-char text-4xl mb-2">ケ</div>
                                         <div class="text-gray-600 dark:text-gray-300">ke</div>
                                     </button>
                                 </td>
                                 <td class="p-3 border border-gray-200 dark:border-gray-700">
                                     <button class="char-card w-full h-full p-4 rounded-lg hover:bg-blue-50 dark:hover:bg-gray-700">
-                                        <div class="hiragana-char text-4xl mb-2">こ</div>
+                                        <div class="katakana-char text-4xl mb-2">コ</div>
                                         <div class="text-gray-600 dark:text-gray-300">ko</div>
                                     </button>
                                 </td>
@@ -242,69 +254,65 @@
                             <tr>
                                 <td class="p-3 border border-gray-200 dark:border-gray-700">
                                     <button class="char-card w-full h-full p-4 rounded-lg hover:bg-blue-50 dark:hover:bg-gray-700">
-                                        <div class="hiragana-char text-4xl mb-2">さ</div>
+                                        <div class="katakana-char text-4xl mb-2">サ</div>
                                         <div class="text-gray-600 dark:text-gray-300">sa</div>
                                     </button>
                                 </td>
                                 <td class="p-3 border border-gray-200 dark:border-gray-700">
                                     <button class="char-card w-full h-full p-4 rounded-lg hover:bg-blue-50 dark:hover:bg-gray-700">
-                                        <div class="hiragana-char text-4xl mb-2">し</div>
+                                        <div class="katakana-char text-4xl mb-2">シ</div>
                                         <div class="text-gray-600 dark:text-gray-300">shi</div>
                                     </button>
                                 </td>
                                 <td class="p-3 border border-gray-200 dark:border-gray-700">
                                     <button class="char-card w-full h-full p-4 rounded-lg hover:bg-blue-50 dark:hover:bg-gray-700">
-                                        <div class="hiragana-char text-4xl mb-2">す</div>
+                                        <div class="katakana-char text-4xl mb-2">ス</div>
                                         <div class="text-gray-600 dark:text-gray-300">su</div>
                                     </button>
                                 </td>
                                 <td class="p-3 border border-gray-200 dark:border-gray-700">
                                     <button class="char-card w-full h-full p-4 rounded-lg hover:bg-blue-50 dark:hover:bg-gray-700">
-                                        <div class="hiragana-char text-4xl mb-2">せ</div>
+                                        <div class="katakana-char text-4xl mb-2">セ</div>
                                         <div class="text-gray-600 dark:text-gray-300">se</div>
                                     </button>
                                 </td>
                                 <td class="p-3 border border-gray-200 dark:border-gray-700">
                                     <button class="char-card w-full h-full p-4 rounded-lg hover:bg-blue-50 dark:hover:bg-gray-700">
-                                        <div class="hiragana-char text-4xl mb-2">そ</div>
+                                        <div class="katakana-char text-4xl mb-2">ソ</div>
                                         <div class="text-gray-600 dark:text-gray-300">so</div>
                                     </button>
                                 </td>
                             </tr>
                             
-                            <!-- Continue with other rows... -->
-                            <!-- T, N, H, M, Y, R, W, N rows would follow the same pattern -->
-                            
-                            <!-- Example of one more row -->
                             <!-- T Row -->
                             <tr>
                                 <td class="p-3 border border-gray-200 dark:border-gray-700">
                                     <button class="char-card w-full h-full p-4 rounded-lg hover:bg-blue-50 dark:hover:bg-gray-700">
-                                        <div class="hiragana-char text-4xl mb-2">た</div>
+                                        <div class="katakana-char text-4xl mb-2">タ</div>
                                         <div class="text-gray-600 dark:text-gray-300">ta</div>
                                     </button>
                                 </td>
                                 <td class="p-3 border border-gray-200 dark:border-gray-700">
                                     <button class="char-card w-full h-full p-4 rounded-lg hover:bg-blue-50 dark:hover:bg-gray-700">
-                                        <div class="hiragana-char text-4xl mb-2">ち</div>
+                                        <div class="katakana-char text-4xl mb-2">チ</div>
                                         <div class="text-gray-600 dark:text-gray-300">chi</div>
                                     </button>
                                 </td>
                                 <td class="p-3 border border-gray-200 dark:border-gray-700">
                                     <button class="char-card w-full h-full p-4 rounded-lg hover:bg-blue-50 dark:hover:bg-gray-700">
-                                        <div class="hiragana-char text-4xl mb-2">つ</div>
+                                        <div class="katakana-char text-4xl mb-2">ツ</div>
                                         <div class="text-gray-600 dark:text-gray-300">tsu</div>
                                     </button>
                                 </td>
                                 <td class="p-3 border border-gray-200 dark:border-gray-700">
                                     <button class="char-card w-full h-full p-4 rounded-lg hover:bg-blue-50 dark:hover:bg-gray-700">
-                                        <div class="hiragana-char text-4xl mb-2">て</div>
+                                        <div class="katakana-char text-4xl mb-2">テ</div>
                                         <div class="text-gray-600 dark:text-gray-300">te</div>
                                     </button>
                                 </td>
                                 <td class="p-3 border border-gray-200 dark:border-gray-700">
                                     <button class="char-card w-full h-full p-4 rounded-lg hover:bg-blue-50 dark:hover:bg-gray-700">
-                                        <div class="hiragana-char text-4xl mb-2">と</div>
+                                        <div class="katakana-char text-4xl mb-2">ト</div>
                                         <div class="text-gray-600 dark:text-gray-300">to</div>
                                     </button>
                                 </td>
@@ -314,133 +322,133 @@
                             <tr>
                                 <td class="p-3 border border-gray-200 dark:border-gray-700">
                                     <button class="char-card w-full h-full p-4 rounded-lg hover:bg-blue-50 dark:hover:bg-gray-700">
-                                        <div class="hiragana-char text-4xl mb-2">な</div>
+                                        <div class="katakana-char text-4xl mb-2">ナ</div>
                                         <div class="text-gray-600 dark:text-gray-300">na</div>
                                     </button>
                                 </td>
                                 <td class="p-3 border border-gray-200 dark:border-gray-700">
                                     <button class="char-card w-full h-full p-4 rounded-lg hover:bg-blue-50 dark:hover:bg-gray-700">
-                                        <div class="hiragana-char text-4xl mb-2">に</div>
+                                        <div class="katakana-char text-4xl mb-2">ニ</div>
                                         <div class="text-gray-600 dark:text-gray-300">ni</div>
                                     </button>
                                 </td>
                                 <td class="p-3 border border-gray-200 dark:border-gray-700">
                                     <button class="char-card w-full h-full p-4 rounded-lg hover:bg-blue-50 dark:hover:bg-gray-700">
-                                        <div class="hiragana-char text-4xl mb-2">ぬ</div>
+                                        <div class="katakana-char text-4xl mb-2">ヌ</div>
                                         <div class="text-gray-600 dark:text-gray-300">nu</div>
                                     </button>
                                 </td>
                                 <td class="p-3 border border-gray-200 dark:border-gray-700">
                                     <button class="char-card w-full h-full p-4 rounded-lg hover:bg-blue-50 dark:hover:bg-gray-700">
-                                        <div class="hiragana-char text-4xl mb-2">ね</div>
+                                        <div class="katakana-char text-4xl mb-2">ネ</div>
                                         <div class="text-gray-600 dark:text-gray-300">ne</div>
                                     </button>
                                 </td>
                                 <td class="p-3 border border-gray-200 dark:border-gray-700">
                                     <button class="char-card w-full h-full p-4 rounded-lg hover:bg-blue-50 dark:hover:bg-gray-700">
-                                        <div class="hiragana-char text-4xl mb-2">の</div>
+                                        <div class="katakana-char text-4xl mb-2">ノ</div>
                                         <div class="text-gray-600 dark:text-gray-300">no</div>
                                     </button>
                                 </td>
                             </tr>
-
+                            
                             <!-- H Row -->
                             <tr>
                                 <td class="p-3 border border-gray-200 dark:border-gray-700">
                                     <button class="char-card w-full h-full p-4 rounded-lg hover:bg-blue-50 dark:hover:bg-gray-700">
-                                        <div class="hiragana-char text-4xl mb-2">は</div>
+                                        <div class="katakana-char text-4xl mb-2">ハ</div>
                                         <div class="text-gray-600 dark:text-gray-300">ha</div>
                                     </button>
                                 </td>
                                 <td class="p-3 border border-gray-200 dark:border-gray-700">
                                     <button class="char-card w-full h-full p-4 rounded-lg hover:bg-blue-50 dark:hover:bg-gray-700">
-                                        <div class="hiragana-char text-4xl mb-2">ひ</div>
+                                        <div class="katakana-char text-4xl mb-2">ヒ</div>
                                         <div class="text-gray-600 dark:text-gray-300">hi</div>
                                     </button>
                                 </td>
                                 <td class="p-3 border border-gray-200 dark:border-gray-700">
                                     <button class="char-card w-full h-full p-4 rounded-lg hover:bg-blue-50 dark:hover:bg-gray-700">
-                                        <div class="hiragana-char text-4xl mb-2">ふ</div>
+                                        <div class="katakana-char text-4xl mb-2">フ</div>
                                         <div class="text-gray-600 dark:text-gray-300">hu</div>
                                     </button>
                                 </td>
                                 <td class="p-3 border border-gray-200 dark:border-gray-700">
                                     <button class="char-card w-full h-full p-4 rounded-lg hover:bg-blue-50 dark:hover:bg-gray-700">
-                                        <div class="hiragana-char text-4xl mb-2">へ</div>
+                                        <div class="katakana-char text-4xl mb-2">ヘ</div>
                                         <div class="text-gray-600 dark:text-gray-300">he</div>
                                     </button>
                                 </td>
                                 <td class="p-3 border border-gray-200 dark:border-gray-700">
                                     <button class="char-card w-full h-full p-4 rounded-lg hover:bg-blue-50 dark:hover:bg-gray-700">
-                                        <div class="hiragana-char text-4xl mb-2">ほ</div>
+                                        <div class="katakana-char text-4xl mb-2">ホ</div>
                                         <div class="text-gray-600 dark:text-gray-300">ho</div>
                                     </button>
                                 </td>
                             </tr>
-
+                            
                             <!-- M Row -->
                             <tr>
                                 <td class="p-3 border border-gray-200 dark:border-gray-700">
                                     <button class="char-card w-full h-full p-4 rounded-lg hover:bg-blue-50 dark:hover:bg-gray-700">
-                                        <div class="hiragana-char text-4xl mb-2">ま</div>
+                                        <div class="katakana-char text-4xl mb-2">マ</div>
                                         <div class="text-gray-600 dark:text-gray-300">ma</div>
                                     </button>
                                 </td>
                                 <td class="p-3 border border-gray-200 dark:border-gray-700">
                                     <button class="char-card w-full h-full p-4 rounded-lg hover:bg-blue-50 dark:hover:bg-gray-700">
-                                        <div class="hiragana-char text-4xl mb-2">み</div>
+                                        <div class="katakana-char text-4xl mb-2">ミ</div>
                                         <div class="text-gray-600 dark:text-gray-300">mi</div>
                                     </button>
                                 </td>
                                 <td class="p-3 border border-gray-200 dark:border-gray-700">
                                     <button class="char-card w-full h-full p-4 rounded-lg hover:bg-blue-50 dark:hover:bg-gray-700">
-                                        <div class="hiragana-char text-4xl mb-2">む</div>
+                                        <div class="katakana-char text-4xl mb-2">ム</div>
                                         <div class="text-gray-600 dark:text-gray-300">mu</div>
                                     </button>
                                 </td>
                                 <td class="p-3 border border-gray-200 dark:border-gray-700">
                                     <button class="char-card w-full h-full p-4 rounded-lg hover:bg-blue-50 dark:hover:bg-gray-700">
-                                        <div class="hiragana-char text-4xl mb-2">め</div>
+                                        <div class="katakana-char text-4xl mb-2">メ</div>
                                         <div class="text-gray-600 dark:text-gray-300">me</div>
                                     </button>
                                 </td>
                                 <td class="p-3 border border-gray-200 dark:border-gray-700">
                                     <button class="char-card w-full h-full p-4 rounded-lg hover:bg-blue-50 dark:hover:bg-gray-700">
-                                        <div class="hiragana-char text-4xl mb-2">も</div>
+                                        <div class="katakana-char text-4xl mb-2">モ</div>
                                         <div class="text-gray-600 dark:text-gray-300">mo</div>
                                     </button>
                                 </td>
                             </tr>
-
+                            
                             <!-- Y Row -->
                             <tr>
                                 <td class="p-3 border border-gray-200 dark:border-gray-700">
                                     <button class="char-card w-full h-full p-4 rounded-lg hover:bg-blue-50 dark:hover:bg-gray-700">
-                                        <div class="hiragana-char text-4xl mb-2">や</div>
+                                        <div class="katakana-char text-4xl mb-2">ヤ</div>
                                         <div class="text-gray-600 dark:text-gray-300">ya</div>
                                     </button>
                                 </td>
                                 <td class="p-3 border border-gray-200 dark:border-gray-700">
                                     <button class="char-card w-full h-full p-4 rounded-lg hover:bg-blue-50 dark:hover:bg-gray-700">
-                                        <div class="hiragana-char text-4xl mb-2"></div>
+                                        <div class="katakana-char text-4xl mb-2"></div>
                                         <div class="text-gray-600 dark:text-gray-300"></div>
                                     </button>
                                 </td>
                                 <td class="p-3 border border-gray-200 dark:border-gray-700">
-                                    <button class="char-card w-full h-full p-4 rounded-ゆlg hover:bg-blue-50 dark:hover:bg-gray-700">
-                                        <div class="hiragana-char text-4xl mb-2">ゆ</div>
+                                    <button class="char-card w-full h-full p-4 rounded-lg hover:bg-blue-50 dark:hover:bg-gray-700">
+                                        <div class="katakana-char text-4xl mb-2">ユ</div>
                                         <div class="text-gray-600 dark:text-gray-300">yu</div>
                                     </button>
                                 </td>
                                 <td class="p-3 border border-gray-200 dark:border-gray-700">
                                     <button class="char-card w-full h-full p-4 rounded-lg hover:bg-blue-50 dark:hover:bg-gray-700">
-                                        <div class="hiragana-char text-4xl mb-2"></div>
+                                        <div class="katakana-char text-4xl mb-2"></div>
                                         <div class="text-gray-600 dark:text-gray-300"></div>
                                     </button>
                                 </td>
                                 <td class="p-3 border border-gray-200 dark:border-gray-700">
                                     <button class="char-card w-full h-full p-4 rounded-lg hover:bg-blue-50 dark:hover:bg-gray-700">
-                                        <div class="hiragana-char text-4xl mb-2">よ</div>
+                                        <div class="katakana-char text-4xl mb-2">ヨ</div>
                                         <div class="text-gray-600 dark:text-gray-300">yo</div>
                                     </button>
                                 </td>
@@ -450,99 +458,99 @@
                             <tr>
                                 <td class="p-3 border border-gray-200 dark:border-gray-700">
                                     <button class="char-card w-full h-full p-4 rounded-lg hover:bg-blue-50 dark:hover:bg-gray-700">
-                                        <div class="hiragana-char text-4xl mb-2">ら</div>
+                                        <div class="katakana-char text-4xl mb-2">ラ</div>
                                         <div class="text-gray-600 dark:text-gray-300">ra</div>
                                     </button>
                                 </td>
                                 <td class="p-3 border border-gray-200 dark:border-gray-700">
                                     <button class="char-card w-full h-full p-4 rounded-lg hover:bg-blue-50 dark:hover:bg-gray-700">
-                                        <div class="hiragana-char text-4xl mb-2">り</div>
+                                        <div class="katakana-char text-4xl mb-2">リ</div>
                                         <div class="text-gray-600 dark:text-gray-300">ri</div>
                                     </button>
                                 </td>
                                 <td class="p-3 border border-gray-200 dark:border-gray-700">
                                     <button class="char-card w-full h-full p-4 rounded-lg hover:bg-blue-50 dark:hover:bg-gray-700">
-                                        <div class="hiragana-char text-4xl mb-2">る</div>
+                                        <div class="katakana-char text-4xl mb-2">ル</div>
                                         <div class="text-gray-600 dark:text-gray-300">ru</div>
                                     </button>
                                 </td>
                                 <td class="p-3 border border-gray-200 dark:border-gray-700">
                                     <button class="char-card w-full h-full p-4 rounded-lg hover:bg-blue-50 dark:hover:bg-gray-700">
-                                        <div class="hiragana-char text-4xl mb-2">れ</div>
+                                        <div class="katakana-char text-4xl mb-2">レ</div>
                                         <div class="text-gray-600 dark:text-gray-300">re</div>
                                     </button>
                                 </td>
                                 <td class="p-3 border border-gray-200 dark:border-gray-700">
                                     <button class="char-card w-full h-full p-4 rounded-lg hover:bg-blue-50 dark:hover:bg-gray-700">
-                                        <div class="hiragana-char text-4xl mb-2">ろ</div>
+                                        <div class="katakana-char text-4xl mb-2">ロ</div>
                                         <div class="text-gray-600 dark:text-gray-300">ro</div>
                                     </button>
                                 </td>
                             </tr>
-
+                            
                             <!-- W Row -->
                             <tr>
                                 <td class="p-3 border border-gray-200 dark:border-gray-700">
                                     <button class="char-card w-full h-full p-4 rounded-lg hover:bg-blue-50 dark:hover:bg-gray-700">
-                                        <div class="hiragana-char text-4xl mb-2">わ</div>
+                                        <div class="katakana-char text-4xl mb-2">ワ</div>
                                         <div class="text-gray-600 dark:text-gray-300">wa</div>
                                     </button>
                                 </td>
                                 <td class="p-3 border border-gray-200 dark:border-gray-700">
                                     <button class="char-card w-full h-full p-4 rounded-lg hover:bg-blue-50 dark:hover:bg-gray-700">
-                                        <div class="hiragana-char text-4xl mb-2"></div>
+                                        <div class="katakana-char text-4xl mb-2"></div>
                                         <div class="text-gray-600 dark:text-gray-300"></div>
                                     </button>
                                 </td>
                                 <td class="p-3 border border-gray-200 dark:border-gray-700">
                                     <button class="char-card w-full h-full p-4 rounded-lg hover:bg-blue-50 dark:hover:bg-gray-700">
-                                        <div class="hiragana-char text-4xl mb-2"></div>
+                                        <div class="katakana-char text-4xl mb-2">ウ</div>
+                                        <div class="text-gray-600 dark:text-gray-300">wu</div>
+                                    </button>
+                                </td>
+                                <td class="p-3 border border-gray-200 dark:border-gray-700">
+                                    <button class="char-card w-full h-full p-4 rounded-lg hover:bg-blue-50 dark:hover:bg-gray-700">
+                                        <div class="katakana-char text-4xl mb-2"></div>
                                         <div class="text-gray-600 dark:text-gray-300"></div>
                                     </button>
                                 </td>
                                 <td class="p-3 border border-gray-200 dark:border-gray-700">
                                     <button class="char-card w-full h-full p-4 rounded-lg hover:bg-blue-50 dark:hover:bg-gray-700">
-                                        <div class="hiragana-char text-4xl mb-2"></div>
-                                        <div class="text-gray-600 dark:text-gray-300"></div>
-                                    </button>
-                                </td>
-                                <td class="p-3 border border-gray-200 dark:border-gray-700">
-                                    <button class="char-card w-full h-full p-4 rounded-lg hover:bg-blue-50 dark:hover:bg-gray-700">
-                                        <div class="hiragana-char text-4xl mb-2">を</div>
+                                        <div class="katakana-char text-4xl mb-2">ヲ</div>
                                         <div class="text-gray-600 dark:text-gray-300">wo</div>
                                     </button>
                                 </td>
                             </tr>
-
+                            
                             <!-- N Row -->
                             <tr>
                                 <td class="p-3 border border-gray-200 dark:border-gray-700">
                                     <button class="char-card w-full h-full p-4 rounded-lg hover:bg-blue-50 dark:hover:bg-gray-700">
-                                        <div class="hiragana-char text-4xl mb-2">ん</div>
+                                        <div class="katakana-char text-4xl mb-2">ン</div>
                                         <div class="text-gray-600 dark:text-gray-300">n</div>
                                     </button>
                                 </td>
                                 <td class="p-3 border border-gray-200 dark:border-gray-700">
                                     <button class="char-card w-full h-full p-4 rounded-lg hover:bg-blue-50 dark:hover:bg-gray-700">
-                                        <div class="hiragana-char text-4xl mb-2"></div>
+                                        <div class="katakana-char text-4xl mb-2"></div>
                                         <div class="text-gray-600 dark:text-gray-300"></div>
                                     </button>
                                 </td>
                                 <td class="p-3 border border-gray-200 dark:border-gray-700">
                                     <button class="char-card w-full h-full p-4 rounded-lg hover:bg-blue-50 dark:hover:bg-gray-700">
-                                        <div class="hiragana-char text-4xl mb-2"></div>
+                                        <div class="katakana-char text-4xl mb-2"></div>
                                         <div class="text-gray-600 dark:text-gray-300"></div>
                                     </button>
                                 </td>
                                 <td class="p-3 border border-gray-200 dark:border-gray-700">
                                     <button class="char-card w-full h-full p-4 rounded-lg hover:bg-blue-50 dark:hover:bg-gray-700">
-                                        <div class="hiragana-char text-4xl mb-2"></div>
+                                        <div class="katakana-char text-4xl mb-2"></div>
                                         <div class="text-gray-600 dark:text-gray-300"></div>
                                     </button>
                                 </td>
                                 <td class="p-3 border border-gray-200 dark:border-gray-700">
                                     <button class="char-card w-full h-full p-4 rounded-lg hover:bg-blue-50 dark:hover:bg-gray-700">
-                                        <div class="hiragana-char text-4xl mb-2"></div>
+                                        <div class="katakana-char text-4xl mb-2"></div>
                                         <div class="text-gray-600 dark:text-gray-300"></div>
                                     </button>
                                 </td>
@@ -557,19 +565,19 @@
         <section id="dakuten" class="container mx-auto px-4 mb-16 dark:text-white">
             <h2 class="text-2xl font-bold text-gray-800 dark:text-white mb-6 flex items-center">
                 <i class="fas fa-quote-right mr-3 text-green-600 dark:text-green-400"></i>
-                Dakuten (Tanda Kutip)
+                Dakuten (Tanda Kutip) Katakana
             </h2>
             
             <div class="bg-white dark:bg-gray-800 rounded-lg shadow-md p-6">
                 <p class="text-gray-600 dark:text-gray-300 mb-6">
-                    Dakuten (゛) adalah tanda yang mengubah suara konsonan tertentu menjadi suara yang berbeda. Contoh: か (ka) → が (ga).
+                    Sama seperti hiragana, katakana juga menggunakan dakuten (゛) untuk mengubah suara konsonan. Contoh: カ (ka) → ガ (ga).
                 </p>
                 
                 <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-4">
                     <!-- Example Dakuten Characters -->
                     <div class="relative">
                         <button class="char-card w-full p-4 rounded-lg hover:bg-green-50 dark:hover:bg-gray-700">
-                            <div class="hiragana-char text-4xl mb-2">が</div>
+                            <div class="katakana-char text-4xl mb-2">ガ</div>
                             <div class="text-gray-600 dark:text-gray-300">ga</div>
                             <span class="dakuten"></span>
                         </button>
@@ -577,7 +585,7 @@
                     
                     <div class="relative">
                         <button class="char-card w-full p-4 rounded-lg hover:bg-green-50 dark:hover:bg-gray-700">
-                            <div class="hiragana-char text-4xl mb-2">ざ</div>
+                            <div class="katakana-char text-4xl mb-2">ザ</div>
                             <div class="text-gray-600 dark:text-gray-300">za</div>
                             <span class="dakuten"></span>
                         </button>
@@ -585,19 +593,17 @@
                     
                     <div class="relative">
                         <button class="char-card w-full p-4 rounded-lg hover:bg-green-50 dark:hover:bg-gray-700">
-                            <div class="hiragana-char text-4xl mb-2">だ</div>
+                            <div class="katakana-char text-4xl mb-2">ダ</div>
                             <div class="text-gray-600 dark:text-gray-300">da</div>
                             <span class="dakuten"></span>
                         </button>
                     </div>
                     
-                    
-                    
                     <div class="relative">
                         <button class="char-card w-full p-4 rounded-lg hover:bg-green-50 dark:hover:bg-gray-700">
-                            <div class="hiragana-char text-4xl mb-2">ぼ</div>
-                            <div class="text-gray-600 dark:text-gray-300">bo</div>
-                            <span class="handakuon"></span>
+                            <div class="katakana-char text-4xl mb-2">バ</div>
+                            <div class="text-gray-600 dark:text-gray-300">ba</div>
+                            <span class="dakuten"></span>
                         </button>
                     </div>
                 </div>
@@ -608,19 +614,19 @@
         <section id="handakuon" class="container mx-auto px-4 mb-16 dark:text-white">
             <h2 class="text-2xl font-bold text-gray-800 dark:text-white mb-6 flex items-center">
                 <i class="fas fa-circle-notch mr-3 text-purple-600 dark:text-purple-400"></i>
-                Handakuon (Lingkaran Kecil)
+                Handakuon (Lingkaran Kecil) Katakana
             </h2>
             
             <div class="bg-white dark:bg-gray-800 rounded-lg shadow-md p-6">
                 <p class="text-gray-600 dark:text-gray-300 mb-6">
-                    Handakuon (゜) adalah tanda lingkaran kecil yang mengubah suara "h" menjadi "p". Contoh: は (ha) → ぱ (pa).
+                    Handakuon (゜) mengubah suara "h" menjadi "p" pada katakana. Contoh: ハ (ha) → パ (pa).
                 </p>
                 
                 <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-4">
                     <!-- Example Handakuon Characters -->
                     <div class="relative">
                         <button class="char-card w-full p-4 rounded-lg hover:bg-purple-50 dark:hover:bg-gray-700">
-                            <div class="hiragana-char text-4xl mb-2">ぱ</div>
+                            <div class="katakana-char text-4xl mb-2">パ</div>
                             <div class="text-gray-600 dark:text-gray-300">pa</div>
                             <span class="handakuon"></span>
                         </button>
@@ -628,7 +634,7 @@
                     
                     <div class="relative">
                         <button class="char-card w-full p-4 rounded-lg hover:bg-purple-50 dark:hover:bg-gray-700">
-                            <div class="hiragana-char text-4xl mb-2">ぴ</div>
+                            <div class="katakana-char text-4xl mb-2">ピ</div>
                             <div class="text-gray-600 dark:text-gray-300">pi</div>
                             <span class="handakuon"></span>
                         </button>
@@ -636,7 +642,7 @@
                     
                     <div class="relative">
                         <button class="char-card w-full p-4 rounded-lg hover:bg-purple-50 dark:hover:bg-gray-700">
-                            <div class="hiragana-char text-4xl mb-2">ぷ</div>
+                            <div class="katakana-char text-4xl mb-2">プ</div>
                             <div class="text-gray-600 dark:text-gray-300">pu</div>
                             <span class="handakuon"></span>
                         </button>
@@ -644,7 +650,7 @@
                     
                     <div class="relative">
                         <button class="char-card w-full p-4 rounded-lg hover:bg-purple-50 dark:hover:bg-gray-700">
-                            <div class="hiragana-char text-4xl mb-2">ぺ</div>
+                            <div class="katakana-char text-4xl mb-2">ペ</div>
                             <div class="text-gray-600 dark:text-gray-300">pe</div>
                             <span class="handakuon"></span>
                         </button>
@@ -652,7 +658,7 @@
                     
                     <div class="relative">
                         <button class="char-card w-full p-4 rounded-lg hover:bg-purple-50 dark:hover:bg-gray-700">
-                            <div class="hiragana-char text-4xl mb-2">ぽ</div>
+                            <div class="katakana-char text-4xl mb-2">ポ</div>
                             <div class="text-gray-600 dark:text-gray-300">po</div>
                             <span class="handakuon"></span>
                         </button>
@@ -665,39 +671,81 @@
         <section id="yoon" class="container mx-auto px-4 mb-16 dark:text-white">
             <h2 class="text-2xl font-bold text-gray-800 dark:text-white mb-6 flex items-center">
                 <i class="fas fa-layer-group mr-3 text-yellow-600 dark:text-yellow-400"></i>
-                Yoon (Gabungan Karakter)
+                Yoon (Gabungan Karakter) Katakana
             </h2>
             
             <div class="bg-white dark:bg-gray-800 rounded-lg shadow-md p-6">
                 <p class="text-gray-600 dark:text-gray-300 mb-6">
-                    Yoon adalah gabungan karakter hiragana yang lebih kecil (ゃ, ゅ, ょ) dengan karakter i-column untuk membentuk suara baru.
+                    Yoon pada katakana menggunakan karakter kecil (ャ, ュ, ョ) untuk membentuk suara gabungan. Contoh: キャ (kya), シュ (shu), チョ (cho).
                 </p>
                 
                 <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-4">
                     <!-- Example Yoon Characters -->
                     <button class="char-card p-4 rounded-lg hover:bg-yellow-50 dark:hover:bg-gray-700">
-                        <div class="hiragana-char text-4xl mb-2">きゃ</div>
+                        <div class="katakana-char text-4xl mb-2">キャ</div>
                         <div class="text-gray-600 dark:text-gray-300">kya</div>
                     </button>
                     
                     <button class="char-card p-4 rounded-lg hover:bg-yellow-50 dark:hover:bg-gray-700">
-                        <div class="hiragana-char text-4xl mb-2">しゅ</div>
+                        <div class="katakana-char text-4xl mb-2">シュ</div>
                         <div class="text-gray-600 dark:text-gray-300">shu</div>
                     </button>
                     
                     <button class="char-card p-4 rounded-lg hover:bg-yellow-50 dark:hover:bg-gray-700">
-                        <div class="hiragana-char text-4xl mb-2">ちょ</div>
+                        <div class="katakana-char text-4xl mb-2">チョ</div>
                         <div class="text-gray-600 dark:text-gray-300">cho</div>
                     </button>
                     
                     <button class="char-card p-4 rounded-lg hover:bg-yellow-50 dark:hover:bg-gray-700">
-                        <div class="hiragana-char text-4xl mb-2">にゃ</div>
+                        <div class="katakana-char text-4xl mb-2">ニャ</div>
                         <div class="text-gray-600 dark:text-gray-300">nya</div>
                     </button>
                     
                     <button class="char-card p-4 rounded-lg hover:bg-yellow-50 dark:hover:bg-gray-700">
-                        <div class="hiragana-char text-4xl mb-2">ひょ</div>
+                        <div class="katakana-char text-4xl mb-2">ヒョ</div>
                         <div class="text-gray-600 dark:text-gray-300">hyo</div>
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Extended Katakana -->
+        <section id="extended" class="container mx-auto px-4 mb-16 dark:text-white">
+            <h2 class="text-2xl font-bold text-gray-800 dark:text-white mb-6 flex items-center">
+                <i class="fas fa-star mr-3 text-orange-600 dark:text-orange-400"></i>
+                Katakana Tambahan
+            </h2>
+            
+            <div class="bg-white dark:bg-gray-800 rounded-lg shadow-md p-6">
+                <p class="text-gray-600 dark:text-gray-300 mb-6">
+                    Katakana memiliki beberapa karakter tambahan untuk menulis suara asing yang tidak ada dalam bahasa Jepang standar.
+                </p>
+                
+                <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-4">
+                    <!-- Example Extended Characters -->
+                    <button class="char-card p-4 rounded-lg hover:bg-orange-50 dark:hover:bg-gray-700">
+                        <div class="katakana-char text-4xl mb-2">ウィ</div>
+                        <div class="text-gray-600 dark:text-gray-300">wi</div>
+                    </button>
+                    
+                    <button class="char-card p-4 rounded-lg hover:bg-orange-50 dark:hover:bg-gray-700">
+                        <div class="katakana-char text-4xl mb-2">ヴァ</div>
+                        <div class="text-gray-600 dark:text-gray-300">va</div>
+                    </button>
+                    
+                    <button class="char-card p-4 rounded-lg hover:bg-orange-50 dark:hover:bg-gray-700">
+                        <div class="katakana-char text-4xl mb-2">ティ</div>
+                        <div class="text-gray-600 dark:text-gray-300">ti</div>
+                    </button>
+                    
+                    <button class="char-card p-4 rounded-lg hover:bg-orange-50 dark:hover:bg-gray-700">
+                        <div class="katakana-char text-4xl mb-2">ファ</div>
+                        <div class="text-gray-600 dark:text-gray-300">fa</div>
+                    </button>
+                    
+                    <button class="char-card p-4 rounded-lg hover:bg-orange-50 dark:hover:bg-gray-700">
+                        <div class="katakana-char text-4xl mb-2">シェ</div>
+                        <div class="text-gray-600 dark:text-gray-300">she</div>
                     </button>
                 </div>
             </div>
@@ -707,7 +755,7 @@
         <section id="latihan" class="container mx-auto px-4">
             <h2 class="text-2xl font-bold text-gray-800 dark:text-white mb-6 flex items-center">
                 <i class="fas fa-pen mr-3 text-red-600 dark:text-red-400"></i>
-                Latihan Hiragana
+                Latihan Katakana
             </h2>
             
             <div class="bg-white dark:bg-gray-800 rounded-lg shadow-md p-6">
@@ -719,7 +767,7 @@
                             Kuis Pengenalan Karakter
                         </h3>
                         <p class="text-gray-600 dark:text-gray-300 mb-6">
-                            Pilih romaji yang sesuai dengan karakter hiragana yang ditampilkan.
+                            Pilih romaji yang sesuai dengan karakter katakana yang ditampilkan.
                         </p>
                         <a href="#" onclick="CommingSoonAlert()" class="inline-block bg-blue-600 hover:bg-blue-700 text-white font-medium py-2 px-4 rounded-lg transition">
                             Mulai Kuis <i class="fas fa-arrow-right ml-2"></i>
@@ -733,13 +781,13 @@
                             Latihan Menulis
                         </h3>
                         <p class="text-gray-600 dark:text-gray-300 mb-6">
-                            Pelajari urutan guratan yang benar untuk setiap karakter hiragana.
+                            Pelajari urutan guratan yang benar untuk setiap karakter katakana.
                         </p>
                         <a href="#" onclick="CommingSoonAlert()" class="inline-block bg-green-600 hover:bg-green-700 text-white font-medium py-2 px-4 rounded-lg transition">
                             Latihan Menulis <i class="fas fa-arrow-right ml-2"></i>
                         </a>
                     </div>
-
+                    
                     <!-- Word Practice Card -->
                     <div class="bg-purple-50 dark:bg-purple-900 rounded-xl p-6">
                         <h3 class="text-xl font-bold text-gray-800 dark:text-white mb-4">
@@ -770,6 +818,22 @@
                 </div>
             </div>
         </section>
+
+        <!-- Ad Space -->
+        <section class="container mx-auto px-4 mt-16">
+            <div class="bg-gray-200 dark:bg-gray-700 rounded-lg p-4 text-center">
+                <!-- Google AdSense Ad Unit -->
+                <ins class="adsbygoogle"
+                    style="display:block"
+                    data-ad-client="ca-pub-1435241846420582"
+                    data-ad-slot="YOUR_AD_SLOT_ID"
+                    data-ad-format="auto"
+                    data-full-width-responsive="true"></ins>
+                <script>
+                    (adsbygoogle = window.adsbygoogle || []).push({});
+                </script>
+            </div>
+        </section>
     </main>
 
     <!-- Footer -->
@@ -778,24 +842,12 @@
             <div class="text-center text-sm text-gray-500 dark:text-gray-400 py-6">
                 <p class="mb-2">© 2025 by Nihongopedia | Belajar Bahasa Jepang. All rights reserved.</p>
                 <p class="mb-4">Dibuat dengan <i class="fas fa-heart text-red-500"></i> untuk pembelajar bahasa Jepang</p>
-                <div class="flex justify-center space-x-4">
-                    <a href="#" class="text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition">
-                        <i class="fab fa-github text-xl"></i>
-                    </a>
-                    <a href="#" class="text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition">
-                        <i class="fab fa-twitter text-xl"></i>
-                    </a>
-                    <a href="#" class="text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition">
-                        <i class="fab fa-instagram text-xl"></i>
-                    </a>
-                </div>
             </div>
         </div>
     </footer>
-
+    
     <!-- JavaScript -->
     <script>
-
         function CommingSoonAlert() {
             Swal.fire({
                 title: 'Coming Soon',
