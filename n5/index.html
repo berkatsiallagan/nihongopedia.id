@@ -5,9 +5,9 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Tingkat N5 | Nihongopedia</title>
-  <meta name="description" content="Nihongopedia.id - Portal lengkap belajar bahasa Jepang. Pelajari hiragana, katakana, kanji, tata bahasa, kosakata, dan budaya Jepang dengan metode interaktif. Sumber terpercaya untuk pemula hingga mahir.">
-  <meta name="keywords" content="nihongopedia, belajar bahasa jepang, kursus jepang online, hiragana, katakana, kanji, tata bahasa jepang, kosakata jepang, budaya jepang, nihongo, JLPT, bahasa jepang pemula, nihongopedia.id">
+  <title>Kosakata N5 | Nihongopedia</title>
+  <meta name="description" content="Pelajari kosakata JLPT N5 secara sistematis dengan kategori lengkap: kata benda, kata kerja, kata sifat, partikel, dan ekspresi dasar bahasa Jepang.">
+  <meta name="keywords" content="kosakata n5, belajar bahasa jepang, kata benda jepang, kata kerja jepang, partikel jepang, JLPT N5 vocabulary">
   
   <!-- Logo Web -->
   <link rel="icon" href="/assets/img/nihongopedia.png" type="image/png">
@@ -51,13 +51,12 @@
 
   <!-- Custom CSS -->
   <style>
-    .jlpt-card:hover {
+    .category-card:hover {
       transform: translateY(-5px);
       box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
     }
 
-    /* Add these new styles */
-    .modal {
+    .subcategory-modal {
       display: none;
       position: fixed;
       z-index: 100;
@@ -102,30 +101,56 @@
       color: white;
     }
 
-    .grammar-box {
-      display: inline-block;
-      width: 50px;
-      height: 50px;
-      margin: 5px;
-      text-align: center;
-      line-height: 50px;
-      background-color: #3b82f6;
-      color: white;
-      border-radius: 4px;
-      cursor: pointer;
+    .subcategory-card {
+      display: block;
+      padding: 15px;
+      margin: 10px 0;
+      border-radius: 8px;
+      background-color: #f8fafc;
+      color: #1e293b;
+      transition: all 0.3s;
+      border-left: 4px solid #3b82f6;
+    }
+
+    .dark .subcategory-card {
+      background-color: #1e293b;
+      color: #f8fafc;
+      border-left: 4px solid #60a5fa;
+    }
+
+    .subcategory-card:hover {
+      transform: translateX(5px);
+      background-color: #e2e8f0;
+    }
+
+    .dark .subcategory-card:hover {
+      background-color: #334155;
+    }
+
+    .particle-card {
+      background: linear-gradient(135deg, #e0f2fe 0%, #f0fdfa 100%);
+      border-radius: 10px;
+      padding: 15px;
+      margin: 10px 0;
       transition: all 0.3s;
     }
 
-    .grammar-box:hover {
-      background-color: #2563eb;
-      transform: translateY(-2px);
+    .dark .particle-card {
+      background: linear-gradient(135deg, #1e3a8a 0%, #164e63 100%);
     }
 
-    .grammar-container {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(50px, 1fr));
-      gap: 10px;
-      margin-top: 20px;
+    .particle-card:hover {
+      transform: scale(1.02);
+    }
+
+    .kanji-badge {
+      display: inline-block;
+      padding: 2px 8px;
+      border-radius: 4px;
+      background-color: #3b82f6;
+      color: white;
+      font-size: 0.8rem;
+      margin-right: 5px;
     }
   </style>
 </head>
@@ -137,7 +162,7 @@
     <div class="container mx-auto px-4 py-3 flex justify-between items-center">
         <!-- Logo -->
         <a href="#" class="flex items-center space-x-2">
-            <span class="text-2xl font-bold text-blue-600 dark:text-blue-400">Cardo</span>
+            <span class="text-2xl font-bold text-blue-600 dark:text-blue-400">Nihongopedia</span>
         </a>
         
         <!-- Desktop Navigation -->
@@ -145,13 +170,13 @@
             <a href="/" class="text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition">Beranda</a>
             <a href="/hiragana" class="text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition">Hiragana</a>
             <a href="/katakana" class="text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition">Katakana</a>
-        <!-- Aktif --><a href="/n5" class="text-blue-600 dark:text-blue-400 font-medium">N5</a>
+            <a href="/n5" class="text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition">N5</a>
+            <!-- Aktif --><a href="/n5/kosakata" class="text-blue-600 dark:text-blue-400 font-medium">Kosakata</a>
             <a href="/n4" class="text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition">N4</a>
             <a href="/n3" class="text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition">N3</a>
             <a href="/n2" class="text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition">N2</a>
             <a href="/n1" class="text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition">N1</a>
             <a href="/donatur" class="text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition">Donatur</a>
-            <a href="/nihongopedia" class="text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition">Nihongopedia</a>
         </nav>
         
         <!-- Dark Mode Toggle -->
@@ -171,13 +196,13 @@
             <a href="/" class="text-gray-600 dark:text-gray-300 py-2 border-b border-gray-200 dark:border-gray-700">Beranda</a>
             <a href="/hiragana" class="text-gray-600 dark:text-gray-300 py-2 border-b border-gray-200 dark:border-gray-700">Hiragana</a>
             <a href="/katakana" class="text-gray-600 dark:text-gray-300 py-2 border-b border-gray-200 dark:border-gray-700">Katakana</a>
-    <!-- Aktif --><a href="/n5" class="text-blue-600 dark:text-blue-400 font-medium py-2 border-b border-gray-200 dark:border-gray-700">N5</a>
+            <a href="/n5" class="text-gray-600 dark:text-gray-300 py-2 border-b border-gray-200 dark:border-gray-700">N5</a>
+            <!-- Aktif --><a href="/n5/kosakata" class="text-blue-600 dark:text-blue-400 font-medium py-2 border-b border-gray-200 dark:border-gray-700">Kosakata</a>
             <a href="/n4" class="text-gray-600 dark:text-gray-300 py-2 border-b border-gray-200 dark:border-gray-700">N4</a>
             <a href="/n3" class="text-gray-600 dark:text-gray-300 py-2 border-b border-gray-200 dark:border-gray-700">N3</a>
             <a href="/n2" class="text-gray-600 dark:text-gray-300 py-2 border-b border-gray-200 dark:border-gray-700">N2</a>
             <a href="/n1" class="text-gray-600 dark:text-gray-300 py-2 border-b border-gray-200 dark:border-gray-700">N1</a>
             <a href="/donatur" class="text-gray-600 dark:text-gray-300 py-2 border-b border-gray-200 dark:border-gray-700">Donatur</a>
-            <a href="/nihongopedia" class="text-gray-600 dark:text-gray-300 py-2 border-b border-gray-200 dark:border-gray-700">Nihongopedia</a>
         </div>
     </div>
   </header>
@@ -194,140 +219,261 @@
             <h1
               class="text-3xl md:text-4xl font-bold text-gray-800 dark:text-white mb-4"
             >
-              JLPT N5 - Level Dasar
+              Kosakata JLPT N5
             </h1>
             <p class="text-lg text-gray-600 dark:text-gray-300 mb-6">
-              Mulai perjalanan belajar bahasa Jepang Anda dari level paling
-              dasar. Pelajari kosakata, tata bahasa, dan kanji dasar yang
-              diperlukan untuk lulus JLPT N5.
+              Pelajari 800+ kosakata dasar bahasa Jepang yang penting untuk level N5. 
+              Materi dikelompokkan secara sistematis untuk memudahkan pembelajaran.
             </p>
             <div class="flex flex-wrap justify-center gap-4">
               <a
-                href="#materi"
+                href="#kategori"
                 class="bg-blue-600 hover:bg-blue-700 text-white font-medium py-2 px-4 rounded-lg transition"
               >
-                <i class="fas fa-book mr-2"></i> Pelajari Materi
+                <i class="fas fa-layer-group mr-2"></i> Lihat Kategori
               </a>
               <a
-                href="#jlpt-info"
+                href="#tips"
                 class="bg-gray-200 hover:bg-gray-300 dark:bg-gray-700 dark:hover:bg-gray-600 text-gray-800 dark:text-white font-medium py-2 px-4 rounded-lg transition"
               >
-                <i class="fas fa-info-circle mr-2"></i> Tentang JLPT N5
+                <i class="fas fa-lightbulb mr-2"></i> Tips Belajar
               </a>
             </div>
           </div>
         </div>
       </section>
 
-      <!-- Materi Section -->
-      <section id="materi" class="container mx-auto px-4 mb-16">
+      <!-- Kategori Section -->
+      <section id="kategori" class="container mx-auto px-4 mb-16">
         <h2
           class="text-2xl font-bold text-gray-800 dark:text-white mb-6 flex items-center"
         >
-          <i class="fas fa-book-open text-blue-500 mr-3"></i>
-          Materi Pembelajaran N5
+          <i class="fas fa-tags text-blue-500 mr-3"></i>
+          Kategori Kosakata N5
         </h2>
 
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-          <!-- Tata Bahasa Card -->
-          <a
-            href="#"
-            onclick="openGrammarModal()"
-            class="jlpt-card bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 p-6 rounded-xl shadow-md transition duration-300 hover:border-blue-500"
-          >
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <!-- Kata Benda Card -->
+          <div class="category-card bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 p-6 rounded-xl shadow-md transition duration-300 hover:border-blue-500">
             <div class="text-center">
               <div
                 class="bg-blue-100 dark:bg-blue-900 text-blue-600 dark:text-blue-300 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4"
               >
-                <i class="fas fa-language text-2xl"></i>
+                <i class="fas fa-cube text-2xl"></i>
               </div>
               <h3 class="text-xl font-bold text-gray-800 dark:text-white mb-2">
-                Tata Bahasa
+                名詞 - Kata Benda
               </h3>
               <p class="text-gray-600 dark:text-gray-300 mb-4">
-                Pelajari struktur kalimat dasar, partikel, dan pola kalimat
-                penting untuk level N5
+                Kosakata benda-benda, orang, tempat, waktu, dan konsep dasar
               </p>
-              <div class="text-blue-600 dark:text-blue-400 font-medium">
-                Mulai Belajar <i class="fas fa-arrow-right ml-1"></i>
-              </div>
+              <button onclick="openSubcategoryModal('meishi')" class="text-blue-600 dark:text-blue-400 font-medium">
+                Lihat Subkategori <i class="fas fa-arrow-right ml-1"></i>
+              </button>
             </div>
-          </a>
+          </div>
 
-          <!-- Kanji Card -->
-          <a
-            href="kanji/1"
-            class="jlpt-card bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 p-6 rounded-xl shadow-md transition duration-300 hover:border-green-500"
-          >
+          <!-- Kata Kerja Card -->
+          <div class="category-card bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 p-6 rounded-xl shadow-md transition duration-300 hover:border-green-500">
             <div class="text-center">
               <div
                 class="bg-green-100 dark:bg-green-900 text-green-600 dark:text-green-300 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4"
               >
-                <i class="fas fa-kanji text-2xl"></i>
+                <i class="fas fa-running text-2xl"></i>
               </div>
               <h3 class="text-xl font-bold text-gray-800 dark:text-white mb-2">
-                Kanji
+                動詞 - Kata Kerja
               </h3>
               <p class="text-gray-600 dark:text-gray-300 mb-4">
-                Kuasai 100+ kanji dasar yang paling sering digunakan dalam
-                bahasa Jepang sehari-hari
+                Kata kerja dasar untuk aktivitas sehari-hari dalam 3 kelompok
               </p>
-              <div class="text-green-600 dark:text-green-400 font-medium">
-                Mulai Belajar <i class="fas fa-arrow-right ml-1"></i>
-              </div>
+              <button onclick="openSubcategoryModal('doushi')" class="text-green-600 dark:text-green-400 font-medium">
+                Lihat Subkategori <i class="fas fa-arrow-right ml-1"></i>
+              </button>
             </div>
-          </a>
+          </div>
 
-          <!-- Kosakata Card -->
-          <a
-            href="/n5/kosakata/"
-            class="jlpt-card bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 p-6 rounded-xl shadow-md transition duration-300 hover:border-purple-500"
-          >
+          <!-- Kata Sifat Card -->
+          <div class="category-card bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 p-6 rounded-xl shadow-md transition duration-300 hover:border-purple-500">
             <div class="text-center">
               <div
                 class="bg-purple-100 dark:bg-purple-900 text-purple-600 dark:text-purple-300 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4"
               >
-                <i class="fas fa-book text-2xl"></i>
+                <i class="fas fa-adjust text-2xl"></i>
               </div>
               <h3 class="text-xl font-bold text-gray-800 dark:text-white mb-2">
-                Kosakata
+                形容詞 - Kata Sifat
               </h3>
               <p class="text-gray-600 dark:text-gray-300 mb-4">
-                Pelajari 800+ kata dasar yang sering muncul dalam ujian JLPT N5
+                Kata sifat i dan na untuk mendeskripsikan benda dan situasi
               </p>
-              <div class="text-purple-600 dark:text-purple-400 font-medium">
-                Mulai Belajar <i class="fas fa-arrow-right ml-1"></i>
-              </div>
+              <button onclick="openSubcategoryModal('keiyoushi')" class="text-purple-600 dark:text-purple-400 font-medium">
+                Lihat Subkategori <i class="fas fa-arrow-right ml-1"></i>
+              </button>
             </div>
-          </a>
+          </div>
+
+          <!-- Partikel Card -->
+          <div class="category-card bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 p-6 rounded-xl shadow-md transition duration-300 hover:border-yellow-500">
+            <div class="text-center">
+              <div
+                class="bg-yellow-100 dark:bg-yellow-900 text-yellow-600 dark:text-yellow-300 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4"
+              >
+                <i class="fas fa-link text-2xl"></i>
+              </div>
+              <h3 class="text-xl font-bold text-gray-800 dark:text-white mb-2">
+                助詞 - Partikel
+              </h3>
+              <p class="text-gray-600 dark:text-gray-300 mb-4">
+                Unsur penting untuk menyusun kalimat bahasa Jepang yang benar
+              </p>
+              <button onclick="openSubcategoryModal('joshi')" class="text-yellow-600 dark:text-yellow-400 font-medium">
+                Lihat Daftar <i class="fas fa-arrow-right ml-1"></i>
+              </button>
+            </div>
+          </div>
+
+          <!-- Ekspresi Dasar Card -->
+          <div class="category-card bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 p-6 rounded-xl shadow-md transition duration-300 hover:border-red-500">
+            <div class="text-center">
+              <div
+                class="bg-red-100 dark:bg-red-900 text-red-600 dark:text-red-300 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4"
+              >
+                <i class="fas fa-comment-dots text-2xl"></i>
+              </div>
+              <h3 class="text-xl font-bold text-gray-800 dark:text-white mb-2">
+                Ekspresi Dasar
+              </h3>
+              <p class="text-gray-600 dark:text-gray-300 mb-4">
+                Ungkapan-ungkapan penting untuk percakapan sehari-hari
+              </p>
+              <a href="/n5/kosakata/ekspresi" class="text-red-600 dark:text-red-400 font-medium">
+                Pelajari Sekarang <i class="fas fa-arrow-right ml-1"></i>
+              </a>
+            </div>
+          </div>
+
+          <!-- Angka & Hitungan Card -->
+          <div class="category-card bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 p-6 rounded-xl shadow-md transition duration-300 hover:border-indigo-500">
+            <div class="text-center">
+              <div
+                class="bg-indigo-100 dark:bg-indigo-900 text-indigo-600 dark:text-indigo-300 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4"
+              >
+                <i class="fas fa-sort-numeric-up-alt text-2xl"></i>
+              </div>
+              <h3 class="text-xl font-bold text-gray-800 dark:text-white mb-2">
+                Angka & Hitungan
+              </h3>
+              <p class="text-gray-600 dark:text-gray-300 mb-4">
+                Sistem angka, hitungan benda, dan penyebutan waktu
+              </p>
+              <a href="/n5/kosakata/angka" class="text-indigo-600 dark:text-indigo-400 font-medium">
+                Pelajari Sekarang <i class="fas fa-arrow-right ml-1"></i>
+              </a>
+            </div>
+          </div>
         </div>
       </section>
 
-      <!-- The Modal -->
-      <div id="grammarModal" class="modal">
+      <!-- Modal Subkategori -->
+      <div id="subcategoryModal" class="subcategory-modal">
         <div class="modal-content dark:bg-gray-800">
-          <span class="close" onclick="closeGrammarModal()">&times;</span>
-          <h2 class="text-2xl font-bold text-gray-800 dark:text-white mb-4">
-            Pilih Materi Tata Bahasa
+          <span class="close" onclick="closeSubcategoryModal()">&times;</span>
+          <h2 id="modalTitle" class="text-2xl font-bold text-gray-800 dark:text-white mb-4">
+            Subkategori
           </h2>
-          <p class="text-gray-600 dark:text-gray-300 mb-6">
-            Silakan pilih nomor materi tata bahasa yang ingin Anda pelajari:
-          </p>
-
-          <div class="grammar-container">
-            <!-- Grammar boxes will be generated by JavaScript -->
+          <div id="modalContent" class="py-4">
+            <!-- Content will be filled by JavaScript -->
           </div>
         </div>
       </div>
 
-      <!-- JLPT N5 Info -->
-      <section id="jlpt-info" class="container mx-auto px-4 mb-16">
+      <!-- Partikel Section -->
+      <section class="container mx-auto px-4 mb-16">
+        <h2
+          class="text-2xl font-bold text-gray-800 dark:text-white mb-6 flex items-center"
+        >
+          <i class="fas fa-link text-yellow-500 mr-3"></i>
+          Partikel Dasar (助詞 - Joshi)
+        </h2>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <div class="particle-card">
+            <h3 class="font-bold text-lg text-gray-800 dark:text-white mb-2">
+              は (wa) - Partikel Topik
+            </h3>
+            <p class="text-gray-600 dark:text-gray-300">
+              Menunjukkan topik pembicaraan. Contoh: 
+              <span class="text-blue-600 dark:text-blue-300">わたし<b>は</b>がくせいです</span> (Saya adalah pelajar).
+            </p>
+          </div>
+          
+          <div class="particle-card">
+            <h3 class="font-bold text-lg text-gray-800 dark:text-white mb-2">
+              が (ga) - Partikel Subjek
+            </h3>
+            <p class="text-gray-600 dark:text-gray-300">
+              Menunjukkan subjek kalimat. Contoh: 
+              <span class="text-blue-600 dark:text-blue-300">だれ<b>が</b>きましたか？</span> (Siapa yang datang?).
+            </p>
+          </div>
+          
+          <div class="particle-card">
+            <h3 class="font-bold text-lg text-gray-800 dark:text-white mb-2">
+              を (wo/o) - Partikel Objek
+            </h3>
+            <p class="text-gray-600 dark:text-gray-300">
+              Menunjukkan objek langsung. Contoh: 
+              <span class="text-blue-600 dark:text-blue-300">みず<b>を</b>のみます</span> (Minum air).
+            </p>
+          </div>
+          
+          <div class="particle-card">
+            <h3 class="font-bold text-lg text-gray-800 dark:text-white mb-2">
+              に (ni) - Partikel Arah/Waktu
+            </h3>
+            <p class="text-gray-600 dark:text-gray-300">
+              Menunjukkan tempat tujuan/waktu. Contoh: 
+              <span class="text-blue-600 dark:text-blue-300">がっこう<b>に</b>いきます</span> (Pergi ke sekolah).
+            </p>
+          </div>
+          
+          <div class="particle-card">
+            <h3 class="font-bold text-lg text-gray-800 dark:text-white mb-2">
+              で (de) - Partikel Tempat Kegiatan
+            </h3>
+            <p class="text-gray-600 dark:text-gray-300">
+              Menunjukkan tempat melakukan aktivitas. Contoh: 
+              <span class="text-blue-600 dark:text-blue-300">レストラン<b>で</b>たべます</span> (Makan di restoran).
+            </p>
+          </div>
+          
+          <div class="particle-card">
+            <h3 class="font-bold text-lg text-gray-800 dark:text-white mb-2">
+              へ (e) - Partikel Arah
+            </h3>
+            <p class="text-gray-600 dark:text-gray-300">
+              Menunjukkan arah (lebih umum dari に). Contoh: 
+              <span class="text-blue-600 dark:text-blue-300">とうきょう<b>へ</b>いきます</span> (Pergi ke Tokyo).
+            </p>
+          </div>
+        </div>
+
+        <div class="text-center mt-6">
+          <a href="/n5/kosakata/partikel" class="inline-block bg-yellow-500 hover:bg-yellow-600 text-white font-medium py-2 px-6 rounded-lg transition">
+            <i class="fas fa-book-open mr-2"></i> Pelajari Semua Partikel
+          </a>
+        </div>
+      </section>
+
+      <!-- Tips Section -->
+      <section id="tips" class="container mx-auto px-4 mb-16">
         <div class="bg-white dark:bg-gray-800 rounded-lg shadow-md p-6">
           <h2
             class="text-2xl font-bold text-gray-800 dark:text-white mb-6 flex items-center"
           >
-            <i class="fas fa-certificate text-yellow-500 mr-3"></i>
-            Mengenal JLPT N5
+            <i class="fas fa-lightbulb text-yellow-500 mr-3"></i>
+            Tips Belajar Kosakata N5
           </h2>
 
           <div class="grid md:grid-cols-2 gap-8">
@@ -335,129 +481,81 @@
               <h3
                 class="text-xl font-semibold text-gray-800 dark:text-white mb-3"
               >
-                Apa itu JLPT N5?
+                Teknik Menghafal Efektif
               </h3>
-              <p class="text-gray-600 dark:text-gray-300 mb-4">
-                JLPT (Japanese-Language Proficiency Test) N5 adalah level paling
-                dasar dalam ujian kemampuan bahasa Jepang. Level ini dirancang
-                untuk pemula yang baru memulai belajar bahasa Jepang.
-              </p>
-              <p class="text-gray-600 dark:text-gray-300">
-                N5 menguji pemahaman dasar tentang bahasa Jepang yang dipelajari
-                di kelas pemula (sekitar 150 jam belajar).
-              </p>
-
-              <h3
-                class="text-xl font-semibold text-gray-800 dark:text-white mt-6 mb-3"
-              >
-                Yang Akan Kamu Pelajari
-              </h3>
-              <ul class="space-y-2 text-gray-600 dark:text-gray-300">
-                <li class="flex items-start">
-                  <i class="fas fa-check text-green-500 mt-1 mr-2"></i>
-                  <span>Hiragana dan Katakana (semua karakter)</span>
-                </li>
-                <li class="flex items-start">
-                  <i class="fas fa-check text-green-500 mt-1 mr-2"></i>
-                  <span>80-100 Kanji dasar</span>
-                </li>
-                <li class="flex items-start">
-                  <i class="fas fa-check text-green-500 mt-1 mr-2"></i>
-                  <span>800 kosakata dasar</span>
-                </li>
-                <li class="flex items-start">
-                  <i class="fas fa-check text-green-500 mt-1 mr-2"></i>
-                  <span
-                    >Tata bahasa untuk percakapan sehari-hari sederhana</span
-                  >
-                </li>
-              </ul>
+              
+              <div class="space-y-4">
+                <div class="flex items-start">
+                  <div class="bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 font-bold px-3 py-1 rounded-full mr-3">1</div>
+                  <div>
+                    <h4 class="font-semibold text-gray-800 dark:text-white">Gunakan Flashcard</h4>
+                    <p class="text-gray-600 dark:text-gray-300 text-sm">
+                      Buat kartu dengan kata Jepang di satu sisi dan artinya di sisi lain. Gunakan aplikasi seperti Anki untuk pengulangan berkala.
+                    </p>
+                  </div>
+                </div>
+                
+                <div class="flex items-start">
+                  <div class="bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 font-bold px-3 py-1 rounded-full mr-3">2</div>
+                  <div>
+                    <h4 class="font-semibold text-gray-800 dark:text-white">Kelompokkan Kosakata</h4>
+                    <p class="text-gray-600 dark:text-gray-300 text-sm">
+                      Belajar berdasarkan tema (makanan, keluarga, dll.) akan membantu otak membuat asosiasi yang lebih kuat.
+                    </p>
+                  </div>
+                </div>
+                
+                <div class="flex items-start">
+                  <div class="bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 font-bold px-3 py-1 rounded-full mr-3">3</div>
+                  <div>
+                    <h4 class="font-semibold text-gray-800 dark:text-white">Buat Kalimat Sederhana</h4>
+                    <p class="text-gray-600 dark:text-gray-300 text-sm">
+                      Praktikkan kosakata baru dengan membuat 2-3 kalimat untuk setiap kata. Ini membantu memahami konteks penggunaan.
+                    </p>
+                  </div>
+                </div>
+              </div>
             </div>
 
             <div>
               <h3
                 class="text-xl font-semibold text-gray-800 dark:text-white mb-3"
               >
-                Struktur Ujian JLPT N5
+                Sumber Belajar Tambahan
               </h3>
-              <div class="bg-gray-50 dark:bg-gray-700 rounded-lg p-4">
-                <div class="space-y-4">
-                  <div class="flex items-start">
-                    <div
-                      class="bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 font-bold px-3 py-1 rounded-full mr-3"
-                    >
-                      1
-                    </div>
-                    <div>
-                      <h4 class="font-semibold text-gray-800 dark:text-white">
-                        Vocabulary (25 menit)
-                      </h4>
-                      <p class="text-gray-600 dark:text-gray-300 text-sm">
-                        Menguji pengetahuan tentang kosakata dasar dan kanji
-                        sederhana
-                      </p>
-                    </div>
-                  </div>
-                  <div class="flex items-start">
-                    <div
-                      class="bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 font-bold px-3 py-1 rounded-full mr-3"
-                    >
-                      2
-                    </div>
-                    <div>
-                      <h4 class="font-semibold text-gray-800 dark:text-white">
-                        Grammar & Reading (50 menit)
-                      </h4>
-                      <p class="text-gray-600 dark:text-gray-300 text-sm">
-                        Memahami tata bahasa dasar dan membaca kalimat pendek
-                      </p>
-                    </div>
-                  </div>
-                  <div class="flex items-start">
-                    <div
-                      class="bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 font-bold px-3 py-1 rounded-full mr-3"
-                    >
-                      3
-                    </div>
-                    <div>
-                      <h4 class="font-semibold text-gray-800 dark:text-white">
-                        Listening (30 menit)
-                      </h4>
-                      <p class="text-gray-600 dark:text-gray-300 text-sm">
-                        Memahami percakapan dasar tentang topik sehari-hari
-                      </p>
-                    </div>
-                  </div>
-                </div>
+              
+              <div class="space-y-3">
+                <a href="#" class="flex items-center text-blue-600 dark:text-blue-400 hover:underline">
+                  <i class="fas fa-book mr-2"></i> Daftar Kosakata N5 PDF
+                </a>
+                <a href="#" class="flex items-center text-blue-600 dark:text-blue-400 hover:underline">
+                  <i class="fas fa-headphones mr-2"></i> Podcast Belajar N5
+                </a>
+                <a href="#" class="flex items-center text-blue-600 dark:text-blue-400 hover:underline">
+                  <i class="fas fa-video mr-2"></i> Video Pembelajaran Kosakata
+                </a>
+                <a href="#" class="flex items-center text-blue-600 dark:text-blue-400 hover:underline">
+                  <i class="fas fa-mobile-alt mr-2"></i> Aplikasi Belajar Kosakata
+                </a>
               </div>
-
-              <h3
-                class="text-xl font-semibold text-gray-800 dark:text-white mt-6 mb-3"
-              >
-                Tips Belajar N5
+              
+              <h3 class="text-xl font-semibold text-gray-800 dark:text-white mt-6 mb-3">
+                Contoh Kosakata N5
               </h3>
-              <div class="bg-yellow-50 dark:bg-yellow-900 rounded-lg p-4">
-                <ul class="space-y-2 text-gray-600 dark:text-gray-300">
-                  <li class="flex items-start">
-                    <i class="fas fa-star text-yellow-500 mt-1 mr-2"></i>
-                    <span>Kuasa dulu semua Hiragana dan Katakana</span>
-                  </li>
-                  <li class="flex items-start">
-                    <i class="fas fa-star text-yellow-500 mt-1 mr-2"></i>
-                    <span>Pelajari kanji dasar sedikit demi sedikit</span>
-                  </li>
-                  <li class="flex items-start">
-                    <i class="fas fa-star text-yellow-500 mt-1 mr-2"></i>
-                    <span>Buat flashcards untuk kosakata baru</span>
-                  </li>
-                  <li class="flex items-start">
-                    <i class="fas fa-star text-yellow-500 mt-1 mr-2"></i>
-                    <span
-                      >Latihan mendengar setiap hari, mulai dari materi
-                      sederhana</span
-                    >
-                  </li>
-                </ul>
+              
+              <div class="grid grid-cols-2 gap-2">
+                <div class="bg-gray-100 dark:bg-gray-700 p-2 rounded">
+                  <span class="kanji-badge">水</span> みず (mizu) - air
+                </div>
+                <div class="bg-gray-100 dark:bg-gray-700 p-2 rounded">
+                  <span class="kanji-badge">食</span> たべる (taberu) - makan
+                </div>
+                <div class="bg-gray-100 dark:bg-gray-700 p-2 rounded">
+                  <span class="kanji-badge">大</span> おおきい (ookii) - besar
+                </div>
+                <div class="bg-gray-100 dark:bg-gray-700 p-2 rounded">
+                  <span class="kanji-badge">子</span> こども (kodomo) - anak
+                </div>
               </div>
             </div>
           </div>
@@ -583,46 +681,146 @@
         });
       });
 
-      // Grammar Modal Functions
-      function openGrammarModal() {
-        const modal = document.getElementById("grammarModal");
-        modal.style.display = "block";
-
-        // Generate grammar boxes
-        const container = document.querySelector(".grammar-container");
-        container.innerHTML = "";
-
-        for (let i = 1; i <= 80; i++) {
-          const box = document.createElement("div");
-          box.className = "grammar-box";
-          box.textContent = i;
-          box.onclick = function () {
-            window.location.href = `tata-bahasa/${i}`;
-          };
-          container.appendChild(box);
+      // Subcategory Modal Functions
+      function openSubcategoryModal(type) {
+        const modal = document.getElementById("subcategoryModal");
+        const modalTitle = document.getElementById("modalTitle");
+        const modalContent = document.getElementById("modalContent");
+        
+        // Set title based on type
+        if (type === 'meishi') {
+          modalTitle.textContent = "Subkategori Kata Benda (名詞 - Meishi)";
+          
+          // Create content for meishi
+          modalContent.innerHTML = `
+            <p class="text-gray-600 dark:text-gray-300 mb-4">Pilih kategori kata benda yang ingin dipelajari:</p>
+            
+            <a href="/n5/kosakata/orang" class="subcategory-card">
+              <h3 class="font-bold text-lg">1. Orang & Hubungan Keluarga</h3>
+              <p class="text-sm text-gray-500 dark:text-gray-400">Contoh: ひと (orang), おとうさん (ayah), ともだち (teman)</p>
+            </a>
+            
+            <a href="/n5/kosakata/waktu" class="subcategory-card">
+              <h3 class="font-bold text-lg">2. Waktu & Tanggal</h3>
+              <p class="text-sm text-gray-500 dark:text-gray-400">Contoh: いま (sekarang), きょう (hari ini), なんじ (jam berapa)</p>
+            </a>
+            
+            <a href="/n5/kosakata/tempat" class="subcategory-card">
+              <h3 class="font-bold text-lg">3. Tempat & Lokasi</h3>
+              <p class="text-sm text-gray-500 dark:text-gray-400">Contoh: いえ (rumah), えき (stasiun), ここ (di sini)</p>
+            </a>
+            
+            <a href="/n5/kosakata/benda" class="subcategory-card">
+              <h3 class="font-bold text-lg">4. Benda & Alam</h3>
+              <p class="text-sm text-gray-500 dark:text-gray-400">Contoh: ほん (buku), つくえ (meja), そら (langit)</p>
+            </a>
+          `;
+          
+        } else if (type === 'doushi') {
+          modalTitle.textContent = "Subkategori Kata Kerja (動詞 - Doushi)";
+          
+          modalContent.innerHTML = `
+            <p class="text-gray-600 dark:text-gray-300 mb-4">Pilih kelompok kata kerja yang ingin dipelajari:</p>
+            
+            <a href="/n5/kosakata/kelompok1" class="subcategory-card">
+              <h3 class="font-bold text-lg">1. Kelompok 1 (U-verbs)</h3>
+              <p class="text-sm text-gray-500 dark:text-gray-400">Contoh: かく (menulis), のむ (minum), あるく (berjalan)</p>
+            </a>
+            
+            <a href="/n5/kosakata/kelompok2" class="subcategory-card">
+              <h3 class="font-bold text-lg">2. Kelompok 2 (Ru-verbs)</h3>
+              <p class="text-sm text-gray-500 dark:text-gray-400">Contoh: たべる (makan), みる (melihat), おきる (bangun)</p>
+            </a>
+            
+            <a href="/n5/kosakata/kelompok3" class="subcategory-card">
+              <h3 class="font-bold text-lg">3. Kelompok 3 (Irregular)</h3>
+              <p class="text-sm text-gray-500 dark:text-gray-400">Contoh: する (melakukan), くる (datang), いく (pergi)</p>
+            </a>
+          `;
+          
+        } else if (type === 'keiyoushi') {
+          modalTitle.textContent = "Subkategori Kata Sifat (形容詞 - Keiyoushi)";
+          
+          modalContent.innerHTML = `
+            <p class="text-gray-600 dark:text-gray-300 mb-4">Pilih jenis kata sifat yang ingin dipelajari:</p>
+            
+            <a href="/n5/kosakata/i-adjectives" class="subcategory-card">
+              <h3 class="font-bold text-lg">1. Kata Sifat I (い-adjectives)</h3>
+              <p class="text-sm text-gray-500 dark:text-gray-400">Contoh: あつい (panas), たかい (tinggi/mahal), おおきい (besar)</p>
+            </a>
+            
+            <a href="/n5/kosakata/na-adjectives" class="subcategory-card">
+              <h3 class="font-bold text-lg">2. Kata Sifat Na (な-adjectives)</h3>
+              <p class="text-sm text-gray-500 dark:text-gray-400">Contoh: しずか (tenang), きれい (cantik/bersih), にぎやか (ramai)</p>
+            </a>
+          `;
+          
+        } else if (type === 'joshi') {
+          modalTitle.textContent = "Daftar Partikel (助詞 - Joshi)";
+          
+          modalContent.innerHTML = `
+            <p class="text-gray-600 dark:text-gray-300 mb-4">Berikut adalah partikel dasar yang perlu dikuasai untuk JLPT N5:</p>
+            
+            <div class="grid grid-cols-2 gap-4">
+              <div class="bg-gray-100 dark:bg-gray-700 p-3 rounded-lg">
+                <h4 class="font-bold">は (wa)</h4>
+                <p class="text-sm">Partikel topik</p>
+              </div>
+              <div class="bg-gray-100 dark:bg-gray-700 p-3 rounded-lg">
+                <h4 class="font-bold">が (ga)</h4>
+                <p class="text-sm">Partikel subjek</p>
+              </div>
+              <div class="bg-gray-100 dark:bg-gray-700 p-3 rounded-lg">
+                <h4 class="font-bold">を (wo/o)</h4>
+                <p class="text-sm">Partikel objek</p>
+              </div>
+              <div class="bg-gray-100 dark:bg-gray-700 p-3 rounded-lg">
+                <h4 class="font-bold">に (ni)</h4>
+                <p class="text-sm">Arah/tujuan/waktu</p>
+              </div>
+              <div class="bg-gray-100 dark:bg-gray-700 p-3 rounded-lg">
+                <h4 class="font-bold">で (de)</h4>
+                <p class="text-sm">Tempat kegiatan</p>
+              </div>
+              <div class="bg-gray-100 dark:bg-gray-700 p-3 rounded-lg">
+                <h4 class="font-bold">へ (e)</h4>
+                <p class="text-sm">Arah (ke)</p>
+              </div>
+              <div class="bg-gray-100 dark:bg-gray-700 p-3 rounded-lg">
+                <h4 class="font-bold">と (to)</h4>
+                <p class="text-sm">Dan/dengan</p>
+              </div>
+              <div class="bg-gray-100 dark:bg-gray-700 p-3 rounded-lg">
+                <h4 class="font-bold">も (mo)</h4>
+                <p class="text-sm">Juga</p>
+              </div>
+            </div>
+            
+            <div class="mt-4 text-center">
+              <a href="/n5/kosakata/partikel" class="inline-block bg-blue-600 hover:bg-blue-700 text-white font-medium py-2 px-4 rounded-lg transition">
+                <i class="fas fa-book mr-2"></i> Pelajari Partikel Lengkap
+              </a>
+            </div>
+          `;
         }
+        
+        modal.style.display = "block";
       }
 
-      function closeGrammarModal() {
-        document.getElementById("grammarModal").style.display = "none";
+      function closeSubcategoryModal() {
+        document.getElementById("subcategoryModal").style.display = "none";
       }
 
       // Close modal when clicking outside
       window.onclick = function (event) {
-        const modal = document.getElementById("grammarModal");
+        const modal = document.getElementById("subcategoryModal");
         if (event.target == modal) {
-          closeGrammarModal();
+          closeSubcategoryModal();
         }
       };
 
-      function CommingSoonAlert() {
-        Swal.fire({
-          title: "Coming Soon",
-          text: "Fitur ini masih dalam tahap pengembangan. Silakan coba lagi nanti!",
-          icon: "warning",
-          confirmButtonText: "OK",
-        });
-      }
+      // Initialize AdSense
+      (adsbygoogle = window.adsbygoogle || []).push({});
     </script>
   </body>
 </html>
