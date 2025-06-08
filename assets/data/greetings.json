@@ -1,0 +1,128 @@
+[
+  {
+    "id": "greeting1",
+    "title": "おはようございます (Ohayou gozaimasu)",
+    "translation": "Selamat pagi (formal)",
+    "icon": "fas fa-sun",
+    "time": "pagi",
+    "politeness": "formal",
+    "note": "Digunakan dari pagi hingga sekitar pukul 10.00. Versi kasualnya adalah 'おはよう' (ohayou)."
+  },
+  {
+    "id": "greeting2",
+    "title": "おはよう (Ohayou)",
+    "translation": "Selamat pagi (kasual)",
+    "icon": "fas fa-sun",
+    "time": "pagi",
+    "politeness": "kasual",
+    "note": "Digunakan antar teman, keluarga, atau anak-anak."
+  },
+  {
+    "id": "greeting3",
+    "title": "こんにちは (Konnichiwa)",
+    "translation": "Selamat siang/sore",
+    "icon": "fas fa-sun",
+    "time": "siang",
+    "politeness": "umum",
+    "note": "Digunakan dari sekitar pukul 10.00 hingga matahari terbenam. Cocok untuk semua situasi."
+  },
+  {
+    "id": "greeting4",
+    "title": "こんばんは (Konbanwa)",
+    "translation": "Selamat malam",
+    "icon": "fas fa-moon",
+    "time": "malam",
+    "politeness": "umum",
+    "note": "Digunakan setelah matahari terbenam hingga malam hari."
+  },
+  {
+    "id": "greeting5",
+    "title": "おやすみなさい (Oyasumi nasai)",
+    "translation": "Selamat tidur (formal)",
+    "icon": "fas fa-moon",
+    "time": "tidur",
+    "politeness": "formal",
+    "note": "Digunakan sebelum tidur dalam situasi sopan. Versi kasualnya adalah 'おやすみ'."
+  },
+  {
+    "id": "greeting6",
+    "title": "おやすみ (Oyasumi)",
+    "translation": "Selamat tidur (kasual)",
+    "icon": "fas fa-moon",
+    "time": "tidur",
+    "politeness": "kasual",
+    "note": "Dipakai antar teman, keluarga, atau dalam situasi tidak formal."
+  },
+  {
+    "id": "greeting7",
+    "title": "いってきます (Ittekimasu)",
+    "translation": "Saya pergi dulu",
+    "icon": "fas fa-walking",
+    "time": "berangkat",
+    "politeness": "umum",
+    "note": "Diucapkan saat akan meninggalkan rumah. Balasannya adalah 'いってらっしゃい'."
+  },
+  {
+    "id": "greeting8",
+    "title": "いってらっしゃい (Itterasshai)",
+    "translation": "Hati-hati di jalan",
+    "icon": "fas fa-home",
+    "time": "berangkat",
+    "politeness": "umum",
+    "note": "Balasan untuk 'いってきます', biasanya diucapkan oleh orang yang ditinggalkan di rumah."
+  },
+  {
+    "id": "greeting9",
+    "title": "ただいま (Tadaima)",
+    "translation": "Saya pulang",
+    "icon": "fas fa-door-open",
+    "time": "pulang",
+    "politeness": "umum",
+    "note": "Diucapkan saat kembali ke rumah. Balasannya adalah 'おかえり'."
+  },
+  {
+    "id": "greeting10",
+    "title": "おかえり (Okaeri)",
+    "translation": "Selamat datang kembali",
+    "icon": "fas fa-smile",
+    "time": "pulang",
+    "politeness": "kasual",
+    "note": "Balasan dari 'ただいま'. Versi formalnya adalah 'おかえりなさい'."
+  },
+  {
+    "id": "greeting11",
+    "title": "おかえりなさい (Okaerinasai)",
+    "translation": "Selamat datang kembali (formal)",
+    "icon": "fas fa-door-open",
+    "time": "pulang",
+    "politeness": "formal",
+    "note": "Versi formal dari 'おかえり'. Diucapkan untuk menyambut seseorang yang pulang ke rumah."
+  },
+  {
+    "id": "greeting12",
+    "title": "もしもし (Moshi moshi)",
+    "translation": "Halo (telepon)",
+    "icon": "fas fa-phone",
+    "time": "umum",
+    "politeness": "umum",
+    "note": "Digunakan saat menjawab atau memulai percakapan di telepon."
+  },
+  {
+    "id": "greeting13",
+    "title": "はじめまして (Hajimemashite)",
+    "translation": "Salam kenal",
+    "icon": "fas fa-handshake",
+    "time": "perkenalan",
+    "politeness": "formal",
+    "note": "Dipakai saat pertama kali bertemu dengan seseorang."
+  },
+  {
+    "id": "greeting14",
+    "title": "よろしくおねがいします (Yoroshiku onegaishimasu)",
+    "translation": "Mohon kerja samanya / Senang bertemu",
+    "icon": "fas fa-hands-helping",
+    "time": "perkenalan",
+    "politeness": "formal",
+    "note": "Sering digunakan setelah 'はじめまして' untuk menunjukkan harapan akan hubungan baik."
+  }    
+]

@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+    <!-- Meta Tags -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Tabel Lengkap Katakana - Pelajari semua karakter katakana dengan audio pengucapan">
+    
+    <!-- Title -->
+    <title>Tabel Katakana | Nihongopedia</title>
+    
+    <!-- Favicon and CSS same as index.html -->
+
+</head>
+<body class="bg-gray-50 font-sans text-gray-800 flex flex-col min-h-screen">
+    <!-- Header same as template -->
+
+    <!-- Main Content Layout -->
+    <div class="flex flex-1 pt-12">
+        <!-- Sidebar same as template -->
+
+        <!-- Main Content -->
+        <main class="flex-1 p-8">
+            <!-- Breadcrumb -->
+            <div class="max-w-6xl mx-auto mb-4">
+                <nav class="flex" aria-label="Breadcrumb">
+                    <ol class="inline-flex items-center space-x-1 md:space-x-2">
+                        <li class="inline-flex items-center">
+                            <a href="/" class="inline-flex items-center text-sm font-medium text-gray-700 hover:text-red-600">
+                                <i class="fas fa-home mr-2"></i>
+                                Beranda
+                            </a>
+                        </li>
+                        <li>
+                            <div class="flex items-center">
+                                <i class="fas fa-chevron-right text-gray-400 text-xs"></i>
+                                <a href="/content/basics/" class="ml-2 text-sm font-medium text-gray-700 hover:text-red-600">Dasar-dasar</a>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="flex items-center">
+                                <i class="fas fa-chevron-right text-gray-400 text-xs"></i>
+                                <a href="/content/basics/katakana/" class="ml-2 text-sm font-medium text-gray-700 hover:text-red-600">Katakana</a>
+                            </div>
+                        </li>
+                        <li aria-current="page">
+                            <div class="flex items-center">
+                                <i class="fas fa-chevron-right text-gray-400 text-xs"></i>
+                                <span class="ml-2 text-sm font-medium text-red-600">Tabel Katakana</span>
+                            </div>
+                        </li>
+                    </ol>
+                </nav>
+            </div>
+
+            <!-- Katakana Chart Content -->
+            <div class="max-w-6xl mx-auto animate__animated animate__fadeIn">
+                <section class="bg-white rounded-lg shadow-md overflow-hidden p-6 md:p-8 mb-8">
+                    <h1 class="text-3xl md:text-4xl font-bold text-red-600 mb-4">Tabel Lengkap Katakana</h1>
+                    <p class="text-lg text-gray-700 mb-6">
+                        Berikut adalah tabel lengkap karakter katakana. Klik pada karakter untuk mendengar pengucapannya.
+                    </p>
+                    
+                    <!-- Katakana Chart Navigation -->
+                    <div class="flex flex-wrap gap-2 mb-6">
+                        <button class="katakana-tab active px-4 py-2 bg-red-600 text-white rounded-md" data-tab="basic">Dasar</button>
+                        <button class="katakana-tab px-4 py-2 bg-gray-200 hover:bg-gray-300 rounded-md" data-tab="dakuon">Dakuon</button>
+                        <button class="katakana-tab px-4 py-2 bg-gray-200 hover:bg-gray-300 rounded-md" data-tab="combo">Kombinasi</button>
+                        <button class="katakana-tab px-4 py-2 bg-gray-200 hover:bg-gray-300 rounded-md" data-tab="extended">Tambahan</button>
+                    </div>
+                    
+                    <!-- Basic Katakana Table -->
+                    <div id="basic-katakana" class="katakana-table active">
+                        <h2 class="text-2xl font-bold text-gray-800 mb-4">Katakana Dasar</h2>
+                        <div class="overflow-x-auto">
+                            <table class="w-full text-center border-collapse">
+                                <thead>
+                                    <tr class="bg-red-100">
+                                        <th class="p-3 border">A</th>
+                                        <th class="p-3 border">I</th>
+                                        <th class="p-3 border">U</th>
+                                        <th class="p-3 border">E</th>
+                                        <th class="p-3 border">O</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td class="p-4 border katakana-char" data-char="ア" data-romaji="a">
+                                            <div class="text-3xl mb-1">ア</div>
+                                            <div class="text-sm text-gray-600">a</div>
+                                        </td>
+                                        <td class="p-4 border katakana-char" data-char="イ" data-romaji="i">
+                                            <div class="text-3xl mb-1">イ</div>
+                                            <div class="text-sm text-gray-600">i</div>
+                                        </td>
+                                        <td class="p-4 border katakana-char" data-char="ウ" data-romaji="u">
+                                            <div class="text-3xl mb-1">ウ</div>
+                                            <div class="text-sm text-gray-600">u</div>
+                                        </td>
+                                        <td class="p-4 border katakana-char" data-char="エ" data-romaji="e">
+                                            <div class="text-3xl mb-1">エ</div>
+                                            <div class="text-sm text-gray-600">e</div>
+                                        </td>
+                                        <td class="p-4 border katakana-char" data-char="オ" data-romaji="o">
+                                            <div class="text-3xl mb-1">オ</div>
+                                            <div class="text-sm text-gray-600">o</div>
+                                        </td>
+                                    </tr>
+                                    <!-- More rows for K, S, T, N, H, M, Y, R, W -->
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    
+                    <!-- Dakuon Table (Hidden by default) -->
+                    <div id="dakuon-katakana" class="katakana-table hidden">
+                        <h2 class="text-2xl font-bold text-gray-800 mb-4">Dakuon & Handakuon</h2>
+                        <p class="text-gray-700 mb-4">Karakter dengan tanda dakuten (〃) atau handakuten (゜)</p>
+                        <div class="overflow-x-auto">
+                            <table class="w-full text-center border-collapse">
+                                <!-- Dakuon table content -->
+                            </table>
+                        </div>
+                    </div>
+                    
+                    <!-- Combo Table (Hidden by default) -->
+                    <div id="combo-katakana" class="katakana-table hidden">
+                        <h2 class="text-2xl font-bold text-gray-800 mb-4">Katakana Kombinasi</h2>
+                        <p class="text-gray-700 mb-4">Karakter kecil (ャ, ュ, ョ, ァ, ィ, ゥ, ェ, ォ) digunakan untuk membentuk suara asing</p>
+                        <div class="overflow-x-auto">
+                            <table class="w-full text-center border-collapse">
+                                <!-- Combo table content -->
+                            </table>
+                        </div>
+                    </div>
+                    
+                    <!-- Extended Table (Hidden by default) -->
+                    <div id="extended-katakana" class="katakana-table hidden">
+                        <h2 class="text-2xl font-bold text-gray-800 mb-4">Katakana Tambahan</h2>
+                        <p class="text-gray-700 mb-4">Digunakan untuk menulis suara asing yang tidak ada dalam bahasa Jepang standar</p>
+                        <div class="overflow-x-auto">
+                            <table class="w-full text-center border-collapse">
+                                <!-- Extended table content -->
+                            </table>
+                        </div>
+                    </div>
+                    
+                    <!-- Audio Player -->
+                    <div class="mt-8 bg-gray-100 rounded-lg p-4 hidden" id="audio-player">
+                        <div class="flex items-center">
+                            <button id="play-audio" class="bg-red-600 text-white p-3 rounded-full mr-4">
+                                <i class="fas fa-play"></i>
+                            </button>
+                            <div>
+                                <h3 class="font-semibold" id="current-char">ア (a)</h3>
+                                <audio id="katakana-audio" src=""></audio>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Practice Section -->
+                    <div class="mt-8 bg-blue-50 rounded-lg p-6 border border-blue-200">
+                        <h2 class="text-2xl font-bold text-blue-700 mb-4">Sudah Hafal Tabel Ini?</h2>
+                        <p class="text-gray-700 mb-4">Uji pengetahuan Anda dengan latihan katakana:</p>
+                        <div class="flex flex-wrap gap-4">
+                            <a href="/practice/quizzes/katakana-basic/" class="px-6 py-3 bg-blue-600 hover:bg-blue-700 text-white rounded-lg transition">
+                                <i class="fas fa-question-circle mr-2"></i>Mulai Kuis
+                            </a>
+                            <a href="/practice/flashcards/katakana/" class="px-6 py-3 bg-white hover:bg-gray-100 border border-blue-600 text-blue-600 rounded-lg transition">
+                                <i class="fas fa-layer-group mr-2"></i>Flashcard
+                            </a>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </main>
+    </div>
+
+    <!-- Footer same as template -->
+
+    <!-- Custom JS for Katakana Chart -->
+    <script>
+        // Tab switching
+        document.querySelectorAll('.katakana-tab').forEach(tab => {
+            tab.addEventListener('click', function() {
+                // Remove active class from all tabs and tables
+                document.querySelectorAll('.katakana-tab').forEach(t => t.classList.remove('active', 'bg-red-600', 'text-white'));
+                document.querySelectorAll('.katakana-tab').forEach(t => t.classList.add('bg-gray-200', 'hover:bg-gray-300'));
+                document.querySelectorAll('.katakana-table').forEach(t => t.classList.add('hidden'));
+                
+                // Add active class to clicked tab
+                this.classList.add('active', 'bg-red-600', 'text-white');
+                this.classList.remove('bg-gray-200', 'hover:bg-gray-300');
+                
+                // Show corresponding table
+                const tabId = this.getAttribute('data-tab');
+                document.getElementById(`${tabId}-katakana`).classList.remove('hidden');
+            });
+        });
+        
+        // Audio playback for characters
+        document.querySelectorAll('.katakana-char').forEach(char => {
+            char.addEventListener('click', function() {
+                const character = this.getAttribute('data-char');
+                const romaji = this.getAttribute('data-romaji');
+                const audioPlayer = document.getElementById('audio-player');
+                const currentCharDisplay = document.getElementById('current-char');
+                const audioElement = document.getElementById('katakana-audio');
+                
+                // Update display
+                currentCharDisplay.textContent = `${character} (${romaji})`;
+                audioElement.src = `/assets/audio/katakana/${romaji}.mp3`;
+                
+                // Show audio player
+                audioPlayer.classList.remove('hidden');
+                
+                // Play audio
+                audioElement.play();
+            });
+        });
+        
+        // Play button
+        document.getElementById('play-audio').addEventListener('click', function() {
+            document.getElementById('katakana-audio').play();
+        });
+    </script>
+</body>
+</html>

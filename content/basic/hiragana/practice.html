@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+    <!-- Meta Tags -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Latihan Hiragana - Belajar menulis dan mengenali karakter hiragana">
+    
+    <!-- Title -->
+    <title>Latihan Hiragana | Nihongopedia</title>
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="/assets/images/logos/favicon.ico">
+    
+    <!-- CDN CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/assets/css/main.css">
+    <link rel="stylesheet" href="/assets/css/animations.css">
+</head>
+<body class="bg-gray-50 font-sans text-gray-800 flex flex-col min-h-screen">
+    <!-- Header -->
+    <header class="bg-red-600 text-white shadow-md fixed top-0 left-0 right-0 z-50">
+        <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+            <!-- Logo -->
+            <div class="flex items-center space-x-2">
+                <a href="/" class="flex items-center">
+                    <i class="fas fa-language text-2xl"></i>
+                    <span class="ml-2 text-xl font-bold">Nihongopedia</span>
+                </a>
+            </div>
+            
+            <!-- Header Right Section -->
+            <div class="flex items-center space-x-4">
+                <!-- Mobile Menu Button -->
+                <button id="mobile-menu-button" class="md:hidden text-white focus:outline-none">
+                    <i class="fas fa-bars text-2xl"></i>
+                </button>
+            </div>
+            
+            <!-- Desktop Nav -->
+            <nav class="hidden md:flex space-x-6">
+                <a href="/" class="hover:text-red-200 transition">Beranda</a>
+                <a href="/content/basics/hiragana/" class="hover:text-red-200 transition">Pelajaran</a>
+                <a href="/practice/" class="hover:text-red-200 transition">Latihan</a>
+                <a href="/resources/" class="hover:text-red-200 transition">Sumber Belajar</a>
+                <a href="/donasi" class="hidden md:flex items-center text-white hover:text-red-200 transition text-sm">Donasi</a>
+                <a href="https://whatsapp.com/channel/0029Vag1xu13AzNLMBd6fi0a" target="_blank" class="hidden md:flex items-center text-white hover:text-red-200 transition text-sm">Channel WhatsApp</a>
+                <a href="/user/dashboard.html" class="hover:text-red-200 transition">
+                    <i class="fas fa-user"></i>
+                </a>
+            </nav>
+        </div>
+        
+        <!-- Mobile Nav (Hidden by default) -->
+        <div id="mobile-menu" class="hidden md:hidden bg-red-700">
+            <div class="container mx-auto px-4 py-2 flex flex-col space-y-3">
+                <a href="/" class="py-2 hover:text-red-200 transition">Beranda</a>
+                <a href="/content/basics/hiragana/" class="py-2 hover:text-red-200 transition">Pelajaran</a>
+                <a href="/practice/" class="py-2 hover:text-red-200 transition">Latihan</a>
+                <a href="/resources/" class="py-2 hover:text-red-200 transition">Sumber Belajar</a>
+                <a href="/donasi" class="py-2 hover:text-red-200 transition flex items-center">Donasi</a>
+                <a href="https://whatsapp.com/channel/0029Vag1xu13AzNLMBd6fi0a" target="_blank" class="py-2 hover:text-red-200 transition flex items-center">Channel WhatsApp</a>
+                <a href="/user/dashboard.html" class="py-2 hover:text-red-200 transition">Akun Saya</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content Layout -->
+    <div class="flex flex-1 pt-12">
+        <!-- Sidebar -->
+        <aside class="hidden lg:block w-64 bg-white shadow-md p-4">
+            <div class="sticky top-20">
+                <!-- Level Navigation -->
+                <div class="mb-6">
+                    <h3 class="font-bold text-lg mb-3 text-red-600 border-b pb-2">Level Belajar</h3>
+                    <ul class="space-y-2">
+                        <li><a href="/content/basics/" class="hover:text-red-600 transition">Dasar-dasar</a></li>
+                        <li><a href="/content/n5/" class="hover:text-red-600 transition">JLPT N5</a></li>
+                        <li><a href="/content/n4/" class="hover:text-red-600 transition">JLPT N4</a></li>
+                        <li><a href="/content/n3/" class="hover:text-red-600 transition">JLPT N3</a></li>
+                        <li><a href="/content/n2/" class="hover:text-red-600 transition">JLPT N2</a></li>
+                        <li><a href="/content/n1/" class="hover:text-red-600 transition">JLPT N1</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Quick Links -->
+                <div>
+                    <h3 class="font-bold text-lg mb-3 text-red-600 border-b pb-2">Akses Cepat</h3>
+                    <ul class="space-y-2">
+                        <li><a href="/practice/flashcards/" class="hover:text-red-600 transition"><i class="fas fa-layer-group mr-2"></i>Flashcards</a></li>
+                        <li><a href="/practice/quizzes/" class="hover:text-red-600 transition"><i class="fas fa-question-circle mr-2"></i>Kuis</a></li>
+                        <li><a href="/resources/cheat-sheets/" class="hover:text-red-600 transition"><i class="fas fa-scroll mr-2"></i>Cheat Sheets</a></li>
+                        <li><a href="/user/progress-tracker.html" class="hover:text-red-600 transition"><i class="fas fa-chart-line mr-2"></i>Progres Belajar</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Sidebar Footer with Subtle Links -->
+                <div class="mt-8 pt-4 border-t border-gray-200 text-sm text-gray-600">
+                    <a href="https://whatsapp.com/channel/0029Vag1xu13AzNLMBd6fi0a" target="_blank" class="block mb-2 hover:text-red-600 transition">
+                        <i class="fab fa-whatsapp mr-2"></i>Channel WhatsApp
+                    </a>
+                    <a href="/donasi" class="block hover:text-red-600 transition">
+                        <i class="fas fa-hand-holding-heart mr-2"></i>Dukung Nihongopedia
+                    </a>
+                </div>
+            </div>
+        </aside>
+
+        <!-- Main Content Area -->
+        <main class="flex-1 p-8">
+            <!-- BreadCrumb -->
+            <div class="max-w-6xl mx-auto mb-4">
+                <nav class="flex" aria-label="Breadcrumb">
+                    <ol class="inline-flex items-center space-x-1 md:space-x-2">
+                        <li class="inline-flex items-center">
+                            <a href="/" class="inline-flex items-center text-sm font-medium text-gray-700 hover:text-red-600">
+                                <i class="fas fa-home mr-2"></i>
+                                Beranda
+                            </a>
+                        </li>
+                        <li>
+                            <div class="flex items-center">
+                                <i class="fas fa-chevron-right text-gray-400 text-xs"></i>
+                                <a href="/content/basics/" class="ml-2 inline-flex items-center text-sm font-medium text-gray-700 hover:text-red-600">Dasar-dasar</a>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="flex items-center">
+                                <i class="fas fa-chevron-right text-gray-400 text-xs"></i>
+                                <a href="/content/basics/hiragana/" class="ml-2 inline-flex items-center text-sm font-medium text-gray-700 hover:text-red-600">Hiragana</a>
+                            </div>
+                        </li>
+                        <li>    
+                            <div class="flex items-center">
+                                <i class="fas fa-chevron-right text-gray-400 text-xs"></i>
+                                <a href="/content/basics/hiragana/practice.html" class="ml-2 text-sm font-medium text-red-600 hover:text-red-500">Latihan Hiragana</a>
+                            </div>
+                        </li>
+                    </ol>
+                </nav>
+            </div>
+
+            <!-- Page Content -->
+            <div class="max-w-6xl mx-auto bg-white rounded-lg shadow-md p-6 animate__animated animate__fadeIn">
+                <h1 class="text-3xl font-bold text-red-600 mb-6">Latihan Hiragana</h1>
+                
+                <div class="grid md:grid-cols-2 gap-8 mb-8">
+                    <div>
+                        <h2 class="text-2xl font-semibold mb-4">Latihan Menulis</h2>
+                        <div class="bg-gray-100 p-4 rounded-lg mb-4">
+                            <div class="flex justify-between items-center mb-3">
+                                <h3 class="font-medium">Karakter: <span id="current-char" class="text-4xl">あ</span></h3>
+                                <button id="next-char" class="bg-red-600 hover:bg-red-700 text-white px-3 py-1 rounded text-sm">
+                                    Karakter Selanjutnya <i class="fas fa-arrow-right ml-1"></i>
+                                </button>
+                            </div>
+                            <div class="bg-white border-2 border-gray-300 rounded-lg h-64 mb-3 flex items-center justify-center">
+                                <canvas id="writing-canvas" class="border border-gray-200 bg-white" width="300" height="250"></canvas>
+                            </div>
+                            <div class="flex justify-between">
+                                <button id="clear-canvas" class="bg-gray-300 hover:bg-gray-400 text-gray-800 px-3 py-1 rounded text-sm">
+                                    <i class="fas fa-eraser mr-1"></i> Hapus
+                                </button>
+                                <div class="text-sm text-gray-600">
+                                    <span id="char-romaji">a</span> - <span id="char-strokes">3 goresan</span>
+                                </div>
+                                <button id="show-stroke" class="bg-blue-600 hover:bg-blue-700 text-white px-3 py-1 rounded text-sm">
+                                    <i class="fas fa-pen-fancy mr-1"></i> Lihat Urutan Goresan
+                                </button>
+                            </div>
+                        </div>
+                        <div class="bg-yellow-50 border-l-4 border-yellow-400 p-4">
+                            <div class="flex">
+                                <div class="flex-shrink-0">
+                                    <i class="fas fa-lightbulb text-yellow-500 text-xl"></i>
+                                </div>
+                                <div class="ml-3">
+                                    <h3 class="text-sm font-medium text-yellow-800">Tips Menulis Hiragana</h3>
+                                    <div class="mt-2 text-sm text-yellow-700">
+                                        <p>• Ikuti urutan goresan yang benar</p>
+                                        <p>• Perhatikan arah goresan (biasanya dari kiri ke kanan, atas ke bawah)</p>
+                                        <p>• Latihan setiap hari untuk memperbaiki bentuk karakter</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div>
+                        <h2 class="text-2xl font-semibold mb-4">Latihan Mengenali Karakter</h2>
+                        <div class="bg-gray-100 p-4 rounded-lg mb-4">
+                            <div class="mb-4">
+                                <h3 class="font-medium mb-2">Pilih Mode Latihan:</h3>
+                                <div class="flex flex-wrap gap-2">
+                                    <button class="practice-mode bg-red-600 text-white px-3 py-1 rounded text-sm" data-mode="romaji-to-hiragana">
+                                        Romaji → Hiragana
+                                    </button>
+                                    <button class="practice-mode bg-white border border-red-600 text-red-600 px-3 py-1 rounded text-sm" data-mode="hiragana-to-romaji">
+                                        Hiragana → Romaji
+                                    </button>
+                                    <button class="practice-mode bg-white border border-red-600 text-red-600 px-3 py-1 rounded text-sm" data-mode="audio-to-hiragana">
+                                        Audio → Hiragana
+                                    </button>
+                                </div>
+                            </div>
+                            
+                            <div id="quiz-area" class="bg-white p-4 rounded border border-gray-300 mb-3">
+                                <div id="question" class="text-center text-5xl mb-6">?</div>
+                                <div id="options" class="grid grid-cols-2 gap-3">
+                                    <button class="option-btn bg-gray-200 hover:bg-gray-300 p-3 rounded-lg text-xl">あ</button>
+                                    <button class="option-btn bg-gray-200 hover:bg-gray-300 p-3 rounded-lg text-xl">か</button>
+                                    <button class="option-btn bg-gray-200 hover:bg-gray-300 p-3 rounded-lg text-xl">さ</button>
+                                    <button class="option-btn bg-gray-200 hover:bg-gray-300 p-3 rounded-lg text-xl">た</button>
+                                </div>
+                            </div>
+                            
+                            <div class="flex justify-between items-center">
+                                <div id="score" class="text-sm font-medium">
+                                    Skor: <span class="text-red-600">0</span>/<span>0</span>
+                                </div>
+                                <button id="next-question" class="bg-red-600 hover:bg-red-700 text-white px-3 py-1 rounded text-sm">
+                                    Pertanyaan Selanjutnya <i class="fas fa-arrow-right ml-1"></i>
+                                </button>
+                            </div>
+                        </div>
+                        
+                        <div class="bg-blue-50 border-l-4 border-blue-400 p-4">
+                            <div class="flex">
+                                <div class="flex-shrink-0">
+                                    <i class="fas fa-volume-up text-blue-500 text-xl"></i>
+                                </div>
+                                <div class="ml-3">
+                                    <h3 class="text-sm font-medium text-blue-800">Tips Pengucapan</h3>
+                                    <div class="mt-2 text-sm text-blue-700">
+                                        <p>• Dengarkan pengucapan yang benar untuk setiap karakter</p>
+                                        <p>• Perhatikan perbedaan suara seperti し (shi) vs ち (chi)</p>
+                                        <p>• Latihan pengucapan sambil menulis karakter</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="bg-green-50 border-l-4 border-green-400 p-4 mb-8">
+                    <div class="flex">
+                        <div class="flex-shrink-0">
+                            <i class="fas fa-chart-line text-green-500 text-xl"></i>
+                        </div>
+                        <div class="ml-3">
+                            <h3 class="text-sm font-medium text-green-800">Progres Belajar</h3>
+                            <div class="mt-2 text-sm text-green-700">
+                                <p>Anda telah menguasai <strong>12 dari 46</strong> karakter hiragana dasar</p>
+                                <div class="w-full bg-gray-200 rounded-full h-2.5 mt-2">
+                                    <div class="bg-green-600 h-2.5 rounded-full" style="width: 26%"></div>
+                                </div>
+                                <p class="mt-2">Lanjutkan latihan untuk menyelesaikan semua karakter!</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="flex justify-between">
+                    <a href="/content/basics/hiragana/chart.html" class="bg-gray-200 hover:bg-gray-300 text-gray-800 font-medium py-2 px-4 rounded inline-flex items-center">
+                        <i class="fas fa-arrow-left mr-2"></i> Kembali ke Tabel Hiragana
+                    </a>
+                    <a href="/practice/flashcards/hiragana.html" class="bg-red-600 hover:bg-red-700 text-white font-medium py-2 px-4 rounded inline-flex items-center">
+                        Lanjut ke Flashcards <i class="fas fa-arrow-right ml-2"></i>
+                    </a>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-8">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Nihongopedia</h3>
+                    <p class="text-gray-400">Platform belajar bahasa Jepang dari dasar hingga level JLPT N1.</p>
+                    <div class="mt-4 space-y-2">
+                        <a href="https://whatsapp.com/channel/0029Vag1xu13AzNLMBd6fi0a" target="_blank" class="flex items-center text-gray-400 hover:text-white transition text-sm">
+                            <i class="fab fa-whatsapp mr-2"></i> WhatsApp Channel
+                        </a>
+                        <a href="/donasi" class="flex items-center text-gray-400 hover:text-white transition text-sm">
+                            <i class="fas fa-heart mr-2"></i> Donasi
+                        </a>
+                    </div>
+                </div>
+                <div>
+                    <h4 class="font-bold mb-4">Navigasi</h4>
+                    <ul class="space-y-2">
+                        <li><a href="/" class="text-gray-400 hover:text-white transition">Beranda</a></li>
+                        <li><a href="/about.html" class="text-gray-400 hover:text-white transition">Tentang Kami</a></li>
+                        <li><a href="/roadmap.html" class="text-gray-400 hover:text-white transition">Roadmap Belajar</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-bold mb-4">Bantuan</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">FAQ</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">Kebijakan Privasi</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-bold mb-4">Sosial Media</h4>
+                    <div class="flex space-x-4">
+                        <a href="https://instagram.com/nihongopedia.id" class="text-gray-400 hover:text-white transition text-2xl"><i class="fab fa-instagram"></i></a>
+                        <a href="https://youtube.com/@nihongopedia" class="text-gray-400 hover:text-white transition text-2xl"><i class="fab fa-youtube"></i></a>
+                        <a href="https://tiktok.com/@nihongopedia" class="text-gray-400 hover:text-white transition text-2xl"><i class="fab fa-tiktok"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-gray-700 mt-8 pt-6 text-center text-gray-400">
+                <p>&copy; 2023 Nihongopedia.id. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- CDN JS -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    
+    <!-- Custom JS -->
+    <script src="/assets/js/main.js"></script>
+    <script src="/assets/js/practice.js"></script>
+    
+    <script>
+        // Mobile menu toggle
+        document.getElementById('mobile-menu-button').addEventListener('click', function() {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('hidden');
+        });
+
+        // Hiragana writing practice
+        const canvas = document.getElementById('writing-canvas');
+        const ctx = canvas.getContext('2d');
+        let isDrawing = false;
+        let lastX = 0;
+        let lastY = 0;
+        
+        // Set canvas style
+        ctx.strokeStyle = '#000';
+        ctx.lineWidth = 3;
+        ctx.lineCap = 'round';
+        
+        // Drawing functions
+        canvas.addEventListener('mousedown', startDrawing);
+        canvas.addEventListener('touchstart', startDrawing);
+        
+        canvas.addEventListener('mousemove', draw);
+        canvas.addEventListener('touchmove', draw);
+        
+        canvas.addEventListener('mouseup', stopDrawing);
+        canvas.addEventListener('touchend', stopDrawing);
+        canvas.addEventListener('mouseout', stopDrawing);
+        
+        function startDrawing(e) {
+            isDrawing = true;
+            const pos = getPosition(e);
+            lastX = pos.x;
+            lastY = pos.y;
+        }
+        
+        function draw(e) {
+            if (!isDrawing) return;
+            
+            const pos = getPosition(e);
+            
+            ctx.beginPath();
+            ctx.moveTo(lastX, lastY);
+            ctx.lineTo(pos.x, pos.y);
+            ctx.stroke();
+            
+            lastX = pos.x;
+            lastY = pos.y;
+        }
+        
+        function stopDrawing() {
+            isDrawing = false;
+        }
+        
+        function getPosition(e) {
+            const rect = canvas.getBoundingClientRect();
+            return {
+                x: (e.clientX || e.touches[0].clientX) - rect.left,
+                y: (e.clientY || e.touches[0].clientY) - rect.top
+            };
+        }
+        
+        // Clear canvas
+        document.getElementById('clear-canvas').addEventListener('click', function() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+        });
+        
+        // Character set for practice
+        const hiraganaChars = [
+            { char: 'あ', romaji: 'a', strokes: 3 },
+            { char: 'か', romaji: 'ka', strokes: 3 },
+            { char: 'さ', romaji: 'sa', strokes: 3 },
+            { char: 'た', romaji: 'ta', strokes: 4 },
+            { char: 'な', romaji: 'na', strokes: 4 },
+            { char: 'は', romaji: 'ha', strokes: 3 },
+            { char: 'ま', romaji: 'ma', strokes: 3 },
+            { char: 'や', romaji: 'ya', strokes: 3 },
+            { char: 'ら', romaji: 'ra', strokes: 2 },
+            { char: 'わ', romaji: 'wa', strokes: 2 }
+        ];
+        
+        let currentCharIndex = 0;
+        
+        // Update character display
+        function updateCharacter() {
+            const char = hiraganaChars[currentCharIndex];
+            document.getElementById('current-char').textContent = char.char;
+            document.getElementById('char-romaji').textContent = char.romaji;
+            document.getElementById('char-strokes').textContent = `${char.strokes} goresan`;
+        }
+        
+        // Next character button
+        document.getElementById('next-char').addEventListener('click', function() {
+            currentCharIndex = (currentCharIndex + 1) % hiraganaChars.length;
+            updateCharacter();
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+        });
+        
+        // Show stroke order button
+        document.getElementById('show-stroke').addEventListener('click', function() {
+            const char = hiraganaChars[currentCharIndex].char;
+            Swal.fire({
+                title: `Urutan Goresan ${char}`,
+                imageUrl: `/assets/images/hiragana/strokes/${char}.png`,
+                imageWidth: 200,
+                imageHeight: 200,
+                imageAlt: `Urutan goresan ${char}`,
+                confirmButtonText: 'Mengerti'
+            });
+        });
+        
+        // Initialize
+        updateCharacter();
+    </script>
+</body>
+</html>

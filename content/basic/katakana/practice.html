@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+    <!-- Meta Tags -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Latihan Menulis Katakana - Pelajari urutan guratan yang benar untuk menulis katakana">
+    
+    <!-- Title -->
+    <title>Latihan Menulis Katakana | Nihongopedia</title>
+    
+    <!-- Favicon and CSS same as index.html -->
+
+</head>
+<body class="bg-gray-50 font-sans text-gray-800 flex flex-col min-h-screen">
+    <!-- Header same as template -->
+
+    <!-- Main Content Layout -->
+    <div class="flex flex-1 pt-12">
+        <!-- Sidebar same as template -->
+
+        <!-- Main Content -->
+        <main class="flex-1 p-8">
+            <!-- Breadcrumb -->
+            <div class="max-w-6xl mx-auto mb-4">
+                <nav class="flex" aria-label="Breadcrumb">
+                    <ol class="inline-flex items-center space-x-1 md:space-x-2">
+                        <li class="inline-flex items-center">
+                            <a href="/" class="inline-flex items-center text-sm font-medium text-gray-700 hover:text-red-600">
+                                <i class="fas fa-home mr-2"></i>
+                                Beranda
+                            </a>
+                        </li>
+                        <li>
+                            <div class="flex items-center">
+                                <i class="fas fa-chevron-right text-gray-400 text-xs"></i>
+                                <a href="/content/basics/" class="ml-2 text-sm font-medium text-gray-700 hover:text-red-600">Dasar-dasar</a>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="flex items-center">
+                                <i class="fas fa-chevron-right text-gray-400 text-xs"></i>
+                                <a href="/content/basics/katakana/" class="ml-2 text-sm font-medium text-gray-700 hover:text-red-600">Katakana</a>
+                            </div>
+                        </li>
+                        <li aria-current="page">
+                            <div class="flex items-center">
+                                <i class="fas fa-chevron-right text-gray-400 text-xs"></i>
+                                <span class="ml-2 text-sm font-medium text-red-600">Latihan Menulis</span>
+                            </div>
+                        </li>
+                    </ol>
+                </nav>
+            </div>
+
+            <!-- Writing Practice Content -->
+            <div class="max-w-6xl mx-auto animate__animated animate__fadeIn">
+                <section class="bg-white rounded-lg shadow-md overflow-hidden p-6 md:p-8 mb-8">
+                    <h1 class="text-3xl md:text-4xl font-bold text-red-600 mb-4">Latihan Menulis Katakana</h1>
+                    <p class="text-lg text-gray-700 mb-6">
+                        Pelajari cara menulis katakana dengan urutan guratan yang benar. Pilih karakter untuk melihat animasi penulisannya.
+                    </p>
+                    
+                    <!-- Character Selector -->
+                    <div class="mb-8">
+                        <h2 class="text-2xl font-bold text-gray-800 mb-4">Pilih Karakter</h2>
+                        <div class="flex flex-wrap gap-3">
+                            <!-- Basic katakana characters -->
+                            <button class="char-selector px-4 py-3 bg-gray-100 hover:bg-gray-200 rounded-lg text-2xl" data-char="ア">ア</button>
+                            <button class="char-selector px-4 py-3 bg-gray-100 hover:bg-gray-200 rounded-lg text-2xl" data-char="イ">イ</button>
+                            <button class="char-selector px-4 py-3 bg-gray-100 hover:bg-gray-200 rounded-lg text-2xl" data-char="ウ">ウ</button>
+                            <!-- More character buttons -->
+                        </div>
+                    </div>
+                    
+                    <!-- Writing Area -->
+                    <div class="grid md:grid-cols-2 gap-8 mb-8">
+                        <div>
+                            <h2 class="text-2xl font-bold text-gray-800 mb-4 flex items-center">
+                                <i class="fas fa-pen-fancy mr-3"></i>
+                                Animasi Penulisan
+                            </h2>
+                            <div class="bg-gray-100 rounded-lg p-6 flex justify-center items-center" style="height: 300px;">
+                                <canvas id="writing-canvas" width="250" height="250" class="border border-gray-300 bg-white"></canvas>
+                            </div>
+                            <div class="mt-4 flex justify-center space-x-4">
+                                <button id="play-animation" class="px-4 py-2 bg-red-600 hover:bg-red-700 text-white rounded-lg">
+                                    <i class="fas fa-play mr-2"></i>Putar
+                                </button>
+                                <button id="reset-animation" class="px-4 py-2 bg-gray-200 hover:bg-gray-300 rounded-lg">
+                                    <i class="fas fa-redo mr-2"></i>Ulangi
+                                </button>
+                            </div>
+                        </div>
+                        <div>
+                            <h2 class="text-2xl font-bold text-gray-800 mb-4 flex items-center">
+                                <i class="fas fa-pencil-alt mr-3"></i>
+                                Coba Sendiri
+                            </h2>
+                            <div class="bg-gray-100 rounded-lg p-6 flex justify-center items-center" style="height: 300px;">
+                                <canvas id="practice-canvas" width="250" height="250" class="border border-gray-300 bg-white"></canvas>
+                            </div>
+                            <div class="mt-4 flex justify-center space-x-4">
+                                <button id="clear-practice" class="px-4 py-2 bg-gray-200 hover:bg-gray-300 rounded-lg">
+                                    <i class="fas fa-eraser mr-2"></i>Hapus
+                                </button>
+                                <button id="check-practice" class="px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white rounded-lg">
+                                    <i class="fas fa-check mr-2"></i>Periksa
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Stroke Order Guide -->
+                    <div class="bg-yellow-50 rounded-lg p-6 border border-yellow-200">
+                        <h2 class="text-2xl font-bold text-yellow-700 mb-4 flex items-center">
+                            <i class="fas fa-list-ol mr-3"></i>
+                            Panduan Urutan Guratan
+                        </h2>
+                        <div class="grid md:grid-cols-3 gap-4" id="stroke-guide">
+                            <!-- Will be filled by JavaScript -->
+                            <div class="text-center">
+                                <div class="bg-white p-3 rounded-lg border border-gray-200 mb-2">
+                                    <span class="text-4xl">1</span>
+                                </div>
+                                <p class="text-sm text-gray-700">Mulai dari sini</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Practice Words -->
+                    <div class="mt-8">
+                        <h2 class="text-2xl font-bold text-gray-800 mb-4">Latihan Kata</h2>
+                        <p class="text-gray-700 mb-4">Praktikkan menulis kata-kata katakana berikut:</p>
+                        <div class="grid md:grid-cols-3 gap-4">
+                            <div class="bg-white p-4 rounded-lg border border-gray-200 hover:border-red-300 transition">
+                                <h3 class="font-semibold text-lg mb-2">コーヒー</h3>
+                                <p class="text-gray-600 mb-3">kōhī (kopi)</p>
+                                <button class="practice-word px-3 py-1 bg-gray-100 hover:bg-gray-200 rounded text-sm" data-word="コーヒー">
+                                    <i class="fas fa-pen mr-1"></i>Latihan
+                                </button>
+                            </div>
+                            <!-- More practice words -->
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </main>
+    </div>
+
+    <!-- Footer same as template -->
+
+    <!-- Custom JS for Writing Practice -->
+    <script>
+        // Character selection
+        document.querySelectorAll('.char-selector').forEach(btn => {
+            btn.addEventListener('click', function() {
+                const char = this.getAttribute('data-char');
+                loadCharacter(char);
+            });
+        });
+        
+        // Word practice
+        document.querySelectorAll('.practice-word').forEach(btn => {
+            btn.addEventListener('click', function() {
+                const word = this.getAttribute('data-word');
+                alert(`Akan memuat latihan untuk kata: ${word}`);
+                // In actual implementation, this would load the word for practice
+            });
+        });
+        
+        // Load character function
+        function loadCharacter(char) {
+            // In actual implementation, this would:
+            // 1. Load the stroke order data for the character
+            // 2. Set up the animation canvas
+            // 3. Update the stroke guide
+            console.log(`Loading character: ${char}`);
+            
+            // Example stroke guide update
+            const strokeGuide = document.getElementById('stroke-guide');
+            strokeGuide.innerHTML = `
+                <div class="text-center">
+                    <div class="bg-white p-3 rounded-lg border border-gray-200 mb-2">
+                        <span class="text-4xl">1</span>
+                    </div>
+                    <p class="text-sm text-gray-700">Guratan pertama</p>
+                </div>
+                <!-- More stroke steps would be added dynamically -->
+            `;
+        }
+        
+        // Canvas drawing functionality would be implemented here
+        // This is just a placeholder for the actual implementation
+        document.getElementById('play-animation').addEventListener('click', function() {
+            alert('Animasi penulisan akan diputar');
+        });
+        
+        document.getElementById('reset-animation').addEventListener('click', function() {
+            alert('Animasi direset');
+        });
+        
+        document.getElementById('clear-practice').addEventListener('click', function() {
+            alert('Area latihan dibersihkan');
+        });
+        
+        document.getElementById('check-practice').addEventListener('click', function() {
+            alert('Hasil latihan diperiksa');
+        });
+    </script>
+</body>
+</html>

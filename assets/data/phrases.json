@@ -1,0 +1,352 @@
+[
+    {
+        "phrase": "はじめまして",
+        "pronunciation": "Hajimemashite",
+        "meaning": "Salam kenal (pertama kali bertemu)",
+        "category": "meeting",
+        "level": "formal"
+    },
+    {
+        "phrase": "よろしくお願いします",
+        "pronunciation": "Yoroshiku onegaishimasu",
+        "meaning": "Mohon bimbingannya (setelah perkenalan)",
+        "category": "meeting",
+        "level": "formal"
+    },
+    {
+        "phrase": "さようなら<br><span class=\"text-gray-500\">じゃあね</span>",
+        "pronunciation": "Sayounara<br><span class=\"text-gray-500\">Jaa ne</span>",
+        "meaning": "Selamat tinggal (formal)<br>Sampai jumpa (kasual)",
+        "category": "farewell",
+        "level": "both"
+    },
+    {
+        "phrase": "おはようございます<br><span class=\"text-gray-500\">おはよう</span>",
+        "pronunciation": "Ohayou gozaimasu<br><span class=\"text-gray-500\">Ohayou</span>",
+        "meaning": "Selamat pagi (formal)<br>Selamat pagi (kasual)",
+        "category": "time",
+        "level": "both"
+    },
+    {
+        "phrase": "こんにちは",
+        "pronunciation": "Konnichiwa",
+        "meaning": "Selamat siang",
+        "category": "time",
+        "level": "both"
+    },
+    {
+        "phrase": "こんばんは",
+        "pronunciation": "Konbanwa",
+        "meaning": "Selamat malam",
+        "category": "time",
+        "level": "both"
+    },
+    {
+        "phrase": "おやすみなさい<br><span class=\"text-gray-500\">おやすみ</span>",
+        "pronunciation": "Oyasuminasai<br><span class=\"text-gray-500\">Oyasumi</span>",
+        "meaning": "Selamat tidur (formal)<br>Selamat tidur (kasual)",
+        "category": "time",
+        "level": "both"
+    },
+    {
+        "phrase": "いただきます",
+        "pronunciation": "Itadakimasu",
+        "meaning": "Ucapan sebelum makan",
+        "category": "situational",
+        "level": "both"
+    },
+    {
+        "phrase": "ごちそうさまでした",
+        "pronunciation": "Gochisousama deshita",
+        "meaning": "Ucapan setelah makan",
+        "category": "situational",
+        "level": "both"
+    },
+    {
+        "phrase": "いってきます",
+        "pronunciation": "Ittekimasu",
+        "meaning": "Saya pergi dulu (keluar rumah)",
+        "category": "situational",
+        "level": "both"
+    },
+    {
+        "phrase": "いってらっしゃい",
+        "pronunciation": "Itterasshai",
+        "meaning": "Hati-hati di jalan (untuk yang pergi)",
+        "category": "situational",
+        "level": "both"
+    },
+    {
+        "phrase": "ただいま",
+        "pronunciation": "Tadaima",
+        "meaning": "Saya pulang",
+        "category": "situational",
+        "level": "both"
+    },
+    {
+        "phrase": "おかえりなさい<br><span class=\"text-gray-500\">おかえり</span>",
+        "pronunciation": "Okaerinasai<br><span class=\"text-gray-500\">Okaeri</span>",
+        "meaning": "Selamat datang pulang (formal)<br>Selamat datang pulang (kasual)",
+        "category": "situational",
+        "level": "both"
+    },
+    {
+        "phrase": "おめでとうございます",
+        "pronunciation": "Omedetou gozaimasu",
+        "meaning": "Selamat (formal)",
+        "category": "situational",
+        "level": "formal"
+    },
+    {
+        "phrase": "おめでとう",
+        "pronunciation": "Omedetou",
+        "meaning": "Selamat (kasual)",
+        "category": "situational",
+        "level": "casual"
+    },
+    {
+        "phrase": "お元気ですか？",
+        "pronunciation": "Ogenki desu ka?",
+        "meaning": "Apa kabar? (formal)",
+        "category": "meeting",
+        "level": "formal"
+    },
+    {
+        "phrase": "元気？",
+        "pronunciation": "Genki?",
+        "meaning": "Apa kabar? (kasual)",
+        "category": "meeting",
+        "level": "casual"
+    },
+    {
+        "phrase": "お久しぶりです",
+        "pronunciation": "Ohisashiburi desu",
+        "meaning": "Lama tidak berjumpa (formal)",
+        "category": "meeting",
+        "level": "formal"
+    },
+    {
+        "phrase": "久しぶり",
+        "pronunciation": "Hisashiburi",
+        "meaning": "Lama tidak berjumpa (kasual)",
+        "category": "meeting",
+        "level": "casual"
+    },
+    {
+        "phrase": "ご無沙汰しております",
+        "pronunciation": "Gobusata shite orimasu",
+        "meaning": "Lama tidak berjumpa (sangat formal)",
+        "category": "meeting",
+        "level": "formal"
+    },
+    {
+        "phrase": "どうもありがとうございます",
+        "pronunciation": "Doumo arigatou gozaimasu",
+        "meaning": "Terima kasih banyak (sangat sopan)",
+        "category": "gratitude",
+        "level": "formal"
+    },
+    {
+        "phrase": "ありがとう",
+        "pronunciation": "Arigatou",
+        "meaning": "Terima kasih (kasual)",
+        "category": "gratitude",
+        "level": "casual"
+    },
+    {
+        "phrase": "すみません",
+        "pronunciation": "Sumimasen",
+        "meaning": "Maaf / Permisi (formal)",
+        "category": "apology",
+        "level": "formal"
+    },
+    {
+        "phrase": "ごめんなさい<br><span class=\"text-gray-500\">ごめん</span>",
+        "pronunciation": "Gomen nasai<br><span class=\"text-gray-500\">Gomen</span>",
+        "meaning": "Maaf (formal)<br>Maaf (kasual)",
+        "category": "apology",
+        "level": "both"
+    },
+    {
+        "phrase": "いらっしゃいませ",
+        "pronunciation": "Irasshaimase",
+        "meaning": "Selamat datang (digunakan oleh staf toko/restoran)",
+        "category": "situational",
+        "level": "formal"
+    },
+    {
+        "phrase": "お疲れ様です",
+        "pronunciation": "Otsukaresama desu",
+        "meaning": "Terima kasih atas kerja kerasnya / Salam kerja",
+        "category": "situational",
+        "level": "formal"
+    },
+    {
+        "phrase": "ごめんください",
+        "pronunciation": "Gomen kudasai",
+        "meaning": "Permisi (saat bertamu ke rumah orang)",
+        "category": "situational",
+        "level": "formal"
+    },
+    {
+        "phrase": "どうぞよろしく",
+        "pronunciation": "Douzo yoroshiku",
+        "meaning": "Senang berkenalan (lebih santai)",
+        "category": "meeting",
+        "level": "casual"
+    },
+    {
+        "phrase": "またね",
+        "pronunciation": "Mata ne",
+        "meaning": "Sampai jumpa (kasual)",
+        "category": "farewell",
+        "level": "casual"
+    },
+    {
+        "phrase": "じゃあまた",
+        "pronunciation": "Jaa mata",
+        "meaning": "Sampai jumpa lagi (kasual)",
+        "category": "farewell",
+        "level": "casual"
+    },
+    {
+        "phrase": "どういたしまして",
+        "pronunciation": "Dou itashimashite",
+        "meaning": "Sama-sama / Dengan senang hati",
+        "category": "gratitude",
+        "level": "both"
+    },
+    {
+        "phrase": "お世話になります",
+        "pronunciation": "Osewa ni narimasu",
+        "meaning": "Terima kasih atas bantuannya (formal)",
+        "category": "situational",
+        "level": "formal"
+    },
+    {
+        "phrase": "失礼します",
+        "pronunciation": "Shitsurei shimasu",
+        "meaning": "Permisi (saat memasuki ruangan, atau pamit secara sopan)",
+        "category": "situational",
+        "level": "formal"
+    },
+    {
+        "phrase": "お邪魔します",
+        "pronunciation": "Ojama shimasu",
+        "meaning": "Permisi (saat memasuki rumah orang)",
+        "category": "situational",
+        "level": "formal"
+    },
+    {
+        "phrase": "お大事に",
+        "pronunciation": "Odaiji ni",
+        "meaning": "Semoga lekas sembuh",
+        "category": "situational",
+        "level": "both"
+    },
+    {
+        "phrase": "お気をつけて",
+        "pronunciation": "Oki wo tsukete",
+        "meaning": "Hati-hati ya",
+        "category": "farewell",
+        "level": "both"
+    },
+    {
+        "phrase": "いらっしゃい",
+        "pronunciation": "Irasshai",
+        "meaning": "Selamat datang (kasual)",
+        "category": "situational",
+        "level": "casual"
+    },
+    {
+        "phrase": "よくいらっしゃいました",
+        "pronunciation": "Yoku irasshaimashita",
+        "meaning": "Selamat datang (sangat sopan)",
+        "category": "situational",
+        "level": "formal"
+    },
+    {
+        "phrase": "こちらこそ",
+        "pronunciation": "Kochira koso",
+        "meaning": "Sama-sama / Saya juga",
+        "category": "conversation",
+        "level": "both"
+    },
+    {
+        "phrase": "どうぞ",
+        "pronunciation": "Douzo",
+        "meaning": "Silakan",
+        "category": "conversation",
+        "level": "both"
+    },
+    {
+        "phrase": "どうしたの？",
+        "pronunciation": "Doushita no?",
+        "meaning": "Ada apa? (kasual)",
+        "category": "conversation",
+        "level": "casual"
+    },
+    {
+        "phrase": "大丈夫？",
+        "pronunciation": "Daijoubu?",
+        "meaning": "Kamu baik-baik saja?",
+        "category": "conversation",
+        "level": "casual"
+    },
+    {
+        "phrase": "大丈夫です",
+        "pronunciation": "Daijoubu desu",
+        "meaning": "Saya baik-baik saja",
+        "category": "conversation",
+        "level": "formal"
+    },
+    {
+        "phrase": "ごめんね",
+        "pronunciation": "Gomen ne",
+        "meaning": "Maaf ya (lebih lembut/kasual)",
+        "category": "apology",
+        "level": "casual"
+    },
+    {
+        "phrase": "おっしゃる通りです",
+        "pronunciation": "Ossharu toori desu",
+        "meaning": "Benar seperti yang Anda katakan (sangat sopan)",
+        "category": "conversation",
+        "level": "formal"
+    },
+    {
+        "phrase": "はい、そうです",
+        "pronunciation": "Hai, sou desu",
+        "meaning": "Ya, betul",
+        "category": "conversation",
+        "level": "both"
+    },
+    {
+        "phrase": "いいえ、違います",
+        "pronunciation": "Iie, chigaimasu",
+        "meaning": "Tidak, salah",
+        "category": "conversation",
+        "level": "both"
+    },
+    {
+        "phrase": "気をつけてね",
+        "pronunciation": "Ki wo tsukete ne",
+        "meaning": "Hati-hati ya (kasual)",
+        "category": "farewell",
+        "level": "casual"
+    },
+    {
+        "phrase": "また会いましょう",
+        "pronunciation": "Mata aimashou",
+        "meaning": "Sampai bertemu lagi",
+        "category": "farewell",
+        "level": "formal"
+    },
+    {
+        "phrase": "お名前は何ですか？",
+        "pronunciation": "Onamae wa nan desu ka?",
+        "meaning": "Siapa nama Anda?",
+        "category": "meeting",
+        "level": "formal"
+    }
+]
