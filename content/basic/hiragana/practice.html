@@ -20,6 +20,28 @@
     <!-- Custom CSS -->
     <link rel="stylesheet" href="/assets/css/main.css">
     <link rel="stylesheet" href="/assets/css/animations.css">
+    <style>
+        .stroke-guide {
+            width: 100%;
+            max-width: 300px;
+            height: auto;
+            opacity: 0.7;
+            transition: opacity 0.3s;
+        }
+        
+        .stroke-guide:hover {
+            opacity: 1;
+        }
+        
+        .practice-paper {
+            background-image: linear-gradient(to bottom, #f9fafb 1px, transparent 1px);
+            background-size: 100% 40px;
+            background-color: white;
+            border: 1px solid #e5e7eb;
+            height: 100px;
+            padding: 20px;
+        }
+    </style>
 </head>
 <body class="bg-gray-50 font-sans text-gray-800 flex flex-col min-h-screen">
     <!-- Header -->
@@ -75,7 +97,7 @@
                 <div class="mb-6">
                     <h3 class="font-bold text-lg mb-3 text-red-600 border-b pb-2">Level Belajar</h3>
                     <ul class="space-y-2">
-                        <li><a href="/content/basic/" class="hover:text-red-600 transition">Dasar-dasar</a></li>
+                        <li><a href="/content/basic/" class="hover:text-red-600 transition font-semibold text-red-600">Dasar-dasar</a></li>
                         <li><a href="/content/n5/" class="hover:text-red-600 transition">JLPT N5</a></li>
                         <li><a href="/content/n4/" class="hover:text-red-600 transition">JLPT N4</a></li>
                         <li><a href="/content/n3/" class="hover:text-red-600 transition">JLPT N3</a></li>
@@ -154,18 +176,26 @@
                                     Karakter Selanjutnya <i class="fas fa-arrow-right ml-1"></i>
                                 </button>
                             </div>
-                            <div class="bg-white border-2 border-gray-300 rounded-lg h-64 mb-3 flex items-center justify-center">
-                                <canvas id="writing-canvas" class="border border-gray-200 bg-white" width="300" height="250"></canvas>
+                            
+                            <div class="mb-4 text-center">
+                                <img id="stroke-guide" class="stroke-guide mx-auto" src="/nihongopedia.id/assets/images/hiragana/strokes/あ.jpg" alt="Panduan goresan">
                             </div>
-                            <div class="flex justify-between">
-                                <button id="clear-canvas" class="bg-gray-300 hover:bg-gray-400 text-gray-800 px-3 py-1 rounded text-sm">
-                                    <i class="fas fa-eraser mr-1"></i> Hapus
-                                </button>
-                                <div class="text-sm text-gray-600">
-                                    <span id="char-romaji">a</span> - <span id="char-strokes">3 goresan</span>
+                            
+                            <div class="bg-white border-2 border-gray-300 rounded-lg mb-3">
+                                <div class="practice-paper">
+                                    <p class="text-sm text-gray-500 mb-2">Latihan menulis di buku tulis Anda:</p>
+                                    <div class="text-center">
+                                        <p class="text-lg"><span id="char-romaji">a</span> - <span id="char-strokes">3 goresan</span></p>
+                                    </div>
                                 </div>
-                                <button id="show-stroke" class="bg-blue-600 hover:bg-blue-700 text-white px-3 py-1 rounded text-sm">
-                                    <i class="fas fa-pen-fancy mr-1"></i> Lihat Urutan Goresan
+                            </div>
+                            
+                            <div class="flex justify-between items-center">
+                                <div class="text-sm text-gray-600">
+                                    Salin karakter di atas ke buku tulis
+                                </div>
+                                <button id="toggle-stroke-guide" class="bg-blue-600 hover:bg-blue-700 text-white px-3 py-1 rounded text-sm">
+                                    <i class="fas fa-eye mr-1"></i> Sembunyikan Panduan
                                 </button>
                             </div>
                         </div>
@@ -180,6 +210,7 @@
                                         <p>• Ikuti urutan goresan yang benar</p>
                                         <p>• Perhatikan arah goresan (biasanya dari kiri ke kanan, atas ke bawah)</p>
                                         <p>• Latihan setiap hari untuk memperbaiki bentuk karakter</p>
+                                        <p>• Gunakan kertas bergaris untuk membantu konsistensi ukuran</p>
                                     </div>
                                 </div>
                             </div>
@@ -197,9 +228,6 @@
                                     </button>
                                     <button class="practice-mode bg-white border border-red-600 text-red-600 px-3 py-1 rounded text-sm" data-mode="hiragana-to-romaji">
                                         Hiragana → Romaji
-                                    </button>
-                                    <button class="practice-mode bg-white border border-red-600 text-red-600 px-3 py-1 rounded text-sm" data-mode="audio-to-hiragana">
-                                        Audio → Hiragana
                                     </button>
                                 </div>
                             </div>
@@ -227,14 +255,14 @@
                         <div class="bg-blue-50 border-l-4 border-blue-400 p-4">
                             <div class="flex">
                                 <div class="flex-shrink-0">
-                                    <i class="fas fa-volume-up text-blue-500 text-xl"></i>
+                                    <i class="fas fa-book text-blue-500 text-xl"></i>
                                 </div>
                                 <div class="ml-3">
-                                    <h3 class="text-sm font-medium text-blue-800">Tips Pengucapan</h3>
+                                    <h3 class="text-sm font-medium text-blue-800">Tips Belajar</h3>
                                     <div class="mt-2 text-sm text-blue-700">
-                                        <p>• Dengarkan pengucapan yang benar untuk setiap karakter</p>
-                                        <p>• Perhatikan perbedaan suara seperti し (shi) vs ち (chi)</p>
-                                        <p>• Latihan pengucapan sambil menulis karakter</p>
+                                        <p>• Fokus pada beberapa karakter setiap hari</p>
+                                        <p>• Gunakan flashcards untuk latihan pengenalan</p>
+                                        <p>• Gabungkan membaca dan menulis untuk hasil terbaik</p>
                                     </div>
                                 </div>
                             </div>
@@ -250,11 +278,11 @@
                         <div class="ml-3">
                             <h3 class="text-sm font-medium text-green-800">Progres Belajar</h3>
                             <div class="mt-2 text-sm text-green-700">
-                                <p>Anda telah menguasai <strong>12 dari 46</strong> karakter hiragana dasar</p>
+                                <p>jika latihan ini selesai, maka anda telah menguasai <strong>46 dari 46</strong> karakter hiragana dasar</p>
                                 <div class="w-full bg-gray-200 rounded-full h-2.5 mt-2">
-                                    <div class="bg-green-600 h-2.5 rounded-full" style="width: 26%"></div>
+                                    <div class="bg-green-600 h-2.5 rounded-full" style="width: 100%"></div>
                                 </div>
-                                <p class="mt-2">Lanjutkan latihan untuk menyelesaikan semua karakter!</p>
+                                <p class="mt-2">Tetap menyerah dan seringlah mengeluh, karena masih ada katakana dan kanji!</p>
                             </div>
                         </div>
                     </div>
@@ -263,9 +291,6 @@
                 <div class="flex justify-between">
                     <a href="/content/basic/hiragana/chart.html" class="bg-gray-200 hover:bg-gray-300 text-gray-800 font-medium py-2 px-4 rounded inline-flex items-center">
                         <i class="fas fa-arrow-left mr-2"></i> Kembali ke Tabel Hiragana
-                    </a>
-                    <a href="/practice/flashcards/hiragana.html" class="bg-red-600 hover:bg-red-700 text-white font-medium py-2 px-4 rounded inline-flex items-center">
-                        Lanjut ke Flashcards <i class="fas fa-arrow-right ml-2"></i>
                     </a>
                 </div>
             </div>
@@ -333,67 +358,6 @@
             menu.classList.toggle('hidden');
         });
 
-        // Hiragana writing practice
-        const canvas = document.getElementById('writing-canvas');
-        const ctx = canvas.getContext('2d');
-        let isDrawing = false;
-        let lastX = 0;
-        let lastY = 0;
-        
-        // Set canvas style
-        ctx.strokeStyle = '#000';
-        ctx.lineWidth = 3;
-        ctx.lineCap = 'round';
-        
-        // Drawing functions
-        canvas.addEventListener('mousedown', startDrawing);
-        canvas.addEventListener('touchstart', startDrawing);
-        
-        canvas.addEventListener('mousemove', draw);
-        canvas.addEventListener('touchmove', draw);
-        
-        canvas.addEventListener('mouseup', stopDrawing);
-        canvas.addEventListener('touchend', stopDrawing);
-        canvas.addEventListener('mouseout', stopDrawing);
-        
-        function startDrawing(e) {
-            isDrawing = true;
-            const pos = getPosition(e);
-            lastX = pos.x;
-            lastY = pos.y;
-        }
-        
-        function draw(e) {
-            if (!isDrawing) return;
-            
-            const pos = getPosition(e);
-            
-            ctx.beginPath();
-            ctx.moveTo(lastX, lastY);
-            ctx.lineTo(pos.x, pos.y);
-            ctx.stroke();
-            
-            lastX = pos.x;
-            lastY = pos.y;
-        }
-        
-        function stopDrawing() {
-            isDrawing = false;
-        }
-        
-        function getPosition(e) {
-            const rect = canvas.getBoundingClientRect();
-            return {
-                x: (e.clientX || e.touches[0].clientX) - rect.left,
-                y: (e.clientY || e.touches[0].clientY) - rect.top
-            };
-        }
-        
-        // Clear canvas
-        document.getElementById('clear-canvas').addEventListener('click', function() {
-            ctx.clearRect(0, 0, canvas.width, canvas.height);
-        });
-        
         // Character set for practice
         const hiraganaChars = [
             { char: 'あ', romaji: 'a', strokes: 3 },
@@ -405,7 +369,43 @@
             { char: 'ま', romaji: 'ma', strokes: 3 },
             { char: 'や', romaji: 'ya', strokes: 3 },
             { char: 'ら', romaji: 'ra', strokes: 2 },
-            { char: 'わ', romaji: 'wa', strokes: 2 }
+            { char: 'わ', romaji: 'wa', strokes: 2 },
+            { char: 'い', romaji: 'i', strokes: 2 },
+            { char: 'き', romaji: 'ki', strokes: 3 },
+            { char: 'し', romaji: 'shi', strokes: 3 },
+            { char: 'ち', romaji: 'chi', strokes: 3 },
+            { char: 'に', romaji: 'ni', strokes: 3 },
+            { char: 'ひ', romaji: 'hi', strokes: 2 },
+            { char: 'み', romaji: 'mi', strokes: 3 },
+            { char: 'り', romaji: 'ri', strokes: 2 },
+            { char: 'う', romaji: 'u', strokes: 2 },
+            { char: 'く', romaji: 'ku', strokes: 2 },
+            { char: 'す', romaji: 'su', strokes: 2 },
+            { char: 'つ', romaji: 'tsu', strokes: 2 },
+            { char: 'ぬ', romaji: 'nu', strokes: 2 },
+            { char: 'ふ', romaji: 'fu', strokes: 4 },
+            { char: 'む', romaji: 'mu', strokes: 3 },
+            { char: 'ゆ', romaji: 'yu', strokes: 2 },
+            { char: 'る', romaji: 'ru', strokes: 1 },
+            { char: 'え', romaji: 'e', strokes: 2 },
+            { char: 'け', romaji: 'ke', strokes: 3 },
+            { char: 'せ', romaji: 'se', strokes: 3 },
+            { char: 'て', romaji: 'te', strokes: 2 },
+            { char: 'ね', romaji: 'ne', strokes: 3 },
+            { char: 'へ', romaji: 'he', strokes: 1 },
+            { char: 'め', romaji: 'me', strokes: 2 },
+            { char: 'れ', romaji: 're', strokes: 2 },
+            { char: 'お', romaji: 'o', strokes: 3 },
+            { char: 'こ', romaji: 'ko', strokes: 2 },
+            { char: 'そ', romaji: 'so', strokes: 3 },
+            { char: 'と', romaji: 'to', strokes: 2 },
+            { char: 'の', romaji: 'no', strokes: 2 },
+            { char: 'ほ', romaji: 'ho', strokes: 4 },
+            { char: 'も', romaji: 'mo', strokes: 3 },
+            { char: 'よ', romaji: 'yo', strokes: 2 },
+            { char: 'ろ', romaji: 'ro', strokes: 1 },
+            { char: 'を', romaji: 'wo', strokes: 3 },
+            { char: 'ん', romaji: 'n', strokes: 1 }
         ];
         
         let currentCharIndex = 0;
@@ -416,30 +416,155 @@
             document.getElementById('current-char').textContent = char.char;
             document.getElementById('char-romaji').textContent = char.romaji;
             document.getElementById('char-strokes').textContent = `${char.strokes} goresan`;
+            
+            // Update stroke guide image
+            document.getElementById('stroke-guide').src = `/nihongopedia.id/assets/images/hiragana/strokes/${char.char}.jpg`;
         }
         
         // Next character button
         document.getElementById('next-char').addEventListener('click', function() {
             currentCharIndex = (currentCharIndex + 1) % hiraganaChars.length;
             updateCharacter();
-            ctx.clearRect(0, 0, canvas.width, canvas.height);
         });
         
-        // Show stroke order button
-        document.getElementById('show-stroke').addEventListener('click', function() {
-            const char = hiraganaChars[currentCharIndex].char;
-            Swal.fire({
-                title: `Urutan Goresan ${char}`,
-                imageUrl: `/assets/images/hiragana/strokes/${char}.png`,
-                imageWidth: 200,
-                imageHeight: 200,
-                imageAlt: `Urutan goresan ${char}`,
-                confirmButtonText: 'Mengerti'
-            });
+        // Toggle stroke guide
+        document.getElementById('toggle-stroke-guide').addEventListener('click', function() {
+            const guide = document.getElementById('stroke-guide');
+            const isHidden = guide.style.opacity === '0';
+            
+            if (isHidden) {
+                guide.style.opacity = '0.7';
+                this.innerHTML = '<i class="fas fa-eye mr-1"></i> Sembunyikan Panduan';
+            } else {
+                guide.style.opacity = '0';
+                this.innerHTML = '<i class="fas fa-eye-slash mr-1"></i> Tampilkan Panduan';
+            }
         });
         
         // Initialize
         updateCharacter();
+        
+        // Quiz functionality
+        const quizModes = {
+            'romaji-to-hiragana': {
+                question: (char) => char.romaji,
+                options: (chars, correctIndex) => {
+                    // Get 4 random characters including the correct one
+                    const options = [chars[correctIndex].char];
+                    while (options.length < 4) {
+                        const randomIndex = Math.floor(Math.random() * chars.length);
+                        if (!options.includes(chars[randomIndex].char)) {
+                            options.push(chars[randomIndex].char);
+                        }
+                    }
+                    return options.sort(() => Math.random() - 0.5);
+                }
+            },
+            'hiragana-to-romaji': {
+                question: (char) => char.char,
+                options: (chars, correctIndex) => {
+                    const options = [chars[correctIndex].romaji];
+                    while (options.length < 4) {
+                        const randomIndex = Math.floor(Math.random() * chars.length);
+                        if (!options.includes(chars[randomIndex].romaji)) {
+                            options.push(chars[randomIndex].romaji);
+                        }
+                    }
+                    return options.sort(() => Math.random() - 0.5);
+                }
+            }
+        };
+        
+        let currentMode = 'romaji-to-hiragana';
+        let score = 0;
+        let totalQuestions = 0;
+        
+        // Set up quiz mode buttons
+        document.querySelectorAll('.practice-mode').forEach(button => {
+            button.addEventListener('click', function() {
+                currentMode = this.dataset.mode;
+                
+                // Update active button styling
+                document.querySelectorAll('.practice-mode').forEach(btn => {
+                    btn.classList.remove('bg-red-600', 'text-white');
+                    btn.classList.add('bg-white', 'border', 'border-red-600', 'text-red-600');
+                });
+                
+                this.classList.add('bg-red-600', 'text-white');
+                this.classList.remove('bg-white', 'border', 'border-red-600', 'text-red-600');
+                
+                // Generate new question
+                generateQuestion();
+            });
+        });
+        
+        // Generate a new quiz question
+        function generateQuestion() {
+            const correctIndex = Math.floor(Math.random() * hiraganaChars.length);
+            const currentChar = hiraganaChars[correctIndex];
+            const mode = quizModes[currentMode];
+            
+            document.getElementById('question').textContent = mode.question(currentChar);
+            
+            const options = mode.options(hiraganaChars, correctIndex);
+            const optionButtons = document.querySelectorAll('.option-btn');
+            
+            optionButtons.forEach((button, index) => {
+                button.textContent = options[index];
+                button.onclick = function() {
+                    const isCorrect = options[index] === (currentMode === 'romaji-to-hiragana' ? currentChar.char : currentChar.romaji);
+                    
+                    if (isCorrect) {
+                        score++;
+                        this.classList.add('bg-green-500', 'text-white');
+                        Swal.fire({
+                            icon: 'success',
+                            title: 'Benar!',
+                            text: `${currentChar.char} dibaca "${currentChar.romaji}"`,
+                            timer: 1500,
+                            showConfirmButton: false
+                        });
+                    } else {
+                        this.classList.add('bg-red-500', 'text-white');
+                        Swal.fire({
+                            icon: 'error',
+                            title: 'Salah!',
+                            text: `Jawaban benar: ${currentMode === 'romaji-to-hiragana' ? currentChar.char : currentChar.romaji}`,
+                            timer: 1500,
+                            showConfirmButton: false
+                        });
+                    }
+                    
+                    totalQuestions++;
+                    updateScore();
+                    
+                    // Disable all buttons after answer
+                    optionButtons.forEach(btn => {
+                        btn.disabled = true;
+                    });
+                };
+            });
+        }
+        
+        // Update score display
+        function updateScore() {
+            document.querySelector('#score span:first-child').textContent = score;
+            document.querySelector('#score span:last-child').textContent = totalQuestions;
+        }
+        
+        // Next question button
+        document.getElementById('next-question').addEventListener('click', function() {
+            // Reset option buttons
+            document.querySelectorAll('.option-btn').forEach(btn => {
+                btn.classList.remove('bg-green-500', 'bg-red-500', 'text-white');
+                btn.disabled = false;
+            });
+            
+            generateQuestion();
+        });
+        
+        // Initialize quiz
+        generateQuestion();
     </script>
 </body>
 </html>
