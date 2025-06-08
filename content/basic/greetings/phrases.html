@@ -20,6 +20,22 @@
     <!-- Custom CSS -->
     <link rel="stylesheet" href="/assets/css/main.css" />
     <link rel="stylesheet" href="/assets/css/animations.css" />
+    
+    <style>
+        /* Custom styles for responsive table */
+        .phrase-card {
+            transition: all 0.3s ease;
+        }
+        .phrase-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        @media (max-width: 767px) {
+            .priority-low {
+                display: none;
+            }
+        }
+    </style>
 </head>
 <body class="bg-gray-50 font-sans text-gray-800 flex flex-col min-h-screen">
     <!-- Header -->
@@ -49,7 +65,6 @@
                 <a href="/resources/" class="hover:text-red-200 transition">Sumber Belajar</a>
                 <a href="/donasi" class="hidden md:flex items-center text-white hover:text-red-200 transition text-sm">Donasi</a>
                 <a href="https://whatsapp.com/channel/0029Vag1xu13AzNLMBd6fi0a" target="_blank" class="hidden md:flex items-center text-white hover:text-red-200 transition text-sm">Channel WhatsApp</a>
-                </a>
             </nav>
         </div>
         
@@ -192,33 +207,39 @@
 
             <!-- Phrases Section -->
             <section class="bg-white rounded-lg shadow-md overflow-hidden mb-8">
-                <div class="overflow-x-auto">
-            <table class="min-w-full divide-y divide-gray-200 table-fixed">
-                <thead class="bg-gray-50">
-                    <tr>
-                        <th scope="col" class="w-1/5 px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Frasa</th>
-                        <th scope="col" class="w-1/5 px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Pelafalan</th>
-                        <th scope="col" class="w-2/5 px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Arti</th>
-                        <th scope="col" class="w-1/10 px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Kategori</th>
-                        <th scope="col" class="w-1/10 px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Level</th>
-                    </tr>
-                </thead>
-                <tbody class="bg-white divide-y divide-gray-200" id="phrases-table">
-                    <!-- Phrases will be loaded here from JSON -->
-                </tbody>
-            </table>
+                <!-- Desktop Table -->
+                <div class="hidden md:block overflow-x-auto">
+                    <table class="min-w-full divide-y divide-gray-200">
+                        <thead class="bg-gray-50">
+                            <tr>
+                                <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Frasa</th>
+                                <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Pelafalan</th>
+                                <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Arti</th>
+                                <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Kategori</th>
+                                <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Level</th>
+                            </tr>
+                        </thead>
+                        <tbody class="bg-white divide-y divide-gray-200" id="phrases-table">
+                            <!-- Data akan diisi oleh JavaScript -->
+                        </tbody>
+                    </table>
+                </div>
+                
+                <!-- Mobile Cards -->
+                <div class="md:hidden space-y-4 p-4" id="mobile-phrases-container">
+                    <!-- Kartu akan diisi oleh JavaScript -->
                 </div>
                 
                 <!-- Pagination -->
                 <div class="bg-white px-4 py-3 flex items-center justify-between border-t border-gray-200 sm:px-6">
                     <div class="flex-1 flex justify-between sm:hidden">
-                        <a href="#" class="relative inline-flex items-center px-4 py-2 border border-gray-300 text-sm font-medium rounded-md text-gray-700 bg-white hover:bg-gray-50"> Sebelumnya </a>
-                        <a href="#" class="ml-3 relative inline-flex items-center px-4 py-2 border border-gray-300 text-sm font-medium rounded-md text-gray-700 bg-white hover:bg-gray-50"> Selanjutnya </a>
+                        <a href="#" class="relative inline-flex items-center px-4 py-2 border border-gray-300 text-sm font-medium rounded-md text-gray-700 bg-white hover:bg-gray-50" id="mobile-prev"> Sebelumnya </a>
+                        <a href="#" class="ml-3 relative inline-flex items-center px-4 py-2 border border-gray-300 text-sm font-medium rounded-md text-gray-700 bg-white hover:bg-gray-50" id="mobile-next"> Selanjutnya </a>
                     </div>
                     <div class="hidden sm:flex-1 sm:flex sm:items-center sm:justify-between">
                         <div>
                             <p class="text-sm text-gray-700">
-                                Menampilkan <span class="font-medium">1</span> sampai <span class="font-medium">10</span> dari <span class="font-medium" id="total-phrases">0</span> frasa
+                                Menampilkan <span class="font-medium" id="display-start">1</span> sampai <span class="font-medium" id="display-end">10</span> dari <span class="font-medium" id="total-phrases">0</span> frasa
                             </p>
                         </div>
                         <div>
@@ -292,7 +313,7 @@
                     <p class="text-gray-600 mb-6 max-w-2xl mx-auto">
                         Dapatkan PDF berisi semua frasa salam bahasa Jepang yang bisa Anda cetak atau simpan untuk belajar offline.
                     </p>
-                    <button class="bg-red-600 hover:bg-red-700 text-white font-bold py-3 px-8 rounded-lg transition inline-flex items-center">
+                    <button id="download-btn" class="bg-red-600 hover:bg-red-700 text-white font-bold py-3 px-8 rounded-lg transition inline-flex items-center">
                         <i class="fas fa-download mr-2"></i> Unduh Sekarang
                     </button>
                 </div>
@@ -351,8 +372,6 @@
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     
     <!-- Custom JS -->
-    <script src="/assets/js/main.js"></script>
-    
     <script>
         // Mobile menu toggle
         document.getElementById('mobile-menu-button').addEventListener('click', function() {
@@ -360,74 +379,65 @@
             menu.classList.toggle('hidden');
         });
 
-        // Sample phrases data (replace with actual JSON fetch)
-        // const phrasesData = [...];  // Removed hardcoded data
-
+        // Sample phrases data structure
         let phrasesData = [];
+        let filteredPhrases = [];
+        let currentPage = 1;
+        const phrasesPerPage = 10;
 
-        // Function to render phrases
-        function renderPhrases(phrases) {
+        // Function to get badge classes based on category
+        function getCategoryBadge(category) {
+            switch(category) {
+                case 'meeting':
+                    return { class: 'bg-green-100 text-green-800', text: 'Pertemuan' };
+                case 'farewell':
+                    return { class: 'bg-blue-100 text-blue-800', text: 'Perpisahan' };
+                case 'time':
+                    return { class: 'bg-yellow-100 text-yellow-800', text: 'Waktu' };
+                case 'situational':
+                    return { class: 'bg-purple-100 text-purple-800', text: 'Situasional' };
+                case 'formal':
+                    return { class: 'bg-red-100 text-red-800', text: 'Formal' };
+                default:
+                    return { class: 'bg-gray-100 text-gray-800', text: 'Lainnya' };
+            }
+        }
+
+        // Function to get badge classes based on level
+        function getLevelBadge(level) {
+            switch(level) {
+                case 'formal':
+                    return { class: 'bg-indigo-100 text-indigo-800', text: 'Formal' };
+                case 'casual':
+                    return { class: 'bg-pink-100 text-pink-800', text: 'Kasual' };
+                case 'both':
+                    return { class: 'bg-teal-100 text-teal-800', text: 'Keduanya' };
+                default:
+                    return { class: 'bg-gray-100 text-gray-800', text: 'Lainnya' };
+            }
+        }
+
+        // Function to render phrases for current page
+        function renderPage(page) {
+            const startIndex = (page - 1) * phrasesPerPage;
+            const endIndex = Math.min(startIndex + phrasesPerPage, filteredPhrases.length);
+            const pagePhrases = filteredPhrases.slice(startIndex, endIndex);
+
+            // Render desktop table
             const tableBody = document.getElementById('phrases-table');
             tableBody.innerHTML = '';
             
-            phrases.forEach(phrase => {
-                // Determine category badge color
-                let categoryClass = '';
-                let categoryText = '';
-                
-                switch(phrase.category) {
-                    case 'meeting':
-                        categoryClass = 'bg-green-100 text-green-800';
-                        categoryText = 'Pertemuan';
-                        break;
-                    case 'farewell':
-                        categoryClass = 'bg-blue-100 text-blue-800';
-                        categoryText = 'Perpisahan';
-                        break;
-                    case 'time':
-                        categoryClass = 'bg-yellow-100 text-yellow-800';
-                        categoryText = 'Waktu';
-                        break;
-                    case 'situational':
-                        categoryClass = 'bg-purple-100 text-purple-800';
-                        categoryText = 'Situasional';
-                        break;
-                    case 'formal':
-                        categoryClass = 'bg-red-100 text-red-800';
-                        categoryText = 'Formal';
-                        break;
-                    default:
-                        categoryClass = 'bg-gray-100 text-gray-800';
-                        categoryText = 'Lainnya';
-                }
-                
-                // Determine level badge color
-                let levelClass = '';
-                let levelText = '';
-                
-                switch(phrase.level) {
-                    case 'formal':
-                        levelClass = 'bg-indigo-100 text-indigo-800';
-                        levelText = 'Formal';
-                        break;
-                    case 'casual':
-                        levelClass = 'bg-pink-100 text-pink-800';
-                        levelText = 'Kasual';
-                        break;
-                    case 'both':
-                        levelClass = 'bg-teal-100 text-teal-800';
-                        levelText = 'Keduanya';
-                        break;
-                    default:
-                        levelClass = 'bg-gray-100 text-gray-800';
-                        levelText = 'Lainnya';
-                }
-                
+            // Render mobile cards
+            const mobileContainer = document.getElementById('mobile-phrases-container');
+            mobileContainer.innerHTML = '';
+
+            pagePhrases.forEach(phrase => {
+                const categoryBadge = getCategoryBadge(phrase.category);
+                const levelBadge = getLevelBadge(phrase.level);
+
+                // Desktop table row
                 const row = document.createElement('tr');
                 row.className = 'hover:bg-gray-50';
-                row.setAttribute('data-category', phrase.category);
-                row.setAttribute('data-level', phrase.level);
-                
                 row.innerHTML = `
                     <td class="px-6 py-4 whitespace-nowrap">
                         <div class="text-sm font-medium text-gray-900">${phrase.phrase}</div>
@@ -439,167 +449,87 @@
                         <div class="text-sm text-gray-900">${phrase.meaning}</div>
                     </td>
                     <td class="px-6 py-4 whitespace-nowrap">
-                        <span class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full ${categoryClass}">${categoryText}</span>
+                        <span class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full ${categoryBadge.class}">${categoryBadge.text}</span>
                     </td>
                     <td class="px-6 py-4 whitespace-nowrap">
-                        <span class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full ${levelClass}">${levelText}</span>
+                        <span class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full ${levelBadge.class}">${levelBadge.text}</span>
                     </td>
                 `;
-                
                 tableBody.appendChild(row);
-            });
-            
-            // Update total phrases count
-            document.getElementById('total-phrases').textContent = phrases.length;
-        }
 
-        // Filter functionality
-        document.addEventListener('DOMContentLoaded', function() {
-            const categoryFilter = document.getElementById('category-filter');
-            const levelFilter = document.getElementById('level-filter');
-            const searchInput = document.getElementById('search');
-            const totalPhrasesSpan = document.getElementById('total-phrases');
-            const phrasesTable = document.getElementById('phrases-table');
+                // Mobile card
+                const card = document.createElement('div');
+                card.className = 'phrase-card bg-white p-4 rounded-lg shadow border border-gray-200';
+                card.innerHTML = `
+                    <div class="flex justify-between items-start mb-2">
+                        <div class="font-bold text-gray-900 text-lg">${phrase.phrase}</div>
+                        <span class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full ${categoryBadge.class}">${categoryBadge.text}</span>
+                    </div>
+                    <div class="text-sm text-gray-600 mb-1"><span class="font-medium">Pelafalan:</span> ${phrase.pronunciation}</div>
+                    <div class="text-sm text-gray-600 mb-2"><span class="font-medium">Arti:</span> ${phrase.meaning}</div>
+                    <div class="text-right">
+                        <span class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full ${levelBadge.class}">${levelBadge.text}</span>
+                    </div>
+                `;
+                mobileContainer.appendChild(card);
+            });
+
+            // Update pagination info
+            document.getElementById('total-phrases').textContent = filteredPhrases.length;
+            document.getElementById('display-start').textContent = filteredPhrases.length === 0 ? 0 : startIndex + 1;
+            document.getElementById('display-end').textContent = endIndex;
+            
+            // Update pagination buttons
             const prevPageBtn = document.getElementById('prev-page');
             const nextPageBtn = document.getElementById('next-page');
-            const currentPageSpan = document.getElementById('current-page');
+            const mobilePrevBtn = document.getElementById('mobile-prev');
+            const mobileNextBtn = document.getElementById('mobile-next');
+            
+            prevPageBtn.classList.toggle('opacity-50', page === 1);
+            prevPageBtn.classList.toggle('cursor-not-allowed', page === 1);
+            mobilePrevBtn.classList.toggle('opacity-50', page === 1);
+            mobilePrevBtn.classList.toggle('cursor-not-allowed', page === 1);
+            
+            const totalPages = Math.ceil(filteredPhrases.length / phrasesPerPage);
+            nextPageBtn.classList.toggle('opacity-50', page === totalPages || totalPages === 0);
+            nextPageBtn.classList.toggle('cursor-not-allowed', page === totalPages || totalPages === 0);
+            mobileNextBtn.classList.toggle('opacity-50', page === totalPages || totalPages === 0);
+            mobileNextBtn.classList.toggle('cursor-not-allowed', page === totalPages || totalPages === 0);
+            
+            document.getElementById('current-page').textContent = page;
+        }
 
-            let filteredPhrases = [];
-            let currentPage = 1;
-            const phrasesPerPage = 10;
+        // Function to filter phrases based on selections
+        function filterPhrases() {
+            const categoryValue = document.getElementById('category-filter').value;
+            const levelValue = document.getElementById('level-filter').value;
+            const searchValue = document.getElementById('search').value.toLowerCase();
 
-            function renderPage(page) {
-                const startIndex = (page - 1) * phrasesPerPage;
-                const endIndex = Math.min(startIndex + phrasesPerPage, filteredPhrases.length);
-                const pagePhrases = filteredPhrases.slice(startIndex, endIndex);
+            filteredPhrases = phrasesData.filter(phrase => {
+                const categoryMatch = categoryValue === 'all' || phrase.category === categoryValue;
+                const levelMatch = levelValue === 'all' || 
+                                 phrase.level === levelValue || 
+                                 (levelValue === 'both' && phrase.level === 'both');
+                const searchMatch = phrase.phrase.toLowerCase().includes(searchValue) ||
+                                   phrase.pronunciation.toLowerCase().includes(searchValue) ||
+                                   phrase.meaning.toLowerCase().includes(searchValue);
 
-                // Render phrases for current page
-                phrasesTable.innerHTML = '';
-                pagePhrases.forEach(phrase => {
-                    // Determine category badge color
-                    let categoryClass = '';
-                    let categoryText = '';
+                return categoryMatch && levelMatch && searchMatch;
+            });
 
-                    switch(phrase.category) {
-                        case 'meeting':
-                            categoryClass = 'bg-green-100 text-green-800';
-                            categoryText = 'Pertemuan';
-                            break;
-                        case 'farewell':
-                            categoryClass = 'bg-blue-100 text-blue-800';
-                            categoryText = 'Perpisahan';
-                            break;
-                        case 'time':
-                            categoryClass = 'bg-yellow-100 text-yellow-800';
-                            categoryText = 'Waktu';
-                            break;
-                        case 'situational':
-                            categoryClass = 'bg-purple-100 text-purple-800';
-                            categoryText = 'Situasional';
-                            break;
-                        case 'formal':
-                            categoryClass = 'bg-red-100 text-red-800';
-                            categoryText = 'Formal';
-                            break;
-                        default:
-                            categoryClass = 'bg-gray-100 text-gray-800';
-                            categoryText = 'Lainnya';
-                    }
+            currentPage = 1;
+            renderPage(currentPage);
+        }
 
-                    // Determine level badge color
-                    let levelClass = '';
-                    let levelText = '';
+        // Initialize the page
+        document.addEventListener('DOMContentLoaded', function() {
+            // Set up event listeners for filters
+            document.getElementById('category-filter').addEventListener('change', filterPhrases);
+            document.getElementById('level-filter').addEventListener('change', filterPhrases);
+            document.getElementById('search').addEventListener('input', filterPhrases);
 
-                    switch(phrase.level) {
-                        case 'formal':
-                            levelClass = 'bg-indigo-100 text-indigo-800';
-                            levelText = 'Formal';
-                            break;
-                        case 'casual':
-                            levelClass = 'bg-pink-100 text-pink-800';
-                            levelText = 'Kasual';
-                            break;
-                        case 'both':
-                            levelClass = 'bg-teal-100 text-teal-800';
-                            levelText = 'Keduanya';
-                            break;
-                        default:
-                            levelClass = 'bg-gray-100 text-gray-800';
-                            levelText = 'Lainnya';
-                    }
-
-                    const row = document.createElement('tr');
-                    row.className = 'hover:bg-gray-50';
-                    row.setAttribute('data-category', phrase.category);
-                    row.setAttribute('data-level', phrase.level);
-
-                    row.innerHTML = `
-                        <td class="px-6 py-4 whitespace-nowrap">
-                            <div class="text-sm font-medium text-gray-900">${phrase.phrase}</div>
-                        </td>
-                        <td class="px-6 py-4 whitespace-nowrap">
-                            <div class="text-sm text-gray-900">${phrase.pronunciation}</div>
-                        </td>
-                        <td class="px-6 py-4 whitespace-nowrap">
-                            <div class="text-sm text-gray-900">${phrase.meaning}</div>
-                        </td>
-                        <td class="px-6 py-4 whitespace-nowrap">
-                            <span class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full ${categoryClass}">${categoryText}</span>
-                        </td>
-                        <td class="px-6 py-4 whitespace-nowrap">
-                            <span class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full ${levelClass}">${levelText}</span>
-                        </td>
-                    `;
-
-                    phrasesTable.appendChild(row);
-                });
-
-                // Update total phrases count and display range
-                totalPhrasesSpan.textContent = filteredPhrases.length;
-                const displayStart = filteredPhrases.length === 0 ? 0 : startIndex + 1;
-                const displayEnd = endIndex;
-                const displayText = `Menampilkan ${displayStart} sampai ${displayEnd} dari ${filteredPhrases.length} frasa`;
-                // Update the text in the UI (assuming there's a container for this text)
-                const displayTextElement = document.querySelector('.bg-white.px-4.py-3.flex.items-center.justify-between.border-t.border-gray-200.sm\\:px-6 > div > p');
-                if (displayTextElement) {
-                    displayTextElement.innerHTML = displayText;
-                }
-
-                // Update pagination buttons state
-                prevPageBtn.classList.toggle('pointer-events-none', page === 1);
-                prevPageBtn.classList.toggle('text-gray-300', page === 1);
-                nextPageBtn.classList.toggle('pointer-events-none', page === Math.ceil(filteredPhrases.length / phrasesPerPage));
-                nextPageBtn.classList.toggle('text-gray-300', page === Math.ceil(filteredPhrases.length / phrasesPerPage));
-
-                currentPageSpan.textContent = page;
-            }
-
-            function filterPhrases() {
-                const categoryValue = categoryFilter.value;
-                const levelValue = levelFilter.value;
-                const searchValue = searchInput.value.toLowerCase();
-
-                filteredPhrases = phrasesData.filter(phrase => {
-                    const categoryMatch = categoryValue === 'all' || phrase.category === categoryValue;
-                    const levelMatch = levelValue === 'all' ||
-                        phrase.level === levelValue ||
-                        (levelValue === 'both' && phrase.level === 'both');
-                    const searchMatch = phrase.phrase.toLowerCase().includes(searchValue) ||
-                        phrase.pronunciation.toLowerCase().includes(searchValue) ||
-                        phrase.meaning.toLowerCase().includes(searchValue);
-
-                    return categoryMatch && levelMatch && searchMatch;
-                });
-
-                currentPage = 1;
-                renderPage(currentPage);
-            }
-
-            categoryFilter.addEventListener('change', filterPhrases);
-            levelFilter.addEventListener('change', filterPhrases);
-            searchInput.addEventListener('input', filterPhrases);
-
-            prevPageBtn.addEventListener('click', function(e) {
+            // Set up pagination controls
+            document.getElementById('prev-page').addEventListener('click', function(e) {
                 e.preventDefault();
                 if (currentPage > 1) {
                     currentPage--;
@@ -607,22 +537,87 @@
                 }
             });
 
-            nextPageBtn.addEventListener('click', function(e) {
+            document.getElementById('next-page').addEventListener('click', function(e) {
                 e.preventDefault();
-                if (currentPage < Math.ceil(filteredPhrases.length / phrasesPerPage)) {
+                const totalPages = Math.ceil(filteredPhrases.length / phrasesPerPage);
+                if (currentPage < totalPages) {
                     currentPage++;
                     renderPage(currentPage);
                 }
             });
 
-            // Fetch phrases data from JSON file and render
+            // Mobile pagination controls
+            document.getElementById('mobile-prev').addEventListener('click', function(e) {
+                e.preventDefault();
+                if (currentPage > 1) {
+                    currentPage--;
+                    renderPage(currentPage);
+                }
+            });
+
+            document.getElementById('mobile-next').addEventListener('click', function(e) {
+                e.preventDefault();
+                const totalPages = Math.ceil(filteredPhrases.length / phrasesPerPage);
+                if (currentPage < totalPages) {
+                    currentPage++;
+                    renderPage(currentPage);
+                }
+            });
+
+            // Download button handler
+            document.getElementById('download-btn').addEventListener('click', function(e) {
+                e.preventDefault();
+                Swal.fire({
+                    title: 'Coming Soon!',
+                    text: 'Fitur unduhan cheat sheet akan segera hadir. Silakan cek kembali nanti!',
+                    icon: 'info',
+                    confirmButtonText: 'Mengerti',
+                    confirmButtonColor: '#d33'
+                });
+            });
+
+            // Fetch phrases data from JSON file
             fetch('/assets/data/phrases.json')
-                .then(response => response.json())
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error('Network response was not ok');
+                    }
+                    return response.json();
+                })
                 .then(data => {
                     phrasesData = data;
-                    filterPhrases();
+                    filteredPhrases = [...phrasesData];
+                    renderPage(currentPage);
                 })
-                .catch(error => console.error('Error loading phrases:', error));
+                .catch(error => {
+                    console.error('Error loading phrases:', error);
+                    // Fallback data if fetch fails
+                    phrasesData = [
+                        {
+                            "phrase": "こんにちは",
+                            "pronunciation": "Konnichiwa",
+                            "meaning": "Halo (siang)",
+                            "category": "meeting",
+                            "level": "both"
+                        },
+                        {
+                            "phrase": "おはようございます",
+                            "pronunciation": "Ohayou gozaimasu",
+                            "meaning": "Selamat pagi (formal)",
+                            "category": "time",
+                            "level": "formal"
+                        },
+                        {
+                            "phrase": "おやすみなさい",
+                            "pronunciation": "Oyasuminasai",
+                            "meaning": "Selamat tidur",
+                            "category": "farewell",
+                            "level": "formal"
+                        }
+                    ];
+                    filteredPhrases = [...phrasesData];
+                    renderPage(currentPage);
+                });
         });
     </script>
 </body>
