@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+    <!-- Meta Tags -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Dukung Nihongopedia - Berbagi kebaikan untuk pendidikan bahasa Jepang yang lebih baik">
+    
+    <!-- Title -->
+    <title>Dukung Nihongopedia | Donasi Saweria</title>
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="/assets/images/logos/favicon.ico">
+    
+    <!-- CDN CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/assets/css/main.css">
+    <style>
+        .donation-card {
+            transition: all 0.3s ease;
+        }
+        .donation-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+        .heart-beat {
+            animation: heartbeat 1.5s infinite;
+        }
+        @keyframes heartbeat {
+            0% { transform: scale(1); }
+            25% { transform: scale(1.1); }
+            50% { transform: scale(1); }
+            75% { transform: scale(1.1); }
+            100% { transform: scale(1); }
+        }
+    </style>
+</head>
+<body class="bg-gray-50 font-sans text-gray-800 flex flex-col min-h-screen">
+    <!-- Header -->
+    <header class="bg-red-600 text-white shadow-md fixed top-0 left-0 right-0 z-50">
+        <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+            <!-- Logo -->
+            <div class="flex items-center space-x-2">
+                <a href="/" class="flex items-center">
+                    <i class="fas fa-language text-2xl"></i>
+                    <span class="ml-2 text-xl font-bold">Nihongopedia</span>
+                </a>
+            </div>
+            
+            <!-- Header Right Section -->
+            <div class="flex items-center space-x-4">
+                <!-- Mobile Menu Button -->
+                <button id="mobile-menu-button" class="md:hidden text-white focus:outline-none">
+                    <i class="fas fa-bars text-2xl"></i>
+                </button>
+            </div>
+            
+            <!-- Desktop Nav -->
+            <nav class="hidden md:flex space-x-6">
+                <a href="/" class="hover:text-red-200 transition">Beranda</a>
+                <a href="/content/basic/hiragana/" class="hover:text-red-200 transition">Pelajaran</a>
+                <a href="/practice/" class="hover:text-red-200 transition">Latihan</a>
+                <a href="/resources/" class="hover:text-red-200 transition">Sumber Belajar</a>
+                <a href="/donasi" class="flex items-center text-white hover:text-red-200 transition font-semibold">
+                    Donasi
+                </a>
+                <a href="https://whatsapp.com/channel/0029Vag1xu13AzNLMBd6fi0a" target="_blank" class="hidden md:flex items-center text-white hover:text-red-200 transition text-sm">Channel WhatsApp</a>
+            </nav>
+        </div>
+        
+        <!-- Mobile Nav (Hidden by default) -->
+        <div id="mobile-menu" class="hidden md:hidden bg-red-700">
+            <div class="container mx-auto px-4 py-2 flex flex-col space-y-3">
+                <a href="/" class="py-2 hover:text-red-200 transition">Beranda</a>
+                <a href="/content/basic/hiragana/" class="py-2 hover:text-red-200 transition">Pelajaran</a>
+                <a href="/practice/" class="py-2 hover:text-red-200 transition">Latihan</a>
+                <a href="/resources/" class="py-2 hover:text-red-200 transition">Sumber Belajar</a>
+                <a href="/donasi" class="py-2 hover:text-red-200 transition flex items-center font-semibold">
+                    Donasi
+                </a>
+                <a href="https://whatsapp.com/channel/0029Vag1xu13AzNLMBd6fi0a" target="_blank" class="py-2 hover:text-red-200 transition flex items-center">Channel WhatsApp</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content Layout -->
+    <div class="flex flex-1 pt-12">
+        <!-- Sidebar -->
+        <aside class="hidden lg:block w-64 bg-white shadow-md p-4">
+            <div class="sticky top-20">
+                <!-- Level Navigation -->
+                <div class="mb-6">
+                    <h3 class="font-bold text-lg mb-3 text-red-600 border-b pb-2">Level Belajar</h3>
+                    <ul class="space-y-2">
+                        <li><a href="/content/basic/" class="hover:text-red-600 transition">Dasar-dasar</a></li>
+                        <li><a href="/content/n5/" class="hover:text-red-600 transition">JLPT N5</a></li>
+                        <li><a href="/content/n4/" class="hover:text-red-600 transition">JLPT N4</a></li>
+                        <li><a href="/content/n3/" class="hover:text-red-600 transition">JLPT N3</a></li>
+                        <li><a href="/content/n2/" class="hover:text-red-600 transition">JLPT N2</a></li>
+                        <li><a href="/content/n1/" class="hover:text-red-600 transition">JLPT N1</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Quick Links -->
+                <div>
+                    <h3 class="font-bold text-lg mb-3 text-red-600 border-b pb-2">Akses Cepat</h3>
+                    <ul class="space-y-2">
+                        <li><a href="/practice/flashcards/" class="hover:text-red-600 transition"><i class="fas fa-layer-group mr-2"></i>Flashcards</a></li>
+                        <li><a href="/practice/quizzes/" class="hover:text-red-600 transition"><i class="fas fa-question-circle mr-2"></i>Kuis</a></li>
+                        <li><a href="/resources/cheat-sheets/" class="hover:text-red-600 transition"><i class="fas fa-scroll mr-2"></i>Cheat Sheets</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Sidebar Footer with Subtle Links -->
+                <div class="mt-8 pt-4 border-t border-gray-200 text-sm text-gray-600">
+                    <a href="https://whatsapp.com/channel/0029Vag1xu13AzNLMBd6fi0a" target="_blank" class="block mb-2 hover:text-red-600 transition">
+                        <i class="fab fa-whatsapp mr-2"></i>Channel WhatsApp
+                    </a>
+                    <a href="/donasi" class="block hover:text-red-600 transition font-semibold">
+                        <i class="fas fa-hand-holding-heart mr-2"></i>Dukung Nihongopedia
+                    </a>
+                </div>
+            </div>
+        </aside>
+
+        <!-- Main Content Area -->
+        <main class="flex-1 p-8">
+            <!-- BreadCrumb -->
+            <div class="max-w-6xl mx-auto mb-4">
+                <nav class="flex" aria-label="Breadcrumb">
+                    <ol class="inline-flex items-center space-x-1 md:space-x-2">
+                        <li class="inline-flex items-center">
+                            <a href="/" class="inline-flex items-center text-sm font-medium text-gray-700 hover:text-red-600">
+                                <i class="fas fa-home mr-2"></i>
+                                Beranda
+                            </a>
+                        </li>
+                        <li>    
+                            <div class="flex items-center">
+                                <i class="fas fa-chevron-right text-gray-400 text-xs"></i>
+                                <a href="/donasi" class="ml-2 text-sm font-medium text-red-600 hover:text-red-500">Donasi</a>
+                            </div>
+                        </li>
+                    </ol>
+                </nav>
+            </div>
+
+            <!-- Page Content -->
+            <div class="max-w-6xl mx-auto bg-white rounded-lg shadow-md p-6 animate__animated animate__fadeIn">
+                <!-- Final CTA -->
+                <div class="text-center bg-red-50 rounded-xl p-8 border-2 border-red-200 mb-10">
+                    <h2 class="text-2xl font-bold text-gray-800 mb-3">Mari Bangun Komunitas Pembelajar Bahasa Jepang</h2>
+                    <p class="text-gray-600 max-w-2xl mx-auto mb-6">
+                        Setiap donasi, besar maupun kecil, membantu kami terus berkembang dan menciptakan lebih banyak konten berkualitas untuk Anda.
+                    </p>
+                    <div class="flex flex-col sm:flex-row justify-center gap-4">
+                        <a href="https://saweria.co/nihongopedia" target="_blank" class="bg-red-600 hover:bg-red-700 text-white font-semibold py-3 px-6 rounded-lg inline-flex items-center justify-center transition duration-300">
+                            <i class="fas fa-hand-holding-heart mr-2"></i> Donasi Sekarang
+                        </a>
+                        <a href="/" class="bg-white hover:bg-gray-100 text-gray-800 font-semibold py-3 px-6 rounded-lg inline-flex items-center justify-center border border-gray-300 transition duration-300">
+                            <i class="fas fa-book-open mr-2"></i> Lanjut Belajar
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="text-center mb-8">
+                    <i class="fas fa-heart text-red-500 text-5xl mb-4 heart-beat"></i>
+                    <h1 class="text-3xl font-bold text-gray-800 mb-2">Dukung Nihongopedia</h1>
+                    <p class="text-lg text-gray-600 max-w-2xl mx-auto">
+                        Setiap donasi membantu kami terus menyediakan konten berkualitas dan gratis untuk semua pembelajar bahasa Jepang.
+                    </p>
+                </div>
+                
+                <!-- Motivational Section -->
+                <div class="bg-gradient-to-r from-red-50 to-pink-50 rounded-xl p-6 mb-8 border border-red-100">
+                    <div class="flex flex-col md:flex-row items-center">
+                        <div class="md:w-2/3 mb-4 md:mb-0 md:pr-6">
+                            <h2 class="text-2xl font-semibold text-gray-800 mb-3">Kenapa Berdonasi?</h2>
+                            <p class="text-gray-700 mb-3">
+                                <i class="fas fa-check-circle text-red-500 mr-2"></i> 
+                                Anda membantu menjaga platform ini tetap <span class="font-semibold">gratis</span> dan <span class="font-semibold">tanpa iklan</span>
+                            </p>
+                            <p class="text-gray-700 mb-3">
+                                <i class="fas fa-check-circle text-red-500 mr-2"></i> 
+                                Kontribusi Anda memungkinkan kami membuat lebih banyak <span class="font-semibold">materi pembelajaran</span> dan <span class="font-semibold">alat latihan</span>
+                            </p>
+                            <p class="text-gray-700">
+                                <i class="fas fa-check-circle text-red-500 mr-2"></i> 
+                                Bersama-sama kita bisa membuat belajar bahasa Jepang lebih <span class="font-semibold">mudah</span> dan <span class="font-semibold">menyenangkan</span>
+                            </p>
+                        </div>
+                        <div class="md:w-1/3 bg-white p-4 rounded-lg shadow-sm border border-gray-200">
+                            <div class="text-center">
+                                <div class="text-4xl font-bold text-red-600 mb-2">1.000+</div>
+                                <div class="text-gray-600">Pembelajar aktif setiap hari</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Donation Options -->
+                <div class="mb-8">
+                    <h2 class="text-2xl font-semibold text-center mb-6">Pilih Cara Berdonasi</h2>
+                    
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <!-- Saweria Card -->
+                        <div class="donation-card bg-white rounded-xl shadow-md overflow-hidden border border-gray-200">
+                            <div class="bg-red-600 p-4 text-white">
+                                <h3 class="text-xl font-bold flex items-center">
+                                    <i class="fas fa-coffee mr-2"></i>
+                                    Saweria
+                                </h3>
+                                <p class="text-red-100 text-sm mt-1">Support kami dengan donasi satu kali</p>
+                            </div>
+                            <div class="p-6">
+                                <div class="flex items-start mb-4">
+                                    <i class="fas fa-bolt text-yellow-500 text-xl mt-1 mr-3"></i>
+                                    <div>
+                                        <h4 class="font-semibold text-gray-800">Donasi Instan</h4>
+                                        <p class="text-gray-600 text-sm">Tanpa registrasi, langsung melalui berbagai metode pembayaran</p>
+                                    </div>
+                                </div>
+                                <div class="flex items-start mb-6">
+                                    <i class="fas fa-shield-alt text-blue-500 text-xl mt-1 mr-3"></i>
+                                    <div>
+                                        <h4 class="font-semibold text-gray-800">Aman & Terpercaya</h4>
+                                        <p class="text-gray-600 text-sm">Diproses melalui platform Saweria yang terpercaya</p>
+                                    </div>
+                                </div>
+                                <a href="https://saweria.co/nihongopedia" target="_blank" class="block w-full bg-red-600 hover:bg-red-700 text-white text-center font-semibold py-3 px-4 rounded-lg transition duration-300">
+                                    Donasi Sekarang
+                                </a>
+                            </div>
+                        </div>
+                        
+                        <!-- Message Card -->
+                        <div class="donation-card bg-white rounded-xl shadow-md overflow-hidden border border-gray-200">
+                            <div class="bg-blue-600 p-4 text-white">
+                                <h3 class="text-xl font-bold flex items-center">
+                                    <i class="fas fa-comment-dots mr-2"></i>
+                                    Kata-kata Penyemangat
+                                </h3>
+                                <p class="text-blue-100 text-sm mt-1">Dukungan moral juga sangat berarti</p>
+                            </div>
+                            <div class="p-6">
+                                <div class="flex items-start mb-4">
+                                    <i class="fas fa-heart text-pink-500 text-xl mt-1 mr-3"></i>
+                                    <div>
+                                        <h4 class="font-semibold text-gray-800">Kirim Dukungan</h4>
+                                        <p class="text-gray-600 text-sm">Tidak bisa berdonasi? Kirimkan kata-kata penyemangat untuk tim kami</p>
+                                    </div>
+                                </div>
+                                <div class="mb-6">
+                                    <p class="text-gray-600 text-sm italic">
+                                        "Semangat terus buat Nihongopedia! Berkat kalian saya bisa belajar bahasa Jepang dengan mudah."
+                                    </p>
+                                    <p class="text-right text-gray-500 text-xs mt-1">- Rina, Pelajar</p>
+                                </div>
+                                <a href="https://form.typeform.com/to/gclh6PlF" target="_blank" class="block w-full bg-blue-600 hover:bg-blue-700 text-white text-center font-semibold py-3 px-4 rounded-lg transition duration-300">
+                                    Kirim Semangat
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Testimonials -->
+                <div class="bg-gray-50 rounded-xl p-6 mb-8">
+                    <h2 class="text-2xl font-semibold text-center mb-6">Apa Kata Mereka?</h2>
+                    <div class="grid md:grid-cols-3 gap-6">
+                        <div class="bg-white p-4 rounded-lg shadow-sm border border-gray-200">
+                            <div class="flex items-center mb-3">
+                                <div class="w-10 h-10 rounded-full bg-red-100 flex items-center justify-center text-red-600 font-bold mr-3">A</div>
+                                <div>
+                                    <h4 class="font-semibold">Andi</h4>
+                                    <div class="flex text-yellow-400 text-sm">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            <p class="text-gray-600 text-sm italic">
+                                "Nihongopedia sangat membantu persiapan JLPT saya. Senang bisa berkontribusi melalui donasi."
+                            </p>
+                        </div>
+                        <div class="bg-white p-4 rounded-lg shadow-sm border border-gray-200">
+                            <div class="flex items-center mb-3">
+                                <div class="w-10 h-10 rounded-full bg-blue-100 flex items-center justify-center text-blue-600 font-bold mr-3">S</div>
+                                <div>
+                                    <h4 class="font-semibold">Siti</h4>
+                                    <div class="flex text-yellow-400 text-sm">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star-half-alt"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            <p class="text-gray-600 text-sm italic">
+                                "Materinya lengkap dan mudah dimengerti. Donasi kecil saya semoga bisa membantu pengembangan fitur baru."
+                            </p>
+                        </div>
+                        <div class="bg-white p-4 rounded-lg shadow-sm border border-gray-200">
+                            <div class="flex items-center mb-3">
+                                <div class="w-10 h-10 rounded-full bg-green-100 flex items-center justify-center text-green-600 font-bold mr-3">B</div>
+                                <div>
+                                    <h4 class="font-semibold">Budi</h4>
+                                    <div class="flex text-yellow-400 text-sm">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            <p class="text-gray-600 text-sm italic">
+                                "Flashcard hiragananya sangat membantu! Donasi via Saweria prosesnya cepat dan mudah."
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-8">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Nihongopedia</h3>
+                    <p class="text-gray-400">Platform belajar bahasa Jepang dari dasar hingga level JLPT N1.</p>
+                    <div class="mt-4 space-y-2">
+                        <a href="https://whatsapp.com/channel/0029Vag1xu13AzNLMBd6fi0a" target="_blank" class="flex items-center text-gray-400 hover:text-white transition text-sm">
+                            <i class="fab fa-whatsapp mr-2"></i> WhatsApp Channel
+                        </a>
+                        <a href="/donasi" class="flex items-center text-gray-400 hover:text-white transition text-sm">
+                            <i class="fas fa-heart mr-2"></i> Donasi
+                        </a>
+                    </div>
+                </div>
+                <div>
+                    <h4 class="font-bold mb-4">Navigasi</h4>
+                    <ul class="space-y-2">
+                        <li><a href="/" class="text-gray-400 hover:text-white transition">Beranda</a></li>
+                        <li><a href="/about.html" class="text-gray-400 hover:text-white transition">Tentang Kami</a></li>
+                        <li><a href="/roadmap.html" class="text-gray-400 hover:text-white transition">Roadmap Belajar</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-bold mb-4">Bantuan</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">FAQ</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">Kebijakan Privasi</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-bold mb-4">Sosial Media</h4>
+                    <div class="flex space-x-4">
+                        <a href="https://instagram.com/nihongopedia.id" class="text-gray-400 hover:text-white transition text-2xl"><i class="fab fa-instagram"></i></a>
+                        <a href="https://youtube.com/@nihongopedia" class="text-gray-400 hover:text-white transition text-2xl"><i class="fab fa-youtube"></i></a>
+                        <a href="https://tiktok.com/@nihongopedia" class="text-gray-400 hover:text-white transition text-2xl"><i class="fab fa-tiktok"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-gray-700 mt-8 pt-6 text-center text-gray-400">
+                <p>&copy; 2023 Nihongopedia.id. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- CDN JS -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    
+    <!-- Custom JS -->
+    <script src="/assets/js/main.js"></script>
+    
+    <script>
+        // Mobile menu toggle
+        document.getElementById('mobile-menu-button').addEventListener('click', function() {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('hidden');
+        });
+
+        // Simple animation for donation cards
+        const donationCards = document.querySelectorAll('.donation-card');
+        donationCards.forEach(card => {
+            card.addEventListener('mouseenter', function() {
+                this.style.transform = 'translateY(-5px)';
+                this.style.boxShadow = '0 10px 25px rgba(0, 0, 0, 0.1)';
+            });
+            card.addEventListener('mouseleave', function() {
+                this.style.transform = '';
+                this.style.boxShadow = '';
+            });
+        });
+    </script>
+</body>
+</html>
