@@ -46,6 +46,22 @@
             color: #666;
             font-style: italic;
         }
+        .practice-btn.correct {
+            background-color: #f0fdf4;
+            color: #166534;
+        }
+        .practice-btn.incorrect {
+            background-color: #fee2e2;
+            color: #991b1b;
+        }
+        .answer-feedback {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+        }
+        .answer-feedback.show {
+            max-height: 100px;
+        }
         @media (max-width: 768px) {
             .table-responsive {
                 display: block;
@@ -99,7 +115,7 @@
             <!-- Header Right Section -->
             <div class="flex items-center space-x-4">
                 <!-- Mobile Menu Button -->
-                <button id="mobile-menu-button" class="md:hidden text-white focus:outline-none">
+                <button id="mobile-menu-button" class="md:hidden text-white focus:outline-none" aria-label="Toggle menu" aria-expanded="false">
                     <i class="fas fa-bars text-2xl"></i>
                 </button>
             </div>
@@ -112,7 +128,6 @@
                 <a href="/resources/" class="hover:text-red-200 transition">Sumber Belajar</a>
                 <a href="/donasi" class="hidden md:flex items-center text-white hover:text-red-200 transition text-sm">Donasi</a>
                 <a href="https://whatsapp.com/channel/0029Vag1xu13AzNLMBd6fi0a" target="_blank" class="hidden md:flex items-center text-white hover:text-red-200 transition text-sm">Channel WhatsApp</a>
-                </a>
             </nav>
         </div>
         
@@ -123,7 +138,6 @@
                 <a href="/content/basic/hiragana/" class="py-2 hover:text-red-200 transition">Pelajaran</a>
                 <a href="/practice/" class="py-2 hover:text-red-200 transition">Latihan</a>
                 <a href="/resources/" class="py-2 hover:text-red-200 transition">Sumber Belajar</a>
-                <!-- Mobile version of the links -->
                 <a href="/donasi" class="py-2 hover:text-red-200 transition flex items-center">Donasi</a>
                 <a href="https://whatsapp.com/channel/0029Vag1xu13AzNLMBd6fi0a" target="_blank" class="py-2 hover:text-red-200 transition flex items-center">Channel WhatsApp</a>
             </div>
@@ -131,10 +145,10 @@
     </header>
 
     <!-- Main Content Layout -->
-    <div class="flex flex-1 pt-12">
+    <div class="flex flex-1 pt-16">
         <!-- Sidebar -->
         <aside class="hidden lg:block w-64 bg-white shadow-md p-4">
-            <div class="sticky top-20">
+            <div class="sticky top-24">
                 <!-- Level Navigation -->
                 <div class="mb-6">
                     <h3 class="font-bold text-lg mb-3 text-red-600 border-b pb-2">Level Belajar</h3>
@@ -171,7 +185,7 @@
         </aside>
 
         <!-- Main Content Area -->
-        <main class="flex-1 p-8">
+        <main class="flex-1 p-4 md:p-8">
             <!-- BreadCrumb -->
             <div class="max-w-6xl mx-auto mb-4">
                 <nav class="flex" aria-label="Breadcrumb">
@@ -201,8 +215,8 @@
             <!-- Main Content -->
             <div class="max-w-6xl mx-auto">
                 <!-- Header Section -->
-                <div class="bg-white rounded-lg shadow-md p-6 mb-6">
-                    <h1 class="text-3xl font-bold text-gray-800 mb-2">Partikel Wo (を)</h1>
+                <div class="bg-white rounded-lg shadow-md p-4 md:p-6 mb-4 md:mb-6">
+                    <h1 class="text-2xl md:text-3xl font-bold text-gray-800 mb-2">Partikel Wo (を)</h1>
                     <p class="text-lg text-gray-600 mb-4">Partikel yang menunjukkan objek langsung dalam kalimat bahasa Jepang</p>
                     
                     <div class="flex flex-wrap gap-4 mb-6">
@@ -296,7 +310,7 @@
                 </div>
                 
                 <!-- Detailed Explanation Section -->
-                <div class="bg-white rounded-lg shadow-md p-6 mb-8">
+                <div class="bg-white rounded-lg shadow-md p-4 md:p-6 mb-8">
                     <h2 class="text-2xl font-bold text-gray-800 mb-6 border-b pb-2">Penjelasan Detail Partikel Wo (を)</h2>
                     
                     <div class="mb-8">
@@ -595,7 +609,7 @@
                 </div>
                 
                 <!-- Practice Section -->
-                <div class="bg-white rounded-lg shadow-md p-6 mb-8">
+                <div class="bg-white rounded-lg shadow-md p-4 md:p-6 mb-8">
                     <h2 class="text-2xl font-bold text-gray-800 mb-6 border-b pb-2">Latihan Partikel Wo</h2>
                     
                     <div class="mb-8">
@@ -609,7 +623,9 @@
                                     <button class="practice-btn bg-gray-100 hover:bg-gray-200 text-gray-800 py-2 px-4 rounded transition" data-answer="は">は</button>
                                     <button class="practice-btn bg-gray-100 hover:bg-gray-200 text-gray-800 py-2 px-4 rounded transition" data-answer="が">が</button>
                                 </div>
-                                <div class="mt-2 text-sm text-green-600 hidden answer-feedback">Jawaban benar! Partikel "を" digunakan untuk menunjukkan objek langsung "sarapan".</div>
+                                <div class="answer-feedback mt-2 text-sm text-green-600">
+                                    Jawaban benar! Partikel "を" digunakan untuk menunjukkan objek langsung "sarapan".
+                                </div>
                             </div>
                             
                             <div class="bg-gray-50 p-4 rounded-lg">
@@ -619,7 +635,9 @@
                                     <button class="practice-btn bg-gray-100 hover:bg-gray-200 text-gray-800 py-2 px-4 rounded transition" data-answer="に">に</button>
                                     <button class="practice-btn bg-gray-100 hover:bg-gray-200 text-gray-800 py-2 px-4 rounded transition" data-answer="で">で</button>
                                 </div>
-                                <div class="mt-2 text-sm text-green-600 hidden answer-feedback">Benar! "を" menunjukkan bahwa "kopi" adalah objek dari kata kerja "minum".</div>
+                                <div class="answer-feedback mt-2 text-sm text-green-600">
+                                    Benar! "を" menunjukkan bahwa "kopi" adalah objek dari kata kerja "minum".
+                                </div>
                             </div>
                             
                             <div class="bg-gray-50 p-4 rounded-lg">
@@ -629,7 +647,9 @@
                                     <button class="practice-btn bg-gray-100 hover:bg-gray-200 text-gray-800 py-2 px-4 rounded transition" data-answer="が">が</button>
                                     <button class="practice-btn bg-gray-100 hover:bg-gray-200 text-gray-800 py-2 px-4 rounded transition" data-answer="は">は</button>
                                 </div>
-                                <div class="mt-2 text-sm text-green-600 hidden answer-feedback">Tepat! "日本語を勉強します" (belajar bahasa Jepang) menggunakan partikel "を" karena "bahasa Jepang" adalah objek langsung.</div>
+                                <div class="answer-feedback mt-2 text-sm text-green-600">
+                                    Tepat! "日本語を勉強します" (belajar bahasa Jepang) menggunakan partikel "を" karena "bahasa Jepang" adalah objek langsung.
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -641,35 +661,41 @@
                             <div class="bg-gray-50 p-4 rounded-lg">
                                 <p class="text-gray-700 mb-2">1. Saya membaca buku.</p>
                                 <div class="flex items-center">
-                                    <input type="text" class="flex-1 border border-gray-300 rounded-l-lg py-2 px-4 focus:outline-none focus:ring-2 focus:ring-red-500" placeholder="Tulis dalam bahasa Jepang...">
+                                    <input type="text" class="flex-1 border border-gray-300 rounded-l-lg py-2 px-4 focus:outline-none focus:ring-2 focus:ring-red-500 transition" placeholder="Tulis dalam bahasa Jepang...">
                                     <button class="bg-red-600 hover:bg-red-700 text-white py-2 px-4 rounded-r-lg transition check-translation">Periksa</button>
                                 </div>
-                                <div class="mt-2 text-sm text-green-600 hidden translation-feedback">Jawaban yang benar: わたしはほんをよみます。(watashi wa hon o yomimasu)</div>
+                                <div class="answer-feedback mt-2 text-sm text-green-600">
+                                    Jawaban yang benar: わたしはほんをよみます。(watashi wa hon o yomimasu)
+                                </div>
                             </div>
                             
                             <div class="bg-gray-50 p-4 rounded-lg">
                                 <p class="text-gray-700 mb-2">2. Dia menonton TV setiap hari.</p>
                                 <div class="flex items-center">
-                                    <input type="text" class="flex-1 border border-gray-300 rounded-l-lg py-2 px-4 focus:outline-none focus:ring-2 focus:ring-red-500" placeholder="Tulis dalam bahasa Jepang...">
+                                    <input type="text" class="flex-1 border border-gray-300 rounded-l-lg py-2 px-4 focus:outline-none focus:ring-2 focus:ring-red-500 transition" placeholder="Tulis dalam bahasa Jepang...">
                                     <button class="bg-red-600 hover:bg-red-700 text-white py-2 px-4 rounded-r-lg transition check-translation">Periksa</button>
                                 </div>
-                                <div class="mt-2 text-sm text-green-600 hidden translation-feedback">Jawaban yang benar: かれはまいにちテレビをみます。(kare wa mainichi terebi o mimasu)</div>
+                                <div class="answer-feedback mt-2 text-sm text-green-600">
+                                    Jawaban yang benar: かれはまいにちテレビをみます。(kare wa mainichi terebi o mimasu)
+                                </div>
                             </div>
                             
                             <div class="bg-gray-50 p-4 rounded-lg">
                                 <p class="text-gray-700 mb-2">3. Kami minum teh hijau.</p>
                                 <div class="flex items-center">
-                                    <input type="text" class="flex-1 border border-gray-300 rounded-l-lg py-2 px-4 focus:outline-none focus:ring-2 focus:ring-red-500" placeholder="Tulis dalam bahasa Jepang...">
+                                    <input type="text" class="flex-1 border border-gray-300 rounded-l-lg py-2 px-4 focus:outline-none focus:ring-2 focus:ring-red-500 transition" placeholder="Tulis dalam bahasa Jepang...">
                                     <button class="bg-red-600 hover:bg-red-700 text-white py-2 px-4 rounded-r-lg transition check-translation">Periksa</button>
                                 </div>
-                                <div class="mt-2 text-sm text-green-600 hidden translation-feedback">Jawaban yang benar: わたしたちはおちゃをのみます。(watashitachi wa ocha o nomimasu)</div>
+                                <div class="answer-feedback mt-2 text-sm text-green-600">
+                                    Jawaban yang benar: わたしたちはおちゃをのみます。(watashitachi wa ocha o nomimasu)
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
                 
                 <!-- Additional Resources -->
-                <div class="bg-white rounded-lg shadow-md p-6">
+                <div class="bg-white rounded-lg shadow-md p-4 md:p-6">
                     <h2 class="text-2xl font-bold text-gray-800 mb-6 border-b pb-2">Sumber Belajar Tambahan</h2>
                     
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -695,10 +721,10 @@
 
                 <!-- Navigation Buttons -->
                 <div class="flex flex-col sm:flex-row justify-between gap-4 mt-8">
-                    <a href="/content/n5/" class="bg-gray-200 hover:bg-gray-300 text-gray-800 font-medium py-2 px-4 rounded-lg inline-flex items-center justify-center">
+                    <a href="/content/n5/" class="bg-gray-200 hover:bg-gray-300 text-gray-800 font-medium py-2 px-4 rounded-lg inline-flex items-center justify-center transition">
                         <i class="fas fa-arrow-left mr-2"></i> JLPT N5
                     </a>
-                    <a href="/content/n5/partikel/ni.html" class="bg-red-600 hover:bg-red-700 text-white font-medium py-2 px-4 rounded-lg inline-flex items-center justify-center">
+                    <a href="/content/n5/partikel/ni.html" class="bg-red-600 hover:bg-red-700 text-white font-medium py-2 px-4 rounded-lg inline-flex items-center justify-center transition">
                         Partikel Ni (に) <i class="fas fa-arrow-right ml-2"></i>
                     </a>
                 </div>
@@ -709,7 +735,7 @@
     <!-- Footer -->
     <footer class="bg-gray-800 text-white py-8">
         <div class="container mx-auto px-4">
-            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-6 md:gap-8">
                 <div>
                     <h3 class="text-xl font-bold mb-4">Nihongopedia</h3>
                     <p class="text-gray-400">Platform belajar bahasa Jepang dari dasar hingga level JLPT N1.</p>
@@ -763,9 +789,12 @@
     
     <script>
         // Mobile menu toggle
-        document.getElementById('mobile-menu-button').addEventListener('click', function() {
-            const menu = document.getElementById('mobile-menu');
+        const menuButton = document.getElementById('mobile-menu-button');
+        const menu = document.getElementById('mobile-menu');
+
+        menuButton.addEventListener('click', () => {
             menu.classList.toggle('hidden');
+            menuButton.setAttribute('aria-expanded', !menu.classList.contains('hidden'));
         });
         
         // Practice button functionality
@@ -774,21 +803,24 @@
                 const isCorrect = this.getAttribute('data-answer') === 'を';
                 const feedback = this.parentElement.nextElementSibling;
                 
+                // Reset all buttons in this question
+                this.parentElement.querySelectorAll('.practice-btn').forEach(btn => {
+                    btn.classList.remove('correct', 'incorrect');
+                    btn.disabled = false;
+                });
+                
                 if (isCorrect) {
-                    this.classList.remove('bg-red-100', 'hover:bg-red-200', 'text-red-800');
-                    this.classList.add('bg-green-100', 'text-green-800');
-                    feedback.classList.remove('hidden');
+                    this.classList.add('correct');
+                    feedback.classList.add('show');
                     
                     // Disable other buttons
                     this.parentElement.querySelectorAll('.practice-btn').forEach(btn => {
                         if (btn !== this) {
                             btn.disabled = true;
-                            btn.classList.add('opacity-50');
                         }
                     });
                 } else {
-                    this.classList.remove('bg-gray-100', 'hover:bg-gray-200', 'text-gray-800');
-                    this.classList.add('bg-red-100', 'text-red-800');
+                    this.classList.add('incorrect');
                     this.disabled = true;
                 }
             });
@@ -799,7 +831,7 @@
             button.addEventListener('click', function() {
                 const input = this.previousElementSibling;
                 const feedback = this.parentElement.nextElementSibling;
-                feedback.classList.remove('hidden');
+                feedback.classList.add('show');
                 
                 if (input.value.trim() !== '') {
                     input.classList.add('border-green-500');

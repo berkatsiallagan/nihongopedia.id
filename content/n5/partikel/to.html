@@ -46,6 +46,30 @@
             color: #666;
             font-style: italic;
         }
+        .practice-btn.correct {
+            background-color: #dcfce7;
+            color: #166534;
+        }
+        .practice-btn.incorrect {
+            background-color: #fee2e2;
+            color: #991b1b;
+        }
+        .answer-feedback {
+            max-height: 0;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+        .answer-feedback.show {
+            max-height: 100px;
+        }
+        .translation-feedback {
+            max-height: 0;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+        .translation-feedback.show {
+            max-height: 200px;
+        }
         @media (max-width: 768px) {
             .table-responsive {
                 display: block;
@@ -91,7 +115,7 @@
             <!-- Header Right Section -->
             <div class="flex items-center space-x-4">
                 <!-- Mobile Menu Button -->
-                <button id="mobile-menu-button" class="md:hidden text-white focus:outline-none">
+                <button id="mobile-menu-button" class="md:hidden text-white focus:outline-none" aria-label="Toggle menu" aria-expanded="false">
                     <i class="fas fa-bars text-2xl"></i>
                 </button>
             </div>
@@ -123,10 +147,10 @@
     </header>
 
     <!-- Main Content Layout -->
-    <div class="flex flex-1 pt-12">
+    <div class="flex flex-1 pt-16">
         <!-- Sidebar -->
         <aside class="hidden lg:block w-64 bg-white shadow-md p-4">
-            <div class="sticky top-20">
+            <div class="sticky top-24">
                 <!-- Level Navigation -->
                 <div class="mb-6">
                     <h3 class="font-bold text-lg mb-3 text-red-600 border-b pb-2">Level Belajar</h3>
@@ -163,7 +187,7 @@
         </aside>
 
         <!-- Main Content Area -->
-        <main class="flex-1 p-8">
+        <main class="flex-1 p-4 md:p-8">
             <!-- BreadCrumb -->
             <div class="max-w-6xl mx-auto mb-4">
                 <nav class="flex" aria-label="Breadcrumb">
@@ -193,8 +217,8 @@
             <!-- Main Content -->
             <div class="max-w-6xl mx-auto">
                 <!-- Header Section -->
-                <div class="bg-white rounded-lg shadow-md p-6 mb-6">
-                    <h1 class="text-3xl font-bold text-gray-800 mb-2">Partikel To (と)</h1>
+                <div class="bg-white rounded-lg shadow-md p-4 md:p-6 mb-4 md:mb-6">
+                    <h1 class="text-2xl md:text-3xl font-bold text-gray-800 mb-2">Partikel To (と)</h1>
                     <p class="text-lg text-gray-600 mb-4">Partikel yang digunakan untuk menyatakan hubungan "dengan" atau "dan" dalam bahasa Jepang</p>
                     
                     <div class="flex flex-wrap gap-4 mb-6">
@@ -281,7 +305,7 @@
                 </div>
                 
                 <!-- Detailed Explanation Section -->
-                <div class="bg-white rounded-lg shadow-md p-6 mb-8">
+                <div class="bg-white rounded-lg shadow-md p-4 md:p-6 mb-8">
                     <h2 class="text-2xl font-bold text-gray-800 mb-6 border-b pb-2">Penjelasan Detail Partikel To (と)</h2>
                     
                     <div class="mb-8">
@@ -670,7 +694,7 @@
                 </div>
                 
                 <!-- Practice Section -->
-                <div class="bg-white rounded-lg shadow-md p-6 mb-8">
+                <div class="bg-white rounded-lg shadow-md p-4 md:p-6 mb-8">
                     <h2 class="text-2xl font-bold text-gray-800 mb-6 border-b pb-2">Latihan Partikel To</h2>
                     
                     <div class="mb-8">
@@ -684,7 +708,7 @@
                                     <button class="practice-btn bg-gray-100 hover:bg-gray-200 text-gray-800 py-2 px-4 rounded transition" data-answer="に">に</button>
                                     <button class="practice-btn bg-gray-100 hover:bg-gray-200 text-gray-800 py-2 px-4 rounded transition" data-answer="で">で</button>
                                 </div>
-                                <div class="mt-2 text-sm text-green-600 hidden answer-feedback">Jawaban benar! Partikel "と" digunakan untuk menyatakan "dengan" seseorang.</div>
+                                <div class="answer-feedback mt-2 text-sm text-green-600">Jawaban benar! Partikel "と" digunakan untuk menyatakan "dengan" seseorang.</div>
                             </div>
                             
                             <div class="bg-gray-50 p-4 rounded-lg">
@@ -694,7 +718,7 @@
                                     <button class="practice-btn bg-gray-100 hover:bg-gray-200 text-gray-800 py-2 px-4 rounded transition" data-answer="や">や</button>
                                     <button class="practice-btn bg-gray-100 hover:bg-gray-200 text-gray-800 py-2 px-4 rounded transition" data-answer="も">も</button>
                                 </div>
-                                <div class="mt-2 text-sm text-green-600 hidden answer-feedback">Benar! "と" digunakan untuk menghubungkan kata benda dengan arti "dan".</div>
+                                <div class="answer-feedback mt-2 text-sm text-green-600">Benar! "と" digunakan untuk menghubungkan kata benda dengan arti "dan".</div>
                             </div>
                         </div>
                     </div>
@@ -706,26 +730,26 @@
                             <div class="bg-gray-50 p-4 rounded-lg">
                                 <p class="text-gray-700 mb-2">1. Saya pergi ke sekolah dengan adik laki-laki.</p>
                                 <div class="flex items-center">
-                                    <input type="text" class="flex-1 border border-gray-300 rounded-l-lg py-2 px-4 focus:outline-none focus:ring-2 focus:ring-red-500" placeholder="Tulis dalam bahasa Jepang...">
+                                    <input type="text" class="flex-1 border border-gray-300 rounded-l-lg py-2 px-4 focus:outline-none focus:ring-2 focus:ring-red-500 transition" placeholder="Tulis dalam bahasa Jepang...">
                                     <button class="bg-red-600 hover:bg-red-700 text-white py-2 px-4 rounded-r-lg transition check-translation">Periksa</button>
                                 </div>
-                                <div class="mt-2 text-sm text-green-600 hidden translation-feedback">Jawaban yang benar: わたしはおとうと<span class="font-bold">と</span>がっこうへいきます。(watashi wa otōto to gakkō e ikimasu)</div>
+                                <div class="translation-feedback mt-2 text-sm text-green-600">Jawaban yang benar: わたしはおとうと<span class="font-bold">と</span>がっこうへいきます。(watashi wa otōto to gakkō e ikimasu)</div>
                             </div>
                             
                             <div class="bg-gray-50 p-4 rounded-lg">
                                 <p class="text-gray-700 mb-2">2. Dia mengatakan "terima kasih".</p>
                                 <div class="flex items-center">
-                                    <input type="text" class="flex-1 border border-gray-300 rounded-l-lg py-2 px-4 focus:outline-none focus:ring-2 focus:ring-red-500" placeholder="Tulis dalam bahasa Jepang...">
+                                    <input type="text" class="flex-1 border border-gray-300 rounded-l-lg py-2 px-4 focus:outline-none focus:ring-2 focus:ring-red-500 transition" placeholder="Tulis dalam bahasa Jepang...">
                                     <button class="bg-red-600 hover:bg-red-700 text-white py-2 px-4 rounded-r-lg transition check-translation">Periksa</button>
                                 </div>
-                                <div class="mt-2 text-sm text-green-600 hidden translation-feedback">Jawaban yang benar: かのじょは「ありがとう」<span class="font-bold">と</span>いいました。(kanojo wa "arigatō" to iimashita)</div>
+                                <div class="translation-feedback mt-2 text-sm text-green-600">Jawaban yang benar: かのじょは「ありがとう」<span class="font-bold">と</span>いいました。(kanojo wa "arigatō" to iimashita)</div>
                             </div>
                         </div>
                     </div>
                 </div>
                 
                 <!-- Additional Resources -->
-                <div class="bg-white rounded-lg shadow-md p-6">
+                <div class="bg-white rounded-lg shadow-md p-4 md:p-6">
                     <h2 class="text-2xl font-bold text-gray-800 mb-6 border-b pb-2">Sumber Belajar Tambahan</h2>
                     
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -765,7 +789,7 @@
     <!-- Footer -->
     <footer class="bg-gray-800 text-white py-8">
         <div class="container mx-auto px-4">
-            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-6 md:gap-8">
                 <div>
                     <h3 class="text-xl font-bold mb-4">Nihongopedia</h3>
                     <p class="text-gray-400">Platform belajar bahasa Jepang dari dasar hingga level JLPT N1.</p>
@@ -820,9 +844,12 @@
     
     <script>
         // Mobile menu toggle
-        document.getElementById('mobile-menu-button').addEventListener('click', function() {
-            const menu = document.getElementById('mobile-menu');
+        const menuButton = document.getElementById('mobile-menu-button');
+        const menu = document.getElementById('mobile-menu');
+
+        menuButton.addEventListener('click', () => {
             menu.classList.toggle('hidden');
+            menuButton.setAttribute('aria-expanded', !menu.classList.contains('hidden'));
         });
         
         // Practice button functionality
@@ -831,13 +858,16 @@
                 const isCorrect = this.getAttribute('data-answer') === 'と';
                 const feedback = this.parentElement.nextElementSibling;
                 
+                // Reset all buttons in this question
+                this.parentElement.querySelectorAll('.practice-btn').forEach(btn => {
+                    btn.classList.remove('correct', 'incorrect');
+                });
+                
                 if (isCorrect) {
-                    this.classList.remove('bg-red-100', 'hover:bg-red-200', 'text-red-800');
-                    this.classList.add('bg-green-100', 'text-green-800');
-                    feedback.classList.remove('hidden');
+                    this.classList.add('correct');
+                    feedback.classList.add('show');
                 } else {
-                    this.classList.remove('bg-gray-100', 'hover:bg-gray-200', 'text-gray-800');
-                    this.classList.add('bg-red-100', 'text-red-800');
+                    this.classList.add('incorrect');
                 }
             });
         });
@@ -847,7 +877,7 @@
             button.addEventListener('click', function() {
                 const input = this.previousElementSibling;
                 const feedback = this.parentElement.nextElementSibling;
-                feedback.classList.remove('hidden');
+                feedback.classList.add('show');
                 
                 if (input.value.trim() !== '') {
                     input.classList.add('border-green-500');
@@ -858,7 +888,7 @@
             });
         });
         
-        // Table responsive behavior
+        // Initialize responsive behavior
         function checkTableResponsive() {
             const tables = document.querySelectorAll('.table-responsive');
             tables.forEach(table => {
