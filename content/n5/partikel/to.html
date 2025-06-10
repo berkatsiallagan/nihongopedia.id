@@ -1,0 +1,877 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+    <!-- Google Ads -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1435241846420582" crossorigin="anonymous"></script>
+    
+    <!-- Meta Tags -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Nihongopedia - Belajar Partikel To (と) dalam Bahasa Jepang">
+    
+    <!-- Title -->
+    <title>Partikel To (と) | Nihongopedia</title>
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="/assets/images/logos/nihongopedia.png">
+    
+    <!-- CDN CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/assets/css/main.css">
+    <link rel="stylesheet" href="/assets/css/animations.css">
+    
+    <style>
+        .particle-card {
+            transition: all 0.3s ease;
+        }
+        .particle-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+        .furigana {
+            font-size: 0.6em;
+            opacity: 0.8;
+            display: block;
+            line-height: 1;
+        }
+        .example-jp {
+            font-size: 1.1em;
+            line-height: 1.6;
+        }
+        .example-id {
+            color: #666;
+            font-style: italic;
+        }
+        @media (max-width: 768px) {
+            .table-responsive {
+                display: block;
+                width: 100%;
+                overflow-x: auto;
+                -webkit-overflow-scrolling: touch;
+            }
+            .table-card {
+                display: flex;
+                flex-direction: column;
+            }
+            .table-card-row {
+                display: flex;
+                flex-direction: column;
+                margin-bottom: 1rem;
+                border: 1px solid #e5e7eb;
+                border-radius: 0.5rem;
+                padding: 1rem;
+            }
+            .table-card-header {
+                font-weight: bold;
+                color: #9b2c2c;
+                margin-bottom: 0.5rem;
+            }
+        }
+    </style>
+</head>
+<body class="bg-gray-50 font-sans text-gray-800 flex flex-col min-h-screen">
+    <!-- Header -->
+    <header class="bg-red-600 text-white shadow-md fixed top-0 left-0 right-0 z-50">
+        <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+            <!-- Logo -->
+            <div class="flex items-center space-x-2">
+                <a href="/" class="flex items-center">
+                    <img src="/assets/images/logos/nihongopedia.png" 
+                    alt="Nihongopedia Logo" 
+                    style="height: 40px; width: auto;"
+                    srcset="">
+                    <span class="ml-2 text-xl font-bold">Nihongopedia</span>
+                </a>
+            </div>
+            
+            <!-- Header Right Section -->
+            <div class="flex items-center space-x-4">
+                <!-- Mobile Menu Button -->
+                <button id="mobile-menu-button" class="md:hidden text-white focus:outline-none">
+                    <i class="fas fa-bars text-2xl"></i>
+                </button>
+            </div>
+            
+            <!-- Desktop Nav -->
+            <nav class="hidden md:flex space-x-6">
+                <a href="/" class="hover:text-red-200 transition">Beranda</a>
+                <a href="/content/basic/hiragana/" class="hover:text-red-200 transition">Pelajaran</a>
+                <a href="/practice/" class="hover:text-red-200 transition">Latihan</a>
+                <a href="/resources/" class="hover:text-red-200 transition">Sumber Belajar</a>
+                <a href="/donasi" class="hidden md:flex items-center text-white hover:text-red-200 transition text-sm">Donasi</a>
+                <a href="https://whatsapp.com/channel/0029Vag1xu13AzNLMBd6fi0a" target="_blank" class="hidden md:flex items-center text-white hover:text-red-200 transition text-sm">Channel WhatsApp</a>
+                </a>
+            </nav>
+        </div>
+        
+        <!-- Mobile Nav (Hidden by default) -->
+        <div id="mobile-menu" class="hidden md:hidden bg-red-700">
+            <div class="container mx-auto px-4 py-2 flex flex-col space-y-3">
+                <a href="/" class="py-2 hover:text-red-200 transition">Beranda</a>
+                <a href="/content/basic/hiragana/" class="py-2 hover:text-red-200 transition">Pelajaran</a>
+                <a href="/practice/" class="py-2 hover:text-red-200 transition">Latihan</a>
+                <a href="/resources/" class="py-2 hover:text-red-200 transition">Sumber Belajar</a>
+                <!-- Mobile version of the links -->
+                <a href="/donasi" class="py-2 hover:text-red-200 transition flex items-center">Donasi</a>
+                <a href="https://whatsapp.com/channel/0029Vag1xu13AzNLMBd6fi0a" target="_blank" class="py-2 hover:text-red-200 transition flex items-center">Channel WhatsApp</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content Layout -->
+    <div class="flex flex-1 pt-12">
+        <!-- Sidebar -->
+        <aside class="hidden lg:block w-64 bg-white shadow-md p-4">
+            <div class="sticky top-20">
+                <!-- Level Navigation -->
+                <div class="mb-6">
+                    <h3 class="font-bold text-lg mb-3 text-red-600 border-b pb-2">Level Belajar</h3>
+                    <ul class="space-y-2">
+                        <li><a href="/content/basic/" class="hover:text-red-600 transition">Dasar-dasar</a></li>
+                        <li><a href="/content/n5/" class="hover:text-red-600 transition font-semibold text-red-600">JLPT N5</a></li>
+                        <li><a href="/content/n4/" class="hover:text-red-600 transition">JLPT N4</a></li>
+                        <li><a href="/content/n3/" class="hover:text-red-600 transition">JLPT N3</a></li>
+                        <li><a href="/content/n2/" class="hover:text-red-600 transition">JLPT N2</a></li>
+                        <li><a href="/content/n1/" class="hover:text-red-600 transition">JLPT N1</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Quick Links -->
+                <div>
+                    <h3 class="font-bold text-lg mb-3 text-red-600 border-b pb-2">Akses Cepat</h3>
+                    <ul class="space-y-2">
+                        <li><a href="/practice/flashcards/" class="hover:text-red-600 transition"><i class="fas fa-layer-group mr-2"></i>Flashcards</a></li>
+                        <li><a href="/practice/quizzes/" class="hover:text-red-600 transition"><i class="fas fa-question-circle mr-2"></i>Kuis</a></li>
+                        <li><a href="/resources/cheat-sheets/" class="hover:text-red-600 transition"><i class="fas fa-scroll mr-2"></i>Cheat Sheets</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Sidebar Footer with Subtle Links -->
+                <div class="mt-8 pt-4 border-t border-gray-200 text-sm text-gray-600">
+                    <a href="https://whatsapp.com/channel/0029Vag1xu13AzNLMBd6fi0a" target="_blank" class="block mb-2 hover:text-red-600 transition">
+                        <i class="fab fa-whatsapp mr-2"></i>Channel WhatsApp
+                    </a>
+                    <a href="/donasi" class="block hover:text-red-600 transition">
+                        <i class="fas fa-hand-holding-heart mr-2"></i>Dukung Nihongopedia
+                    </a>
+                </div>
+            </div>
+        </aside>
+
+        <!-- Main Content Area -->
+        <main class="flex-1 p-8">
+            <!-- BreadCrumb -->
+            <div class="max-w-6xl mx-auto mb-4">
+                <nav class="flex" aria-label="Breadcrumb">
+                    <ol class="inline-flex items-center space-x-1 md:space-x-2">
+                        <li class="inline-flex items-center">
+                            <a href="/" class="inline-flex items-center text-sm font-medium text-gray-700 hover:text-red-600">
+                                <i class="fas fa-home mr-2"></i>
+                                Beranda
+                            </a>
+                        </li>
+                        <li class="inline-flex items-center">
+                            <div class="flex items-center">
+                                <i class="fas fa-chevron-right text-gray-400 text-xs"></i>
+                                <a href="/content/n5/" class="ml-2 text-sm font-medium text-gray-700 hover:text-red-600">JLPT N5</a>
+                            </div>
+                        </li>
+                        <li>    
+                            <div class="flex items-center">
+                                <i class="fas fa-chevron-right text-gray-400 text-xs"></i>
+                                <a href="#" class="ml-2 text-sm font-medium text-red-600 hover:text-red-500">Partikel To (と)</a>
+                            </div>
+                        </li>
+                    </ol>
+                </nav>
+            </div>
+
+            <!-- Main Content -->
+            <div class="max-w-6xl mx-auto">
+                <!-- Header Section -->
+                <div class="bg-white rounded-lg shadow-md p-6 mb-6">
+                    <h1 class="text-3xl font-bold text-gray-800 mb-2">Partikel To (と)</h1>
+                    <p class="text-lg text-gray-600 mb-4">Partikel yang digunakan untuk menyatakan hubungan "dengan" atau "dan" dalam bahasa Jepang</p>
+                    
+                    <div class="flex flex-wrap gap-4 mb-6">
+                        <span class="bg-red-100 text-red-800 px-3 py-1 rounded-full text-sm font-medium">JLPT N5</span>
+                        <span class="bg-red-100 text-red-800 px-3 py-1 rounded-full text-sm font-medium">Dasar-dasar</span>
+                        <span class="bg-red-100 text-red-800 px-3 py-1 rounded-full text-sm font-medium">Tata Bahasa</span>
+                    </div>
+                    
+                    <div class="bg-red-50 border-l-4 border-red-500 p-4 mb-6">
+                        <div class="flex">
+                            <div class="flex-shrink-0 text-red-500">
+                                <i class="fas fa-lightbulb text-xl"></i>
+                            </div>
+                            <div class="ml-3">
+                                <p class="text-sm text-red-700">
+                                    <span class="font-bold">Fakta Menarik:</span> Partikel "to" (と) memiliki beberapa fungsi penting termasuk menyatakan teman melakukan sesuatu, membuat daftar, dan menyatakan kutipan.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Content Sections -->
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+                    <!-- Quick Summary Card -->
+                    <div class="bg-white rounded-lg shadow-md p-6 particle-card">
+                        <h2 class="text-xl font-bold text-red-600 mb-4 flex items-center">
+                            <i class="fas fa-info-circle mr-2"></i> Ringkasan Cepat
+                        </h2>
+                        <ul class="space-y-3 text-gray-700">
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-red-500 mt-1 mr-2"></i>
+                                <span>Digunakan untuk "dan" (menghubungkan kata benda)</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-red-500 mt-1 mr-2"></i>
+                                <span>Menyatakan "dengan" (bersama seseorang)</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-red-500 mt-1 mr-2"></i>
+                                <span>Digunakan untuk kutipan langsung</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-red-500 mt-1 mr-2"></i>
+                                <span>Dipelajari pertama kali di level N5</span>
+                            </li>
+                        </ul>
+                    </div>
+                    
+                    <!-- Pronunciation Card -->
+                    <div class="bg-white rounded-lg shadow-md p-6 particle-card">
+                        <h2 class="text-xl font-bold text-red-600 mb-4 flex items-center">
+                            <i class="fas fa-volume-up mr-2"></i> Pengucapan
+                        </h2>
+                        <div class="flex items-center justify-center mb-4">
+                            <div class="text-center">
+                                <span class="text-3xl font-bold">と</span>
+                                <span class="text-gray-500 ml-2">(to)</span>
+                            </div>
+                        </div>
+                        <p class="text-gray-700">Partikel "to" selalu diucapkan "to" (seperti "to" dalam bahasa Indonesia). Tidak ada pengecualian pengucapan untuk partikel ini.</p>
+                    </div>
+                    
+                    <!-- Common Mistakes Card -->
+                    <div class="bg-white rounded-lg shadow-md p-6 particle-card">
+                        <h2 class="text-xl font-bold text-red-600 mb-4 flex items-center">
+                            <i class="fas fa-exclamation-triangle mr-2"></i> Kesalahan Umum
+                        </h2>
+                        <ul class="space-y-3 text-gray-700">
+                            <li class="flex items-start">
+                                <i class="fas fa-times text-red-500 mt-1 mr-2"></i>
+                                <span>Menggunakan "to" untuk menghubungkan kalimat (harusnya "shi" atau "te")</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-times text-red-500 mt-1 mr-2"></i>
+                                <span>Bingung dengan partikel "ya" (や) untuk daftar tidak lengkap</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-times text-red-500 mt-1 mr-2"></i>
+                                <span>Lupa menggunakan "to" saat menyatakan "dengan" seseorang</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <!-- Detailed Explanation Section -->
+                <div class="bg-white rounded-lg shadow-md p-6 mb-8">
+                    <h2 class="text-2xl font-bold text-gray-800 mb-6 border-b pb-2">Penjelasan Detail Partikel To (と)</h2>
+                    
+                    <div class="mb-8">
+                        <h3 class="text-xl font-bold text-red-600 mb-4">1. Fungsi Dasar Partikel To</h3>
+                        <p class="text-gray-700 mb-4">Partikel "to" (と) memiliki tiga fungsi utama dalam bahasa Jepang:</p>
+                        
+                        <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6">
+                            <div class="bg-gray-50 p-4 rounded-lg">
+                                <h4 class="font-bold text-red-500 mb-2">a. Menyatakan "Dan"</h4>
+                                <div class="example-jp mb-2">
+                                    りんご<span class="font-bold">と</span>バナナ
+                                    <span class="furigana">(ringo to banana)</span>
+                                </div>
+                                <div class="example-id">Apel dan pisang</div>
+                            </div>
+                            
+                            <div class="bg-gray-50 p-4 rounded-lg">
+                                <h4 class="font-bold text-red-500 mb-2">b. Menyatakan "Dengan"</h4>
+                                <div class="example-jp mb-2">
+                                    ともだち<span class="font-bold">と</span>えいがをみます。
+                                    <span class="furigana">(tomodachi to eiga o mimasu)</span>
+                                </div>
+                                <div class="example-id">Menonton film dengan teman</div>
+                            </div>
+                            
+                            <div class="bg-gray-50 p-4 rounded-lg">
+                                <h4 class="font-bold text-red-500 mb-2">c. Menyatakan Kutipan</h4>
+                                <div class="example-jp mb-2">
+                                    「こんにちは」<span class="font-bold">と</span>いいました。
+                                    <span class="furigana">("konnichiwa" to iimashita)</span>
+                                </div>
+                                <div class="example-id">Mengucapkan "halo"</div>
+                            </div>
+                        </div>
+                        
+                        <div class="bg-yellow-50 border-l-4 border-yellow-400 p-4">
+                            <div class="flex">
+                                <div class="flex-shrink-0 text-yellow-500">
+                                    <i class="fas fa-exclamation-triangle"></i>
+                                </div>
+                                <div class="ml-3">
+                                    <p class="text-sm text-yellow-700">
+                                        <span class="font-bold">Perhatian:</span> Partikel "to" hanya digunakan untuk menghubungkan kata benda, bukan kalimat atau frasa kerja.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="mb-8">
+                        <h3 class="text-xl font-bold text-red-600 mb-4">2. Penggunaan Partikel To sebagai "Dan"</h3>
+                        <p class="text-gray-700 mb-4">Partikel "to" digunakan untuk menghubungkan kata benda dengan arti "dan". Ini membuat daftar yang lengkap dan terbatas.</p>
+                        
+                        <div class="table-responsive">
+                            <div class="md:hidden table-card">
+                                <!-- Mobile Card View -->
+                                <div class="table-card-row">
+                                    <div class="table-card-header">Contoh 1</div>
+                                    <div class="example-jp mb-2">
+                                        ほん<span class="font-bold">と</span>じしょ
+                                        <span class="furigana">(hon to jisho)</span>
+                                    </div>
+                                    <div class="example-id">Buku dan kamus</div>
+                                </div>
+                                
+                                <div class="table-card-row">
+                                    <div class="table-card-header">Contoh 2</div>
+                                    <div class="example-jp mb-2">
+                                        コーヒー<span class="font-bold">と</span>ケーキ
+                                        <span class="furigana">(kōhī to kēki)</span>
+                                    </div>
+                                    <div class="example-id">Kopi dan kue</div>
+                                </div>
+                                
+                                <div class="table-card-row">
+                                    <div class="table-card-header">Perbedaan dengan "ya" (や)</div>
+                                    <div class="example-jp mb-2">
+                                        フルーツややさい
+                                        <span class="furigana">(furūtsu ya yasai)</span>
+                                    </div>
+                                    <div class="example-id">Buah-buahan dan sayuran (dan lain-lain)</div>
+                                    <p class="text-sm text-gray-600 mt-2">"ya" digunakan untuk daftar tidak lengkap, sedangkan "to" untuk daftar lengkap.</p>
+                                </div>
+                            </div>
+                            
+                            <!-- Desktop Table View -->
+                            <table class="hidden md:table min-w-full divide-y divide-gray-200 mb-4">
+                                <thead class="bg-gray-100">
+                                    <tr>
+                                        <th class="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Jenis</th>
+                                        <th class="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Contoh</th>
+                                        <th class="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Arti</th>
+                                        <th class="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Penjelasan</th>
+                                    </tr>
+                                </thead>
+                                <tbody class="bg-white divide-y divide-gray-200">
+                                    <tr>
+                                        <td class="px-4 py-4 whitespace-nowrap font-bold text-red-600">To (と)</td>
+                                        <td class="px-4 py-4">
+                                            <div class="example-jp">
+                                                ほん<span class="font-bold">と</span>じしょ
+                                                <span class="furigana">(hon to jisho)</span>
+                                            </div>
+                                        </td>
+                                        <td class="px-4 py-4">Buku dan kamus</td>
+                                        <td class="px-4 py-4">Daftar lengkap (hanya buku dan kamus)</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="px-4 py-4 whitespace-nowrap font-bold text-red-600">Ya (や)</td>
+                                        <td class="px-4 py-4">
+                                            <div class="example-jp">
+                                                フルーツややさい
+                                                <span class="furigana">(furūtsu ya yasai)</span>
+                                            </div>
+                                        </td>
+                                        <td class="px-4 py-4">Buah-buahan dan sayuran</td>
+                                        <td class="px-4 py-4">Daftar tidak lengkap (masih ada lainnya)</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        
+                        <div class="bg-red-50 border-l-4 border-red-500 p-4">
+                            <div class="flex">
+                                <div class="flex-shrink-0 text-red-500">
+                                    <i class="fas fa-lightbulb"></i>
+                                </div>
+                                <div class="ml-3">
+                                    <p class="text-sm text-red-700">
+                                        <span class="font-bold">Tip:</span> Gunakan "to" ketika Anda ingin menyebutkan semua item secara spesifik, dan "ya" ketika Anda hanya menyebutkan beberapa contoh dari banyak item.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="mb-8">
+                        <h3 class="text-xl font-bold text-red-600 mb-4">3. Penggunaan Partikel To sebagai "Dengan"</h3>
+                        <p class="text-gray-700 mb-4">Partikel "to" digunakan untuk menyatakan bahwa suatu tindakan dilakukan bersama dengan orang lain.</p>
+                        
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+                            <div class="bg-gray-50 p-4 rounded-lg">
+                                <h4 class="font-bold text-red-500 mb-2">Bentuk Dasar</h4>
+                                <div class="example-jp mb-2">
+                                    [Orang] <span class="font-bold">と</span> [Aksi]
+                                </div>
+                                <div class="example-id">[Dengan seseorang] [melakukan sesuatu]</div>
+                            </div>
+                            
+                            <div class="bg-gray-50 p-4 rounded-lg">
+                                <h4 class="font-bold text-red-500 mb-2">Contoh Kalimat</h4>
+                                <div class="example-jp mb-2">
+                                    ともだち<span class="font-bold">と</span>レストランでたべます。
+                                    <span class="furigana">(tomodachi to resutoran de tabemasu)</span>
+                                </div>
+                                <div class="example-id">Saya makan di restoran dengan teman.</div>
+                            </div>
+                        </div>
+                        
+                        <div class="table-responsive">
+                            <div class="md:hidden table-card">
+                                <!-- Mobile Card View -->
+                                <div class="table-card-row">
+                                    <div class="table-card-header">Contoh 1</div>
+                                    <div class="example-jp mb-2">
+                                        かのじょ<span class="font-bold">と</span>デートします。
+                                        <span class="furigana">(kanojo to dēto shimasu)</span>
+                                    </div>
+                                    <div class="example-id">Saya berkencan dengan pacar saya.</div>
+                                </div>
+                                
+                                <div class="table-card-row">
+                                    <div class="table-card-header">Contoh 2</div>
+                                    <div class="example-jp mb-2">
+                                        せんせい<span class="font-bold">と</span>はなします。
+                                        <span class="furigana">(sensei to hanashimasu)</span>
+                                    </div>
+                                    <div class="example-id">Saya berbicara dengan guru.</div>
+                                </div>
+                                
+                                <div class="table-card-row">
+                                    <div class="table-card-header">Perbedaan dengan "to issho ni"</div>
+                                    <div class="example-jp mb-2">
+                                        かぞく<span class="font-bold">といっしょに</span>りょこうします。
+                                        <span class="furigana">(kazoku to issho ni ryokō shimasu)</span>
+                                    </div>
+                                    <div class="example-id">Saya bepergian bersama keluarga.</div>
+                                    <p class="text-sm text-gray-600 mt-2">"to issho ni" lebih menekankan pada kebersamaan.</p>
+                                </div>
+                            </div>
+                            
+                            <!-- Desktop Table View -->
+                            <table class="hidden md:table min-w-full divide-y divide-gray-200">
+                                <thead class="bg-gray-100">
+                                    <tr>
+                                        <th class="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Contoh</th>
+                                        <th class="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Bacaan</th>
+                                        <th class="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Arti</th>
+                                        <th class="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Catatan</th>
+                                    </tr>
+                                </thead>
+                                <tbody class="bg-white divide-y divide-gray-200">
+                                    <tr>
+                                        <td class="px-4 py-4">
+                                            <div class="example-jp">
+                                                ともだち<span class="font-bold">と</span>あそびます。
+                                            </div>
+                                        </td>
+                                        <td class="px-4 py-4">
+                                            <span class="furigana">(tomodachi to asobimasu)</span>
+                                        </td>
+                                        <td class="px-4 py-4">Saya bermain dengan teman.</td>
+                                        <td class="px-4 py-4">Bentuk dasar</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="px-4 py-4">
+                                            <div class="example-jp">
+                                                りょうしん<span class="font-bold">といっしょに</span>すんでいます。
+                                            </div>
+                                        </td>
+                                        <td class="px-4 py-4">
+                                            <span class="furigana">(ryōshin to issho ni sunde imasu)</span>
+                                        </td>
+                                        <td class="px-4 py-4">Saya tinggal bersama orang tua.</td>
+                                        <td class="px-4 py-4">Penekanan pada kebersamaan</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="px-4 py-4">
+                                            <div class="example-jp">
+                                                だれ<span class="font-bold">と</span>いきますか。
+                                            </div>
+                                        </td>
+                                        <td class="px-4 py-4">
+                                            <span class="furigana">(dare to ikimasu ka)</span>
+                                        </td>
+                                        <td class="px-4 py-4">Dengan siapa kamu akan pergi?</td>
+                                        <td class="px-4 py-4">Pertanyaan dengan "dare to"</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    
+                    <div class="mb-8">
+                        <h3 class="text-xl font-bold text-red-600 mb-4">4. Penggunaan Partikel To untuk Kutipan</h3>
+                        <p class="text-gray-700 mb-4">Partikel "to" digunakan untuk mengutip perkataan atau pemikiran seseorang secara langsung.</p>
+                        
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <div class="bg-gray-50 p-4 rounded-lg">
+                                <h4 class="font-bold text-red-500 mb-2">Pola Dasar</h4>
+                                <div class="example-jp mb-2">
+                                    「[Kutipan]」<span class="font-bold">と</span> [Kata kerja]
+                                </div>
+                                <div class="example-id">"[Kutipan]" [kata kerja seperti mengatakan, berpikir]</div>
+                            </div>
+                            
+                            <div class="bg-gray-50 p-4 rounded-lg">
+                                <h4 class="font-bold text-red-500 mb-2">Kata Kerja Umum</h4>
+                                <ul class="space-y-2">
+                                    <li class="flex items-start">
+                                        <i class="fas fa-comment text-red-500 mt-1 mr-2"></i>
+                                        <span>いう (iu) - mengatakan</span>
+                                    </li>
+                                    <li class="flex items-start">
+                                        <i class="fas fa-comment text-red-500 mt-1 mr-2"></i>
+                                        <span>おもう (omou) - berpikir</span>
+                                    </li>
+                                    <li class="flex items-start">
+                                        <i class="fas fa-comment text-red-500 mt-1 mr-2"></i>
+                                        <span>かく (kaku) - menulis</span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        
+                        <div class="mt-6 space-y-4">
+                            <div class="bg-gray-50 p-4 rounded-lg">
+                                <div class="example-jp mb-2">
+                                    「おはようございます」<span class="font-bold">と</span>いいました。
+                                    <span class="furigana">("ohayō gozaimasu" to iimashita)</span>
+                                </div>
+                                <div class="example-id">Dia mengucapkan "selamat pagi".</div>
+                            </div>
+                            
+                            <div class="bg-gray-50 p-4 rounded-lg">
+                                <div class="example-jp mb-2">
+                                    「だいじょうぶです」<span class="font-bold">と</span>おもいます。
+                                    <span class="furigana">("daijōbu desu" to omoimasu)</span>
+                                </div>
+                                <div class="example-id">Saya pikir "tidak apa-apa".</div>
+                            </div>
+                            
+                            <div class="bg-gray-50 p-4 rounded-lg">
+                                <div class="example-jp mb-2">
+                                    せんせいは「よくできました」<span class="font-bold">と</span>いいました。
+                                    <span class="furigana">(sensei wa "yoku dekimashita" to iimashita)</span>
+                                </div>
+                                <div class="example-id">Guru mengatakan "kerja bagus".</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="mb-8">
+                        <h3 class="text-xl font-bold text-red-600 mb-4">5. Perbandingan dengan Partikel Lain</h3>
+                        
+                        <div class="table-responsive">
+                            <div class="md:hidden table-card">
+                                <!-- Mobile Card View -->
+                                <div class="table-card-row">
+                                    <div class="table-card-header">To (と)</div>
+                                    <div class="example-jp mb-2">
+                                        コーヒー<span class="font-bold">と</span>紅茶
+                                        <span class="furigana">(kōhī to kōcha)</span>
+                                    </div>
+                                    <div class="example-id">Kopi dan teh (hanya dua item)</div>
+                                </div>
+                                
+                                <div class="table-card-row">
+                                    <div class="table-card-header">Ya (や)</div>
+                                    <div class="example-jp mb-2">
+                                        コーヒー<span class="font-bold">や</span>紅茶
+                                        <span class="furigana">(kōhī ya kōcha)</span>
+                                    </div>
+                                    <div class="example-id">Kopi, teh, dan lainnya</div>
+                                </div>
+                                
+                                <div class="table-card-row">
+                                    <div class="table-card-header">To vs. Ni (に)</div>
+                                    <div class="example-jp mb-2">
+                                        ともだち<span class="font-bold">と</span>はなす (dengan teman)
+                                        <br>
+                                        ともだち<span class="font-bold">に</span>はなす (kepada teman)
+                                    </div>
+                                    <div class="example-id">"To" untuk bersama, "ni" untuk arah</div>
+                                </div>
+                            </div>
+                            
+                            <!-- Desktop Table View -->
+                            <table class="hidden md:table min-w-full divide-y divide-gray-200">
+                                <thead class="bg-gray-100">
+                                    <tr>
+                                        <th class="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Partikel</th>
+                                        <th class="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Contoh</th>
+                                        <th class="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Arti</th>
+                                        <th class="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Perbedaan</th>
+                                    </tr>
+                                </thead>
+                                <tbody class="bg-white divide-y divide-gray-200">
+                                    <tr>
+                                        <td class="px-4 py-4 whitespace-nowrap font-bold text-red-600">と</td>
+                                        <td class="px-4 py-4">
+                                            <div class="example-jp">
+                                                コーヒー<span class="font-bold">と</span>紅茶
+                                                <span class="furigana">(kōhī to kōcha)</span>
+                                            </div>
+                                        </td>
+                                        <td class="px-4 py-4">Kopi dan teh</td>
+                                        <td class="px-4 py-4">Daftar lengkap (hanya dua item)</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="px-4 py-4 whitespace-nowrap font-bold text-red-600">や</td>
+                                        <td class="px-4 py-4">
+                                            <div class="example-jp">
+                                                コーヒー<span class="font-bold">や</span>紅茶
+                                                <span class="furigana">(kōhī ya kōcha)</span>
+                                            </div>
+                                        </td>
+                                        <td class="px-4 py-4">Kopi, teh, dll.</td>
+                                        <td class="px-4 py-4">Daftar tidak lengkap (masih ada lainnya)</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="px-4 py-4 whitespace-nowrap font-bold text-red-600">に</td>
+                                        <td class="px-4 py-4">
+                                            <div class="example-jp">
+                                                ともだち<span class="font-bold">に</span>はなす
+                                                <span class="furigana">(tomodachi ni hanasu)</span>
+                                            </div>
+                                        </td>
+                                        <td class="px-4 py-4">Berbicara kepada teman</td>
+                                        <td class="px-4 py-4">"ni" menunjukkan arah/tujuan, bukan kebersamaan</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Practice Section -->
+                <div class="bg-white rounded-lg shadow-md p-6 mb-8">
+                    <h2 class="text-2xl font-bold text-gray-800 mb-6 border-b pb-2">Latihan Partikel To</h2>
+                    
+                    <div class="mb-8">
+                        <h3 class="text-xl font-bold text-red-600 mb-4">Latihan 1: Isilah dengan Partikel yang Tepat</h3>
+                        
+                        <div class="space-y-4">
+                            <div class="bg-gray-50 p-4 rounded-lg">
+                                <p class="text-gray-700 mb-2">1. わたしはともだち<span class="font-bold text-red-600">＿</span>えいがをみます。</p>
+                                <div class="grid grid-cols-3 gap-2">
+                                    <button class="practice-btn bg-red-100 hover:bg-red-200 text-red-800 py-2 px-4 rounded transition" data-answer="と">と</button>
+                                    <button class="practice-btn bg-gray-100 hover:bg-gray-200 text-gray-800 py-2 px-4 rounded transition" data-answer="に">に</button>
+                                    <button class="practice-btn bg-gray-100 hover:bg-gray-200 text-gray-800 py-2 px-4 rounded transition" data-answer="で">で</button>
+                                </div>
+                                <div class="mt-2 text-sm text-green-600 hidden answer-feedback">Jawaban benar! Partikel "と" digunakan untuk menyatakan "dengan" seseorang.</div>
+                            </div>
+                            
+                            <div class="bg-gray-50 p-4 rounded-lg">
+                                <p class="text-gray-700 mb-2">2. コーヒー<span class="font-bold text-red-600">＿</span>紅茶がすきです。</p>
+                                <div class="grid grid-cols-3 gap-2">
+                                    <button class="practice-btn bg-red-100 hover:bg-red-200 text-red-800 py-2 px-4 rounded transition" data-answer="と">と</button>
+                                    <button class="practice-btn bg-gray-100 hover:bg-gray-200 text-gray-800 py-2 px-4 rounded transition" data-answer="や">や</button>
+                                    <button class="practice-btn bg-gray-100 hover:bg-gray-200 text-gray-800 py-2 px-4 rounded transition" data-answer="も">も</button>
+                                </div>
+                                <div class="mt-2 text-sm text-green-600 hidden answer-feedback">Benar! "と" digunakan untuk menghubungkan kata benda dengan arti "dan".</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="mb-8">
+                        <h3 class="text-xl font-bold text-red-600 mb-4">Latihan 2: Terjemahkan Kalimat Berikut</h3>
+                        
+                        <div class="space-y-4">
+                            <div class="bg-gray-50 p-4 rounded-lg">
+                                <p class="text-gray-700 mb-2">1. Saya pergi ke sekolah dengan adik laki-laki.</p>
+                                <div class="flex items-center">
+                                    <input type="text" class="flex-1 border border-gray-300 rounded-l-lg py-2 px-4 focus:outline-none focus:ring-2 focus:ring-red-500" placeholder="Tulis dalam bahasa Jepang...">
+                                    <button class="bg-red-600 hover:bg-red-700 text-white py-2 px-4 rounded-r-lg transition check-translation">Periksa</button>
+                                </div>
+                                <div class="mt-2 text-sm text-green-600 hidden translation-feedback">Jawaban yang benar: わたしはおとうと<span class="font-bold">と</span>がっこうへいきます。(watashi wa otōto to gakkō e ikimasu)</div>
+                            </div>
+                            
+                            <div class="bg-gray-50 p-4 rounded-lg">
+                                <p class="text-gray-700 mb-2">2. Dia mengatakan "terima kasih".</p>
+                                <div class="flex items-center">
+                                    <input type="text" class="flex-1 border border-gray-300 rounded-l-lg py-2 px-4 focus:outline-none focus:ring-2 focus:ring-red-500" placeholder="Tulis dalam bahasa Jepang...">
+                                    <button class="bg-red-600 hover:bg-red-700 text-white py-2 px-4 rounded-r-lg transition check-translation">Periksa</button>
+                                </div>
+                                <div class="mt-2 text-sm text-green-600 hidden translation-feedback">Jawaban yang benar: かのじょは「ありがとう」<span class="font-bold">と</span>いいました。(kanojo wa "arigatō" to iimashita)</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Additional Resources -->
+                <div class="bg-white rounded-lg shadow-md p-6">
+                    <h2 class="text-2xl font-bold text-gray-800 mb-6 border-b pb-2">Sumber Belajar Tambahan</h2>
+                    
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <!-- Resource 1 -->
+                        <div class="bg-red-50 border border-red-100 rounded-lg p-4 hover:border-red-200 transition">
+                            <h3 class="font-bold text-red-600 mb-2">Video Pembelajaran</h3>
+                            <p class="text-gray-700 mb-3">Tonton video penjelasan partikel "to" oleh sensei Jepang.</p>
+                            <a href="#" class="text-red-600 hover:text-red-800 font-medium inline-flex items-center">
+                                Tonton Sekarang <i class="fas fa-arrow-right ml-2"></i>
+                            </a>
+                        </div>
+                        
+                        <!-- Resource 2 -->
+                        <div class="bg-red-50 border border-red-100 rounded-lg p-4 hover:border-red-200 transition">
+                            <h3 class="font-bold text-red-600 mb-2">Flashcards</h3>
+                            <p class="text-gray-700 mb-3">Latih penguasaan partikel "to" dengan flashcards interaktif.</p>
+                            <a href="#" class="text-red-600 hover:text-red-800 font-medium inline-flex items-center">
+                                Mulai Belajar <i class="fas fa-arrow-right ml-2"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Navigation Buttons -->
+                <div class="flex flex-col sm:flex-row justify-between gap-4 mt-8">
+                    <a href="/content/n5/" class="bg-gray-200 hover:bg-gray-300 text-gray-800 font-medium py-2 px-4 rounded-lg inline-flex items-center justify-center">
+                        <i class="fas fa-arrow-left mr-2"></i> JLPT N5
+                    </a>
+                    <a href="/content/n5/partikel/kara.html" class="bg-red-600 hover:bg-red-700 text-white font-medium py-2 px-4 rounded-lg inline-flex items-center justify-center">
+                        Partikel Kara (から) <i class="fas fa-arrow-right ml-2"></i>
+                    </a>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-8">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Nihongopedia</h3>
+                    <p class="text-gray-400">Platform belajar bahasa Jepang dari dasar hingga level JLPT N1.</p>
+                    <!-- Footer Contact Links -->
+                    <div class="mt-4 space-y-2">
+                        <a href="https://whatsapp.com/channel/0029Vag1xu13AzNLMBd6fi0a" target="_blank" class="flex items-center text-gray-400 hover:text-white transition text-sm">
+                            <i class="fab fa-whatsapp mr-2"></i> WhatsApp Channel
+                        </a>
+                        <a href="/donasi" class="flex items-center text-gray-400 hover:text-white transition text-sm">
+                            <i class="fas fa-heart mr-2"></i> Donasi
+                        </a>
+                    </div>
+                </div>
+                <div>
+                    <h4 class="font-bold mb-4">Navigasi</h4>
+                    <ul class="space-y-2">
+                        <li><a href="/" class="text-gray-400 hover:text-white transition">Beranda</a></li>
+                        <li><a href="/about.html" class="text-gray-400 hover:text-white transition">Tentang Kami</a></li>
+                        <li><a href="/roadmap.html" class="text-gray-400 hover:text-white transition">Roadmap Belajar</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-bold mb-4">Bantuan</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">FAQ</a></li>
+                        <li><a href="/privacy.html" class="text-gray-400 hover:text-white transition">Kebijakan Privasi</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">Email : nihongopedia123@gmail.com</a></li>
+
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-bold mb-4">Sosial Media</h4>
+                    <div class="flex space-x-4">
+                        <a href="https://instagram.com/nihongopedia.jpg" class="text-gray-400 hover:text-white transition text-2xl"><i class="fab fa-instagram"></i></a>
+                        <a href="https://youtube.com/@nihongopedia" class="text-gray-400 hover:text-white transition text-2xl"><i class="fab fa-youtube"></i></a>
+                        <a href="https://tiktok.com/@nihongopedia" class="text-gray-400 hover:text-white transition text-2xl"><i class="fab fa-tiktok"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-gray-700 mt-8 pt-6 text-center text-gray-400">
+                <p>&copy; 2023 Nihongopedia.id. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- CDN JS -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    
+    <!-- Custom JS -->
+    <script src="/assets/js/main.js"></script>
+    
+    <script>
+        // Mobile menu toggle
+        document.getElementById('mobile-menu-button').addEventListener('click', function() {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('hidden');
+        });
+        
+        // Practice button functionality
+        document.querySelectorAll('.practice-btn').forEach(button => {
+            button.addEventListener('click', function() {
+                const isCorrect = this.getAttribute('data-answer') === 'と';
+                const feedback = this.parentElement.nextElementSibling;
+                
+                if (isCorrect) {
+                    this.classList.remove('bg-red-100', 'hover:bg-red-200', 'text-red-800');
+                    this.classList.add('bg-green-100', 'text-green-800');
+                    feedback.classList.remove('hidden');
+                } else {
+                    this.classList.remove('bg-gray-100', 'hover:bg-gray-200', 'text-gray-800');
+                    this.classList.add('bg-red-100', 'text-red-800');
+                }
+            });
+        });
+        
+        // Translation check functionality
+        document.querySelectorAll('.check-translation').forEach(button => {
+            button.addEventListener('click', function() {
+                const input = this.previousElementSibling;
+                const feedback = this.parentElement.nextElementSibling;
+                feedback.classList.remove('hidden');
+                
+                if (input.value.trim() !== '') {
+                    input.classList.add('border-green-500');
+                    setTimeout(() => {
+                        input.classList.remove('border-green-500');
+                    }, 2000);
+                }
+            });
+        });
+        
+        // Table responsive behavior
+        function checkTableResponsive() {
+            const tables = document.querySelectorAll('.table-responsive');
+            tables.forEach(table => {
+                if (window.innerWidth < 768) {
+                    // For mobile, we rely on horizontal scrolling
+                } else {
+                    // For desktop, ensure table is properly displayed
+                }
+            });
+        }
+        
+        window.addEventListener('resize', checkTableResponsive);
+        document.addEventListener('DOMContentLoaded', checkTableResponsive);
+    </script>
+</body>
+</html>

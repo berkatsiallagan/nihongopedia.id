@@ -1,0 +1,644 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+    <!-- Google Ads -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1435241846420582" crossorigin="anonymous"></script>
+    
+    <!-- Meta Tags -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Nihongopedia - Belajar Partikel Wa (は) dalam Bahasa Jepang">
+    
+    <!-- Title -->
+    <title>Partikel Wa (は) | Nihongopedia</title>
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="/assets/images/logos/nihongopedia.png">
+    
+    <!-- CDN CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/assets/css/main.css">
+    <link rel="stylesheet" href="/assets/css/animations.css">
+    
+    <style>
+        .particle-card {
+            transition: all 0.3s ease;
+        }
+        .particle-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+        .furigana {
+            font-size: 0.6em;
+            opacity: 0.8;
+            display: block;
+            line-height: 1;
+        }
+        .example-jp {
+            font-size: 1.1em;
+            line-height: 1.6;
+        }
+        .example-id {
+            color: #666;
+            font-style: italic;
+        }
+        @media (max-width: 768px) {
+            .table-responsive {
+                display: block;
+                width: 100%;
+                overflow-x: auto;
+                -webkit-overflow-scrolling: touch;
+            }
+        }
+    </style>
+</head>
+<body class="bg-gray-50 font-sans text-gray-800 flex flex-col min-h-screen">
+    <!-- Header -->
+    <header class="bg-red-600 text-white shadow-md fixed top-0 left-0 right-0 z-50">
+        <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+            <!-- Logo -->
+            <div class="flex items-center space-x-2">
+                <a href="/" class="flex items-center">
+                    <img src="/assets/images/logos/nihongopedia.png" 
+                    alt="Nihongopedia Logo" 
+                    style="height: 40px; width: auto;"
+                    srcset="">
+                    <span class="ml-2 text-xl font-bold">Nihongopedia</span>
+                </a>
+            </div>
+            
+            <!-- Header Right Section -->
+            <div class="flex items-center space-x-4">
+                <!-- Mobile Menu Button -->
+                <button id="mobile-menu-button" class="md:hidden text-white focus:outline-none">
+                    <i class="fas fa-bars text-2xl"></i>
+                </button>
+            </div>
+            
+            <!-- Desktop Nav -->
+            <nav class="hidden md:flex space-x-6">
+                <a href="/" class="hover:text-red-200 transition">Beranda</a>
+                <a href="/content/basic/hiragana/" class="hover:text-red-200 transition">Pelajaran</a>
+                <a href="/practice/" class="hover:text-red-200 transition">Latihan</a>
+                <a href="/resources/" class="hover:text-red-200 transition">Sumber Belajar</a>
+                <a href="/donasi" class="hidden md:flex items-center text-white hover:text-red-200 transition text-sm">Donasi</a>
+                <a href="https://whatsapp.com/channel/0029Vag1xu13AzNLMBd6fi0a" target="_blank" class="hidden md:flex items-center text-white hover:text-red-200 transition text-sm">Channel WhatsApp</a>
+                </a>
+            </nav>
+        </div>
+        
+        <!-- Mobile Nav (Hidden by default) -->
+        <div id="mobile-menu" class="hidden md:hidden bg-red-700">
+            <div class="container mx-auto px-4 py-2 flex flex-col space-y-3">
+                <a href="/" class="py-2 hover:text-red-200 transition">Beranda</a>
+                <a href="/content/basic/hiragana/" class="py-2 hover:text-red-200 transition">Pelajaran</a>
+                <a href="/practice/" class="py-2 hover:text-red-200 transition">Latihan</a>
+                <a href="/resources/" class="py-2 hover:text-red-200 transition">Sumber Belajar</a>
+                <!-- Mobile version of the links -->
+                <a href="/donasi" class="py-2 hover:text-red-200 transition flex items-center">Donasi</a>
+                <a href="https://whatsapp.com/channel/0029Vag1xu13AzNLMBd6fi0a" target="_blank" class="py-2 hover:text-red-200 transition flex items-center">Channel WhatsApp</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content Layout -->
+    <div class="flex flex-1 pt-12">
+        <!-- Sidebar -->
+        <aside class="hidden lg:block w-64 bg-white shadow-md p-4">
+            <div class="sticky top-20">
+                <!-- Level Navigation -->
+                <div class="mb-6">
+                    <h3 class="font-bold text-lg mb-3 text-red-600 border-b pb-2">Level Belajar</h3>
+                    <ul class="space-y-2">
+                        <li><a href="/content/basic/" class="hover:text-red-600 transition">Dasar-dasar</a></li>
+                        <li><a href="/content/n5/" class="hover:text-red-600 transition font-semibold text-red-600">JLPT N5</a></li>
+                        <li><a href="/content/n4/" class="hover:text-red-600 transition">JLPT N4</a></li>
+                        <li><a href="/content/n3/" class="hover:text-red-600 transition">JLPT N3</a></li>
+                        <li><a href="/content/n2/" class="hover:text-red-600 transition">JLPT N2</a></li>
+                        <li><a href="/content/n1/" class="hover:text-red-600 transition">JLPT N1</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Quick Links -->
+                <div>
+                    <h3 class="font-bold text-lg mb-3 text-red-600 border-b pb-2">Akses Cepat</h3>
+                    <ul class="space-y-2">
+                        <li><a href="/practice/flashcards/" class="hover:text-red-600 transition"><i class="fas fa-layer-group mr-2"></i>Flashcards</a></li>
+                        <li><a href="/practice/quizzes/" class="hover:text-red-600 transition"><i class="fas fa-question-circle mr-2"></i>Kuis</a></li>
+                        <li><a href="/resources/cheat-sheets/" class="hover:text-red-600 transition"><i class="fas fa-scroll mr-2"></i>Cheat Sheets</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Sidebar Footer with Subtle Links -->
+                <div class="mt-8 pt-4 border-t border-gray-200 text-sm text-gray-600">
+                    <a href="https://whatsapp.com/channel/0029Vag1xu13AzNLMBd6fi0a" target="_blank" class="block mb-2 hover:text-red-600 transition">
+                        <i class="fab fa-whatsapp mr-2"></i>Channel WhatsApp
+                    </a>
+                    <a href="/donasi" class="block hover:text-red-600 transition">
+                        <i class="fas fa-hand-holding-heart mr-2"></i>Dukung Nihongopedia
+                    </a>
+                </div>
+            </div>
+        </aside>
+
+        <!-- Main Content Area -->
+        <main class="flex-1 p-8">
+            <!-- BreadCrumb -->
+            <div class="max-w-6xl mx-auto mb-4">
+                <nav class="flex" aria-label="Breadcrumb">
+                    <ol class="inline-flex items-center space-x-1 md:space-x-2">
+                        <li class="inline-flex items-center">
+                            <a href="/" class="inline-flex items-center text-sm font-medium text-gray-700 hover:text-red-600">
+                                <i class="fas fa-home mr-2"></i>
+                                Beranda
+                            </a>
+                        </li>
+                        <li class="inline-flex items-center">
+                            <div class="flex items-center">
+                                <i class="fas fa-chevron-right text-gray-400 text-xs"></i>
+                                <a href="/content/n5/" class="ml-2 text-sm font-medium text-gray-700 hover:text-red-600">JLPT N5</a>
+                            </div>
+                        </li>
+                        <li>    
+                            <div class="flex items-center">
+                                <i class="fas fa-chevron-right text-gray-400 text-xs"></i>
+                                <a href="#" class="ml-2 text-sm font-medium text-red-600 hover:text-red-500">Partikel Wa (は)</a>
+                            </div>
+                        </li>
+                    </ol>
+                </nav>
+            </div>
+
+            <!-- Main Content -->
+            <div class="max-w-6xl mx-auto">
+                <!-- Header Section -->
+                <div class="bg-white rounded-lg shadow-md p-6 mb-6">
+                    <h1 class="text-3xl font-bold text-gray-800 mb-2">Partikel Wa (は)</h1>
+                    <p class="text-lg text-gray-600 mb-4">Partikel yang sangat penting dalam bahasa Jepang untuk menunjukkan topik pembicaraan</p>
+                    
+                    <div class="flex flex-wrap gap-4 mb-6">
+                        <span class="bg-red-100 text-red-800 px-3 py-1 rounded-full text-sm font-medium">JLPT N5</span>
+                        <span class="bg-red-100 text-red-800 px-3 py-1 rounded-full text-sm font-medium">Dasar-dasar</span>
+                        <span class="bg-red-100 text-red-800 px-3 py-1 rounded-full text-sm font-medium">Tata Bahasa</span>
+                    </div>
+                    
+                    <div class="bg-red-50 border-l-4 border-red-500 p-4 mb-6">
+                        <div class="flex">
+                            <div class="flex-shrink-0 text-red-500">
+                                <i class="fas fa-lightbulb text-xl"></i>
+                            </div>
+                            <div class="ml-3">
+                                <p class="text-sm text-red-700">
+                                    <span class="font-bold">Fakta Menarik:</span> Meskipun ditulis dengan huruf hiragana "は" (ha), partikel ini dibaca sebagai "wa" ketika berfungsi sebagai partikel.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Content Sections -->
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+                    <!-- Quick Summary Card -->
+                    <div class="bg-white rounded-lg shadow-md p-6 particle-card">
+                        <h2 class="text-xl font-bold text-red-600 mb-4 flex items-center">
+                            <i class="fas fa-info-circle mr-2"></i> Ringkasan Cepat
+                        </h2>
+                        <ul class="space-y-3 text-gray-700">
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-red-500 mt-1 mr-2"></i>
+                                <span>Dibaca "wa" meski ditulis "は"</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-red-500 mt-1 mr-2"></i>
+                                <span>Menunjukkan topik pembicaraan</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-red-500 mt-1 mr-2"></i>
+                                <span>Sering digunakan dalam kalimat</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-red-500 mt-1 mr-2"></i>
+                                <span>Dipelajari pertama kali di level N5</span>
+                            </li>
+                        </ul>
+                    </div>
+                    
+                    <!-- Pronunciation Card -->
+                    <div class="bg-white rounded-lg shadow-md p-6 particle-card">
+                        <h2 class="text-xl font-bold text-red-600 mb-4 flex items-center">
+                            <i class="fas fa-volume-up mr-2"></i> Pengucapan
+                        </h2>
+                        <div class="flex items-center justify-between mb-4">
+                            <div>
+                                <span class="text-2xl font-bold">は</span>
+                                <span class="text-gray-500 ml-2">(ha)</span>
+                            </div>
+                            <div class="text-2xl text-red-500">
+                                <i class="fas fa-arrow-right"></i>
+                            </div>
+                            <div>
+                                <span class="text-2xl font-bold">わ</span>
+                                <span class="text-gray-500 ml-2">(wa)</span>
+                            </div>
+                        </div>
+                        <p class="text-gray-700">Ketika berfungsi sebagai partikel, "は" dibaca "wa", bukan "ha". Ini adalah pengecualian dalam bahasa Jepang.</p>
+                    </div>
+                    
+                    <!-- Common Mistakes Card -->
+                    <div class="bg-white rounded-lg shadow-md p-6 particle-card">
+                        <h2 class="text-xl font-bold text-red-600 mb-4 flex items-center">
+                            <i class="fas fa-exclamation-triangle mr-2"></i> Kesalahan Umum
+                        </h2>
+                        <ul class="space-y-3 text-gray-700">
+                            <li class="flex items-start">
+                                <i class="fas fa-times text-red-500 mt-1 mr-2"></i>
+                                <span>Membaca "は" sebagai "ha" saat partikel</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-times text-red-500 mt-1 mr-2"></i>
+                                <span>Bingung dengan partikel "ga" (が)</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-times text-red-500 mt-1 mr-2"></i>
+                                <span>Lupa menggunakan partikel wa</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <!-- Detailed Explanation Section -->
+                <div class="bg-white rounded-lg shadow-md p-6 mb-8">
+                    <h2 class="text-2xl font-bold text-gray-800 mb-6 border-b pb-2">Penjelasan Detail Partikel Wa (は)</h2>
+                    
+                    <div class="mb-8">
+                        <h3 class="text-xl font-bold text-red-600 mb-4">1. Fungsi Dasar Partikel Wa</h3>
+                        <p class="text-gray-700 mb-4">Partikel "wa" (は) digunakan untuk menunjukkan <strong>topik</strong> atau <strong>subjek</strong> pembicaraan dalam kalimat. Partikel ini memberitahu pendengar tentang apa yang sedang dibicarakan.</p>
+                        
+                        <div class="bg-gray-50 p-4 rounded-lg mb-4">
+                            <div class="example-jp mb-2">
+                                <span class="font-bold">わたしは</span>がくせいです。
+                                <span class="furigana">(watashi wa gakusei desu)</span>
+                            </div>
+                            <div class="example-id">Saya adalah seorang pelajar.</div>
+                        </div>
+                        
+                        <p class="text-gray-700">Dalam contoh di atas, "watashi wa" menunjukkan bahwa topik pembicaraan adalah "saya", dan informasi tentang saya adalah "seorang pelajar".</p>
+                    </div>
+                    
+                    <div class="mb-8">
+                        <h3 class="text-xl font-bold text-red-600 mb-4">2. Perbedaan dengan Partikel Ga (が)</h3>
+                        <p class="text-gray-700 mb-4">Banyak pembelajar bingung antara partikel "wa" dan "ga". Perbedaan utamanya adalah:</p>
+                        
+                        <div class="overflow-x-auto table-responsive">
+                            <table class="min-w-full divide-y divide-gray-200 mb-4">
+                                <thead class="bg-gray-100">
+                                    <tr>
+                                        <th class="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Partikel</th>
+                                        <th class="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Fungsi</th>
+                                        <th class="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Contoh</th>
+                                    </tr>
+                                </thead>
+                                <tbody class="bg-white divide-y divide-gray-200">
+                                    <tr>
+                                        <td class="px-4 py-4 whitespace-nowrap font-bold text-red-600">は (wa)</td>
+                                        <td class="px-4 py-4">Menunjukkan topik pembicaraan</td>
+                                        <td class="px-4 py-4">
+                                            <div class="example-jp">
+                                                わたしはにほんじんです。
+                                                <span class="furigana">(watashi wa nihonjin desu)</span>
+                                            </div>
+                                            <div class="example-id">(Mengenai saya) Saya orang Jepang.</div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="px-4 py-4 whitespace-nowrap font-bold text-red-600">が (ga)</td>
+                                        <td class="px-4 py-4">Menunjukkan subjek yang melakukan aksi</td>
+                                        <td class="px-4 py-4">
+                                            <div class="example-jp">
+                                                わたしがします。
+                                                <span class="furigana">(watashi ga shimasu)</span>
+                                            </div>
+                                            <div class="example-id">Sayalah yang akan melakukannya.</div>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        
+                        <div class="bg-yellow-50 border-l-4 border-yellow-400 p-4">
+                            <div class="flex">
+                                <div class="flex-shrink-0 text-yellow-500">
+                                    <i class="fas fa-exclamation-triangle"></i>
+                                </div>
+                                <div class="ml-3">
+                                    <p class="text-sm text-yellow-700">
+                                        <span class="font-bold">Perhatian:</span> Dalam pertanyaan dengan kata tanya (who, what, etc.), jawabannya biasanya menggunakan "ga" bukan "wa".
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="mb-8">
+                        <h3 class="text-xl font-bold text-red-600 mb-4">3. Penggunaan Partikel Wa dalam Berbagai Konteks</h3>
+                        
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <!-- Usage 1 -->
+                            <div class="bg-gray-50 p-4 rounded-lg">
+                                <h4 class="font-bold text-red-500 mb-2">a. Perkenalan Diri</h4>
+                                <div class="example-jp mb-2">
+                                    はじめまして。<span class="font-bold">わたしは</span>アリです。
+                                    <span class="furigana">(Hajimemashite. Watashi wa Ari desu)</span>
+                                </div>
+                                <div class="example-id">Senang berkenalan. Saya Ari.</div>
+                            </div>
+                            
+                            <!-- Usage 2 -->
+                            <div class="bg-gray-50 p-4 rounded-lg">
+                                <h4 class="font-bold text-red-500 mb-2">b. Menyatakan Kebangsaan</h4>
+                                <div class="example-jp mb-2">
+                                    <span class="font-bold">アリさんは</span>インドネシアじんです。
+                                    <span class="furigana">(Ari-san wa Indoneshia-jin desu)</span>
+                                </div>
+                                <div class="example-id">Ari adalah orang Indonesia.</div>
+                            </div>
+                            
+                            <!-- Usage 3 -->
+                            <div class="bg-gray-50 p-4 rounded-lg">
+                                <h4 class="font-bold text-red-500 mb-2">c. Menyatakan Pekerjaan</h4>
+                                <div class="example-jp mb-2">
+                                    <span class="font-bold">わたしは</span>いしゃです。
+                                    <span class="furigana">(Watashi wa isha desu)</span>
+                                </div>
+                                <div class="example-id">Saya adalah dokter.</div>
+                            </div>
+                            
+                            <!-- Usage 4 -->
+                            <div class="bg-gray-50 p-4 rounded-lg">
+                                <h4 class="font-bold text-red-500 mb-2">d. Menyatakan Suka/Tidak Suka</h4>
+                                <div class="example-jp mb-2">
+                                    <span class="font-bold">わたしは</span>さしみがすきです。
+                                    <span class="furigana">(Watashi wa sashimi ga suki desu)</span>
+                                </div>
+                                <div class="example-id">Saya suka sashimi.</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="mb-8">
+                        <h3 class="text-xl font-bold text-red-600 mb-4">4. Pola Kalimat dengan Partikel Wa</h3>
+                        
+                        <div class="overflow-x-auto table-responsive">
+                            <table class="min-w-full divide-y divide-gray-200">
+                                <thead class="bg-gray-100">
+                                    <tr>
+                                        <th class="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Pola Kalimat</th>
+                                        <th class="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Contoh</th>
+                                        <th class="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Arti</th>
+                                    </tr>
+                                </thead>
+                                <tbody class="bg-white divide-y divide-gray-200">
+                                    <tr>
+                                        <td class="px-4 py-4 whitespace-nowrap">[Topik] は [Kata Benda] です</td>
+                                        <td class="px-4 py-4">
+                                            <div class="example-jp">
+                                                これはほんです。
+                                                <span class="furigana">(Kore wa hon desu)</span>
+                                            </div>
+                                        </td>
+                                        <td class="px-4 py-4">Ini adalah buku.</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="px-4 py-4 whitespace-nowrap">[Topik] は [Kata Sifat] です</td>
+                                        <td class="px-4 py-4">
+                                            <div class="example-jp">
+                                                このレストランはおいしいです。
+                                                <span class="furigana">(Kono resutoran wa oishii desu)</span>
+                                            </div>
+                                        </td>
+                                        <td class="px-4 py-4">Restoran ini enak.</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="px-4 py-4 whitespace-nowrap">[Topik] は [Kata Kerja]</td>
+                                        <td class="px-4 py-4">
+                                            <div class="example-jp">
+                                                わたしはべんきょうします。
+                                                <span class="furigana">(Watashi wa benkyou shimasu)</span>
+                                            </div>
+                                        </td>
+                                        <td class="px-4 py-4">Saya belajar.</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Practice Section -->
+                <div class="bg-white rounded-lg shadow-md p-6 mb-8">
+                    <h2 class="text-2xl font-bold text-gray-800 mb-6 border-b pb-2">Latihan Partikel Wa</h2>
+                    
+                    <div class="mb-8">
+                        <h3 class="text-xl font-bold text-red-600 mb-4">Latihan 1: Isilah dengan Partikel yang Tepat</h3>
+                        
+                        <div class="space-y-4">
+                            <div class="bg-gray-50 p-4 rounded-lg">
+                                <p class="text-gray-700 mb-2">1. わたし<span class="font-bold text-red-600">＿</span>インドネシアじんです。</p>
+                                <div class="grid grid-cols-2 gap-2">
+                                    <button class="practice-btn bg-red-100 hover:bg-red-200 text-red-800 py-2 px-4 rounded transition" data-answer="は">は</button>
+                                    <button class="practice-btn bg-gray-100 hover:bg-gray-200 text-gray-800 py-2 px-4 rounded transition" data-answer="が">が</button>
+                                </div>
+                                <div class="mt-2 text-sm text-green-600 hidden answer-feedback">Jawaban benar! Partikel "は" digunakan untuk menunjukkan topik pembicaraan.</div>
+                            </div>
+                            
+                            <div class="bg-gray-50 p-4 rounded-lg">
+                                <p class="text-gray-700 mb-2">2. これ<span class="font-bold text-red-600">＿</span>わたしのほんです。</p>
+                                <div class="grid grid-cols-2 gap-2">
+                                    <button class="practice-btn bg-red-100 hover:bg-red-200 text-red-800 py-2 px-4 rounded transition" data-answer="は">は</button>
+                                    <button class="practice-btn bg-gray-100 hover:bg-gray-200 text-gray-800 py-2 px-4 rounded transition" data-answer="が">が</button>
+                                </div>
+                                <div class="mt-2 text-sm text-green-600 hidden answer-feedback">Benar! "は" menunjukkan bahwa "ini" adalah topik pembicaraan.</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="mb-8">
+                        <h3 class="text-xl font-bold text-red-600 mb-4">Latihan 2: Terjemahkan Kalimat Berikut</h3>
+                        
+                        <div class="space-y-4">
+                            <div class="bg-gray-50 p-4 rounded-lg">
+                                <p class="text-gray-700 mb-2">1. Saya adalah guru.</p>
+                                <div class="flex items-center">
+                                    <input type="text" class="flex-1 border border-gray-300 rounded-l-lg py-2 px-4 focus:outline-none focus:ring-2 focus:ring-red-500" placeholder="Tulis dalam bahasa Jepang...">
+                                    <button class="bg-red-600 hover:bg-red-700 text-white py-2 px-4 rounded-r-lg transition check-translation">Periksa</button>
+                                </div>
+                                <div class="mt-2 text-sm text-green-600 hidden translation-feedback">Jawaban yang benar: わたしはせんせいです。(watashi wa sensei desu)</div>
+                            </div>
+                            
+                            <div class="bg-gray-50 p-4 rounded-lg">
+                                <p class="text-gray-700 mb-2">2. Makanan ini enak.</p>
+                                <div class="flex items-center">
+                                    <input type="text" class="flex-1 border border-gray-300 rounded-l-lg py-2 px-4 focus:outline-none focus:ring-2 focus:ring-red-500" placeholder="Tulis dalam bahasa Jepang...">
+                                    <button class="bg-red-600 hover:bg-red-700 text-white py-2 px-4 rounded-r-lg transition check-translation">Periksa</button>
+                                </div>
+                                <div class="mt-2 text-sm text-green-600 hidden translation-feedback">Jawaban yang benar: このたべものはおいしいです。(kono tabemono wa oishii desu)</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Additional Resources -->
+                <div class="bg-white rounded-lg shadow-md p-6">
+                    <h2 class="text-2xl font-bold text-gray-800 mb-6 border-b pb-2">Sumber Belajar Tambahan</h2>
+                    
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <!-- Resource 1 -->
+                        <div class="bg-red-50 border border-red-100 rounded-lg p-4 hover:border-red-200 transition">
+                            <h3 class="font-bold text-red-600 mb-2">Video Pembelajaran</h3>
+                            <p class="text-gray-700 mb-3">Tonton video penjelasan partikel "wa" oleh sensei Jepang.</p>
+                            <a href="#" class="text-red-600 hover:text-red-800 font-medium inline-flex items-center">
+                                Tonton Sekarang <i class="fas fa-arrow-right ml-2"></i>
+                            </a>
+                        </div>
+                        
+                        <!-- Resource 2 -->
+                        <div class="bg-red-50 border border-red-100 rounded-lg p-4 hover:border-red-200 transition">
+                            <h3 class="font-bold text-red-600 mb-2">Flashcards</h3>
+                            <p class="text-gray-700 mb-3">Latih penguasaan partikel "wa" dengan flashcards interaktif.</p>
+                            <a href="#" class="text-red-600 hover:text-red-800 font-medium inline-flex items-center">
+                                Mulai Belajar <i class="fas fa-arrow-right ml-2"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Navigation Buttons -->
+                <div class="flex flex-col sm:flex-row justify-between gap-4 mt-8">
+                    <a href="/content/n5/" class="bg-gray-200 hover:bg-gray-300 text-gray-800 font-medium py-2 px-4 rounded-lg inline-flex items-center justify-center">
+                        <i class="fas fa-arrow-left mr-2"></i> Kembali ke JLPT N5
+                    </a>
+                    <a href="/content/n5/partikel/ga.html" class="bg-red-600 hover:bg-red-700 text-white font-medium py-2 px-4 rounded-lg inline-flex items-center justify-center">
+                        Partikel Ga (が) <i class="fas fa-arrow-right ml-2"></i>
+                    </a>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-8">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Nihongopedia</h3>
+                    <p class="text-gray-400">Platform belajar bahasa Jepang dari dasar hingga level JLPT N1.</p>
+                    <!-- Footer Contact Links -->
+                    <div class="mt-4 space-y-2">
+                        <a href="https://whatsapp.com/channel/0029Vag1xu13AzNLMBd6fi0a" target="_blank" class="flex items-center text-gray-400 hover:text-white transition text-sm">
+                            <i class="fab fa-whatsapp mr-2"></i> WhatsApp Channel
+                        </a>
+                        <a href="/donasi" class="flex items-center text-gray-400 hover:text-white transition text-sm">
+                            <i class="fas fa-heart mr-2"></i> Donasi
+                        </a>
+                    </div>
+                </div>
+                <div>
+                    <h4 class="font-bold mb-4">Navigasi</h4>
+                    <ul class="space-y-2">
+                        <li><a href="/" class="text-gray-400 hover:text-white transition">Beranda</a></li>
+                        <li><a href="/about.html" class="text-gray-400 hover:text-white transition">Tentang Kami</a></li>
+                        <li><a href="/roadmap.html" class="text-gray-400 hover:text-white transition">Roadmap Belajar</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-bold mb-4">Bantuan</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">FAQ</a></li>
+                        <li><a href="/privacy.html" class="text-gray-400 hover:text-white transition">Kebijakan Privasi</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">Email : nihongopedia123@gmail.com</a></li>
+
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-bold mb-4">Sosial Media</h4>
+                    <div class="flex space-x-4">
+                        <a href="https://instagram.com/nihongopedia.jpg" class="text-gray-400 hover:text-white transition text-2xl"><i class="fab fa-instagram"></i></a>
+                        <a href="https://youtube.com/@nihongopedia" class="text-gray-400 hover:text-white transition text-2xl"><i class="fab fa-youtube"></i></a>
+                        <a href="https://tiktok.com/@nihongopedia" class="text-gray-400 hover:text-white transition text-2xl"><i class="fab fa-tiktok"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-gray-700 mt-8 pt-6 text-center text-gray-400">
+                <p>&copy; 2023 Nihongopedia.id. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- CDN JS -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    
+    <!-- Custom JS -->
+    <script src="/assets/js/main.js"></script>
+    
+    <script>
+        // Mobile menu toggle
+        document.getElementById('mobile-menu-button').addEventListener('click', function() {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('hidden');
+        });
+        
+        // Practice button functionality
+        document.querySelectorAll('.practice-btn').forEach(button => {
+            button.addEventListener('click', function() {
+                const isCorrect = this.getAttribute('data-answer') === 'は';
+                const feedback = this.parentElement.nextElementSibling;
+                
+                if (isCorrect) {
+                    this.classList.remove('bg-red-100', 'hover:bg-red-200', 'text-red-800');
+                    this.classList.add('bg-green-100', 'text-green-800');
+                    feedback.classList.remove('hidden');
+                } else {
+                    this.classList.remove('bg-gray-100', 'hover:bg-gray-200', 'text-gray-800');
+                    this.classList.add('bg-red-100', 'text-red-800');
+                }
+            });
+        });
+        
+        // Translation check functionality
+        document.querySelectorAll('.check-translation').forEach(button => {
+            button.addEventListener('click', function() {
+                const input = this.previousElementSibling;
+                const feedback = this.parentElement.nextElementSibling;
+                feedback.classList.remove('hidden');
+                
+                if (input.value.trim() !== '') {
+                    input.classList.add('border-green-500');
+                    setTimeout(() => {
+                        input.classList.remove('border-green-500');
+                    }, 2000);
+                }
+            });
+        });
+        
+        // Table responsive behavior
+        function checkTableResponsive() {
+            const tables = document.querySelectorAll('.table-responsive');
+            tables.forEach(table => {
+                if (window.innerWidth < 768) {
+                    // For mobile, we rely on horizontal scrolling
+                } else {
+                    // For desktop, ensure table is properly displayed
+                }
+            });
+        }
+        
+        window.addEventListener('resize', checkTableResponsive);
+        document.addEventListener('DOMContentLoaded', checkTableResponsive);
+    </script>
+</body>
+</html>

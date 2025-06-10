@@ -1,0 +1,857 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+    <!-- Google Ads -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1435241846420582" crossorigin="anonymous"></script>
+    
+    <!-- Meta Tags -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Nihongopedia - Belajar Partikel Ga (が) dalam Bahasa Jepang">
+    
+    <!-- Title -->
+    <title>Partikel Ga (が) | Nihongopedia</title>
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="/assets/images/logos/nihongopedia.png">
+    
+    <!-- CDN CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/assets/css/main.css">
+    <link rel="stylesheet" href="/assets/css/animations.css">
+    
+    <style>
+        .particle-card {
+            transition: all 0.3s ease;
+        }
+        .particle-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+        .furigana {
+            font-size: 0.6em;
+            opacity: 0.8;
+            display: block;
+            line-height: 1;
+        }
+        .example-jp {
+            font-size: 1.1em;
+            line-height: 1.6;
+        }
+        .example-id {
+            color: #666;
+            font-style: italic;
+        }
+        @media (max-width: 768px) {
+            .table-responsive {
+                display: block;
+                width: 100%;
+                overflow-x: auto;
+                -webkit-overflow-scrolling: touch;
+            }
+            .table-card {
+                display: block;
+                width: 100%;
+                margin-bottom: 1rem;
+                background-color: white;
+                border-radius: 0.5rem;
+                box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+                padding: 1rem;
+            }
+            .table-card-row {
+                margin-bottom: 0.5rem;
+                padding-bottom: 0.5rem;
+                border-bottom: 1px solid #eee;
+            }
+            .table-card-row:last-child {
+                border-bottom: none;
+            }
+            .table-card-header {
+                font-weight: bold;
+                color: #e53e3e;
+                margin-bottom: 0.25rem;
+            }
+        }
+    </style>
+</head>
+<body class="bg-gray-50 font-sans text-gray-800 flex flex-col min-h-screen">
+    <!-- Header -->
+    <header class="bg-red-600 text-white shadow-md fixed top-0 left-0 right-0 z-50">
+        <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+            <!-- Logo -->
+            <div class="flex items-center space-x-2">
+                <a href="/" class="flex items-center">
+                    <img src="/assets/images/logos/nihongopedia.png" 
+                    alt="Nihongopedia Logo" 
+                    style="height: 40px; width: auto;"
+                    srcset="">
+                    <span class="ml-2 text-xl font-bold">Nihongopedia</span>
+                </a>
+            </div>
+            
+            <!-- Header Right Section -->
+            <div class="flex items-center space-x-4">
+                <!-- Mobile Menu Button -->
+                <button id="mobile-menu-button" class="md:hidden text-white focus:outline-none">
+                    <i class="fas fa-bars text-2xl"></i>
+                </button>
+            </div>
+            
+            <!-- Desktop Nav -->
+            <nav class="hidden md:flex space-x-6">
+                <a href="/" class="hover:text-red-200 transition">Beranda</a>
+                <a href="/content/basic/hiragana/" class="hover:text-red-200 transition">Pelajaran</a>
+                <a href="/practice/" class="hover:text-red-200 transition">Latihan</a>
+                <a href="/resources/" class="hover:text-red-200 transition">Sumber Belajar</a>
+                <a href="/donasi" class="hidden md:flex items-center text-white hover:text-red-200 transition text-sm">Donasi</a>
+                <a href="https://whatsapp.com/channel/0029Vag1xu13AzNLMBd6fi0a" target="_blank" class="hidden md:flex items-center text-white hover:text-red-200 transition text-sm">Channel WhatsApp</a>
+                </a>
+            </nav>
+        </div>
+        
+        <!-- Mobile Nav (Hidden by default) -->
+        <div id="mobile-menu" class="hidden md:hidden bg-red-700">
+            <div class="container mx-auto px-4 py-2 flex flex-col space-y-3">
+                <a href="/" class="py-2 hover:text-red-200 transition">Beranda</a>
+                <a href="/content/basic/hiragana/" class="py-2 hover:text-red-200 transition">Pelajaran</a>
+                <a href="/practice/" class="py-2 hover:text-red-200 transition">Latihan</a>
+                <a href="/resources/" class="py-2 hover:text-red-200 transition">Sumber Belajar</a>
+                <!-- Mobile version of the links -->
+                <a href="/donasi" class="py-2 hover:text-red-200 transition flex items-center">Donasi</a>
+                <a href="https://whatsapp.com/channel/0029Vag1xu13AzNLMBd6fi0a" target="_blank" class="py-2 hover:text-red-200 transition flex items-center">Channel WhatsApp</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content Layout -->
+    <div class="flex flex-1 pt-12">
+        <!-- Sidebar -->
+        <aside class="hidden lg:block w-64 bg-white shadow-md p-4">
+            <div class="sticky top-20">
+                <!-- Level Navigation -->
+                <div class="mb-6">
+                    <h3 class="font-bold text-lg mb-3 text-red-600 border-b pb-2">Level Belajar</h3>
+                    <ul class="space-y-2">
+                        <li><a href="/content/basic/" class="hover:text-red-600 transition">Dasar-dasar</a></li>
+                        <li><a href="/content/n5/" class="hover:text-red-600 transition font-semibold text-red-600">JLPT N5</a></li>
+                        <li><a href="/content/n4/" class="hover:text-red-600 transition">JLPT N4</a></li>
+                        <li><a href="/content/n3/" class="hover:text-red-600 transition">JLPT N3</a></li>
+                        <li><a href="/content/n2/" class="hover:text-red-600 transition">JLPT N2</a></li>
+                        <li><a href="/content/n1/" class="hover:text-red-600 transition">JLPT N1</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Quick Links -->
+                <div>
+                    <h3 class="font-bold text-lg mb-3 text-red-600 border-b pb-2">Akses Cepat</h3>
+                    <ul class="space-y-2">
+                        <li><a href="/practice/flashcards/" class="hover:text-red-600 transition"><i class="fas fa-layer-group mr-2"></i>Flashcards</a></li>
+                        <li><a href="/practice/quizzes/" class="hover:text-red-600 transition"><i class="fas fa-question-circle mr-2"></i>Kuis</a></li>
+                        <li><a href="/resources/cheat-sheets/" class="hover:text-red-600 transition"><i class="fas fa-scroll mr-2"></i>Cheat Sheets</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Sidebar Footer with Subtle Links -->
+                <div class="mt-8 pt-4 border-t border-gray-200 text-sm text-gray-600">
+                    <a href="https://whatsapp.com/channel/0029Vag1xu13AzNLMBd6fi0a" target="_blank" class="block mb-2 hover:text-red-600 transition">
+                        <i class="fab fa-whatsapp mr-2"></i>Channel WhatsApp
+                    </a>
+                    <a href="/donasi" class="block hover:text-red-600 transition">
+                        <i class="fas fa-hand-holding-heart mr-2"></i>Dukung Nihongopedia
+                    </a>
+                </div>
+            </div>
+        </aside>
+
+        <!-- Main Content Area -->
+        <main class="flex-1 p-8">
+            <!-- BreadCrumb -->
+            <div class="max-w-6xl mx-auto mb-4">
+                <nav class="flex" aria-label="Breadcrumb">
+                    <ol class="inline-flex items-center space-x-1 md:space-x-2">
+                        <li class="inline-flex items-center">
+                            <a href="/" class="inline-flex items-center text-sm font-medium text-gray-700 hover:text-red-600">
+                                <i class="fas fa-home mr-2"></i>
+                                Beranda
+                            </a>
+                        </li>
+                        <li class="inline-flex items-center">
+                            <div class="flex items-center">
+                                <i class="fas fa-chevron-right text-gray-400 text-xs"></i>
+                                <a href="/content/n5/" class="ml-2 text-sm font-medium text-gray-700 hover:text-red-600">JLPT N5</a>
+                            </div>
+                        </li>
+                        <li>    
+                            <div class="flex items-center">
+                                <i class="fas fa-chevron-right text-gray-400 text-xs"></i>
+                                <a href="#" class="ml-2 text-sm font-medium text-red-600 hover:text-red-500">Partikel Ga (が)</a>
+                            </div>
+                        </li>
+                    </ol>
+                </nav>
+            </div>
+
+            <!-- Main Content -->
+            <div class="max-w-6xl mx-auto">
+                <!-- Header Section -->
+                <div class="bg-white rounded-lg shadow-md p-6 mb-6">
+                    <h1 class="text-3xl font-bold text-gray-800 mb-2">Partikel Ga (が)</h1>
+                    <p class="text-lg text-gray-600 mb-4">Partikel yang menunjukkan subjek dalam kalimat dan memiliki berbagai fungsi penting</p>
+                    
+                    <div class="flex flex-wrap gap-4 mb-6">
+                        <span class="bg-red-100 text-red-800 px-3 py-1 rounded-full text-sm font-medium">JLPT N5</span>
+                        <span class="bg-red-100 text-red-800 px-3 py-1 rounded-full text-sm font-medium">Tata Bahasa</span>
+                        <span class="bg-red-100 text-red-800 px-3 py-1 rounded-full text-sm font-medium">Partikel</span>
+                    </div>
+                    
+                    <div class="bg-red-50 border-l-4 border-red-500 p-4 mb-6">
+                        <div class="flex">
+                            <div class="flex-shrink-0 text-red-500">
+                                <i class="fas fa-lightbulb text-xl"></i>
+                            </div>
+                            <div class="ml-3">
+                                <p class="text-sm text-red-700">
+                                    <span class="font-bold">Fakta Penting:</span> Partikel "ga" sering membingungkan bagi pemula karena memiliki beberapa fungsi berbeda tergantung konteks kalimat.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Content Sections -->
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+                    <!-- Quick Summary Card -->
+                    <div class="bg-white rounded-lg shadow-md p-6 particle-card">
+                        <h2 class="text-xl font-bold text-red-600 mb-4 flex items-center">
+                            <i class="fas fa-info-circle mr-2"></i> Ringkasan Cepat
+                        </h2>
+                        <ul class="space-y-3 text-gray-700">
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-red-500 mt-1 mr-2"></i>
+                                <span>Menunjukkan subjek yang melakukan aksi</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-red-500 mt-1 mr-2"></i>
+                                <span>Digunakan dengan kata sifat dan kata kerja</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-red-500 mt-1 mr-2"></i>
+                                <span>Penting untuk kalimat dengan kata tanya</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-red-500 mt-1 mr-2"></i>
+                                <span>Memiliki beberapa fungsi khusus</span>
+                            </li>
+                        </ul>
+                    </div>
+                    
+                    <!-- Pronunciation Card -->
+                    <div class="bg-white rounded-lg shadow-md p-6 particle-card">
+                        <h2 class="text-xl font-bold text-red-600 mb-4 flex items-center">
+                            <i class="fas fa-volume-up mr-2"></i> Pengucapan
+                        </h2>
+                        <div class="flex items-center justify-center mb-4">
+                            <div class="text-center">
+                                <span class="text-4xl font-bold">が</span>
+                                <div class="text-gray-600 mt-1">ga</div>
+                            </div>
+                        </div>
+                        <p class="text-gray-700">Partikel "ga" selalu dibaca "ga" tanpa pengecualian. Berbeda dengan partikel "wa" yang memiliki pengecualian pengucapan.</p>
+                    </div>
+                    
+                    <!-- Common Mistakes Card -->
+                    <div class="bg-white rounded-lg shadow-md p-6 particle-card">
+                        <h2 class="text-xl font-bold text-red-600 mb-4 flex items-center">
+                            <i class="fas fa-exclamation-triangle mr-2"></i> Kesalahan Umum
+                        </h2>
+                        <ul class="space-y-3 text-gray-700">
+                            <li class="flex items-start">
+                                <i class="fas fa-times text-red-500 mt-1 mr-2"></i>
+                                <span>Bingung kapan menggunakan "ga" vs "wa"</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-times text-red-500 mt-1 mr-2"></i>
+                                <span>Lupa menggunakan "ga" dalam kalimat dengan kata tanya</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-times text-red-500 mt-1 mr-2"></i>
+                                <span>Tidak memahami fungsi khusus "ga"</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <!-- Detailed Explanation Section -->
+                <div class="bg-white rounded-lg shadow-md p-6 mb-8">
+                    <h2 class="text-2xl font-bold text-gray-800 mb-6 border-b pb-2">Penjelasan Detail Partikel Ga (が)</h2>
+                    
+                    <div class="mb-8">
+                        <h3 class="text-xl font-bold text-red-600 mb-4">1. Fungsi Dasar Partikel Ga</h3>
+                        <p class="text-gray-700 mb-4">Partikel "ga" memiliki beberapa fungsi utama dalam bahasa Jepang:</p>
+                        
+                        <div class="bg-gray-50 p-4 rounded-lg mb-4">
+                            <div class="example-jp mb-2">
+                                だれ<strong>が</strong> これを しましたか？
+                                <span class="furigana">(Dare ga kore o shimashita ka?)</span>
+                            </div>
+                            <div class="example-id">Siapa yang melakukan ini?</div>
+                        </div>
+                        
+                        <p class="text-gray-700">Dalam contoh di atas, "ga" menunjukkan subjek yang melakukan aksi ("who" dalam hal ini).</p>
+                    </div>
+                    
+                    <div class="mb-8">
+                        <h3 class="text-xl font-bold text-red-600 mb-4">2. Perbedaan dengan Partikel Wa (は)</h3>
+                        <p class="text-gray-700 mb-4">Perbedaan utama antara "ga" dan "wa":</p>
+                        
+                        <!-- Desktop Table -->
+                        <div class="hidden md:block overflow-x-auto table-responsive">
+                            <table class="min-w-full divide-y divide-gray-200 mb-4">
+                                <thead class="bg-gray-100">
+                                    <tr>
+                                        <th class="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Partikel</th>
+                                        <th class="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Fungsi</th>
+                                        <th class="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Contoh</th>
+                                    </tr>
+                                </thead>
+                                <tbody class="bg-white divide-y divide-gray-200">
+                                    <tr>
+                                        <td class="px-4 py-4 whitespace-nowrap font-bold text-red-600">が (ga)</td>
+                                        <td class="px-4 py-4">Menunjukkan subjek yang melakukan aksi atau mengalami keadaan</td>
+                                        <td class="px-4 py-4">
+                                            <div class="example-jp">
+                                                わたし<strong>が</strong> たべます。
+                                                <span class="furigana">(Watashi ga tabemasu)</span>
+                                            </div>
+                                            <div class="example-id">Sayalah yang akan makan.</div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="px-4 py-4 whitespace-nowrap font-bold text-red-600">は (wa)</td>
+                                        <td class="px-4 py-4">Menunjukkan topik pembicaraan</td>
+                                        <td class="px-4 py-4">
+                                            <div class="example-jp">
+                                                わたし<strong>は</strong> たべます。
+                                                <span class="furigana">(Watashi wa tabemasu)</span>
+                                            </div>
+                                            <div class="example-id">(Mengenai saya) Saya akan makan.</div>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        
+                        <!-- Mobile Cards -->
+                        <div class="md:hidden space-y-4">
+                            <div class="table-card">
+                                <div class="table-card-row">
+                                    <div class="table-card-header">が (ga)</div>
+                                    <div>Menunjukkan subjek yang melakukan aksi atau mengalami keadaan</div>
+                                </div>
+                                <div class="table-card-row">
+                                    <div class="example-jp">
+                                        わたし<strong>が</strong> たべます。
+                                        <span class="furigana">(Watashi ga tabemasu)</span>
+                                    </div>
+                                    <div class="example-id">Sayalah yang akan makan.</div>
+                                </div>
+                            </div>
+                            
+                            <div class="table-card">
+                                <div class="table-card-row">
+                                    <div class="table-card-header">は (wa)</div>
+                                    <div>Menunjukkan topik pembicaraan</div>
+                                </div>
+                                <div class="table-card-row">
+                                    <div class="example-jp">
+                                        わたし<strong>は</strong> たべます。
+                                        <span class="furigana">(Watashi wa tabemasu)</span>
+                                    </div>
+                                    <div class="example-id">(Mengenai saya) Saya akan makan.</div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="bg-yellow-50 border-l-4 border-yellow-400 p-4">
+                            <div class="flex">
+                                <div class="flex-shrink-0 text-yellow-500">
+                                    <i class="fas fa-exclamation-triangle"></i>
+                                </div>
+                                <div class="ml-3">
+                                    <p class="text-sm text-yellow-700">
+                                        <span class="font-bold">Perhatian:</span> Dalam pertanyaan dengan kata tanya (who, what, etc.), jawabannya selalu menggunakan "ga" bukan "wa".
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="mb-8">
+                        <h3 class="text-xl font-bold text-red-600 mb-4">3. Penggunaan Partikel Ga dalam Berbagai Konteks</h3>
+                        
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <!-- Usage 1 -->
+                            <div class="bg-gray-50 p-4 rounded-lg">
+                                <h4 class="font-bold text-red-500 mb-2">a. Dengan Kata Sifat</h4>
+                                <div class="example-jp mb-2">
+                                    この ほん<strong>が</strong> おもしろいです。
+                                    <span class="furigana">(Kono hon ga omoshiroi desu)</span>
+                                </div>
+                                <div class="example-id">Buku ini menarik.</div>
+                                <p class="text-gray-700 text-sm mt-2">"Ga" menunjukkan subjek yang memiliki sifat "menarik".</p>
+                            </div>
+                            
+                            <!-- Usage 2 -->
+                            <div class="bg-gray-50 p-4 rounded-lg">
+                                <h4 class="font-bold text-red-500 mb-2">b. Dengan Kata Kerja</h4>
+                                <div class="example-jp mb-2">
+                                    せんせい<strong>が</strong> きました。
+                                    <span class="furigana">(Sensei ga kimashita)</span>
+                                </div>
+                                <div class="example-id">Guru telah datang.</div>
+                                <p class="text-gray-700 text-sm mt-2">"Ga" menunjukkan subjek yang melakukan aksi "datang".</p>
+                            </div>
+                            
+                            <!-- Usage 3 -->
+                            <div class="bg-gray-50 p-4 rounded-lg">
+                                <h4 class="font-bold text-red-500 mb-2">c. Dalam Kalimat dengan Kata Tanya</h4>
+                                <div class="example-jp mb-2">
+                                    どれ<strong>が</strong> あなたの かばんですか？
+                                    <span class="furigana">(Dore ga anata no kaban desu ka?)</span>
+                                </div>
+                                <div class="example-id">Yang mana tas Anda?</div>
+                                <p class="text-gray-700 text-sm mt-2">"Ga" digunakan dengan kata tanya "dore" (yang mana).</p>
+                            </div>
+                            
+                            <!-- Usage 4 -->
+                            <div class="bg-gray-50 p-4 rounded-lg">
+                                <h4 class="font-bold text-red-500 mb-2">d. Menyatakan Kemampuan</h4>
+                                <div class="example-jp mb-2">
+                                    わたし<strong>が</strong> にほんごを はなせます。
+                                    <span class="furigana">(Watashi ga nihongo o hanasemasu)</span>
+                                </div>
+                                <div class="example-id">Saya bisa berbicara bahasa Jepang.</div>
+                                <p class="text-gray-700 text-sm mt-2">"Ga" digunakan untuk menekankan kemampuan subjek.</p>
+                            </div>
+                            
+                            <!-- Usage 5 -->
+                            <div class="bg-gray-50 p-4 rounded-lg">
+                                <h4 class="font-bold text-red-500 mb-2">e. Menyatakan Keinginan</h4>
+                                <div class="example-jp mb-2">
+                                    コーヒー<strong>が</strong> のみたいです。
+                                    <span class="furigana">(Kōhī ga nomitai desu)</span>
+                                </div>
+                                <div class="example-id">Saya ingin minum kopi.</div>
+                                <p class="text-gray-700 text-sm mt-2">"Ga" digunakan setelah objek yang diinginkan.</p>
+                            </div>
+                            
+                            <!-- Usage 6 -->
+                            <div class="bg-gray-50 p-4 rounded-lg">
+                                <h4 class="font-bold text-red-500 mb-2">f. Menyatakan Persepsi atau Perasaan</h4>
+                                <div class="example-jp mb-2">
+                                    あめ<strong>が</strong> ふっています。
+                                    <span class="furigana">(Ame ga futte imasu)</span>
+                                </div>
+                                <div class="example-id">Hujan sedang turun.</div>
+                                <p class="text-gray-700 text-sm mt-2">"Ga" digunakan untuk fenomena alam atau persepsi indera.</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="mb-8">
+                        <h3 class="text-xl font-bold text-red-600 mb-4">4. Pola Kalimat dengan Partikel Ga</h3>
+                        
+                        <!-- Desktop Table -->
+                        <div class="hidden md:block overflow-x-auto table-responsive">
+                            <table class="min-w-full divide-y divide-gray-200">
+                                <thead class="bg-gray-100">
+                                    <tr>
+                                        <th class="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Pola Kalimat</th>
+                                        <th class="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Contoh</th>
+                                        <th class="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Arti</th>
+                                    </tr>
+                                </thead>
+                                <tbody class="bg-white divide-y divide-gray-200">
+                                    <tr>
+                                        <td class="px-4 py-4 whitespace-nowrap">[Subjek] が [Kata Sifat]</td>
+                                        <td class="px-4 py-4">
+                                            <div class="example-jp">
+                                                この レストラン<strong>が</strong> おいしいです。
+                                                <span class="furigana">(Kono resutoran ga oishii desu)</span>
+                                            </div>
+                                        </td>
+                                        <td class="px-4 py-4">Restoran ini enak.</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="px-4 py-4 whitespace-nowrap">[Kata Tanya] が [Predikat]</td>
+                                        <td class="px-4 py-4">
+                                            <div class="example-jp">
+                                                だれ<strong>が</strong> きますか？
+                                                <span class="furigana">(Dare ga kimasu ka?)</span>
+                                            </div>
+                                        </td>
+                                        <td class="px-4 py-4">Siapa yang akan datang?</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="px-4 py-4 whitespace-nowrap">[Subjek] が [Kata Kerja]</td>
+                                        <td class="px-4 py-4">
+                                            <div class="example-jp">
+                                                いぬ<strong>が</strong> ほえます。
+                                                <span class="furigana">(Inu ga hoemasu)</span>
+                                            </div>
+                                        </td>
+                                        <td class="px-4 py-4">Anjing menggonggong.</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="px-4 py-4 whitespace-nowrap">[Objek] が [Keinginan]</td>
+                                        <td class="px-4 py-4">
+                                            <div class="example-jp">
+                                                みず<strong>が</strong> のみたいです。
+                                                <span class="furigana">(Mizu ga nomitai desu)</span>
+                                            </div>
+                                        </td>
+                                        <td class="px-4 py-4">Saya ingin minum air.</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        
+                        <!-- Mobile Cards -->
+                        <div class="md:hidden space-y-4">
+                            <div class="table-card">
+                                <div class="table-card-row">
+                                    <div class="table-card-header">[Subjek] が [Kata Sifat]</div>
+                                </div>
+                                <div class="table-card-row">
+                                    <div class="example-jp">
+                                        この レストラン<strong>が</strong> おいしいです。
+                                        <span class="furigana">(Kono resutoran ga oishii desu)</span>
+                                    </div>
+                                    <div class="example-id">Restoran ini enak.</div>
+                                </div>
+                            </div>
+                            
+                            <div class="table-card">
+                                <div class="table-card-row">
+                                    <div class="table-card-header">[Kata Tanya] が [Predikat]</div>
+                                </div>
+                                <div class="table-card-row">
+                                    <div class="example-jp">
+                                        だれ<strong>が</strong> きますか？
+                                        <span class="furigana">(Dare ga kimasu ka?)</span>
+                                    </div>
+                                    <div class="example-id">Siapa yang akan datang?</div>
+                                </div>
+                            </div>
+                            
+                            <div class="table-card">
+                                <div class="table-card-row">
+                                    <div class="table-card-header">[Subjek] が [Kata Kerja]</div>
+                                </div>
+                                <div class="table-card-row">
+                                    <div class="example-jp">
+                                        いぬ<strong>が</strong> ほえます。
+                                        <span class="furigana">(Inu ga hoemasu)</span>
+                                    </div>
+                                    <div class="example-id">Anjing menggonggong.</div>
+                                </div>
+                            </div>
+                            
+                            <div class="table-card">
+                                <div class="table-card-row">
+                                    <div class="table-card-header">[Objek] が [Keinginan]</div>
+                                </div>
+                                <div class="table-card-row">
+                                    <div class="example-jp">
+                                        みず<strong>が</strong> のみたいです。
+                                        <span class="furigana">(Mizu ga nomitai desu)</span>
+                                    </div>
+                                    <div class="example-id">Saya ingin minum air.</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="mb-8">
+                        <h3 class="text-xl font-bold text-red-600 mb-4">5. Contoh Dialog dengan Partikel Ga</h3>
+                        
+                        <div class="bg-gray-50 p-4 rounded-lg">
+                            <div class="mb-4">
+                                <div class="example-jp mb-1">
+                                    A: どれ<strong>が</strong> あなたの かばんですか？
+                                    <span class="furigana">(Dore ga anata no kaban desu ka?)</span>
+                                </div>
+                                <div class="example-id">A: Yang mana tas Anda?</div>
+                            </div>
+                            
+                            <div class="mb-4">
+                                <div class="example-jp mb-1">
+                                    B: これ<strong>が</strong> わたしの かばんです。
+                                    <span class="furigana">(Kore ga watashi no kaban desu)</span>
+                                </div>
+                                <div class="example-id">B: Ini tas saya.</div>
+                            </div>
+                            
+                            <div class="mb-4">
+                                <div class="example-jp mb-1">
+                                    A: だれ<strong>が</strong> にほんごを べんきょうしていますか？
+                                    <span class="furigana">(Dare ga nihongo o benkyou shite imasu ka?)</span>
+                                </div>
+                                <div class="example-id">A: Siapa yang sedang belajar bahasa Jepang?</div>
+                            </div>
+                            
+                            <div>
+                                <div class="example-jp mb-1">
+                                    B: わたし<strong>が</strong> にほんごを べんきょうしています。
+                                    <span class="furigana">(Watashi ga nihongo o benkyou shite imasu)</span>
+                                </div>
+                                <div class="example-id">B: Saya yang sedang belajar bahasa Jepang.</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Practice Section -->
+                <div class="bg-white rounded-lg shadow-md p-6 mb-8">
+                    <h2 class="text-2xl font-bold text-gray-800 mb-6 border-b pb-2">Latihan Partikel Ga</h2>
+                    
+                    <div class="mb-8">
+                        <h3 class="text-xl font-bold text-red-600 mb-4">Latihan 1: Isilah dengan Partikel yang Tepat (は atau が)</h3>
+                        
+                        <div class="space-y-4">
+                            <div class="bg-gray-50 p-4 rounded-lg">
+                                <p class="text-gray-700 mb-2">1. だれ<span class="font-bold text-red-600">＿</span> この ほんを よみましたか？</p>
+                                <div class="grid grid-cols-2 gap-2">
+                                    <button class="practice-btn bg-gray-100 hover:bg-gray-200 text-gray-800 py-2 px-4 rounded transition" data-answer="は">は</button>
+                                    <button class="practice-btn bg-red-100 hover:bg-red-200 text-red-800 py-2 px-4 rounded transition" data-answer="が">が</button>
+                                </div>
+                                <div class="mt-2 text-sm text-green-600 hidden answer-feedback">Jawaban benar! Partikel "が" digunakan dengan kata tanya seperti "dare" (siapa).</div>
+                            </div>
+                            
+                            <div class="bg-gray-50 p-4 rounded-lg">
+                                <p class="text-gray-700 mb-2">2. わたし<span class="font-bold text-red-600">＿</span> コーヒーを のみたいです。</p>
+                                <div class="grid grid-cols-2 gap-2">
+                                    <button class="practice-btn bg-gray-100 hover:bg-gray-200 text-gray-800 py-2 px-4 rounded transition" data-answer="は">は</button>
+                                    <button class="practice-btn bg-red-100 hover:bg-red-200 text-red-800 py-2 px-4 rounded transition" data-answer="が">が</button>
+                                </div>
+                                <div class="mt-2 text-sm text-green-600 hidden answer-feedback">Benar! "が" digunakan setelah objek dalam ekspresi keinginan.</div>
+                            </div>
+                            
+                            <div class="bg-gray-50 p-4 rounded-lg">
+                                <p class="text-gray-700 mb-2">3. あめ<span class="font-bold text-red-600">＿</span> ふっています。</p>
+                                <div class="grid grid-cols-2 gap-2">
+                                    <button class="practice-btn bg-gray-100 hover:bg-gray-200 text-gray-800 py-2 px-4 rounded transition" data-answer="は">は</button>
+                                    <button class="practice-btn bg-red-100 hover:bg-red-200 text-red-800 py-2 px-4 rounded transition" data-answer="が">が</button>
+                                </div>
+                                <div class="mt-2 text-sm text-green-600 hidden answer-feedback">Tepat! "が" digunakan untuk fenomena alam seperti hujan.</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="mb-8">
+                        <h3 class="text-xl font-bold text-red-600 mb-4">Latihan 2: Terjemahkan Kalimat Berikut</h3>
+                        
+                        <div class="space-y-4">
+                            <div class="bg-gray-50 p-4 rounded-lg">
+                                <p class="text-gray-700 mb-2">1. Saya yang akan pergi ke Jepang.</p>
+                                <div class="flex items-center">
+                                    <input type="text" class="flex-1 border border-gray-300 rounded-l-lg py-2 px-4 focus:outline-none focus:ring-2 focus:ring-red-500" placeholder="Tulis dalam bahasa Jepang...">
+                                    <button class="bg-red-600 hover:bg-red-700 text-white py-2 px-4 rounded-r-lg transition check-translation">Periksa</button>
+                                </div>
+                                <div class="mt-2 text-sm text-green-600 hidden translation-feedback">Jawaban yang benar: わたしが にほんに いきます。(watashi ga nihon ni ikimasu)</div>
+                            </div>
+                            
+                            <div class="bg-gray-50 p-4 rounded-lg">
+                                <p class="text-gray-700 mb-2">2. Saya ingin makan sushi.</p>
+                                <div class="flex items-center">
+                                    <input type="text" class="flex-1 border border-gray-300 rounded-l-lg py-2 px-4 focus:outline-none focus:ring-2 focus:ring-red-500" placeholder="Tulis dalam bahasa Jepang...">
+                                    <button class="bg-red-600 hover:bg-red-700 text-white py-2 px-4 rounded-r-lg transition check-translation">Periksa</button>
+                                </div>
+                                <div class="mt-2 text-sm text-green-600 hidden translation-feedback">Jawaban yang benar: すしが たべたいです。(sushi ga tabetai desu)</div>
+                            </div>
+                            
+                            <div class="bg-gray-50 p-4 rounded-lg">
+                                <p class="text-gray-700 mb-2">3. Yang mana yang baru?</p>
+                                <div class="flex items-center">
+                                    <input type="text" class="flex-1 border border-gray-300 rounded-l-lg py-2 px-4 focus:outline-none focus:ring-2 focus:ring-red-500" placeholder="Tulis dalam bahasa Jepang...">
+                                    <button class="bg-red-600 hover:bg-red-700 text-white py-2 px-4 rounded-r-lg transition check-translation">Periksa</button>
+                                </div>
+                                <div class="mt-2 text-sm text-green-600 hidden translation-feedback">Jawaban yang benar: どれが あたらしいですか？(dore ga atarashii desu ka?)</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Additional Resources -->
+                <div class="bg-white rounded-lg shadow-md p-6">
+                    <h2 class="text-2xl font-bold text-gray-800 mb-6 border-b pb-2">Sumber Belajar Tambahan</h2>
+                    
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <!-- Resource 1 -->
+                        <div class="bg-red-50 border border-red-100 rounded-lg p-4 hover:border-red-200 transition">
+                            <h3 class="font-bold text-red-600 mb-2">Video Pembelajaran</h3>
+                            <p class="text-gray-700 mb-3">Tonton video penjelasan partikel "ga" oleh sensei Jepang.</p>
+                            <a href="#" class="text-red-600 hover:text-red-800 font-medium inline-flex items-center">
+                                Tonton Sekarang <i class="fas fa-arrow-right ml-2"></i>
+                            </a>
+                        </div>
+                        
+                        <!-- Resource 2 -->
+                        <div class="bg-red-50 border border-red-100 rounded-lg p-4 hover:border-red-200 transition">
+                            <h3 class="font-bold text-red-600 mb-2">Flashcards</h3>
+                            <p class="text-gray-700 mb-3">Latih penguasaan partikel "ga" dengan flashcards interaktif.</p>
+                            <a href="/practice/flashcards/partikel-ga" class="text-red-600 hover:text-red-800 font-medium inline-flex items-center">
+                                Mulai Belajar <i class="fas fa-arrow-right ml-2"></i>
+                            </a>
+                        </div>
+                        
+                        <!-- Resource 3 -->
+                        <div class="bg-red-50 border border-red-100 rounded-lg p-4 hover:border-red-200 transition">
+                            <h3 class="font-bold text-red-600 mb-2">Perbandingan Partikel</h3>
+                            <p class="text-gray-700 mb-3">Pelajari perbedaan partikel "ga", "wa", "o", dan lainnya.</p>
+                            <a href="/content/n5/partikel/perbandingan" class="text-red-600 hover:text-red-800 font-medium inline-flex items-center">
+                                Pelajari <i class="fas fa-arrow-right ml-2"></i>
+                            </a>
+                        </div>
+                        
+                        <!-- Resource 4 -->
+                        <div class="bg-red-50 border border-red-100 rounded-lg p-4 hover:border-red-200 transition">
+                            <h3 class="font-bold text-red-600 mb-2">Kuis Interaktif</h3>
+                            <p class="text-gray-700 mb-3">Uji pemahaman Anda dengan kuis partikel "ga".</p>
+                            <a href="#" class="text-red-600 hover:text-red-800 font-medium inline-flex items-center">
+                                Mulai Kuis <i class="fas fa-arrow-right ml-2"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Navigation Buttons -->
+                <div class="flex flex-col sm:flex-row justify-between gap-4 mt-8">
+                    <a href="/content/n5/" class="bg-gray-200 hover:bg-gray-300 text-gray-800 font-medium py-2 px-4 rounded-lg inline-flex items-center justify-center">
+                        <i class="fas fa-arrow-left mr-2"></i> JLPT N5
+                    </a>
+                    <a href="/content/n5/partikel/o.html" class="bg-red-600 hover:bg-red-700 text-white font-medium py-2 px-4 rounded-lg inline-flex items-center justify-center">
+                        Partikel O (を) <i class="fas fa-arrow-right ml-2"></i>
+                    </a>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-8">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Nihongopedia</h3>
+                    <p class="text-gray-400">Platform belajar bahasa Jepang dari dasar hingga level JLPT N1.</p>
+                    <!-- Footer Contact Links -->
+                    <div class="mt-4 space-y-2">
+                        <a href="https://whatsapp.com/channel/0029Vag1xu13AzNLMBd6fi0a" target="_blank" class="flex items-center text-gray-400 hover:text-white transition text-sm">
+                            <i class="fab fa-whatsapp mr-2"></i> WhatsApp Channel
+                        </a>
+                        <a href="/donasi" class="flex items-center text-gray-400 hover:text-white transition text-sm">
+                            <i class="fas fa-heart mr-2"></i> Donasi
+                        </a>
+                    </div>
+                </div>
+                <div>
+                    <h4 class="font-bold mb-4">Navigasi</h4>
+                    <ul class="space-y-2">
+                        <li><a href="/" class="text-gray-400 hover:text-white transition">Beranda</a></li>
+                        <li><a href="/about.html" class="text-gray-400 hover:text-white transition">Tentang Kami</a></li>
+                        <li><a href="/roadmap.html" class="text-gray-400 hover:text-white transition">Roadmap Belajar</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-bold mb-4">Bantuan</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">FAQ</a></li>
+                        <li><a href="/privacy.html" class="text-gray-400 hover:text-white transition">Kebijakan Privasi</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">Email : nihongopedia123@gmail.com</a></li>
+
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-bold mb-4">Sosial Media</h4>
+                    <div class="flex space-x-4">
+                        <a href="https://instagram.com/nihongopedia.jpg" class="text-gray-400 hover:text-white transition text-2xl"><i class="fab fa-instagram"></i></a>
+                        <a href="https://youtube.com/@nihongopedia" class="text-gray-400 hover:text-white transition text-2xl"><i class="fab fa-youtube"></i></a>
+                        <a href="https://tiktok.com/@nihongopedia" class="text-gray-400 hover:text-white transition text-2xl"><i class="fab fa-tiktok"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-gray-700 mt-8 pt-6 text-center text-gray-400">
+                <p>&copy; 2023 Nihongopedia.id. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- CDN JS -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    
+    <!-- Custom JS -->
+    <script src="/assets/js/main.js"></script>
+    
+    <script>
+        // Mobile menu toggle
+        document.getElementById('mobile-menu-button').addEventListener('click', function() {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('hidden');
+        });
+        
+        // Practice button functionality
+        document.querySelectorAll('.practice-btn').forEach(button => {
+            button.addEventListener('click', function() {
+                const isCorrect = this.getAttribute('data-answer') === 'が';
+                const feedback = this.parentElement.nextElementSibling;
+                
+                if (isCorrect) {
+                    this.classList.remove('bg-red-100', 'hover:bg-red-200', 'text-red-800');
+                    this.classList.add('bg-green-100', 'text-green-800');
+                    feedback.classList.remove('hidden');
+                } else {
+                    this.classList.remove('bg-gray-100', 'hover:bg-gray-200', 'text-gray-800');
+                    this.classList.add('bg-red-100', 'text-red-800');
+                }
+            });
+        });
+        
+        // Translation check functionality
+        document.querySelectorAll('.check-translation').forEach(button => {
+            button.addEventListener('click', function() {
+                const input = this.previousElementSibling;
+                const feedback = this.parentElement.nextElementSibling;
+                feedback.classList.remove('hidden');
+                
+                if (input.value.trim() !== '') {
+                    input.classList.add('border-green-500');
+                    setTimeout(() => {
+                        input.classList.remove('border-green-500');
+                    }, 2000);
+                }
+            });
+        });
+        
+        // Table responsive behavior
+        function checkTableResponsive() {
+            const tables = document.querySelectorAll('.table-responsive');
+            tables.forEach(table => {
+                if (window.innerWidth < 768) {
+                    // For mobile, we rely on horizontal scrolling
+                } else {
+                    // For desktop, ensure table is properly displayed
+                }
+            });
+        }
+        
+        window.addEventListener('resize', checkTableResponsive);
+        document.addEventListener('DOMContentLoaded', checkTableResponsive);
+    </script>
+</body>
+</html>
