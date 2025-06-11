@@ -46,16 +46,34 @@
             color: #666;
             font-style: italic;
         }
+        .practice-btn.correct {
+            background-color: #f0fdf4;
+            color: #166534;
+        }
+        .practice-btn.incorrect {
+            background-color: #fee2e2;
+            color: #991b1b;
+        }
+        .answer-feedback {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+        }
+        .answer-feedback.show {
+            max-height: 100px;
+        }
+        .translation-input:focus {
+            outline: none;
+            ring-width: 2px;
+            ring-color: #ef4444;
+        }
         @media (max-width: 768px) {
             .table-responsive {
-                display: block;
-                width: 100%;
-                overflow-x: auto;
-                -webkit-overflow-scrolling: touch;
+                display: none;
             }
             .table-card {
-                display: flex;
-                flex-direction: column;
+                display: block;
+                width: 100%;
             }
             .table-card-row {
                 border: 1px solid #e5e7eb;
@@ -75,6 +93,17 @@
                 color: #9ca3af;
                 text-transform: uppercase;
                 font-size: 0.75rem;
+            }
+        }
+        @media (min-width: 769px) {
+            .table-responsive {
+                display: block;
+                width: 100%;
+                overflow-x: auto;
+                -webkit-overflow-scrolling: touch;
+            }
+            .table-card {
+                display: none;
             }
         }
     </style>
@@ -97,7 +126,7 @@
             <!-- Header Right Section -->
             <div class="flex items-center space-x-4">
                 <!-- Mobile Menu Button -->
-                <button id="mobile-menu-button" class="md:hidden text-white focus:outline-none">
+                <button id="mobile-menu-button" class="md:hidden text-white focus:outline-none" aria-label="Toggle menu" aria-expanded="false">
                     <i class="fas fa-bars text-2xl"></i>
                 </button>
             </div>
@@ -199,8 +228,8 @@
             <!-- Main Content -->
             <div class="max-w-6xl mx-auto">
                 <!-- Header Section -->
-                <div class="bg-white rounded-lg shadow-md p-6 mb-6">
-                    <h1 class="text-3xl font-bold text-gray-800 mb-2">Partikel De (で)</h1>
+                <div class="bg-white rounded-lg shadow-md p-4 md:p-6 mb-4 md:mb-6">
+                    <h1 class="text-2xl md:text-3xl font-bold text-gray-800 mb-2">Partikel De (で)</h1>
                     <p class="text-lg text-gray-600 mb-4">Partikel serbaguna dalam bahasa Jepang yang menunjukkan lokasi, alat, cara, dan banyak lagi</p>
                     
                     <div class="flex flex-wrap gap-4 mb-6">
@@ -224,9 +253,9 @@
                 </div>
                 
                 <!-- Content Sections -->
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6 mb-6 md:mb-8">
                     <!-- Quick Summary Card -->
-                    <div class="bg-white rounded-lg shadow-md p-6 particle-card">
+                    <div class="bg-white rounded-lg shadow-md p-4 md:p-6 particle-card">
                         <h2 class="text-xl font-bold text-red-600 mb-4 flex items-center">
                             <i class="fas fa-info-circle mr-2"></i> Ringkasan Cepat
                         </h2>
@@ -251,7 +280,7 @@
                     </div>
                     
                     <!-- Pronunciation Card -->
-                    <div class="bg-white rounded-lg shadow-md p-6 particle-card">
+                    <div class="bg-white rounded-lg shadow-md p-4 md:p-6 particle-card">
                         <h2 class="text-xl font-bold text-red-600 mb-4 flex items-center">
                             <i class="fas fa-volume-up mr-2"></i> Pengucapan
                         </h2>
@@ -265,7 +294,7 @@
                     </div>
                     
                     <!-- Common Mistakes Card -->
-                    <div class="bg-white rounded-lg shadow-md p-6 particle-card">
+                    <div class="bg-white rounded-lg shadow-md p-4 md:p-6 particle-card">
                         <h2 class="text-xl font-bold text-red-600 mb-4 flex items-center">
                             <i class="fas fa-exclamation-triangle mr-2"></i> Kesalahan Umum
                         </h2>
@@ -287,10 +316,10 @@
                 </div>
                 
                 <!-- Detailed Explanation Section -->
-                <div class="bg-white rounded-lg shadow-md p-6 mb-8">
-                    <h2 class="text-2xl font-bold text-gray-800 mb-6 border-b pb-2">Penjelasan Detail Partikel De (で)</h2>
+                <div class="bg-white rounded-lg shadow-md p-4 md:p-6 mb-6 md:mb-8">
+                    <h2 class="text-2xl font-bold text-gray-800 mb-4 md:mb-6 border-b pb-2">Penjelasan Detail Partikel De (で)</h2>
                     
-                    <div class="mb-8">
+                    <div class="mb-6 md:mb-8">
                         <h3 class="text-xl font-bold text-red-600 mb-4">1. Fungsi Dasar Partikel De</h3>
                         <p class="text-gray-700 mb-4">Partikel "de" (で) memiliki beberapa fungsi utama dalam bahasa Jepang:</p>
                         
@@ -397,7 +426,7 @@
                         </div>
                     </div>
                     
-                    <div class="mb-8">
+                    <div class="mb-6 md:mb-8">
                         <h3 class="text-xl font-bold text-red-600 mb-4">2. Perbedaan dengan Partikel Ni (に)</h3>
                         <p class="text-gray-700 mb-4">Banyak pembelajar bingung antara partikel "de" dan "ni". Perbedaan utamanya adalah:</p>
                         
@@ -479,10 +508,10 @@
                         </div>
                     </div>
                     
-                    <div class="mb-8">
+                    <div class="mb-6 md:mb-8">
                         <h3 class="text-xl font-bold text-red-600 mb-4">3. Penggunaan Partikel De dalam Berbagai Konteks</h3>
                         
-                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
                             <!-- Usage 1 -->
                             <div class="bg-gray-50 p-4 rounded-lg">
                                 <h4 class="font-bold text-red-500 mb-2">a. Tempat Aktivitas</h4>
@@ -529,7 +558,7 @@
                         </div>
                     </div>
                     
-                    <div class="mb-8">
+                    <div class="mb-6 md:mb-8">
                         <h3 class="text-xl font-bold text-red-600 mb-4">4. Pola Kalimat dengan Partikel De</h3>
                         
                         <div class="hidden md:block overflow-x-auto table-responsive">
@@ -637,10 +666,10 @@
                 </div>
                 
                 <!-- Practice Section -->
-                <div class="bg-white rounded-lg shadow-md p-6 mb-8">
-                    <h2 class="text-2xl font-bold text-gray-800 mb-6 border-b pb-2">Latihan Partikel De</h2>
+                <div class="bg-white rounded-lg shadow-md p-4 md:p-6 mb-6 md:mb-8">
+                    <h2 class="text-2xl font-bold text-gray-800 mb-4 md:mb-6 border-b pb-2">Latihan Partikel De</h2>
                     
-                    <div class="mb-8">
+                    <div class="mb-6 md:mb-8">
                         <h3 class="text-xl font-bold text-red-600 mb-4">Latihan 1: Isilah dengan Partikel yang Tepat</h3>
                         
                         <div class="space-y-4">
@@ -651,7 +680,7 @@
                                     <button class="practice-btn bg-gray-100 hover:bg-gray-200 text-gray-800 py-2 px-4 rounded transition" data-answer="に">に</button>
                                     <button class="practice-btn bg-gray-100 hover:bg-gray-200 text-gray-800 py-2 px-4 rounded transition" data-answer="は">は</button>
                                 </div>
-                                <div class="mt-2 text-sm text-green-600 hidden answer-feedback">Jawaban benar! Partikel "で" digunakan untuk menunjukkan tempat aktivitas.</div>
+                                <div class="answer-feedback mt-2 text-sm text-green-600">Jawaban benar! Partikel "で" digunakan untuk menunjukkan tempat aktivitas.</div>
                             </div>
                             
                             <div class="bg-gray-50 p-4 rounded-lg">
@@ -661,41 +690,41 @@
                                     <button class="practice-btn bg-gray-100 hover:bg-gray-200 text-gray-800 py-2 px-4 rounded transition" data-answer="に">に</button>
                                     <button class="practice-btn bg-gray-100 hover:bg-gray-200 text-gray-800 py-2 px-4 rounded transition" data-answer="と">と</button>
                                 </div>
-                                <div class="mt-2 text-sm text-green-600 hidden answer-feedback">Benar! "で" menunjukkan bahan pembuatan kue.</div>
+                                <div class="answer-feedback mt-2 text-sm text-green-600">Benar! "で" menunjukkan bahan pembuatan kue.</div>
                             </div>
                         </div>
                     </div>
                     
-                    <div class="mb-8">
+                    <div class="mb-6 md:mb-8">
                         <h3 class="text-xl font-bold text-red-600 mb-4">Latihan 2: Terjemahkan Kalimat Berikut</h3>
                         
                         <div class="space-y-4">
                             <div class="bg-gray-50 p-4 rounded-lg">
                                 <p class="text-gray-700 mb-2">1. Saya makan sushi dengan sumpit di restoran.</p>
                                 <div class="flex items-center">
-                                    <input type="text" class="flex-1 border border-gray-300 rounded-l-lg py-2 px-4 focus:outline-none focus:ring-2 focus:ring-red-500" placeholder="Tulis dalam bahasa Jepang...">
+                                    <input type="text" class="translation-input flex-1 border border-gray-300 rounded-l-lg py-2 px-4 focus:outline-none focus:ring-2 focus:ring-red-500 transition" placeholder="Tulis dalam bahasa Jepang...">
                                     <button class="bg-red-600 hover:bg-red-700 text-white py-2 px-4 rounded-r-lg transition check-translation">Periksa</button>
                                 </div>
-                                <div class="mt-2 text-sm text-green-600 hidden translation-feedback">Jawaban yang benar: レストランではしですしをたべます。(resutoran de hashi de sushi o tabemasu)</div>
+                                <div class="translation-feedback mt-2 text-sm text-green-600">Jawaban yang benar: レストランではしですしをたべます。(resutoran de hashi de sushi o tabemasu)</div>
                             </div>
                             
                             <div class="bg-gray-50 p-4 rounded-lg">
                                 <p class="text-gray-700 mb-2">2. Meja ini terbuat dari kaca.</p>
                                 <div class="flex items-center">
-                                    <input type="text" class="flex-1 border border-gray-300 rounded-l-lg py-2 px-4 focus:outline-none focus:ring-2 focus:ring-red-500" placeholder="Tulis dalam bahasa Jepang...">
+                                    <input type="text" class="translation-input flex-1 border border-gray-300 rounded-l-lg py-2 px-4 focus:outline-none focus:ring-2 focus:ring-red-500 transition" placeholder="Tulis dalam bahasa Jepang...">
                                     <button class="bg-red-600 hover:bg-red-700 text-white py-2 px-4 rounded-r-lg transition check-translation">Periksa</button>
                                 </div>
-                                <div class="mt-2 text-sm text-green-600 hidden translation-feedback">Jawaban yang benar: このテーブルはガラスでできています。(kono tēburu wa garasu de dekite imasu)</div>
+                                <div class="translation-feedback mt-2 text-sm text-green-600">Jawaban yang benar: このテーブルはガラスでできています。(kono tēburu wa garasu de dekite imasu)</div>
                             </div>
                         </div>
                     </div>
                 </div>
                 
                 <!-- Additional Resources -->
-                <div class="bg-white rounded-lg shadow-md p-6">
-                    <h2 class="text-2xl font-bold text-gray-800 mb-6 border-b pb-2">Sumber Belajar Tambahan</h2>
+                <div class="bg-white rounded-lg shadow-md p-4 md:p-6">
+                    <h2 class="text-2xl font-bold text-gray-800 mb-4 md:mb-6 border-b pb-2">Sumber Belajar Tambahan</h2>
                     
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
                         <!-- Resource 1 -->
                         <div class="bg-red-50 border border-red-100 rounded-lg p-4 hover:border-red-200 transition">
                             <h3 class="font-bold text-red-600 mb-2">Video Pembelajaran</h3>
@@ -717,11 +746,11 @@
                 </div>
 
                 <!-- Navigation Buttons -->
-                <div class="flex flex-col sm:flex-row justify-between gap-4 mt-8">
-                    <a href="/content/n5/" class="bg-gray-200 hover:bg-gray-300 text-gray-800 font-medium py-2 px-4 rounded-lg inline-flex items-center justify-center">
+                <div class="flex flex-col sm:flex-row justify-between gap-4 mt-6 md:mt-8">
+                    <a href="/content/n5/" class="bg-gray-200 hover:bg-gray-300 text-gray-800 font-medium py-2 px-4 rounded-lg inline-flex items-center justify-center transition">
                         <i class="fas fa-arrow-left mr-2"></i> JLPT N5
                     </a>
-                    <a href="/content/n5/partikel/e.html" class="bg-red-600 hover:bg-red-700 text-white font-medium py-2 px-4 rounded-lg inline-flex items-center justify-center">
+                    <a href="/content/n5/partikel/e.html" class="bg-red-600 hover:bg-red-700 text-white font-medium py-2 px-4 rounded-lg inline-flex items-center justify-center transition">
                         Partikel E (へ) <i class="fas fa-arrow-right ml-2"></i>
                     </a>
                 </div>
@@ -732,7 +761,7 @@
     <!-- Footer -->
     <footer class="bg-gray-800 text-white py-8">
         <div class="container mx-auto px-4">
-            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-6 md:gap-8">
                 <div>
                     <h3 class="text-xl font-bold mb-4">Nihongopedia</h3>
                     <p class="text-gray-400">Platform belajar bahasa Jepang dari dasar hingga level JLPT N1.</p>
@@ -760,7 +789,6 @@
                         <li><a href="#" class="text-gray-400 hover:text-white transition">FAQ</a></li>
                         <li><a href="/privacy.html" class="text-gray-400 hover:text-white transition">Kebijakan Privasi</a></li>
                         <li><a href="#" class="text-gray-400 hover:text-white transition">Email : nihongopedia123@gmail.com</a></li>
-
                     </ul>
                 </div>
                 <div>
@@ -787,24 +815,31 @@
     
     <script>
         // Mobile menu toggle
-        document.getElementById('mobile-menu-button').addEventListener('click', function() {
-            const menu = document.getElementById('mobile-menu');
+        const menuButton = document.getElementById('mobile-menu-button');
+        const menu = document.getElementById('mobile-menu');
+
+        menuButton.addEventListener('click', () => {
             menu.classList.toggle('hidden');
+            menuButton.setAttribute('aria-expanded', !menu.classList.contains('hidden'));
         });
         
         // Practice button functionality
         document.querySelectorAll('.practice-btn').forEach(button => {
             button.addEventListener('click', function() {
                 const isCorrect = this.getAttribute('data-answer') === 'で';
-                const feedback = this.parentElement.nextElementSibling;
+                const questionContainer = this.closest('.bg-gray-50');
+                const feedback = questionContainer.querySelector('.answer-feedback');
+                
+                // Reset all buttons in this question
+                questionContainer.querySelectorAll('.practice-btn').forEach(btn => {
+                    btn.classList.remove('correct', 'incorrect');
+                });
                 
                 if (isCorrect) {
-                    this.classList.remove('bg-red-100', 'hover:bg-red-200', 'text-red-800');
-                    this.classList.add('bg-green-100', 'text-green-800');
-                    feedback.classList.remove('hidden');
+                    this.classList.add('correct');
+                    feedback.classList.add('show');
                 } else {
-                    this.classList.remove('bg-gray-100', 'hover:bg-gray-200', 'text-gray-800');
-                    this.classList.add('bg-red-100', 'text-red-800');
+                    this.classList.add('incorrect');
                 }
             });
         });
@@ -814,31 +849,17 @@
             button.addEventListener('click', function() {
                 const input = this.previousElementSibling;
                 const feedback = this.parentElement.nextElementSibling;
-                feedback.classList.remove('hidden');
                 
                 if (input.value.trim() !== '') {
                     input.classList.add('border-green-500');
+                    feedback.classList.add('show');
+                    
                     setTimeout(() => {
                         input.classList.remove('border-green-500');
                     }, 2000);
                 }
             });
         });
-        
-        // Table responsive behavior
-        function checkTableResponsive() {
-            const tables = document.querySelectorAll('.table-responsive');
-            tables.forEach(table => {
-                if (window.innerWidth < 768) {
-                    // For mobile, we rely on horizontal scrolling
-                } else {
-                    // For desktop, ensure table is properly displayed
-                }
-            });
-        }
-        
-        window.addEventListener('resize', checkTableResponsive);
-        document.addEventListener('DOMContentLoaded', checkTableResponsive);
     </script>
 </body>
 </html>
