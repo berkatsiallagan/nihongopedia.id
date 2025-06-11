@@ -1,9 +1,6 @@
 <!DOCTYPE html>
 <html lang="id" class="scroll-smooth">
 <head>
-    <!-- Google Ads -->
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1435241846420582" crossorigin="anonymous"></script>
-    
     <!-- Meta Tags -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -20,11 +17,8 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
-    <!-- Custom CSS -->
-    <link rel="stylesheet" href="/assets/css/main.css">
-    <link rel="stylesheet" href="/assets/css/animations.css">
-    
     <style>
+        /* Improved Card Hover Effects */
         .particle-card {
             transition: all 0.3s ease;
         }
@@ -32,12 +26,16 @@
             transform: translateY(-5px);
             box-shadow: 0 10px 20px rgba(0,0,0,0.1);
         }
+        
+        /* Furigana Styling */
         .furigana {
             font-size: 0.6em;
             opacity: 0.8;
             display: block;
             line-height: 1;
         }
+        
+        /* Example Styling */
         .example-jp {
             font-size: 1.1em;
             line-height: 1.6;
@@ -46,12 +44,31 @@
             color: #666;
             font-style: italic;
         }
+        
+        /* Practice Button States */
+        .practice-btn.correct {
+            background-color: #f0fdf4;
+            color: #166534;
+        }
+        .practice-btn.incorrect {
+            background-color: #fee2e2;
+            color: #991b1b;
+        }
+        
+        /* Answer Feedback Animation */
+        .answer-feedback {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+        }
+        .answer-feedback.show {
+            max-height: 100px;
+        }
+        
+        /* Responsive Tables */
         @media (max-width: 768px) {
             .table-responsive {
-                display: block;
-                width: 100%;
-                overflow-x: auto;
-                -webkit-overflow-scrolling: touch;
+                display: none;
             }
             .table-card {
                 display: block;
@@ -76,6 +93,29 @@
                 margin-bottom: 0.25rem;
             }
         }
+        
+        @media (min-width: 769px) {
+            .table-responsive {
+                display: block;
+                width: 100%;
+                overflow-x: auto;
+                -webkit-overflow-scrolling: touch;
+            }
+            .table-card {
+                display: none;
+            }
+        }
+        
+        /* Input Focus States */
+        .translation-input {
+            transition: all 0.2s ease;
+            border-color: #d1d5db;
+        }
+        .translation-input:focus {
+            outline: none;
+            border-color: #f87171;
+            box-shadow: 0 0 0 2px rgba(239, 68, 68, 0.2);
+        }
     </style>
 </head>
 <body class="bg-gray-50 font-sans text-gray-800 flex flex-col min-h-screen">
@@ -96,7 +136,7 @@
             <!-- Header Right Section -->
             <div class="flex items-center space-x-4">
                 <!-- Mobile Menu Button -->
-                <button id="mobile-menu-button" class="md:hidden text-white focus:outline-none">
+                <button id="mobile-menu-button" class="md:hidden text-white focus:outline-none" aria-expanded="false" aria-controls="mobile-menu">
                     <i class="fas fa-bars text-2xl"></i>
                 </button>
             </div>
@@ -109,7 +149,6 @@
                 <a href="/resources/" class="hover:text-red-200 transition">Sumber Belajar</a>
                 <a href="/donasi" class="hidden md:flex items-center text-white hover:text-red-200 transition text-sm">Donasi</a>
                 <a href="https://whatsapp.com/channel/0029Vag1xu13AzNLMBd6fi0a" target="_blank" class="hidden md:flex items-center text-white hover:text-red-200 transition text-sm">Channel WhatsApp</a>
-                </a>
             </nav>
         </div>
         
@@ -120,7 +159,6 @@
                 <a href="/content/basic/hiragana/" class="py-2 hover:text-red-200 transition">Pelajaran</a>
                 <a href="/practice/" class="py-2 hover:text-red-200 transition">Latihan</a>
                 <a href="/resources/" class="py-2 hover:text-red-200 transition">Sumber Belajar</a>
-                <!-- Mobile version of the links -->
                 <a href="/donasi" class="py-2 hover:text-red-200 transition flex items-center">Donasi</a>
                 <a href="https://whatsapp.com/channel/0029Vag1xu13AzNLMBd6fi0a" target="_blank" class="py-2 hover:text-red-200 transition flex items-center">Channel WhatsApp</a>
             </div>
@@ -128,10 +166,10 @@
     </header>
 
     <!-- Main Content Layout -->
-    <div class="flex flex-1 pt-12">
+    <div class="flex flex-1 pt-16">
         <!-- Sidebar -->
         <aside class="hidden lg:block w-64 bg-white shadow-md p-4">
-            <div class="sticky top-20">
+            <div class="sticky top-24">
                 <!-- Level Navigation -->
                 <div class="mb-6">
                     <h3 class="font-bold text-lg mb-3 text-red-600 border-b pb-2">Level Belajar</h3>
@@ -155,7 +193,7 @@
                     </ul>
                 </div>
                 
-                <!-- Sidebar Footer with Subtle Links -->
+                <!-- Sidebar Footer -->
                 <div class="mt-8 pt-4 border-t border-gray-200 text-sm text-gray-600">
                     <a href="https://whatsapp.com/channel/0029Vag1xu13AzNLMBd6fi0a" target="_blank" class="block mb-2 hover:text-red-600 transition">
                         <i class="fab fa-whatsapp mr-2"></i>Channel WhatsApp
@@ -168,7 +206,7 @@
         </aside>
 
         <!-- Main Content Area -->
-        <main class="flex-1 p-8">
+        <main class="flex-1 p-4 md:p-8">
             <!-- BreadCrumb -->
             <div class="max-w-6xl mx-auto mb-4">
                 <nav class="flex" aria-label="Breadcrumb">
@@ -198,8 +236,8 @@
             <!-- Main Content -->
             <div class="max-w-6xl mx-auto">
                 <!-- Header Section -->
-                <div class="bg-white rounded-lg shadow-md p-6 mb-6">
-                    <h1 class="text-3xl font-bold text-gray-800 mb-2">Partikel Ga (が)</h1>
+                <div class="bg-white rounded-lg shadow-md p-4 md:p-6 mb-4 md:mb-6">
+                    <h1 class="text-2xl md:text-3xl font-bold text-gray-800 mb-2">Partikel Ga (が)</h1>
                     <p class="text-lg text-gray-600 mb-4">Partikel yang menunjukkan subjek dalam kalimat dan memiliki berbagai fungsi penting</p>
                     
                     <div class="flex flex-wrap gap-4 mb-6">
@@ -629,7 +667,9 @@
                                     <button class="practice-btn bg-gray-100 hover:bg-gray-200 text-gray-800 py-2 px-4 rounded transition" data-answer="は">は</button>
                                     <button class="practice-btn bg-red-100 hover:bg-red-200 text-red-800 py-2 px-4 rounded transition" data-answer="が">が</button>
                                 </div>
-                                <div class="mt-2 text-sm text-green-600 hidden answer-feedback">Jawaban benar! Partikel "が" digunakan dengan kata tanya seperti "dare" (siapa).</div>
+                                <div class="answer-feedback mt-2 text-sm text-green-600">
+                                    Jawaban benar! Partikel "が" digunakan dengan kata tanya seperti "dare" (siapa).
+                                </div>
                             </div>
                             
                             <div class="bg-gray-50 p-4 rounded-lg">
@@ -638,7 +678,9 @@
                                     <button class="practice-btn bg-gray-100 hover:bg-gray-200 text-gray-800 py-2 px-4 rounded transition" data-answer="は">は</button>
                                     <button class="practice-btn bg-red-100 hover:bg-red-200 text-red-800 py-2 px-4 rounded transition" data-answer="が">が</button>
                                 </div>
-                                <div class="mt-2 text-sm text-green-600 hidden answer-feedback">Benar! "が" digunakan setelah objek dalam ekspresi keinginan.</div>
+                                <div class="answer-feedback mt-2 text-sm text-green-600">
+                                    Benar! "が" digunakan setelah objek dalam ekspresi keinginan.
+                                </div>
                             </div>
                             
                             <div class="bg-gray-50 p-4 rounded-lg">
@@ -647,7 +689,9 @@
                                     <button class="practice-btn bg-gray-100 hover:bg-gray-200 text-gray-800 py-2 px-4 rounded transition" data-answer="は">は</button>
                                     <button class="practice-btn bg-red-100 hover:bg-red-200 text-red-800 py-2 px-4 rounded transition" data-answer="が">が</button>
                                 </div>
-                                <div class="mt-2 text-sm text-green-600 hidden answer-feedback">Tepat! "が" digunakan untuk fenomena alam seperti hujan.</div>
+                                <div class="answer-feedback mt-2 text-sm text-green-600">
+                                    Tepat! "が" digunakan untuk fenomena alam seperti hujan.
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -659,28 +703,34 @@
                             <div class="bg-gray-50 p-4 rounded-lg">
                                 <p class="text-gray-700 mb-2">1. Saya yang akan pergi ke Jepang.</p>
                                 <div class="flex items-center">
-                                    <input type="text" class="flex-1 border border-gray-300 rounded-l-lg py-2 px-4 focus:outline-none focus:ring-2 focus:ring-red-500" placeholder="Tulis dalam bahasa Jepang...">
+                                    <input type="text" class="translation-input flex-1 border border-gray-300 rounded-l-lg py-2 px-4 focus:outline-none" placeholder="Tulis dalam bahasa Jepang...">
                                     <button class="bg-red-600 hover:bg-red-700 text-white py-2 px-4 rounded-r-lg transition check-translation">Periksa</button>
                                 </div>
-                                <div class="mt-2 text-sm text-green-600 hidden translation-feedback">Jawaban yang benar: わたしが にほんに いきます。(watashi ga nihon ni ikimasu)</div>
+                                <div class="translation-feedback mt-2 text-sm text-green-600 max-h-0 overflow-hidden">
+                                    Jawaban yang benar: わたしが にほんに いきます。(watashi ga nihon ni ikimasu)
+                                </div>
                             </div>
                             
                             <div class="bg-gray-50 p-4 rounded-lg">
                                 <p class="text-gray-700 mb-2">2. Saya ingin makan sushi.</p>
                                 <div class="flex items-center">
-                                    <input type="text" class="flex-1 border border-gray-300 rounded-l-lg py-2 px-4 focus:outline-none focus:ring-2 focus:ring-red-500" placeholder="Tulis dalam bahasa Jepang...">
+                                    <input type="text" class="translation-input flex-1 border border-gray-300 rounded-l-lg py-2 px-4 focus:outline-none" placeholder="Tulis dalam bahasa Jepang...">
                                     <button class="bg-red-600 hover:bg-red-700 text-white py-2 px-4 rounded-r-lg transition check-translation">Periksa</button>
                                 </div>
-                                <div class="mt-2 text-sm text-green-600 hidden translation-feedback">Jawaban yang benar: すしが たべたいです。(sushi ga tabetai desu)</div>
+                                <div class="translation-feedback mt-2 text-sm text-green-600 max-h-0 overflow-hidden">
+                                    Jawaban yang benar: すしが たべたいです。(sushi ga tabetai desu)
+                                </div>
                             </div>
                             
                             <div class="bg-gray-50 p-4 rounded-lg">
                                 <p class="text-gray-700 mb-2">3. Yang mana yang baru?</p>
                                 <div class="flex items-center">
-                                    <input type="text" class="flex-1 border border-gray-300 rounded-l-lg py-2 px-4 focus:outline-none focus:ring-2 focus:ring-red-500" placeholder="Tulis dalam bahasa Jepang...">
+                                    <input type="text" class="translation-input flex-1 border border-gray-300 rounded-l-lg py-2 px-4 focus:outline-none" placeholder="Tulis dalam bahasa Jepang...">
                                     <button class="bg-red-600 hover:bg-red-700 text-white py-2 px-4 rounded-r-lg transition check-translation">Periksa</button>
                                 </div>
-                                <div class="mt-2 text-sm text-green-600 hidden translation-feedback">Jawaban yang benar: どれが あたらしいですか？(dore ga atarashii desu ka?)</div>
+                                <div class="translation-feedback mt-2 text-sm text-green-600 max-h-0 overflow-hidden">
+                                    Jawaban yang benar: どれが あたらしいですか？(dore ga atarashii desu ka?)
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -745,11 +795,10 @@
     <!-- Footer -->
     <footer class="bg-gray-800 text-white py-8">
         <div class="container mx-auto px-4">
-            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-6 md:gap-8">
                 <div>
                     <h3 class="text-xl font-bold mb-4">Nihongopedia</h3>
                     <p class="text-gray-400">Platform belajar bahasa Jepang dari dasar hingga level JLPT N1.</p>
-                    <!-- Footer Contact Links -->
                     <div class="mt-4 space-y-2">
                         <a href="https://whatsapp.com/channel/0029Vag1xu13AzNLMBd6fi0a" target="_blank" class="flex items-center text-gray-400 hover:text-white transition text-sm">
                             <i class="fab fa-whatsapp mr-2"></i> WhatsApp Channel
@@ -773,7 +822,6 @@
                         <li><a href="#" class="text-gray-400 hover:text-white transition">FAQ</a></li>
                         <li><a href="/privacy.html" class="text-gray-400 hover:text-white transition">Kebijakan Privasi</a></li>
                         <li><a href="#" class="text-gray-400 hover:text-white transition">Email : nihongopedia123@gmail.com</a></li>
-
                     </ul>
                 </div>
                 <div>
@@ -791,67 +839,64 @@
         </div>
     </footer>
 
-    <!-- CDN JS -->
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    
-    <!-- Custom JS -->
-    <script src="/assets/js/main.js"></script>
-    
+    <!-- JavaScript -->
     <script>
-        // Mobile menu toggle
-        document.getElementById('mobile-menu-button').addEventListener('click', function() {
-            const menu = document.getElementById('mobile-menu');
+        // Mobile menu toggle with ARIA attributes
+        const menuButton = document.getElementById('mobile-menu-button');
+        const menu = document.getElementById('mobile-menu');
+
+        menuButton.addEventListener('click', () => {
+            const isExpanded = menuButton.getAttribute('aria-expanded') === 'true';
             menu.classList.toggle('hidden');
+            menuButton.setAttribute('aria-expanded', !isExpanded);
         });
-        
+
         // Practice button functionality
         document.querySelectorAll('.practice-btn').forEach(button => {
             button.addEventListener('click', function() {
+                // Reset all buttons in this question
+                this.parentElement.querySelectorAll('.practice-btn').forEach(btn => {
+                    btn.classList.remove('correct', 'incorrect');
+                });
+
                 const isCorrect = this.getAttribute('data-answer') === 'が';
-                const feedback = this.parentElement.nextElementSibling;
                 
                 if (isCorrect) {
-                    this.classList.remove('bg-red-100', 'hover:bg-red-200', 'text-red-800');
-                    this.classList.add('bg-green-100', 'text-green-800');
-                    feedback.classList.remove('hidden');
+                    this.classList.add('correct');
                 } else {
-                    this.classList.remove('bg-gray-100', 'hover:bg-gray-200', 'text-gray-800');
-                    this.classList.add('bg-red-100', 'text-red-800');
+                    this.classList.add('incorrect');
                 }
+                
+                // Show feedback
+                const feedback = this.closest('.bg-gray-50').querySelector('.answer-feedback');
+                feedback.classList.add('show');
             });
         });
-        
+
         // Translation check functionality
         document.querySelectorAll('.check-translation').forEach(button => {
             button.addEventListener('click', function() {
                 const input = this.previousElementSibling;
-                const feedback = this.parentElement.nextElementSibling;
-                feedback.classList.remove('hidden');
+                const feedback = this.closest('.bg-gray-50').querySelector('.translation-feedback');
                 
-                if (input.value.trim() !== '') {
-                    input.classList.add('border-green-500');
-                    setTimeout(() => {
-                        input.classList.remove('border-green-500');
-                    }, 2000);
-                }
+                // Highlight input
+                input.classList.add('border-green-500');
+                setTimeout(() => {
+                    input.classList.remove('border-green-500');
+                }, 2000);
+                
+                // Show feedback
+                feedback.classList.add('show');
             });
         });
-        
-        // Table responsive behavior
-        function checkTableResponsive() {
-            const tables = document.querySelectorAll('.table-responsive');
-            tables.forEach(table => {
-                if (window.innerWidth < 768) {
-                    // For mobile, we rely on horizontal scrolling
-                } else {
-                    // For desktop, ensure table is properly displayed
-                }
-            });
+
+        // Responsive behavior
+        function checkResponsiveElements() {
+            // Additional responsive checks can be added here
         }
-        
-        window.addEventListener('resize', checkTableResponsive);
-        document.addEventListener('DOMContentLoaded', checkTableResponsive);
+
+        window.addEventListener('resize', checkResponsiveElements);
+        document.addEventListener('DOMContentLoaded', checkResponsiveElements);
     </script>
 </body>
 </html>
