@@ -46,6 +46,27 @@
             color: #666;
             font-style: italic;
         }
+        .practice-btn.correct {
+            background-color: #dcfce7;
+            color: #166534;
+        }
+        .practice-btn.incorrect {
+            background-color: #fee2e2;
+            color: #991b1b;
+        }
+        .answer-feedback {
+            max-height: 0;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+        .answer-feedback.show {
+            max-height: 100px;
+        }
+        .translation-input:focus {
+            outline: none;
+            ring: 2px;
+            ring-color: #dc2626;
+        }
         @media (max-width: 768px) {
             .table-responsive {
                 display: block;
@@ -103,7 +124,7 @@
             <!-- Header Right Section -->
             <div class="flex items-center space-x-4">
                 <!-- Mobile Menu Button -->
-                <button id="mobile-menu-button" class="md:hidden text-white focus:outline-none">
+                <button id="mobile-menu-button" class="md:hidden text-white focus:outline-none" aria-label="Toggle menu" aria-expanded="false">
                     <i class="fas fa-bars text-2xl"></i>
                 </button>
             </div>
@@ -135,10 +156,10 @@
     </header>
 
     <!-- Main Content Layout -->
-    <div class="flex flex-1 pt-12">
+    <div class="flex flex-1 pt-16"> <!-- Increased padding to account for fixed header -->
         <!-- Sidebar -->
         <aside class="hidden lg:block w-64 bg-white shadow-md p-4">
-            <div class="sticky top-20">
+            <div class="sticky top-24"> <!-- Adjusted top position -->
                 <!-- Level Navigation -->
                 <div class="mb-6">
                     <h3 class="font-bold text-lg mb-3 text-red-600 border-b pb-2">Level Belajar</h3>
@@ -175,7 +196,7 @@
         </aside>
 
         <!-- Main Content Area -->
-        <main class="flex-1 p-8">
+        <main class="flex-1 p-4 md:p-8"> <!-- Responsive padding -->
             <!-- BreadCrumb -->
             <div class="max-w-6xl mx-auto mb-4">
                 <nav class="flex" aria-label="Breadcrumb">
@@ -205,8 +226,10 @@
             <!-- Main Content -->
             <div class="max-w-6xl mx-auto">
                 <!-- Header Section -->
-                <div class="bg-white rounded-lg shadow-md p-6 mb-6">
-                    <h1 class="text-3xl font-bold text-gray-800 mb-2">Partikel Ni (に)</h1>
+                <div class="bg-white rounded-lg shadow-md p-4 md:p-6 mb-4 md:mb-6"> <!-- Responsive padding -->
+                    <h1 class="text-2xl md:text-3xl font-bold text-gray-800 mb-2"> <!-- Responsive typography -->
+                        Partikel Ni (に)
+                    </h1>
                     <p class="text-lg text-gray-600 mb-4">Partikel serbaguna dalam bahasa Jepang yang menunjukkan arah, waktu, tujuan, dan penerima</p>
                     
                     <div class="flex flex-wrap gap-4 mb-6">
@@ -230,9 +253,9 @@
                 </div>
                 
                 <!-- Content Sections -->
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6 mb-6 md:mb-8"> <!-- Responsive gap -->
                     <!-- Quick Summary Card -->
-                    <div class="bg-white rounded-lg shadow-md p-6 particle-card">
+                    <div class="bg-white rounded-lg shadow-md p-4 md:p-6 particle-card"> <!-- Responsive padding -->
                         <h2 class="text-xl font-bold text-red-600 mb-4 flex items-center">
                             <i class="fas fa-info-circle mr-2"></i> Ringkasan Cepat
                         </h2>
@@ -257,7 +280,7 @@
                     </div>
                     
                     <!-- Pronunciation Card -->
-                    <div class="bg-white rounded-lg shadow-md p-6 particle-card">
+                    <div class="bg-white rounded-lg shadow-md p-4 md:p-6 particle-card"> <!-- Responsive padding -->
                         <h2 class="text-xl font-bold text-red-600 mb-4 flex items-center">
                             <i class="fas fa-volume-up mr-2"></i> Pengucapan
                         </h2>
@@ -269,7 +292,7 @@
                     </div>
                     
                     <!-- Common Mistakes Card -->
-                    <div class="bg-white rounded-lg shadow-md p-6 particle-card">
+                    <div class="bg-white rounded-lg shadow-md p-4 md:p-6 particle-card"> <!-- Responsive padding -->
                         <h2 class="text-xl font-bold text-red-600 mb-4 flex items-center">
                             <i class="fas fa-exclamation-triangle mr-2"></i> Kesalahan Umum
                         </h2>
@@ -291,10 +314,12 @@
                 </div>
                 
                 <!-- Detailed Explanation Section -->
-                <div class="bg-white rounded-lg shadow-md p-6 mb-8">
-                    <h2 class="text-2xl font-bold text-gray-800 mb-6 border-b pb-2">Penjelasan Detail Partikel Ni (に)</h2>
+                <div class="bg-white rounded-lg shadow-md p-4 md:p-6 mb-6 md:mb-8"> <!-- Responsive padding -->
+                    <h2 class="text-2xl font-bold text-gray-800 mb-4 md:mb-6 border-b pb-2"> <!-- Responsive margin -->
+                        Penjelasan Detail Partikel Ni (に)
+                    </h2>
                     
-                    <div class="mb-8">
+                    <div class="mb-6 md:mb-8"> <!-- Responsive margin -->
                         <h3 class="text-xl font-bold text-red-600 mb-4">1. Fungsi Dasar Partikel Ni</h3>
                         <p class="text-gray-700 mb-4">Partikel "ni" (に) adalah salah satu partikel paling penting dan serbaguna dalam bahasa Jepang. Berikut adalah fungsi utamanya:</p>
                         
@@ -353,11 +378,11 @@
                         </div>
                     </div>
                     
-                    <div class="mb-8">
+                    <div class="mb-6 md:mb-8"> <!-- Responsive margin -->
                         <h3 class="text-xl font-bold text-red-600 mb-4">2. Perbedaan dengan Partikel Lain</h3>
                         <p class="text-gray-700 mb-4">Partikel "ni" sering membingungkan karena memiliki beberapa fungsi yang tumpang tindih dengan partikel lain:</p>
                         
-                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6 mb-4 md:mb-6"> <!-- Responsive gap -->
                             <!-- Comparison 1 -->
                             <div class="bg-gray-50 p-4 rounded-lg">
                                 <h4 class="font-bold text-red-500 mb-2">Ni (に) vs De (で)</h4>
@@ -405,10 +430,10 @@
                         </div>
                     </div>
                     
-                    <div class="mb-8">
+                    <div class="mb-6 md:mb-8"> <!-- Responsive margin -->
                         <h3 class="text-xl font-bold text-red-600 mb-4">3. Penggunaan Lanjutan Partikel Ni</h3>
                         
-                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6"> <!-- Responsive gap -->
                             <!-- Advanced 1 -->
                             <div class="bg-gray-50 p-4 rounded-lg">
                                 <h4 class="font-bold text-red-500 mb-2">a. Dengan Kata Kerja Gerakan</h4>
@@ -455,7 +480,7 @@
                         </div>
                     </div>
                     
-                    <div class="mb-8">
+                    <div class="mb-6 md:mb-8"> <!-- Responsive margin -->
                         <h3 class="text-xl font-bold text-red-600 mb-4">4. Pola Kalimat dengan Partikel Ni</h3>
                         
                         <div class="overflow-x-auto table-responsive">
@@ -505,10 +530,12 @@
                 </div>
                 
                 <!-- Practice Section -->
-                <div class="bg-white rounded-lg shadow-md p-6 mb-8">
-                    <h2 class="text-2xl font-bold text-gray-800 mb-6 border-b pb-2">Latihan Partikel Ni</h2>
+                <div class="bg-white rounded-lg shadow-md p-4 md:p-6 mb-6 md:mb-8"> <!-- Responsive padding -->
+                    <h2 class="text-2xl font-bold text-gray-800 mb-4 md:mb-6 border-b pb-2"> <!-- Responsive margin -->
+                        Latihan Partikel Ni
+                    </h2>
                     
-                    <div class="mb-8">
+                    <div class="mb-6 md:mb-8"> <!-- Responsive margin -->
                         <h3 class="text-xl font-bold text-red-600 mb-4">Latihan 1: Isilah dengan Partikel yang Tepat</h3>
                         
                         <div class="space-y-4">
@@ -519,7 +546,9 @@
                                     <button class="practice-btn bg-gray-100 hover:bg-gray-200 text-gray-800 py-2 px-4 rounded transition" data-answer="で">で</button>
                                     <button class="practice-btn bg-gray-100 hover:bg-gray-200 text-gray-800 py-2 px-4 rounded transition" data-answer="へ">へ</button>
                                 </div>
-                                <div class="mt-2 text-sm text-green-600 hidden answer-feedback">Jawaban benar! Partikel "に" digunakan untuk waktu spesifik.</div>
+                                <div class="answer-feedback mt-2 text-sm text-green-600">
+                                    Jawaban benar! Partikel "に" digunakan untuk waktu spesifik.
+                                </div>
                             </div>
                             
                             <div class="bg-gray-50 p-4 rounded-lg">
@@ -529,41 +558,49 @@
                                     <button class="practice-btn bg-gray-100 hover:bg-gray-200 text-gray-800 py-2 px-4 rounded transition" data-answer="と">と</button>
                                     <button class="practice-btn bg-gray-100 hover:bg-gray-200 text-gray-800 py-2 px-4 rounded transition" data-answer="で">で</button>
                                 </div>
-                                <div class="mt-2 text-sm text-green-600 hidden answer-feedback">Benar! "に" menunjukkan orang yang ditemui.</div>
+                                <div class="answer-feedback mt-2 text-sm text-green-600">
+                                    Benar! "に" menunjukkan orang yang ditemui.
+                                </div>
                             </div>
                         </div>
                     </div>
                     
-                    <div class="mb-8">
+                    <div class="mb-6 md:mb-8"> <!-- Responsive margin -->
                         <h3 class="text-xl font-bold text-red-600 mb-4">Latihan 2: Terjemahkan Kalimat Berikut</h3>
                         
                         <div class="space-y-4">
                             <div class="bg-gray-50 p-4 rounded-lg">
                                 <p class="text-gray-700 mb-2">1. Saya pergi ke universitas setiap hari.</p>
                                 <div class="flex items-center">
-                                    <input type="text" class="flex-1 border border-gray-300 rounded-l-lg py-2 px-4 focus:outline-none focus:ring-2 focus:ring-red-500" placeholder="Tulis dalam bahasa Jepang...">
+                                    <input type="text" class="translation-input flex-1 border border-gray-300 rounded-l-lg py-2 px-4 focus:outline-none focus:ring-2 focus:ring-red-500 transition" placeholder="Tulis dalam bahasa Jepang...">
                                     <button class="bg-red-600 hover:bg-red-700 text-white py-2 px-4 rounded-r-lg transition check-translation">Periksa</button>
                                 </div>
-                                <div class="mt-2 text-sm text-green-600 hidden translation-feedback">Jawaban yang benar: わたしはまいにちだいがく<span class="text-red-600">に</span>いきます。(watashi wa mainichi daigaku ni ikimasu)</div>
+                                <div class="translation-feedback mt-2 text-sm text-green-600">
+                                    Jawaban yang benar: わたしはまいにちだいがく<span class="text-red-600">に</span>いきます。(watashi wa mainichi daigaku ni ikimasu)
+                                </div>
                             </div>
                             
                             <div class="bg-gray-50 p-4 rounded-lg">
                                 <p class="text-gray-700 mb-2">2. Saya memberi buku kepada adik perempuan saya.</p>
                                 <div class="flex items-center">
-                                    <input type="text" class="flex-1 border border-gray-300 rounded-l-lg py-2 px-4 focus:outline-none focus:ring-2 focus:ring-red-500" placeholder="Tulis dalam bahasa Jepang...">
+                                    <input type="text" class="translation-input flex-1 border border-gray-300 rounded-l-lg py-2 px-4 focus:outline-none focus:ring-2 focus:ring-red-500 transition" placeholder="Tulis dalam bahasa Jepang...">
                                     <button class="bg-red-600 hover:bg-red-700 text-white py-2 px-4 rounded-r-lg transition check-translation">Periksa</button>
                                 </div>
-                                <div class="mt-2 text-sm text-green-600 hidden translation-feedback">Jawaban yang benar: わたしはいもうと<span class="text-red-600">に</span>ほんをあげます。(watashi wa imouto ni hon o agemasu)</div>
+                                <div class="translation-feedback mt-2 text-sm text-green-600">
+                                    Jawaban yang benar: わたしはいもうと<span class="text-red-600">に</span>ほんをあげます。(watashi wa imouto ni hon o agemasu)
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
                 
                 <!-- Additional Resources -->
-                <div class="bg-white rounded-lg shadow-md p-6">
-                    <h2 class="text-2xl font-bold text-gray-800 mb-6 border-b pb-2">Sumber Belajar Tambahan</h2>
+                <div class="bg-white rounded-lg shadow-md p-4 md:p-6"> <!-- Responsive padding -->
+                    <h2 class="text-2xl font-bold text-gray-800 mb-4 md:mb-6 border-b pb-2"> <!-- Responsive margin -->
+                        Sumber Belajar Tambahan
+                    </h2>
                     
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6"> <!-- Responsive gap -->
                         <!-- Resource 1 -->
                         <div class="bg-red-50 border border-red-100 rounded-lg p-4 hover:border-red-200 transition">
                             <h3 class="font-bold text-red-600 mb-2">Video Pembelajaran</h3>
@@ -585,7 +622,7 @@
                 </div>
 
                 <!-- Navigation Buttons -->
-                <div class="flex flex-col sm:flex-row justify-between gap-4 mt-8">
+                <div class="flex flex-col sm:flex-row justify-between gap-4 mt-6 md:mt-8"> <!-- Responsive margin -->
                     <a href="/content/n5/" class="bg-gray-200 hover:bg-gray-300 text-gray-800 font-medium py-2 px-4 rounded-lg inline-flex items-center justify-center">
                         <i class="fas fa-arrow-left mr-2"></i> JLPT N5
                     </a>
@@ -600,7 +637,7 @@
     <!-- Footer -->
     <footer class="bg-gray-800 text-white py-8">
         <div class="container mx-auto px-4">
-            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-6 md:gap-8"> <!-- Responsive gap -->
                 <div>
                     <h3 class="text-xl font-bold mb-4">Nihongopedia</h3>
                     <p class="text-gray-400">Platform belajar bahasa Jepang dari dasar hingga level JLPT N1.</p>
@@ -653,35 +690,41 @@
     <script src="/assets/js/main.js"></script>
     
     <script>
-        // Mobile menu toggle
-        document.getElementById('mobile-menu-button').addEventListener('click', function() {
-            const menu = document.getElementById('mobile-menu');
+        // Mobile menu toggle with improved accessibility
+        const menuButton = document.getElementById('mobile-menu-button');
+        const menu = document.getElementById('mobile-menu');
+
+        menuButton.addEventListener('click', () => {
+            const isExpanded = menuButton.getAttribute('aria-expanded') === 'true';
             menu.classList.toggle('hidden');
+            menuButton.setAttribute('aria-expanded', !isExpanded);
         });
         
-        // Practice button functionality
+        // Practice button functionality with improved feedback
         document.querySelectorAll('.practice-btn').forEach(button => {
             button.addEventListener('click', function() {
                 const isCorrect = this.getAttribute('data-answer') === 'に';
-                const feedback = this.parentElement.nextElementSibling;
+                const questionContainer = this.closest('.bg-gray-50');
+                const feedback = questionContainer.querySelector('.answer-feedback');
                 
+                // Reset all buttons in this question first
+                questionContainer.querySelectorAll('.practice-btn').forEach(btn => {
+                    btn.classList.remove('correct', 'incorrect', 'bg-red-100', 'bg-gray-100', 'hover:bg-red-200', 'hover:bg-gray-200');
+                    btn.classList.add('opacity-50', 'cursor-not-allowed');
+                    btn.disabled = true;
+                });
+                
+                // Apply appropriate class
                 if (isCorrect) {
-                    this.classList.remove('bg-red-100', 'hover:bg-red-200', 'text-red-800');
-                    this.classList.add('bg-green-100', 'text-green-800');
-                    feedback.classList.remove('hidden');
-                    
-                    // Disable other buttons
-                    this.parentElement.querySelectorAll('.practice-btn').forEach(btn => {
-                        if (btn !== this) {
-                            btn.classList.add('opacity-50', 'cursor-not-allowed');
-                            btn.disabled = true;
-                        }
-                    });
+                    this.classList.add('correct');
+                    feedback.classList.add('show');
                 } else {
-                    this.classList.remove('bg-gray-100', 'hover:bg-gray-200', 'text-gray-800');
-                    this.classList.add('bg-red-100', 'text-red-800');
-                    this.classList.add('opacity-50', 'cursor-not-allowed');
-                    this.disabled = true;
+                    this.classList.add('incorrect');
+                    // Show correct answer
+                    const correctBtn = questionContainer.querySelector('[data-answer="に"]');
+                    correctBtn.classList.add('correct');
+                    correctBtn.classList.remove('opacity-50', 'cursor-not-allowed');
+                    correctBtn.disabled = false;
                 }
             });
         });
@@ -690,11 +733,12 @@
         document.querySelectorAll('.check-translation').forEach(button => {
             button.addEventListener('click', function() {
                 const input = this.previousElementSibling;
-                const feedback = this.parentElement.nextElementSibling;
-                feedback.classList.remove('hidden');
+                const feedback = this.closest('.bg-gray-50').querySelector('.translation-feedback');
                 
                 if (input.value.trim() !== '') {
                     input.classList.add('border-green-500');
+                    feedback.classList.add('show');
+                    
                     setTimeout(() => {
                         input.classList.remove('border-green-500');
                     }, 2000);
@@ -714,6 +758,7 @@
             });
         }
         
+        // Initialize on load and resize
         window.addEventListener('resize', checkTableResponsive);
         document.addEventListener('DOMContentLoaded', checkTableResponsive);
     </script>
