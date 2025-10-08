@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nihongopedia - Redirecting...</title>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary: #DC143C;
+            --secondary: #FFFFFF;
+            --accent: #C70039;
+            --text-primary: #333333;
+            --text-secondary: #666666;
+            --bg-primary: #FFFFFF;
+            --bg-secondary: #F8F8F8;
+            --border: #E0E0E0;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: var(--bg-primary);
+            color: var(--text-primary);
+            line-height: 1.6;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            text-align: center;
+            padding: 20px;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 30px;
+        }
+
+        .logo-icon {
+            color: var(--primary);
+            font-size: 48px;
+        }
+
+        .logo-text {
+            font-size: 36px;
+            font-weight: 700;
+            color: var(--primary);
+        }
+
+        .redirect-container {
+            max-width: 500px;
+            background-color: var(--bg-secondary);
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .spinner {
+            width: 50px;
+            height: 50px;
+            border: 5px solid rgba(220, 20, 60, 0.2);
+            border-top: 5px solid var(--primary);
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+            margin: 0 auto 20px;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        h1 {
+            font-size: 24px;
+            margin-bottom: 15px;
+            color: var(--text-primary);
+        }
+
+        p {
+            color: var(--text-secondary);
+            margin-bottom: 20px;
+        }
+
+        .redirect-link {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 12px 24px;
+            background-color: var(--primary);
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: 600;
+            transition: all 0.3s;
+        }
+
+        .redirect-link:hover {
+            background-color: var(--accent);
+            transform: translateY(-2px);
+        }
+
+        .language-note {
+            margin-top: 30px;
+            font-size: 14px;
+            color: var(--text-secondary);
+            font-style: italic;
+        }
+    </style>
+</head>
+<body>
+    <div class="logo">
+        <div class="logo-icon">
+            <i class="fas fa-language"></i>
+        </div>
+        <div class="logo-text">Nihongopedia</div>
+    </div>
+
+    <div class="redirect-container">
+        <div class="spinner"></div>
+        <h1>Mengarahkan ke Beranda</h1>
+        <p>Anda akan diarahkan ke halaman beranda Nihongopedia dalam beberapa detik.</p>
+        <p>Jika tidak terjadi pengalihan otomatis, silakan klik tombol di bawah ini:</p>
+        <a href="/01_beranda" class="redirect-link">
+            <i class="fas fa-home"></i> Pergi ke Beranda
+        </a>
+    </div>
+
+    <div class="language-note">
+        Platform Belajar Bahasa Jepang Gratis
+    </div>
+
+    <script>
+        // Redirect otomatis setelah 3 detik
+        setTimeout(function() {
+            window.location.href = "/01_beranda";
+        }, 3000);
+
+        // Fallback: redirect jika halaman masih terbuka setelah 5 detik
+        setTimeout(function() {
+            window.location.href = "/01_beranda";
+        }, 5000);
+
+        // Opsi alternatif: redirect langsung tanpa delay
+        // window.location.href = "/01_beranda";
+    </script>
+</body>
+</html>
