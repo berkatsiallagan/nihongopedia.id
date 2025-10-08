@@ -1,203 +1,599 @@
 <!DOCTYPE html>
-<html lang="id" class="scroll-smooth">
+<html lang="id">
 <head>
-    <!-- Google Ads -->
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1435241846420582" crossorigin="anonymous"></script>
-    
-    <!-- Meta Tags -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Nihongopedia - Belajar Bahasa Jepang dari Dasar hingga Level N1">
-    
-    <!-- Title -->
-    <title>Halaman Tidak Ditemukan | Nihongopedia</title>
-    
-    <!-- Favicon -->
-    <link rel="icon" type="image/x-icon" href="/assets/images/logos/nihongopedia.png">
-    
-    <!-- CDN CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <title>Halaman Tidak Ditemukan - Nihongopedia</title>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    
-    <!-- Custom CSS -->
-    <link rel="stylesheet" href="/assets/css/main.css">
-    <link rel="stylesheet" href="/assets/css/animations.css">
+    <style>
+        :root {
+            /* Light Theme */
+            --primary: #DC143C;
+            --secondary: #FFFFFF;
+            --accent: #C70039;
+            --text-primary: #333333;
+            --text-secondary: #666666;
+            --bg-primary: #FFFFFF;
+            --bg-secondary: #F8F8F8;
+            --bg-card: #FFFFFF;
+            --border: #E0E0E0;
+            --shadow: rgba(0, 0, 0, 0.1);
+            --success: #28a745;
+            --warning: #ffc107;
+        }
+
+        [data-theme="dark"] {
+            /* Dark Theme */
+            --primary: #DC143C;
+            --secondary: #1a1a1a;
+            --accent: #FF6B8B;
+            --text-primary: #FFFFFF;
+            --text-secondary: #CCCCCC;
+            --bg-primary: #121212;
+            --bg-secondary: #1E1E1E;
+            --bg-card: #252525;
+            --border: #444444;
+            --shadow: rgba(0, 0, 0, 0.3);
+            --success: #34D399;
+            --warning: #FBBF24;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            transition: background-color 0.3s, color 0.3s, border-color 0.3s;
+        }
+
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: var(--bg-primary);
+            color: var(--text-primary);
+            line-height: 1.6;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header Styles */
+        header {
+            background-color: var(--bg-primary);
+            box-shadow: 0 2px 10px var(--shadow);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 0;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo-icon {
+            color: var(--primary);
+            font-size: 24px;
+        }
+
+        .logo-text {
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--primary);
+        }
+
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            gap: 30px;
+        }
+
+        .nav-link {
+            text-decoration: none;
+            color: var(--text-primary);
+            font-weight: 500;
+            position: relative;
+            padding: 5px 0;
+        }
+
+        .nav-link:hover {
+            color: var(--primary);
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: var(--primary);
+            transition: width 0.3s;
+        }
+
+        .nav-link:hover::after {
+            width: 100%;
+        }
+
+        .header-actions {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .theme-toggle {
+            background: none;
+            border: none;
+            color: var(--text-primary);
+            cursor: pointer;
+            font-size: 20px;
+            padding: 5px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .theme-toggle:hover {
+            background-color: var(--bg-secondary);
+        }
+
+        .mobile-menu-toggle {
+            display: none;
+            background: none;
+            border: none;
+            color: var(--text-primary);
+            font-size: 24px;
+            cursor: pointer;
+        }
+
+        /* 404 Content Styles */
+        .error-content {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 40px 0;
+            background-color: var(--bg-secondary);
+        }
+
+        .error-container {
+            text-align: center;
+            max-width: 600px;
+            padding: 40px;
+            background-color: var(--bg-card);
+            border-radius: 15px;
+            box-shadow: 0 10px 30px var(--shadow);
+            margin: 20px;
+        }
+
+        .error-icon {
+            font-size: 120px;
+            color: var(--primary);
+            margin-bottom: 30px;
+        }
+
+        .error-title {
+            font-size: 48px;
+            font-weight: 700;
+            margin-bottom: 20px;
+            color: var(--text-primary);
+        }
+
+        .error-subtitle {
+            font-size: 24px;
+            color: var(--text-secondary);
+            margin-bottom: 20px;
+        }
+
+        .error-description {
+            color: var(--text-secondary);
+            margin-bottom: 40px;
+            font-size: 16px;
+            line-height: 1.8;
+        }
+
+        .error-japanese {
+            font-size: 20px;
+            color: var(--primary);
+            margin-bottom: 30px;
+            font-weight: 600;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 12px 24px;
+            border-radius: 8px;
+            font-weight: 600;
+            text-decoration: none;
+            cursor: pointer;
+            transition: all 0.3s;
+            border: none;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+        }
+
+        .btn-primary {
+            background-color: var(--primary);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background-color: var(--accent);
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(220, 20, 60, 0.3);
+        }
+
+        .btn-secondary {
+            background-color: transparent;
+            color: var(--primary);
+            border: 2px solid var(--primary);
+        }
+
+        .btn-secondary:hover {
+            background-color: var(--primary);
+            color: white;
+            transform: translateY(-2px);
+        }
+
+        .btn-outline {
+            background-color: transparent;
+            color: var(--text-primary);
+            border: 2px solid var(--border);
+        }
+
+        .btn-outline:hover {
+            background-color: var(--bg-secondary);
+            border-color: var(--primary);
+        }
+
+        .action-buttons {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-top: 30px;
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--bg-secondary);
+            padding: 60px 0 30px;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-column h3 {
+            font-size: 18px;
+            font-weight: 600;
+            margin-bottom: 20px;
+            color: var(--text-primary);
+        }
+
+        .footer-links {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 10px;
+        }
+
+        .footer-links a {
+            text-decoration: none;
+            color: var(--text-secondary);
+            transition: color 0.3s;
+        }
+
+        .footer-links a:hover {
+            color: var(--primary);
+        }
+
+        .social-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .social-link {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background-color: var(--bg-card);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--text-primary);
+            text-decoration: none;
+            transition: all 0.3s;
+        }
+
+        .social-link:hover {
+            background-color: var(--primary);
+            color: white;
+            transform: translateY(-3px);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid var(--border);
+            color: var(--text-secondary);
+            font-size: 14px;
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 768px) {
+            .nav-menu {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                background-color: var(--bg-primary);
+                flex-direction: column;
+                padding: 20px;
+                box-shadow: 0 5px 10px var(--shadow);
+                gap: 15px;
+            }
+
+            .nav-menu.active {
+                display: flex;
+            }
+
+            .mobile-menu-toggle {
+                display: block;
+            }
+
+            .error-title {
+                font-size: 36px;
+            }
+
+            .error-subtitle {
+                font-size: 20px;
+            }
+
+            .error-icon {
+                font-size: 80px;
+            }
+
+            .action-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .action-buttons .btn {
+                width: 100%;
+                max-width: 300px;
+                justify-content: center;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .error-container {
+                padding: 20px;
+            }
+
+            .error-title {
+                font-size: 28px;
+            }
+
+            .error-subtitle {
+                font-size: 18px;
+            }
+
+            .error-icon {
+                font-size: 60px;
+            }
+        }
+    </style>
 </head>
-<body class="bg-gray-50 font-sans text-gray-800 flex flex-col min-h-screen">
+
+<body>
     <!-- Header -->
-<header class="bg-red-600 text-white shadow-md fixed top-0 left-0 right-0 z-50">
-        <div class="container mx-auto px-4 py-3 flex justify-between items-center">
-            <!-- Logo -->
-            <div class="flex items-center space-x-2">
-                <a href="/" class="flex items-center">
-                    <img src="/assets/images/logos/nihongopedia.png" 
-                    alt="Nihongopedia Logo" 
-                    style="height: 40px; width: auto;"
-                    srcset="">
-                    <span class="ml-2 text-xl font-bold">Nihongopedia</span>
-                </a>
-            </div>
-            
-            <!-- Header Right Section -->
-            <div class="flex items-center space-x-4">
-                <!-- Mobile Menu Button -->
-                <button id="mobile-menu-button" class="md:hidden text-white focus:outline-none">
-                    <i class="fas fa-bars text-2xl"></i>
-                </button>
-            </div>
-            
-            <!-- Desktop Nav -->
-            <nav class="hidden md:flex space-x-6">
-                <a href="/" class="hover:text-red-200 transition">Beranda</a>
-                <a href="/content/basic/hiragana/" class="hover:text-red-200 transition">Pelajaran</a>
-                <a href="/practice/" class="hover:text-red-200 transition">Latihan</a>
-                <a href="/resources/" class="hover:text-red-200 transition">Sumber Belajar</a>
-                <a href="/donasi" class="hidden md:flex items-center text-white hover:text-red-200 transition text-sm">Donasi</a>
-                <a href="https://whatsapp.com/channel/0029Vag1xu13AzNLMBd6fi0a" target="_blank" class="hidden md:flex items-center text-white hover:text-red-200 transition text-sm">Channel WhatsApp</a>
-                </a>
-            </nav>
-        </div>
-        
-        <!-- Mobile Nav (Hidden by default) -->
-        <div id="mobile-menu" class="hidden md:hidden bg-red-700">
-            <div class="container mx-auto px-4 py-2 flex flex-col space-y-3">
-                <a href="/" class="py-2 hover:text-red-200 transition">Beranda</a>
-                <a href="/content/basic/hiragana/" class="py-2 hover:text-red-200 transition">Pelajaran</a>
-                <a href="/practice/" class="py-2 hover:text-red-200 transition">Latihan</a>
-                <a href="/resources/" class="py-2 hover:text-red-200 transition">Sumber Belajar</a>
-                <!-- Mobile version of the links -->
-                <a href="/donasi" class="py-2 hover:text-red-200 transition flex items-center">Donasi</a>
-                <a href="https://whatsapp.com/channel/0029Vag1xu13AzNLMBd6fi0a" target="_blank" class="py-2 hover:text-red-200 transition flex items-center">Channel WhatsApp</a>
+    <header>
+        <div class="container">
+            <div class="header-container">
+                <div class="logo">
+                    <div class="logo-icon">
+                        <i class="fas fa-language"></i>
+                    </div>
+                    <div class="logo-text">Nihongopedia</div>
+                </div>
+
+                <ul class="nav-menu">
+                    <li><a href="/01_beranda" class="nav-link">Beranda</a></li>
+                    <li><a href="/02_belajar" class="nav-link">Belajar</a></li>
+                    <li><a href="/03_buku" class="nav-link">Buku</a></li>
+                    <li><a href="/04_materi" class="nav-link">Materi</a></li>
+                    <li><a href="/05_donasi" class="nav-link">Donasi</a></li>
+                </ul>
+
+                <div class="header-actions">
+                    <button class="theme-toggle" id="theme-toggle">
+                        <i class="fas fa-moon"></i>
+                    </button>
+                    <button class="mobile-menu-toggle" id="mobile-menu-toggle">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                </div>
             </div>
         </div>
     </header>
 
-    <!-- Main Content Layout -->
-    <div class="flex flex-1 pt-12">
-        <!-- Sidebar -->
-        <aside class="hidden lg:block w-64 bg-white shadow-md p-4">
-            <div class="sticky top-20">
-                <!-- Level Navigation -->
-                <div class="mb-6">
-                    <h3 class="font-bold text-lg mb-3 text-red-600 border-b pb-2">Level Belajar</h3>
-                    <ul class="space-y-2">
-                        <li><a href="/content/basic/" class="hover:text-red-600 transition">Dasar-dasar</a></li>
-                        <li><a href="/content/n5/" class="hover:text-red-600 transition">JLPT N5</a></li>
-                        <li><a href="/content/n4/" class="hover:text-red-600 transition">JLPT N4</a></li>
-                        <li><a href="/content/n3/" class="hover:text-red-600 transition">JLPT N3</a></li>
-                        <li><a href="/content/n2/" class="hover:text-red-600 transition">JLPT N2</a></li>
-                        <li><a href="/content/n1/" class="hover:text-red-600 transition">JLPT N1</a></li>
-                    </ul>
+    <!-- 404 Content -->
+    <section class="error-content">
+        <div class="container">
+            <div class="error-container">
+                <div class="error-icon">
+                    <i class="fas fa-exclamation-triangle"></i>
                 </div>
-                
-                <!-- Quick Links -->
-                <div>
-                    <h3 class="font-bold text-lg mb-3 text-red-600 border-b pb-2">Akses Cepat</h3>
-                    <ul class="space-y-2">
-                        <li><a href="/practice/flashcards/" class="hover:text-red-600 transition"><i class="fas fa-layer-group mr-2"></i>Flashcards</a></li>
-                        <li><a href="/practice/quizzes/" class="hover:text-red-600 transition"><i class="fas fa-question-circle mr-2"></i>Kuis</a></li>
-                        <li><a href="/resources/cheat-sheets/" class="hover:text-red-600 transition"><i class="fas fa-scroll mr-2"></i>Cheat Sheets</a></li>
-                    </ul>
-                </div>
-                
-                <!-- Sidebar Footer with Subtle Links -->
-                <div class="mt-8 pt-4 border-t border-gray-200 text-sm text-gray-600">
-                    <a href="https://whatsapp.com/channel/0029Vag1xu13AzNLMBd6fi0a" target="_blank" class="block mb-2 hover:text-red-600 transition">
-                        <i class="fab fa-whatsapp mr-2"></i>Channel WhatsApp
+                <h1 class="error-title">404</h1>
+                <h2 class="error-subtitle">Halaman Tidak Ditemukan</h2>
+                <div class="error-japanese">ページが見つかりません (Pēji ga mitsukarimasen)</div>
+                <p class="error-description">
+                    Maaf, halaman yang Anda cari tidak dapat ditemukan. Mungkin halaman telah dipindahkan, dihapus, atau Anda salah mengetik URL.
+                </p>
+                <div class="action-buttons">
+                    <a href="/01_beranda" class="btn btn-primary">
+                        <i class="fas fa-home"></i> Kembali ke Beranda
                     </a>
-                    <a href="/donasi" class="block hover:text-red-600 transition">
-                        <i class="fas fa-hand-holding-heart mr-2"></i>Dukung Nihongopedia
+                    <a href="/03_buku" class="btn btn-secondary">
+                        <i class="fas fa-book"></i> Jelajahi Materi
                     </a>
+                    <button onclick="history.back()" class="btn btn-outline">
+                        <i class="fas fa-arrow-left"></i> Kembali ke Halaman Sebelumnya
+                    </button>
                 </div>
             </div>
-        </aside>
-
-        <!-- Main Content -->
-        <main class="flex flex-1 p-8">
-            <!-- 404 Content -->
-            <div class="max-w-4xl mx-auto text-center py-12 px-4 sm:px-6 lg:px-8">
-                <div class="animate__animated animate__fadeIn">
-                    <h1 class="text-9xl font-bold text-red-600 mb-4">404</h1>
-                    <h2 class="text-3xl font-bold text-gray-800 mb-6">Halaman Tidak Ditemukan</h2>
-                    <p class="text-xl text-gray-600 mb-8">
-                        Maaf, halaman yang Anda cari tidak ada atau telah dipindahkan.
-                        <br>
-                        Silakan kembali ke beranda atau cari materi yang Anda inginkan.
-                    </p>
-                    <div class="flex flex-col sm:flex-row justify-center gap-4">
-                        <a href="/" class="bg-red-600 hover:bg-red-700 text-white font-bold py-3 px-6 rounded-lg transition duration-300 transform hover:scale-105">
-                            <i class="fas fa-home mr-2"></i>Kembali ke Beranda
-                        </a>
-                        <a href="/content/basic/" class="bg-gray-200 hover:bg-gray-300 text-gray-800 font-bold py-3 px-6 rounded-lg transition duration-300 transform hover:scale-105">
-                            <i class="fas fa-book mr-2"></i>Mulai Belajar
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </main>
-    </div>
+        </div>
+    </section>
 
     <!-- Footer -->
-    <footer class="bg-gray-800 text-white py-8">
-        <div class="container mx-auto px-4">
-            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
-                <div>
-                    <h3 class="text-xl font-bold mb-4">Nihongopedia</h3>
-                    <p class="text-gray-400">Platform belajar bahasa Jepang dari dasar hingga level JLPT N1.</p>
-                    <!-- Footer Contact Links -->
-                    <div class="mt-4 space-y-2">
-                        <a href="https://whatsapp.com/channel/0029Vag1xu13AzNLMBd6fi0a" target="_blank" class="flex items-center text-gray-400 hover:text-white transition text-sm">
-                            <i class="fab fa-whatsapp mr-2"></i> WhatsApp Channel
-                        </a>
-                        <a href="/donasi" class="flex items-center text-gray-400 hover:text-white transition text-sm">
-                            <i class="fas fa-heart mr-2"></i> Donasi
-                        </a>
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>Nihongopedia</h3>
+                    <p style="color: var(--text-secondary); margin-bottom: 20px;">
+                        Platform pembelajaran bahasa Jepang gratis dan lengkap untuk semua level.
+                    </p>
+                    <div class="social-links">
+                        <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-youtube"></i></a>
                     </div>
                 </div>
-                <div>
-                    <h4 class="font-bold mb-4">Navigasi</h4>
-                    <ul class="space-y-2">
-                        <li><a href="/" class="text-gray-400 hover:text-white transition">Beranda</a></li>
-                        <li><a href="/about.html" class="text-gray-400 hover:text-white transition">Tentang Kami</a></li>
-                        <li><a href="/roadmap.html" class="text-gray-400 hover:text-white transition">Roadmap Belajar</a></li>
+
+                <div class="footer-column">
+                    <h3>Menu</h3>
+                    <ul class="footer-links">
+                        <li><a href="/01_beranda">Beranda</a></li>
+                        <li><a href="/02_belajar">Belajar</a></li>
+                        <li><a href="/03_buku">Buku</a></li>
+                        <li><a href="/04_materi">Materi</a></li>
+                        <li><a href="/05_donasi">Donasi</a></li>
                     </ul>
                 </div>
-                <div>
-                    <h4 class="font-bold mb-4">Bantuan</h4>
-                    <ul class="space-y-2">
-                        <li><a href="#" class="text-gray-400 hover:text-white transition">FAQ</a></li>
-                        <li><a href="/privacy.html" class="text-gray-400 hover:text-white transition">Kebijakan Privasi</a></li>
-                        <li><a href="#" class="text-gray-400 hover:text-white transition">Email : nihongopedia123@gmail.com</a></li>
+
+                <div class="footer-column">
+                    <h3>Buku Populer</h3>
+                    <ul class="footer-links">
+                        <li><a href="/03_buku/minna-no-nihongo-1">Minna no Nihongo 1</a></li>
+                        <li><a href="/03_buku/minna-no-nihongo-2">Minna no Nihongo 2</a></li>
+                        <li><a href="/03_buku/genki-1">Genki 1</a></li>
+                        <li><a href="/03_buku/genki-2">Genki 2</a></li>
+                        <li><a href="/03_buku/jlpt-n5">Persiapan JLPT N5</a></li>
                     </ul>
                 </div>
-                <div>
-                    <h4 class="font-bold mb-4">Sosial Media</h4>
-                    <div class="flex space-x-4">
-                        <a href="https://instagram.com/nihongopedia.jpg" class="text-gray-400 hover:text-white transition text-2xl"><i class="fab fa-instagram"></i></a>
-                        <a href="https://youtube.com/@nihongopedia" class="text-gray-400 hover:text-white transition text-2xl"><i class="fab fa-youtube"></i></a>
-                        <a href="https://tiktok.com/@nihongopedia" class="text-gray-400 hover:text-white transition text-2xl"><i class="fab fa-tiktok"></i></a>
-                    </div>
+
+                <div class="footer-column">
+                    <h3>Kontak & Donasi</h3>
+                    <ul class="footer-links">
+                        <li><i class="fas fa-envelope"></i> info@nihongopedia.com</li>
+                        <li><i class="fas fa-heart"></i> <a href="/05_donasi">Dukung Kami</a></li>
+                        <li><i class="fas fa-map-marker-alt"></i> Indonesia</li>
+                    </ul>
                 </div>
             </div>
-            <div class="border-t border-gray-700 mt-8 pt-6 text-center text-gray-400">
-                <p>&copy; 2023 Nihongopedia.id. All rights reserved.</p>
+
+            <div class="footer-bottom">
+                <p>&copy; 2023 Nihongopedia. All rights reserved. - Platform Belajar Bahasa Jepang Gratis</p>
             </div>
         </div>
     </footer>
 
-    <!-- CDN JS -->
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    
-    <!-- Custom JS -->
-    <script src="/assets/js/main.js"></script>
-    
     <script>
-        // Mobile menu toggle
-        document.getElementById('mobile-menu-button').addEventListener('click', function() {
-            const menu = document.getElementById('mobile-menu');
-            menu.classList.toggle('hidden');
+        // Theme Toggle Functionality
+        const themeToggle = document.getElementById('theme-toggle');
+        const themeIcon = themeToggle.querySelector('i');
+
+        // Check for saved theme or prefer-color-scheme
+        const savedTheme = localStorage.getItem('theme') ||
+            (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+
+        // Apply the saved theme
+        document.documentElement.setAttribute('data-theme', savedTheme);
+        updateThemeIcon(savedTheme);
+
+        // Toggle theme on button click
+        themeToggle.addEventListener('click', () => {
+            const currentTheme = document.documentElement.getAttribute('data-theme');
+            const newTheme = currentTheme === 'light' ? 'dark' : 'light';
+
+            document.documentElement.setAttribute('data-theme', newTheme);
+            localStorage.setItem('theme', newTheme);
+            updateThemeIcon(newTheme);
+        });
+
+        function updateThemeIcon(theme) {
+            if (theme === 'dark') {
+                themeIcon.classList.remove('fa-moon');
+                themeIcon.classList.add('fa-sun');
+            } else {
+                themeIcon.classList.remove('fa-sun');
+                themeIcon.classList.add('fa-moon');
+            }
+        }
+
+        // Mobile Menu Toggle
+        const mobileMenuToggle = document.getElementById('mobile-menu-toggle');
+        const navMenu = document.querySelector('.nav-menu');
+
+        mobileMenuToggle.addEventListener('click', () => {
+            navMenu.classList.toggle('active');
+            const icon = mobileMenuToggle.querySelector('i');
+            if (navMenu.classList.contains('active')) {
+                icon.classList.remove('fa-bars');
+                icon.classList.add('fa-times');
+            } else {
+                icon.classList.remove('fa-times');
+                icon.classList.add('fa-bars');
+            }
+        });
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    // Close mobile menu if open
+                    navMenu.classList.remove('active');
+                    mobileMenuToggle.querySelector('i').classList.remove('fa-times');
+                    mobileMenuToggle.querySelector('i').classList.add('fa-bars');
+
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                }
+            });
         });
     </script>
 </body>

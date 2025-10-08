@@ -1,0 +1,1569 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hiragana - Nihongopedia</title>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            /* Light Theme */
+            --primary: #DC143C;
+            --secondary: #FFFFFF;
+            --accent: #C70039;
+            --text-primary: #333333;
+            --text-secondary: #666666;
+            --bg-primary: #FFFFFF;
+            --bg-secondary: #F8F8F8;
+            --bg-card: #FFFFFF;
+            --border: #E0E0E0;
+            --shadow: rgba(0, 0, 0, 0.1);
+            --success: #28a745;
+            --warning: #ffc107;
+        }
+
+        [data-theme="dark"] {
+            /* Dark Theme */
+            --primary: #DC143C;
+            --secondary: #1a1a1a;
+            --accent: #FF6B8B;
+            --text-primary: #FFFFFF;
+            --text-secondary: #CCCCCC;
+            --bg-primary: #121212;
+            --bg-secondary: #1E1E1E;
+            --bg-card: #252525;
+            --border: #444444;
+            --shadow: rgba(0, 0, 0, 0.3);
+            --success: #34D399;
+            --warning: #FBBF24;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            transition: background-color 0.3s, color 0.3s, border-color 0.3s;
+        }
+
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: var(--bg-primary);
+            color: var(--text-primary);
+            line-height: 1.6;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header Styles */
+        header {
+            background-color: var(--bg-primary);
+            box-shadow: 0 2px 10px var(--shadow);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 0;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo-icon {
+            color: var(--primary);
+            font-size: 24px;
+        }
+
+        .logo-text {
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--primary);
+        }
+
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            gap: 30px;
+        }
+
+        .nav-link {
+            text-decoration: none;
+            color: var(--text-primary);
+            font-weight: 500;
+            position: relative;
+            padding: 5px 0;
+        }
+
+        .nav-link:hover {
+            color: var(--primary);
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: var(--primary);
+            transition: width 0.3s;
+        }
+
+        .nav-link:hover::after {
+            width: 100%;
+        }
+
+        .header-actions {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .theme-toggle {
+            background: none;
+            border: none;
+            color: var(--text-primary);
+            cursor: pointer;
+            font-size: 20px;
+            padding: 5px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .theme-toggle:hover {
+            background-color: var(--bg-secondary);
+        }
+
+        .mobile-menu-toggle {
+            display: none;
+            background: none;
+            border: none;
+            color: var(--text-primary);
+            font-size: 24px;
+            cursor: pointer;
+        }
+
+        /* Breadcrumb Styles */
+        .breadcrumb {
+            background-color: var(--bg-secondary);
+            padding: 15px 0;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .breadcrumb-list {
+            display: flex;
+            align-items: center;
+            list-style: none;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+
+        .breadcrumb-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 14px;
+        }
+
+        .breadcrumb-item:not(:last-child)::after {
+            content: '/';
+            color: var(--text-secondary);
+            margin-left: 10px;
+        }
+
+        .breadcrumb-item a {
+            text-decoration: none;
+            color: var(--text-secondary);
+            transition: color 0.3s;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .breadcrumb-item a:hover {
+            color: var(--primary);
+        }
+
+        .breadcrumb-item.active span {
+            color: var(--primary);
+            font-weight: 600;
+        }
+
+        .breadcrumb-item .fas.fa-home {
+            font-size: 12px;
+        }
+
+        /* Hero Section */
+        .hero {
+            padding: 80px 0;
+            background: linear-gradient(135deg, var(--bg-primary) 0%, var(--bg-secondary) 100%);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 50%;
+            height: 100%;
+            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="none"><path d="M0,0 L100,0 L100,100 Z" fill="%23DC143C" opacity="0.05"/></svg>') no-repeat;
+            background-size: cover;
+        }
+
+        .hero-content {
+            display: flex;
+            align-items: center;
+            gap: 40px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero-text {
+            flex: 1;
+        }
+
+        .hero-title {
+            font-size: 48px;
+            font-weight: 700;
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+
+        .hero-title span {
+            color: var(--primary);
+        }
+
+        .hero-description {
+            font-size: 18px;
+            color: var(--text-secondary);
+            margin-bottom: 30px;
+            max-width: 600px;
+        }
+
+        /* CTA Buttons */
+        .cta-buttons {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 12px 24px;
+            border-radius: 8px;
+            font-weight: 600;
+            text-decoration: none;
+            cursor: pointer;
+            transition: all 0.3s;
+            border: none;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+        }
+
+        .btn-primary {
+            background-color: var(--primary);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background-color: var(--accent);
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(220, 20, 60, 0.3);
+        }
+
+        .btn-secondary {
+            background-color: transparent;
+            color: var(--primary);
+            border: 2px solid var(--primary);
+        }
+
+        .btn-secondary:hover {
+            background-color: var(--primary);
+            color: white;
+            transform: translateY(-2px);
+        }
+
+        .btn-outline {
+            background-color: transparent;
+            color: var(--text-primary);
+            border: 2px solid var(--border);
+        }
+
+        .btn-outline:hover {
+            background-color: var(--bg-secondary);
+            border-color: var(--primary);
+        }
+
+        /* Section Styles */
+        .section {
+            padding: 80px 0;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 36px;
+            font-weight: 700;
+            margin-bottom: 50px;
+            color: var(--text-primary);
+        }
+
+        .section-title span {
+            color: var(--primary);
+        }
+
+        /* Hiragana Table */
+        .hiragana-section {
+            background-color: var(--bg-secondary);
+        }
+
+        .hiragana-table-container {
+            background-color: var(--bg-card);
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: 0 10px 30px var(--shadow);
+            margin-bottom: 40px;
+            overflow-x: auto;
+        }
+
+        .hiragana-table {
+            width: 100%;
+            border-collapse: collapse;
+            min-width: 600px;
+        }
+
+        .hiragana-table th {
+            background-color: var(--primary);
+            color: white;
+            padding: 15px;
+            text-align: center;
+            font-weight: 600;
+            font-size: 18px;
+        }
+
+        .hiragana-table td {
+            padding: 20px;
+            text-align: center;
+            border: 1px solid var(--border);
+            font-size: 24px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+            position: relative;
+        }
+
+        .hiragana-table td:hover {
+            background-color: rgba(220, 20, 60, 0.1);
+            transform: scale(1.05);
+        }
+
+        .hiragana-table .romaji {
+            font-size: 14px;
+            color: var(--text-secondary);
+            margin-top: 5px;
+            font-weight: 400;
+        }
+
+        /* Practice Section */
+        .practice-section {
+            text-align: center;
+        }
+
+        .practice-container {
+            background-color: var(--bg-card);
+            border-radius: 15px;
+            padding: 40px;
+            box-shadow: 0 10px 30px var(--shadow);
+            max-width: 600px;
+            margin: 0 auto 40px;
+        }
+
+        .practice-display {
+            font-size: 120px;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 30px;
+            min-height: 140px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .practice-romaji {
+            font-size: 24px;
+            color: var(--text-secondary);
+            margin-bottom: 30px;
+        }
+
+        .practice-controls {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-bottom: 20px;
+            flex-wrap: wrap;
+        }
+
+        .practice-input {
+            width: 100%;
+            padding: 15px;
+            border: 2px solid var(--border);
+            border-radius: 8px;
+            font-size: 18px;
+            text-align: center;
+            background-color: var(--bg-primary);
+            color: var(--text-primary);
+            margin-bottom: 20px;
+        }
+
+        .practice-input:focus {
+            outline: none;
+            border-color: var(--primary);
+        }
+
+        .practice-feedback {
+            margin-top: 20px;
+            padding: 15px;
+            border-radius: 8px;
+            font-weight: 600;
+            display: none;
+        }
+
+        .practice-feedback.correct {
+            background-color: rgba(40, 167, 69, 0.1);
+            color: var(--success);
+            border: 1px solid var(--success);
+            display: block;
+        }
+
+        .practice-feedback.incorrect {
+            background-color: rgba(220, 20, 60, 0.1);
+            color: var(--primary);
+            border: 1px solid var(--primary);
+            display: block;
+        }
+
+        /* Writing Guide */
+        .writing-section {
+            background-color: var(--bg-secondary);
+        }
+
+        .writing-guide {
+            background-color: var(--bg-card);
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: 0 10px 30px var(--shadow);
+            margin-bottom: 40px;
+        }
+
+        .writing-character {
+            font-size: 120px;
+            text-align: center;
+            margin-bottom: 30px;
+            color: var(--primary);
+        }
+
+        .writing-steps {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+
+        .writing-step {
+            text-align: center;
+            padding: 20px;
+            background-color: var(--bg-secondary);
+            border-radius: 10px;
+        }
+
+        .writing-step-number {
+            width: 40px;
+            height: 40px;
+            background-color: var(--primary);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 15px;
+            font-weight: 600;
+        }
+
+        .writing-step-desc {
+            color: var(--text-secondary);
+            font-size: 14px;
+        }
+
+        /* Quiz Section */
+        .quiz-section {
+            text-align: center;
+        }
+
+        .quiz-container {
+            background-color: var(--bg-card);
+            border-radius: 15px;
+            padding: 40px;
+            box-shadow: 0 10px 30px var(--shadow);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .quiz-progress {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 30px;
+            color: var(--text-secondary);
+        }
+
+        .quiz-question {
+            font-size: 48px;
+            margin-bottom: 30px;
+            min-height: 60px;
+        }
+
+        .quiz-options {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 15px;
+            margin-bottom: 30px;
+        }
+
+        .quiz-option {
+            padding: 20px;
+            border: 2px solid var(--border);
+            border-radius: 8px;
+            background-color: var(--bg-primary);
+            cursor: pointer;
+            transition: all 0.3s;
+            font-size: 18px;
+        }
+
+        .quiz-option:hover {
+            border-color: var(--primary);
+            transform: translateY(-2px);
+        }
+
+        .quiz-option.selected {
+            background-color: var(--primary);
+            color: white;
+            border-color: var(--primary);
+        }
+
+        /* Resources Section */
+        .resources-section {
+            background-color: var(--bg-secondary);
+        }
+
+        .resources-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .resource-card {
+            background-color: var(--bg-card);
+            border-radius: 10px;
+            padding: 30px;
+            box-shadow: 0 5px 15px var(--shadow);
+            text-align: center;
+            transition: transform 0.3s;
+        }
+
+        .resource-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .resource-icon {
+            width: 60px;
+            height: 60px;
+            background-color: rgba(220, 20, 60, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+            color: var(--primary);
+            font-size: 24px;
+        }
+
+        .resource-title {
+            font-size: 20px;
+            font-weight: 600;
+            margin-bottom: 15px;
+            color: var(--text-primary);
+        }
+
+        .resource-description {
+            color: var(--text-secondary);
+            margin-bottom: 20px;
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--bg-secondary);
+            padding: 60px 0 30px;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-column h3 {
+            font-size: 18px;
+            font-weight: 600;
+            margin-bottom: 20px;
+            color: var(--text-primary);
+        }
+
+        .footer-links {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 10px;
+        }
+
+        .footer-links a {
+            text-decoration: none;
+            color: var(--text-secondary);
+            transition: color 0.3s;
+        }
+
+        .footer-links a:hover {
+            color: var(--primary);
+        }
+
+        .social-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .social-link {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background-color: var(--bg-card);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--text-primary);
+            text-decoration: none;
+            transition: all 0.3s;
+        }
+
+        .social-link:hover {
+            background-color: var(--primary);
+            color: white;
+            transform: translateY(-3px);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid var(--border);
+            color: var(--text-secondary);
+            font-size: 14px;
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 992px) {
+            .hero-content {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .hero-title {
+                font-size: 36px;
+            }
+
+            .hero::before {
+                width: 100%;
+                opacity: 0.1;
+            }
+
+            .practice-display {
+                font-size: 80px;
+            }
+
+            .writing-character {
+                font-size: 80px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .nav-menu {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                background-color: var(--bg-primary);
+                flex-direction: column;
+                padding: 20px;
+                box-shadow: 0 5px 10px var(--shadow);
+                gap: 15px;
+            }
+
+            .nav-menu.active {
+                display: flex;
+            }
+
+            .mobile-menu-toggle {
+                display: block;
+            }
+
+            .section-title {
+                font-size: 28px;
+            }
+
+            .hero-title {
+                font-size: 32px;
+            }
+
+            .cta-buttons {
+                justify-content: center;
+            }
+
+            .quiz-options {
+                grid-template-columns: 1fr;
+            }
+
+            .writing-steps {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .resources-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .practice-controls {
+                flex-direction: column;
+            }
+
+            .hiragana-table td {
+                padding: 15px 10px;
+                font-size: 20px;
+            }
+        }
+
+        /* TV Screen Optimization */
+        @media (min-width: 1920px) {
+            .container {
+                max-width: 1600px;
+            }
+
+            .hero-title {
+                font-size: 64px;
+            }
+
+            .section-title {
+                font-size: 48px;
+            }
+
+            .practice-display, .writing-character {
+                font-size: 160px;
+            }
+
+            .hiragana-table td {
+                font-size: 32px;
+                padding: 25px;
+            }
+
+            .btn {
+                padding: 18px 32px;
+                font-size: 18px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <div class="header-container">
+                <div class="logo">
+                    <div class="logo-icon">
+                        <i class="fas fa-language"></i>
+                    </div>
+                    <div class="logo-text">Nihongopedia</div>
+                </div>
+
+                <ul class="nav-menu">
+                    <li><a href="/01_beranda" class="nav-link">Beranda</a></li>
+                    <li><a href="/02_belajar" class="nav-link">Belajar</a></li>
+                    <li><a href="/03_buku" class="nav-link">Buku</a></li>
+                    <li><a href="/04_materi" class="nav-link">Materi</a></li>
+                    <li><a href="/05_donasi" class="nav-link">Donasi</a></li>
+                </ul>
+
+                <div class="header-actions">
+                    <button class="theme-toggle" id="theme-toggle">
+                        <i class="fas fa-moon"></i>
+                    </button>
+                    <button class="mobile-menu-toggle" id="mobile-menu-toggle">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Breadcrumb -->
+    <nav class="breadcrumb">
+        <div class="container">
+            <ul class="breadcrumb-list">
+                <li class="breadcrumb-item">
+                    <a href="/01_beranda">
+                        <i class="fas fa-home"></i>
+                        Beranda
+                    </a>
+                </li>
+                <li class="breadcrumb-item">
+                    <a href="/02_belajar">Belajar</a>
+                </li>
+                <li class="breadcrumb-item active">
+                    <span>Hiragana</span>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <h1 class="hero-title">Belajar <span>Hiragana</span> dengan Mudah</h1>
+                    <p class="hero-description">
+                        Pelajari huruf dasar bahasa Jepang - Hiragana. Mulai dari pengenalan karakter, cara menulis, 
+                        hingga latihan membaca dan menulis. Semua materi tersedia gratis untuk Anda.
+                    </p>
+                    <div class="cta-buttons">
+                        <a href="#table" class="btn btn-primary">
+                            <i class="fas fa-table"></i> Lihat Tabel Hiragana
+                        </a>
+                        <a href="#practice" class="btn btn-secondary">
+                            <i class="fas fa-pencil-alt"></i> Mulai Latihan
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Hiragana Table Section -->
+    <section class="section hiragana-section" id="table">
+        <div class="container">
+            <h2 class="section-title">Tabel <span>Hiragana</span></h2>
+            <p style="text-align: center; color: var(--text-secondary); margin-bottom: 50px; max-width: 800px; margin-left: auto; margin-right: auto;">
+                Kenali semua 46 karakter Hiragana dasar. Klik pada karakter untuk mendengar pengucapannya.
+            </p>
+            
+            <div class="hiragana-table-container">
+                <table class="hiragana-table">
+                    <thead>
+                        <tr>
+                            <th></th>
+                            <th>a</th>
+                            <th>i</th>
+                            <th>u</th>
+                            <th>e</th>
+                            <th>o</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td style="background-color: var(--primary); color: white; font-weight: 600;"></td>
+                            <td>
+                                <div>あ</div>
+                                <div class="romaji">a</div>
+                            </td>
+                            <td>
+                                <div>い</div>
+                                <div class="romaji">i</div>
+                            </td>
+                            <td>
+                                <div>う</div>
+                                <div class="romaji">u</div>
+                            </td>
+                            <td>
+                                <div>え</div>
+                                <div class="romaji">e</div>
+                            </td>
+                            <td>
+                                <div>お</div>
+                                <div class="romaji">o</div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="background-color: var(--primary); color: white; font-weight: 600;">k</td>
+                            <td>
+                                <div>か</div>
+                                <div class="romaji">ka</div>
+                            </td>
+                            <td>
+                                <div>き</div>
+                                <div class="romaji">ki</div>
+                            </td>
+                            <td>
+                                <div>く</div>
+                                <div class="romaji">ku</div>
+                            </td>
+                            <td>
+                                <div>け</div>
+                                <div class="romaji">ke</div>
+                            </td>
+                            <td>
+                                <div>こ</div>
+                                <div class="romaji">ko</div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="background-color: var(--primary); color: white; font-weight: 600;">s</td>
+                            <td>
+                                <div>さ</div>
+                                <div class="romaji">sa</div>
+                            </td>
+                            <td>
+                                <div>し</div>
+                                <div class="romaji">shi</div>
+                            </td>
+                            <td>
+                                <div>す</div>
+                                <div class="romaji">su</div>
+                            </td>
+                            <td>
+                                <div>せ</div>
+                                <div class="romaji">se</div>
+                            </td>
+                            <td>
+                                <div>そ</div>
+                                <div class="romaji">so</div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="background-color: var(--primary); color: white; font-weight: 600;">t</td>
+                            <td>
+                                <div>た</div>
+                                <div class="romaji">ta</div>
+                            </td>
+                            <td>
+                                <div>ち</div>
+                                <div class="romaji">chi</div>
+                            </td>
+                            <td>
+                                <div>つ</div>
+                                <div class="romaji">tsu</div>
+                            </td>
+                            <td>
+                                <div>て</div>
+                                <div class="romaji">te</div>
+                            </td>
+                            <td>
+                                <div>と</div>
+                                <div class="romaji">to</div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="background-color: var(--primary); color: white; font-weight: 600;">n</td>
+                            <td>
+                                <div>な</div>
+                                <div class="romaji">na</div>
+                            </td>
+                            <td>
+                                <div>に</div>
+                                <div class="romaji">ni</div>
+                            </td>
+                            <td>
+                                <div>ぬ</div>
+                                <div class="romaji">nu</div>
+                            </td>
+                            <td>
+                                <div>ね</div>
+                                <div class="romaji">ne</div>
+                            </td>
+                            <td>
+                                <div>の</div>
+                                <div class="romaji">no</div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="background-color: var(--primary); color: white; font-weight: 600;">h</td>
+                            <td>
+                                <div>は</div>
+                                <div class="romaji">ha</div>
+                            </td>
+                            <td>
+                                <div>ひ</div>
+                                <div class="romaji">hi</div>
+                            </td>
+                            <td>
+                                <div>ふ</div>
+                                <div class="romaji">fu</div>
+                            </td>
+                            <td>
+                                <div>へ</div>
+                                <div class="romaji">he</div>
+                            </td>
+                            <td>
+                                <div>ほ</div>
+                                <div class="romaji">ho</div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="background-color: var(--primary); color: white; font-weight: 600;">m</td>
+                            <td>
+                                <div>ま</div>
+                                <div class="romaji">ma</div>
+                            </td>
+                            <td>
+                                <div>み</div>
+                                <div class="romaji">mi</div>
+                            </td>
+                            <td>
+                                <div>む</div>
+                                <div class="romaji">mu</div>
+                            </td>
+                            <td>
+                                <div>め</div>
+                                <div class="romaji">me</div>
+                            </td>
+                            <td>
+                                <div>も</div>
+                                <div class="romaji">mo</div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="background-color: var(--primary); color: white; font-weight: 600;">y</td>
+                            <td>
+                                <div>や</div>
+                                <div class="romaji">ya</div>
+                            </td>
+                            <td></td>
+                            <td>
+                                <div>ゆ</div>
+                                <div class="romaji">yu</div>
+                            </td>
+                            <td></td>
+                            <td>
+                                <div>よ</div>
+                                <div class="romaji">yo</div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="background-color: var(--primary); color: white; font-weight: 600;">r</td>
+                            <td>
+                                <div>ら</div>
+                                <div class="romaji">ra</div>
+                            </td>
+                            <td>
+                                <div>り</div>
+                                <div class="romaji">ri</div>
+                            </td>
+                            <td>
+                                <div>る</div>
+                                <div class="romaji">ru</div>
+                            </td>
+                            <td>
+                                <div>れ</div>
+                                <div class="romaji">re</div>
+                            </td>
+                            <td>
+                                <div>ろ</div>
+                                <div class="romaji">ro</div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="background-color: var(--primary); color: white; font-weight: 600;">w</td>
+                            <td>
+                                <div>わ</div>
+                                <div class="romaji">wa</div>
+                            </td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td>
+                                <div>を</div>
+                                <div class="romaji">wo</div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="background-color: var(--primary); color: white; font-weight: 600;">n</td>
+                            <td colspan="5">
+                                <div>ん</div>
+                                <div class="romaji">n</div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+
+    <!-- Practice Section -->
+    <section class="section practice-section" id="practice">
+        <div class="container">
+            <h2 class="section-title">Latihan <span>Membaca</span></h2>
+            <p style="text-align: center; color: var(--text-secondary); margin-bottom: 50px; max-width: 800px; margin-left: auto; margin-right: auto;">
+                Latih kemampuan membaca Hiragana dengan mengetik romaji yang sesuai untuk karakter yang ditampilkan.
+            </p>
+
+            <div class="practice-container">
+                <div class="practice-display" id="practice-character">あ</div>
+                <div class="practice-romaji" id="practice-romaji">a</div>
+                
+                <input type="text" class="practice-input" id="practice-input" placeholder="Ketik romaji di sini..." maxlength="3">
+                
+                <div class="practice-controls">
+                    <button class="btn btn-outline" id="hint-btn">
+                        <i class="fas fa-lightbulb"></i> Petunjuk
+                    </button>
+                    <button class="btn btn-primary" id="check-btn">
+                        <i class="fas fa-check"></i> Periksa
+                    </button>
+                    <button class="btn btn-outline" id="next-practice">
+                        <i class="fas fa-forward"></i> Selanjutnya
+                    </button>
+                </div>
+                
+                <div class="practice-feedback" id="practice-feedback"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Writing Guide Section -->
+    <section class="section writing-section" id="writing">
+        <div class="container">
+            <h2 class="section-title">Panduan <span>Menulis</span></h2>
+            <p style="text-align: center; color: var(--text-secondary); margin-bottom: 50px; max-width: 800px; margin-left: auto; margin-right: auto;">
+                Pelajari cara menulis Hiragana dengan urutan stroke yang benar. Mulai dari karakter dasar.
+            </p>
+
+            <div class="writing-guide">
+                <div class="writing-character" id="writing-char">あ</div>
+                
+                <div class="writing-steps">
+                    <div class="writing-step">
+                        <div class="writing-step-number">1</div>
+                        <div class="writing-step-desc">Mulai dari kiri atas, tarik ke kanan bawah</div>
+                    </div>
+                    <div class="writing-step">
+                        <div class="writing-step-number">2</div>
+                        <div class="writing-step-desc">Buat lengkungan ke kiri</div>
+                    </div>
+                    <div class="writing-step">
+                        <div class="writing-step-number">3</div>
+                        <div class="writing-step-desc">Tarik garis horizontal di bagian bawah</div>
+                    </div>
+                </div>
+
+                <div class="practice-controls">
+                    <button class="btn btn-outline" id="prev-char">
+                        <i class="fas fa-arrow-left"></i> Sebelumnya
+                    </button>
+                    <button class="btn btn-primary" id="next-char">
+                        Selanjutnya <i class="fas fa-arrow-right"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Quiz Section -->
+    <section class="section quiz-section" id="quiz">
+        <div class="container">
+            <h2 class="section-title">Kuis <span>Hiragana</span></h2>
+            <p style="text-align: center; color: var(--text-secondary); margin-bottom: 50px; max-width: 800px; margin-left: auto; margin-right: auto;">
+                Uji pemahaman Anda tentang Hiragana dengan kuis interaktif ini.
+            </p>
+
+            <div class="quiz-container">
+                <div class="quiz-progress">
+                    <span id="quiz-score">Skor: 0</span>
+                    <span id="quiz-progress">Pertanyaan 1/10</span>
+                </div>
+                
+                <div class="quiz-question" id="quiz-question">あ</div>
+                
+                <div class="quiz-options">
+                    <div class="quiz-option" data-answer="a">a</div>
+                    <div class="quiz-option" data-answer="i">i</div>
+                    <div class="quiz-option" data-answer="u">u</div>
+                    <div class="quiz-option" data-answer="e">e</div>
+                </div>
+                
+                <button class="btn btn-primary" id="submit-quiz" disabled>
+                    <i class="fas fa-paper-plane"></i> Submit Jawaban
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Resources Section -->
+    <section class="section resources-section" id="resources">
+        <div class="container">
+            <h2 class="section-title">Sumber <span>Belajar</span> Lainnya</h2>
+            <div class="resources-grid">
+                <div class="resource-card">
+                    <div class="resource-icon">
+                        <i class="fas fa-file-pdf"></i>
+                    </div>
+                    <h3 class="resource-title">Lembar Kerja PDF</h3>
+                    <p class="resource-description">
+                        Download lembar kerja Hiragana untuk latihan menulis offline.
+                    </p>
+                    <a href="#" class="btn btn-outline">Download</a>
+                </div>
+
+                <div class="resource-card">
+                    <div class="resource-icon">
+                        <i class="fas fa-headphones"></i>
+                    </div>
+                    <h3 class="resource-title">Audio Pengucapan</h3>
+                    <p class="resource-description">
+                        Dengarkan pengucapan native speaker untuk setiap karakter Hiragana.
+                    </p>
+                    <a href="/04_materi/02_audio" class="btn btn-outline">Dengarkan</a>
+                </div>
+
+                <div class="resource-card">
+                    <div class="resource-icon">
+                        <i class="fas fa-gamepad"></i>
+                    </div>
+                    <h3 class="resource-title">Game Interaktif</h3>
+                    <p class="resource-description">
+                        Belajar Hiragana dengan cara yang menyenangkan melalui game.
+                    </p>
+                    <a href="/04_materi/01_flashcard" class="btn btn-outline">Main Game</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>Nihongopedia</h3>
+                    <p style="color: var(--text-secondary); margin-bottom: 20px;">
+                        Platform pembelajaran bahasa Jepang gratis dan lengkap untuk semua level.
+                    </p>
+                    <div class="social-links">
+                        <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+
+                <div class="footer-column">
+                    <h3>Menu</h3>
+                    <ul class="footer-links">
+                        <li><a href="/01_beranda">Beranda</a></li>
+                        <li><a href="/02_belajar">Belajar</a></li>
+                        <li><a href="/03_buku">Buku</a></li>
+                        <li><a href="/04_materi">Materi</a></li>
+                        <li><a href="/05_donasi">Donasi</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-column">
+                    <h3>Materi Hiragana</h3>
+                    <ul class="footer-links">
+                        <li><a href="#table">Tabel Hiragana</a></li>
+                        <li><a href="#practice">Latihan Membaca</a></li>
+                        <li><a href="#writing">Panduan Menulis</a></li>
+                        <li><a href="#quiz">Kuis Hiragana</a></li>
+                        <li><a href="/02_belajar/02_katakana">Lanjut ke Katakana</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-column">
+                    <h3>Kontak & Donasi</h3>
+                    <ul class="footer-links">
+                        <li><i class="fas fa-envelope"></i> info@nihongopedia.com</li>
+                        <li><i class="fas fa-heart"></i> <a href="/05_donasi">Dukung Kami</a></li>
+                        <li><i class="fas fa-map-marker-alt"></i> Indonesia</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2023 Nihongopedia. All rights reserved. - Platform Belajar Bahasa Jepang Gratis</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Theme Toggle Functionality
+        const themeToggle = document.getElementById('theme-toggle');
+        const themeIcon = themeToggle.querySelector('i');
+
+        // Check for saved theme or prefer-color-scheme
+        const savedTheme = localStorage.getItem('theme') ||
+            (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+
+        // Apply the saved theme
+        document.documentElement.setAttribute('data-theme', savedTheme);
+        updateThemeIcon(savedTheme);
+
+        // Toggle theme on button click
+        themeToggle.addEventListener('click', () => {
+            const currentTheme = document.documentElement.getAttribute('data-theme');
+            const newTheme = currentTheme === 'light' ? 'dark' : 'light';
+
+            document.documentElement.setAttribute('data-theme', newTheme);
+            localStorage.setItem('theme', newTheme);
+            updateThemeIcon(newTheme);
+        });
+
+        function updateThemeIcon(theme) {
+            if (theme === 'dark') {
+                themeIcon.classList.remove('fa-moon');
+                themeIcon.classList.add('fa-sun');
+            } else {
+                themeIcon.classList.remove('fa-sun');
+                themeIcon.classList.add('fa-moon');
+            }
+        }
+
+        // Mobile Menu Toggle
+        const mobileMenuToggle = document.getElementById('mobile-menu-toggle');
+        const navMenu = document.querySelector('.nav-menu');
+
+        mobileMenuToggle.addEventListener('click', () => {
+            navMenu.classList.toggle('active');
+            const icon = mobileMenuToggle.querySelector('i');
+            if (navMenu.classList.contains('active')) {
+                icon.classList.remove('fa-bars');
+                icon.classList.add('fa-times');
+            } else {
+                icon.classList.remove('fa-times');
+                icon.classList.add('fa-bars');
+            }
+        });
+
+        // Hiragana Practice Functionality
+        const practiceChars = [
+            { char: 'あ', romaji: 'a' },
+            { char: 'い', romaji: 'i' },
+            { char: 'う', romaji: 'u' },
+            { char: 'え', romaji: 'e' },
+            { char: 'お', romaji: 'o' },
+            { char: 'か', romaji: 'ka' },
+            { char: 'き', romaji: 'ki' },
+            { char: 'く', romaji: 'ku' },
+            { char: 'け', romaji: 'ke' },
+            { char: 'こ', romaji: 'ko' }
+        ];
+
+        let currentPracticeIndex = 0;
+        const practiceCharacter = document.getElementById('practice-character');
+        const practiceRomaji = document.getElementById('practice-romaji');
+        const practiceInput = document.getElementById('practice-input');
+        const checkBtn = document.getElementById('check-btn');
+        const hintBtn = document.getElementById('hint-btn');
+        const nextPractice = document.getElementById('next-practice');
+        const practiceFeedback = document.getElementById('practice-feedback');
+
+        function updatePractice() {
+            const current = practiceChars[currentPracticeIndex];
+            practiceCharacter.textContent = current.char;
+            practiceRomaji.textContent = ''; // Hide romaji initially
+            practiceInput.value = '';
+            practiceFeedback.className = 'practice-feedback';
+            practiceFeedback.textContent = '';
+        }
+
+        checkBtn.addEventListener('click', () => {
+            const current = practiceChars[currentPracticeIndex];
+            const userAnswer = practiceInput.value.trim().toLowerCase();
+            
+            if (userAnswer === current.romaji) {
+                practiceFeedback.className = 'practice-feedback correct';
+                practiceFeedback.innerHTML = '<i class="fas fa-check"></i> Benar!';
+            } else {
+                practiceFeedback.className = 'practice-feedback incorrect';
+                practiceFeedback.innerHTML = `<i class="fas fa-times"></i> Salah! Jawaban yang benar: ${current.romaji}`;
+            }
+        });
+
+        hintBtn.addEventListener('click', () => {
+            const current = practiceChars[currentPracticeIndex];
+            practiceRomaji.textContent = current.romaji;
+        });
+
+        nextPractice.addEventListener('click', () => {
+            currentPracticeIndex = (currentPracticeIndex + 1) % practiceChars.length;
+            updatePractice();
+        });
+
+        // Initialize practice
+        updatePractice();
+
+        // Writing Guide Functionality
+        const writingChars = ['あ', 'か', 'さ', 'た', 'な', 'は', 'ま', 'や', 'ら', 'わ'];
+        let currentWritingIndex = 0;
+        const writingChar = document.getElementById('writing-char');
+        const prevChar = document.getElementById('prev-char');
+        const nextChar = document.getElementById('next-char');
+
+        function updateWritingGuide() {
+            writingChar.textContent = writingChars[currentWritingIndex];
+        }
+
+        prevChar.addEventListener('click', () => {
+            currentWritingIndex = (currentWritingIndex - 1 + writingChars.length) % writingChars.length;
+            updateWritingGuide();
+        });
+
+        nextChar.addEventListener('click', () => {
+            currentWritingIndex = (currentWritingIndex + 1) % writingChars.length;
+            updateWritingGuide();
+        });
+
+        // Initialize writing guide
+        updateWritingGuide();
+
+        // Quiz Functionality
+        const quizData = [
+            { char: 'あ', options: ['a', 'i', 'u', 'e'], answer: 'a' },
+            { char: 'い', options: ['a', 'i', 'u', 'e'], answer: 'i' },
+            { char: 'う', options: ['a', 'i', 'u', 'e'], answer: 'u' },
+            { char: 'え', options: ['a', 'i', 'u', 'e'], answer: 'e' },
+            { char: 'お', options: ['a', 'i', 'u', 'o'], answer: 'o' },
+            { char: 'か', options: ['ka', 'ki', 'ku', 'ke'], answer: 'ka' },
+            { char: 'き', options: ['ka', 'ki', 'ku', 'ke'], answer: 'ki' },
+            { char: 'く', options: ['ka', 'ki', 'ku', 'ke'], answer: 'ku' },
+            { char: 'け', options: ['ka', 'ki', 'ku', 'ke'], answer: 'ke' },
+            { char: 'こ', options: ['ka', 'ki', 'ku', 'ko'], answer: 'ko' }
+        ];
+
+        let currentQuizIndex = 0;
+        let score = 0;
+        let selectedAnswer = null;
+
+        const quizQuestion = document.getElementById('quiz-question');
+        const quizOptions = document.querySelectorAll('.quiz-option');
+        const submitQuiz = document.getElementById('submit-quiz');
+        const quizScore = document.getElementById('quiz-score');
+        const quizProgress = document.getElementById('quiz-progress');
+
+        function updateQuiz() {
+            const current = quizData[currentQuizIndex];
+            quizQuestion.textContent = current.char;
+            
+            // Shuffle and update options
+            const shuffledOptions = [...current.options].sort(() => Math.random() - 0.5);
+            quizOptions.forEach((option, index) => {
+                option.textContent = shuffledOptions[index];
+                option.setAttribute('data-answer', shuffledOptions[index]);
+                option.classList.remove('selected');
+            });
+            
+            selectedAnswer = null;
+            submitQuiz.disabled = true;
+            quizProgress.textContent = `Pertanyaan ${currentQuizIndex + 1}/${quizData.length}`;
+        }
+
+        quizOptions.forEach(option => {
+            option.addEventListener('click', () => {
+                // Remove selected class from all options
+                quizOptions.forEach(opt => opt.classList.remove('selected'));
+                // Add selected class to clicked option
+                option.classList.add('selected');
+                selectedAnswer = option.getAttribute('data-answer');
+                submitQuiz.disabled = false;
+            });
+        });
+
+        submitQuiz.addEventListener('click', () => {
+            const current = quizData[currentQuizIndex];
+            
+            if (selectedAnswer === current.answer) {
+                score++;
+                quizScore.textContent = `Skor: ${score}`;
+                alert('Jawaban benar!');
+            } else {
+                alert(`Jawaban salah! Yang benar adalah: ${current.answer}`);
+            }
+            
+            // Move to next question or finish quiz
+            if (currentQuizIndex < quizData.length - 1) {
+                currentQuizIndex++;
+                updateQuiz();
+            } else {
+                alert(`Kuis selesai! Skor akhir Anda: ${score}/${quizData.length}`);
+                // Reset quiz
+                currentQuizIndex = 0;
+                score = 0;
+                updateQuiz();
+                quizScore.textContent = `Skor: 0`;
+            }
+        });
+
+        // Initialize quiz
+        updateQuiz();
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    // Close mobile menu if open
+                    navMenu.classList.remove('active');
+                    mobileMenuToggle.querySelector('i').classList.remove('fa-times');
+                    mobileMenuToggle.querySelector('i').classList.add('fa-bars');
+
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+        // Hiragana table click functionality
+        document.querySelectorAll('.hiragana-table td').forEach(cell => {
+            cell.addEventListener('click', () => {
+                const hiraganaChar = cell.querySelector('div:first-child').textContent;
+                const romaji = cell.querySelector('.romaji').textContent;
+                alert(`Karakter: ${hiraganaChar}\nPengucapan: ${romaji}`);
+            });
+        });
+    </script>
+</body>
+
+</html>

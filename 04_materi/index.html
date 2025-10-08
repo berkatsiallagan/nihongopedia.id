@@ -1,0 +1,1513 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Materi - Nihongopedia</title>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            /* Light Theme */
+            --primary: #DC143C;
+            --secondary: #FFFFFF;
+            --accent: #C70039;
+            --text-primary: #333333;
+            --text-secondary: #666666;
+            --bg-primary: #FFFFFF;
+            --bg-secondary: #F8F8F8;
+            --bg-card: #FFFFFF;
+            --border: #E0E0E0;
+            --shadow: rgba(0, 0, 0, 0.1);
+            --success: #28a745;
+            --warning: #ffc107;
+        }
+
+        [data-theme="dark"] {
+            /* Dark Theme */
+            --primary: #DC143C;
+            --secondary: #1a1a1a;
+            --accent: #FF6B8B;
+            --text-primary: #FFFFFF;
+            --text-secondary: #CCCCCC;
+            --bg-primary: #121212;
+            --bg-secondary: #1E1E1E;
+            --bg-card: #252525;
+            --border: #444444;
+            --shadow: rgba(0, 0, 0, 0.3);
+            --success: #34D399;
+            --warning: #FBBF24;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            transition: background-color 0.3s, color 0.3s, border-color 0.3s;
+        }
+
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: var(--bg-primary);
+            color: var(--text-primary);
+            line-height: 1.6;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header Styles */
+        header {
+            background-color: var(--bg-primary);
+            box-shadow: 0 2px 10px var(--shadow);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 0;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo-icon {
+            color: var(--primary);
+            font-size: 24px;
+        }
+
+        .logo-text {
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--primary);
+        }
+
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            gap: 30px;
+        }
+
+        .nav-link {
+            text-decoration: none;
+            color: var(--text-primary);
+            font-weight: 500;
+            position: relative;
+            padding: 5px 0;
+        }
+
+        .nav-link:hover {
+            color: var(--primary);
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: var(--primary);
+            transition: width 0.3s;
+        }
+
+        .nav-link:hover::after {
+            width: 100%;
+        }
+
+        .header-actions {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .theme-toggle {
+            background: none;
+            border: none;
+            color: var(--text-primary);
+            cursor: pointer;
+            font-size: 20px;
+            padding: 5px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .theme-toggle:hover {
+            background-color: var(--bg-secondary);
+        }
+
+        .mobile-menu-toggle {
+            display: none;
+            background: none;
+            border: none;
+            color: var(--text-primary);
+            font-size: 24px;
+            cursor: pointer;
+        }
+
+        /* Hero Section */
+        .hero {
+            padding: 80px 0;
+            background: linear-gradient(135deg, var(--bg-primary) 0%, var(--bg-secondary) 100%);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 50%;
+            height: 100%;
+            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="none"><path d="M0,0 L100,0 L100,100 Z" fill="%23DC143C" opacity="0.05"/></svg>') no-repeat;
+            background-size: cover;
+        }
+
+        .hero-content {
+            display: flex;
+            align-items: center;
+            gap: 40px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero-text {
+            flex: 1;
+        }
+
+        .hero-title {
+            font-size: 48px;
+            font-weight: 700;
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+
+        .hero-title span {
+            color: var(--primary);
+        }
+
+        .hero-description {
+            font-size: 18px;
+            color: var(--text-secondary);
+            margin-bottom: 30px;
+            max-width: 600px;
+        }
+
+        /* Breadcrumb Styles */
+        .breadcrumb {
+            background-color: var(--bg-secondary);
+            padding: 15px 0;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .breadcrumb-list {
+            display: flex;
+            align-items: center;
+            list-style: none;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+
+        .breadcrumb-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 14px;
+        }
+
+        .breadcrumb-item:not(:last-child)::after {
+            content: '/';
+            color: var(--text-secondary);
+            margin-left: 10px;
+        }
+
+        .breadcrumb-item a {
+            text-decoration: none;
+            color: var(--text-secondary);
+            transition: color 0.3s;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .breadcrumb-item a:hover {
+            color: var(--primary);
+        }
+
+        .breadcrumb-item.active span {
+            color: var(--primary);
+            font-weight: 600;
+        }
+
+        .breadcrumb-item .fas.fa-home {
+            font-size: 12px;
+        }
+
+        /* CTA Buttons */
+        .cta-buttons {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 12px 24px;
+            border-radius: 8px;
+            font-weight: 600;
+            text-decoration: none;
+            cursor: pointer;
+            transition: all 0.3s;
+            border: none;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+        }
+
+        .btn-primary {
+            background-color: var(--primary);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background-color: var(--accent);
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(220, 20, 60, 0.3);
+        }
+
+        .btn-secondary {
+            background-color: transparent;
+            color: var(--primary);
+            border: 2px solid var(--primary);
+        }
+
+        .btn-secondary:hover {
+            background-color: var(--primary);
+            color: white;
+            transform: translateY(-2px);
+        }
+
+        .btn-outline {
+            background-color: transparent;
+            color: var(--text-primary);
+            border: 2px solid var(--border);
+        }
+
+        .btn-outline:hover {
+            background-color: var(--bg-secondary);
+            border-color: var(--primary);
+        }
+
+        /* Section Styles */
+        .section {
+            padding: 80px 0;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 36px;
+            font-weight: 700;
+            margin-bottom: 50px;
+            color: var(--text-primary);
+        }
+
+        .section-title span {
+            color: var(--primary);
+        }
+
+        /* Materials Grid */
+        .materials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .material-card {
+            background-color: var(--bg-card);
+            border-radius: 10px;
+            padding: 30px;
+            box-shadow: 0 5px 15px var(--shadow);
+            transition: transform 0.3s;
+            text-decoration: none;
+            display: block;
+            color: inherit;
+            position: relative;
+        }
+
+        .material-card:hover {
+            transform: translateY(-5px);
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .material-badge {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background-color: var(--primary);
+            color: white;
+            padding: 5px 10px;
+            border-radius: 15px;
+            font-size: 12px;
+            font-weight: 600;
+        }
+
+        .material-icon {
+            width: 80px;
+            height: 80px;
+            background-color: rgba(220, 20, 60, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 20px;
+            color: var(--primary);
+            font-size: 32px;
+        }
+
+        .material-title {
+            font-size: 24px;
+            font-weight: 600;
+            margin-bottom: 15px;
+            color: var(--text-primary);
+        }
+
+        .material-description {
+            color: var(--text-secondary);
+            margin-bottom: 20px;
+        }
+
+        .material-features {
+            list-style: none;
+            margin-bottom: 25px;
+        }
+
+        .material-features li {
+            padding: 8px 0;
+            color: var(--text-secondary);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .material-features li i {
+            color: var(--success);
+        }
+
+        .material-stats {
+            display: flex;
+            justify-content: space-between;
+            color: var(--text-secondary);
+            font-size: 14px;
+            border-top: 1px solid var(--border);
+            padding-top: 15px;
+        }
+
+        /* Flashcard Section */
+        .flashcard-section {
+            background-color: var(--bg-secondary);
+        }
+
+        .flashcard-preview {
+            background-color: var(--bg-card);
+            border-radius: 15px;
+            padding: 40px;
+            box-shadow: 0 10px 30px var(--shadow);
+            max-width: 600px;
+            margin: 0 auto 40px;
+            text-align: center;
+            position: relative;
+            min-height: 300px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .flashcard-content {
+            perspective: 1000px;
+            width: 100%;
+            height: 200px;
+            margin-bottom: 20px;
+        }
+
+        .flashcard {
+            width: 100%;
+            height: 100%;
+            position: relative;
+            transform-style: preserve-3d;
+            transition: transform 0.6s;
+            cursor: pointer;
+        }
+
+        .flashcard.flipped {
+            transform: rotateY(180deg);
+        }
+
+        .flashcard-front,
+        .flashcard-back {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            backface-visibility: hidden;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+            font-size: 24px;
+            font-weight: 600;
+            cursor: pointer;
+        }
+
+        .flashcard-front {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--accent) 100%);
+            color: white;
+        }
+
+        .flashcard-back {
+            background-color: var(--bg-primary);
+            color: var(--text-primary);
+            transform: rotateY(180deg);
+            border: 2px solid var(--primary);
+        }
+
+        .flashcard-controls {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .flashcard-hint {
+            color: var(--text-secondary);
+            font-size: 14px;
+            margin-top: 15px;
+        }
+
+        .flashcard-info {
+            margin-top: 15px;
+            color: var(--text-secondary);
+            font-size: 14px;
+            font-weight: 500;
+        }
+
+        .flashcard-controls {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 15px;
+            margin-top: 20px;
+            flex-wrap: wrap;
+        }
+
+        /* Audio Section */
+        .audio-section {
+            background-color: var(--bg-primary);
+        }
+
+        .audio-player {
+            background-color: var(--bg-card);
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: 0 10px 30px var(--shadow);
+            max-width: 500px;
+            margin: 0 auto;
+        }
+
+        .audio-title {
+            font-size: 20px;
+            font-weight: 600;
+            margin-bottom: 20px;
+            text-align: center;
+            color: var(--text-primary);
+        }
+
+        .audio-controls {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 20px;
+            margin-bottom: 20px;
+        }
+
+        .audio-btn {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background-color: var(--primary);
+            color: white;
+            border: none;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .audio-btn:hover {
+            background-color: var(--accent);
+            transform: scale(1.1);
+        }
+
+        .audio-progress {
+            width: 100%;
+            height: 6px;
+            background-color: var(--border);
+            border-radius: 3px;
+            overflow: hidden;
+            margin-bottom: 10px;
+        }
+
+        .audio-progress-bar {
+            height: 100%;
+            background-color: var(--primary);
+            width: 0%;
+            transition: width 0.1s;
+        }
+
+        .audio-time {
+            display: flex;
+            justify-content: space-between;
+            color: var(--text-secondary);
+            font-size: 14px;
+        }
+
+        .audio-samples {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            margin-top: 30px;
+        }
+
+        .audio-sample {
+            background-color: var(--bg-secondary);
+            border-radius: 8px;
+            padding: 15px;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.3s;
+            border: 2px solid transparent;
+        }
+
+        .audio-sample:hover {
+            border-color: var(--primary);
+            transform: translateY(-2px);
+        }
+
+        .audio-sample.active {
+            background-color: var(--primary);
+            color: white;
+        }
+
+        /* Video Section */
+        .video-section {
+            background-color: var(--bg-secondary);
+        }
+
+        .video-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .video-card {
+            background-color: var(--bg-card);
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px var(--shadow);
+            transition: transform 0.3s;
+        }
+
+        .video-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .video-thumbnail {
+            width: 100%;
+            height: 180px;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--accent) 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 48px;
+            position: relative;
+        }
+
+        .video-play-btn {
+            width: 60px;
+            height: 60px;
+            background-color: rgba(255, 255, 255, 0.9);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--primary);
+            font-size: 20px;
+            transition: all 0.3s;
+        }
+
+        .video-thumbnail:hover .video-play-btn {
+            transform: scale(1.1);
+            background-color: white;
+        }
+
+        .video-duration {
+            position: absolute;
+            bottom: 10px;
+            right: 10px;
+            background-color: rgba(0, 0, 0, 0.7);
+            color: white;
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-size: 12px;
+        }
+
+        .video-info {
+            padding: 20px;
+        }
+
+        .video-title {
+            font-size: 18px;
+            font-weight: 600;
+            margin-bottom: 10px;
+            color: var(--text-primary);
+        }
+
+        .video-description {
+            color: var (--text-secondary);
+            font-size: 14px;
+            margin-bottom: 15px;
+        }
+
+        .video-meta {
+            display: flex;
+            justify-content: space-between;
+            color: var(--text-secondary);
+            font-size: 12px;
+        }
+
+        /* Resources Section */
+        .resources-section {
+            text-align: center;
+        }
+
+        .resources-stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+            margin-bottom: 50px;
+        }
+
+        .resource-stat {
+            background-color: var(--bg-card);
+            border-radius: 10px;
+            padding: 30px;
+            box-shadow: 0 5px 15px var(--shadow);
+        }
+
+        .resource-number {
+            font-size: 48px;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 10px;
+        }
+
+        .resource-text {
+            color: var(--text-secondary);
+            font-size: 16px;
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--bg-secondary);
+            padding: 60px 0 30px;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-column h3 {
+            font-size: 18px;
+            font-weight: 600;
+            margin-bottom: 20px;
+            color: var(--text-primary);
+        }
+
+        .footer-links {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 10px;
+        }
+
+        .footer-links a {
+            text-decoration: none;
+            color: var(--text-secondary);
+            transition: color 0.3s;
+        }
+
+        .footer-links a:hover {
+            color: var(--primary);
+        }
+
+        .social-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .social-link {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background-color: var(--bg-card);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--text-primary);
+            text-decoration: none;
+            transition: all 0.3s;
+        }
+
+        .social-link:hover {
+            background-color: var(--primary);
+            color: white;
+            transform: translateY(-3px);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid var(--border);
+            color: var(--text-secondary);
+            font-size: 14px;
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 992px) {
+            .hero-content {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .hero-title {
+                font-size: 36px;
+            }
+
+            .hero::before {
+                width: 100%;
+                opacity: 0.1;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .nav-menu {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                background-color: var(--bg-primary);
+                flex-direction: column;
+                padding: 20px;
+                box-shadow: 0 5px 10px var(--shadow);
+                gap: 15px;
+            }
+
+            .nav-menu.active {
+                display: flex;
+            }
+
+            .mobile-menu-toggle {
+                display: block;
+            }
+
+            .section-title {
+                font-size: 28px;
+            }
+
+            .hero-title {
+                font-size: 32px;
+            }
+
+            .cta-buttons {
+                justify-content: center;
+            }
+
+            .flashcard-preview {
+                padding: 20px;
+            }
+
+            .flashcard-front,
+            .flashcard-back {
+                font-size: 20px;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .materials-grid,
+            .video-grid,
+            .resources-stats {
+                grid-template-columns: 1fr;
+            }
+
+            .audio-samples {
+                grid-template-columns: 1fr;
+            }
+
+            .flashcard-content {
+                height: 150px;
+            }
+        }
+
+        /* TV Screen Optimization */
+        @media (min-width: 1920px) {
+            .container {
+                max-width: 1600px;
+            }
+
+            .hero-title {
+                font-size: 64px;
+            }
+
+            .section-title {
+                font-size: 48px;
+            }
+
+            .material-title, .audio-title, .video-title {
+                font-size: 28px;
+            }
+
+            .material-description, .video-description {
+                font-size: 18px;
+            }
+
+            .btn {
+                padding: 18px 32px;
+                font-size: 18px;
+            }
+
+            .resource-number {
+                font-size: 64px;
+            }
+
+            .flashcard-content {
+                height: 250px;
+            }
+
+            .flashcard-front,
+            .flashcard-back {
+                font-size: 32px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <div class="header-container">
+                <div class="logo">
+                    <div class="logo-icon">
+                        <i class="fas fa-language"></i>
+                    </div>
+                    <div class="logo-text">Nihongopedia</div>
+                </div>
+
+                <ul class="nav-menu">
+                    <li><a href="/01_beranda" class="nav-link">Beranda</a></li>
+                    <li><a href="/02_belajar" class="nav-link">Belajar</a></li>
+                    <li><a href="/03_buku" class="nav-link">Buku</a></li>
+                    <li><a href="/04_materi" class="nav-link">Materi</a></li>
+                    <li><a href="/05_donasi" class="nav-link">Donasi</a></li>
+                </ul>
+
+                <div class="header-actions">
+                    <button class="theme-toggle" id="theme-toggle">
+                        <i class="fas fa-moon"></i>
+                    </button>
+                    <button class="mobile-menu-toggle" id="mobile-menu-toggle">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Breadcrumb -->
+    <nav class="breadcrumb">
+        <div class="container">
+            <ul class="breadcrumb-list">
+                <li class="breadcrumb-item">
+                    <a href="/01_beranda">
+                        <i class="fas fa-home"></i>
+                        Beranda
+                    </a>
+                </li>
+                <li class="breadcrumb-item active">
+                    <span>Materi</span>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <h1 class="hero-title">Materi <span>Interaktif</span> Belajar Bahasa Jepang</h1>
+                    <p class="hero-description">
+                        Tingkatkan kemampuan bahasa Jepang Anda dengan berbagai materi interaktif. 
+                        Flashcard, audio latihan, video pembelajaran, dan banyak lagi untuk membuat belajar lebih menyenangkan.
+                    </p>
+                    <div class="cta-buttons">
+                        <a href="#flashcard" class="btn btn-primary">
+                            <i class="fas fa-layer-group"></i> Coba Flashcard
+                        </a>
+                        <a href="#audio" class="btn btn-secondary">
+                            <i class="fas fa-headphones"></i> Latihan Mendengar
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Materials Section -->
+    <section class="section" id="materials">
+        <div class="container">
+            <h2 class="section-title">Jenis <span>Materi</span> Pembelajaran</h2>
+            <div class="materials-grid">
+                <a href="01_flashcard" class="material-card">
+                    <div class="material-badge">Populer</div>
+                    <div class="material-icon">
+                        <i class="fas fa-layer-group"></i>
+                    </div>
+                    <h3 class="material-title">Flashcard Digital</h3>
+                    <p class="material-description">
+                        Belajar kosakata dan kanji dengan flashcard interaktif yang bisa dibalik.
+                    </p>
+                    <ul class="material-features">
+                        <li><i class="fas fa-check"></i> 1000+ kosakata</li>
+                        <li><i class="fas fa-check"></i> Sistem pengulangan</li>
+                        <li><i class="fas fa-check"></i> Audio pengucapan</li>
+                        <li><i class="fas fa-check"></i> Progress tracking</li>
+                    </ul>
+                    <div class="material-stats">
+                        <span><i class="fas fa-clock"></i> 5-10 menit/hari</span>
+                        <span><i class="fas fa-chart-line"></i> 95% efektif</span>
+                    </div>
+                </a>
+
+                <a href="02_audio" class="material-card">
+                    <div class="material-icon">
+                        <i class="fas fa-headphones"></i>
+                    </div>
+                    <h3 class="material-title">Latihan Mendengar</h3>
+                    <p class="material-description">
+                        Tingkatkan kemampuan mendengar dengan audio percakapan native speaker.
+                    </p>
+                    <ul class="material-features">
+                        <li><i class="fas fa-check"></i> Percakapan sehari-hari</li>
+                        <li><i class="fas fa-check"></i> Berbagai aksen Jepang</li>
+                        <li><i class="fas fa-check"></i> Kecepatan berbeda</li>
+                        <li><i class="fas fa-check"></i> Script dan terjemahan</li>
+                    </ul>
+                    <div class="material-stats">
+                        <span><i class="fas fa-clock"></i> 10-15 menit/hari</span>
+                        <span><i class="fas fa-chart-line"></i> 200+ audio</span>
+                    </div>
+                </a>
+
+                <a href="03_video" class="material-card">
+                    <div class="material-badge">Baru</div>
+                    <div class="material-icon">
+                        <i class="fas fa-video"></i>
+                    </div>
+                    <h3 class="material-title">Video Pembelajaran</h3>
+                    <p class="material-description">
+                        Tonton video penjelasan dari pengajar berpengalaman untuk materi yang sulit.
+                    </p>
+                    <ul class="material-features">
+                        <li><i class="fas fa-check"></i> Penjelasan visual</li>
+                        <li><i class="fas fa-check"></i> Contoh percakapan</li>
+                        <li><i class="fas fa-check"></i> Tips belajar</li>
+                        <li><i class="fas fa-check"></i> Kuis interaktif</li>
+                    </ul>
+                    <div class="material-stats">
+                        <span><i class="fas fa-clock"></i> 5-20 menit/video</span>
+                        <span><i class="fas fa-chart-line"></i> 50+ video</span>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Flashcard Section -->
+    <section class="section flashcard-section" id="flashcard">
+        <div class="container">
+            <h2 class="section-title">Flashcard <span>Interaktif</span></h2>
+            <p style="text-align: center; color: var(--text-secondary); margin-bottom: 50px; max-width: 800px; margin-left: auto; margin-right: auto;">
+                Coba flashcard interaktif kami. Gunakan tombol untuk membalik kartu dan melihat artinya.
+            </p>
+            
+            <div class="flashcard-preview">
+                <div class="flashcard-content">
+                    <div id="flashcard" class="flashcard">
+                        <div id="flashcard-front-text" class="flashcard-front">Depan</div>
+                        <div id="flashcard-back-text" class="flashcard-back">Belakang</div>
+                    </div>
+                </div>
+                <div class="flashcard-controls">
+                    <button id="prev-card" class="btn btn-outline">Sebelumnya</button>
+                    <button id="flip-card" class="btn btn-primary">Balik Kartu</button>
+                    <button id="next-card" class="btn btn-outline">Berikutnya</button>
+                </div>
+                <div id="card-counter" class="flashcard-info">Kartu 1 dari 5</div>
+            </div>
+
+            <div style="text-align: center;">
+                <a href="01_flashcard" class="btn btn-primary">
+                    <i class="fas fa-external-link-alt"></i> Buka Flashcard Lengkap
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Audio Section -->
+    <section class="section audio-section" id="audio">
+        <div class="container">
+            <h2 class="section-title">Latihan <span>Mendengar</span></h2>
+            <p style="text-align: center; color: var(--text-secondary); margin-bottom: 50px; max-width: 800px; margin-left: auto; margin-right: auto;">
+                Latih telinga Anda dengan audio percakapan bahasa Jepang. Pilih topik dan dengarkan percakapan native speaker.
+            </p>
+
+            <div class="audio-player">
+                <div class="audio-title" id="audio-title">Perkenalan Diri</div>
+                <div class="audio-controls">
+                    <button class="audio-btn" id="play-pause">
+                        <i class="fas fa-play" id="play-icon"></i>
+                    </button>
+                </div>
+                <div class="audio-progress">
+                    <div class="audio-progress-bar" id="progress-bar"></div>
+                </div>
+                <div class="audio-time">
+                    <span id="current-time">0:00</span>
+                    <span id="duration">0:30</span>
+                </div>
+            </div>
+
+            <div class="audio-samples">
+                <div class="audio-sample active" data-audio="perkenalan">
+                    <i class="fas fa-user"></i>
+                    <div>Perkenalan Diri</div>
+                </div>
+                <div class="audio-sample" data-audio="makanan">
+                    <i class="fas fa-utensils"></i>
+                    <div>Pesan Makanan</div>
+                </div>
+                <div class="audio-sample" data-audio="perjalanan">
+                    <i class="fas fa-train"></i>
+                    <div>Tanya Jalan</div>
+                </div>
+                <div class="audio-sample" data-audio="belanja">
+                    <i class="fas fa-shopping-bag"></i>
+                    <div>Belanja</div>
+                </div>
+            </div>
+
+            <div style="text-align: center; margin-top: 40px;">
+                <a href="02_audio" class="btn btn-primary">
+                    <i class="fas fa-external-link-alt"></i> Lihat Semua Audio
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Video Section -->
+    <section class="section video-section" id="video">
+        <div class="container">
+            <h2 class="section-title">Video <span>Pembelajaran</span></h2>
+            <p style="text-align: center; color: var(--text-secondary); margin-bottom: 50px; max-width: 800px; margin-left: auto; margin-right: auto;">
+                Belajar melalui video penjelasan yang mudah dipahami. Dari tata bahasa dasar hingga percakapan lanjutan.
+            </p>
+
+            <div class="video-grid">
+                <div class="video-card">
+                    <div class="video-thumbnail">
+                        <div class="video-play-btn">
+                            <i class="fas fa-play"></i>
+                        </div>
+                        <div class="video-duration">8:15</div>
+                    </div>
+                    <div class="video-info">
+                        <h3 class="video-title">Partikel WA dan GA</h3>
+                        <p class="video-description">
+                            Penjelasan lengkap tentang perbedaan dan penggunaan partikel WA dan GA.
+                        </p>
+                        <div class="video-meta">
+                            <span><i class="fas fa-eye"></i> 15.2K</span>
+                            <span>Level: N5</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="video-card">
+                    <div class="video-thumbnail">
+                        <div class="video-play-btn">
+                            <i class="fas fa-play"></i>
+                        </div>
+                        <div class="video-duration">12:30</div>
+                    </div>
+                    <div class="video-info">
+                        <h3 class="video-title">Bentuk TE Kata Kerja</h3>
+                        <p class="video-description">
+                            Cara membuat dan menggunakan bentuk TE dalam percakapan sehari-hari.
+                        </p>
+                        <div class="video-meta">
+                            <span><i class="fas fa-eye"></i> 12.8K</span>
+                            <span>Level: N5</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="video-card">
+                    <div class="video-thumbnail">
+                        <div class="video-play-btn">
+                            <i class="fas fa-play"></i>
+                        </div>
+                        <div class="video-duration">15:45</div>
+                    </div>
+                    <div class="video-info">
+                        <h3 class="video-title">Percakapan di Restoran</h3>
+                        <p class="video-description">
+                            Kosakata dan frasa penting untuk memesan makanan di restoran Jepang.
+                        </p>
+                        <div class="video-meta">
+                            <span><i class="fas fa-eye"></i> 18.5K</span>
+                            <span>Level: N4</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div style="text-align: center; margin-top: 40px;">
+                <a href="03_video" class="btn btn-primary">
+                    <i class="fas fa-external-link-alt"></i> Jelajahi Semua Video
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Resources Section -->
+    <section class="section resources-section" id="resources">
+        <div class="container">
+            <h2 class="section-title">Koleksi <span>Materi</span> Kami</h2>
+            <div class="resources-stats">
+                <div class="resource-stat">
+                    <div class="resource-number">1,000+</div>
+                    <div class="resource-text">Flashcard Interaktif</div>
+                </div>
+                <div class="resource-stat">
+                    <div class="resource-number">200+</div>
+                    <div class="resource-text">Audio Latihan</div>
+                </div>
+                <div class="resource-stat">
+                    <div class="resource-number">50+</div>
+                    <div class="resource-text">Video Pembelajaran</div>
+                </div>
+                <div class="resource-stat">
+                    <div class="resource-number">10,000+</div>
+                    <div class="resource-text">Pengguna Aktif</div>
+                </div>
+            </div>
+            <a href="/01_beranda" class="btn btn-primary">
+                <i class="fas fa-rocket"></i> Mulai Belajar Sekarang
+            </a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>Nihongopedia</h3>
+                    <p style="color: var(--text-secondary); margin-bottom: 20px;">
+                        Platform pembelajaran bahasa Jepang gratis dan lengkap untuk semua level.
+                    </p>
+                    <div class="social-links">
+                        <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+
+                <div class="footer-column">
+                    <h3>Menu</h3>
+                    <ul class="footer-links">
+                        <li><a href="/01_beranda">Beranda</a></li>
+                        <li><a href="/02_belajar">Belajar</a></li>
+                        <li><a href="/03_buku">Buku</a></li>
+                        <li><a href="/04_materi">Materi</a></li>
+                        <li><a href="/05_donasi">Donasi</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-column">
+                    <h3>Materi Pembelajaran</h3>
+                    <ul class="footer-links">
+                        <li><a href="01_flashcard">Flashcard</a></li>
+                        <li><a href="02_audio">Latihan Mendengar</a></li>
+                        <li><a href="03_video">Video Pembelajaran</a></li>
+                        <li><a href="/02_belajar/04_tata-bahasa">Tata Bahasa</a></li>
+                        <li><a href="/02_belajar/05_kanji">Kanji</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-column">
+                    <h3>Kontak & Donasi</h3>
+                    <ul class="footer-links">
+                        <li><i class="fas fa-envelope"></i> info@nihongopedia.com</li>
+                        <li><i class="fas fa-heart"></i> <a href="/05_donasi">Dukung Kami</a></li>
+                        <li><i class="fas fa-map-marker-alt"></i> Indonesia</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2023 Nihongopedia. All rights reserved. - Platform Belajar Bahasa Jepang Gratis</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Theme Toggle Functionality
+        const themeToggle = document.getElementById('theme-toggle');
+        const themeIcon = themeToggle.querySelector('i');
+
+        // Check for saved theme or prefer-color-scheme
+        const savedTheme = localStorage.getItem('theme') ||
+            (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+
+        // Apply the saved theme
+        document.documentElement.setAttribute('data-theme', savedTheme);
+        updateThemeIcon(savedTheme);
+
+        // Toggle theme on button click
+        themeToggle.addEventListener('click', () => {
+            const currentTheme = document.documentElement.getAttribute('data-theme');
+            const newTheme = currentTheme === 'light' ? 'dark' : 'light';
+
+            document.documentElement.setAttribute('data-theme', newTheme);
+            localStorage.setItem('theme', newTheme);
+            updateThemeIcon(newTheme);
+        });
+
+        function updateThemeIcon(theme) {
+            if (theme === 'dark') {
+                themeIcon.classList.remove('fa-moon');
+                themeIcon.classList.add('fa-sun');
+            } else {
+                themeIcon.classList.remove('fa-sun');
+                themeIcon.classList.add('fa-moon');
+            }
+        }
+
+        // Mobile Menu Toggle
+        const mobileMenuToggle = document.getElementById('mobile-menu-toggle');
+        const navMenu = document.querySelector('.nav-menu');
+
+        mobileMenuToggle.addEventListener('click', () => {
+            navMenu.classList.toggle('active');
+            const icon = mobileMenuToggle.querySelector('i');
+            if (navMenu.classList.contains('active')) {
+                icon.classList.remove('fa-bars');
+                icon.classList.add('fa-times');
+            } else {
+                icon.classList.remove('fa-times');
+                icon.classList.add('fa-bars');
+            }
+        });
+
+        // Flashcard Functionality
+        const flashcard = document.querySelector('.flashcard');
+        const prevCardBtn = document.getElementById('prev-card');
+        const flipCardBtn = document.getElementById('flip-card');
+        const nextCardBtn = document.getElementById('next-card');
+        const flashcardFrontText = document.getElementById('flashcard-front-text');
+        const flashcardBackText = document.getElementById('flashcard-back-text');
+        const cardCounter = document.getElementById('card-counter');
+
+        const flashcards = [
+            { front: "食べます", back: "tabemasu — Makan (Bentuk Sopan)" },
+            { front: "飲みます", back: "nomimasu — Minum (Bentuk Sopan)" },
+            { front: "行きます", back: "ikimasu — Pergi (Bentuk Sopan)" },
+            { front: "来ます", back: "kimasu — Datang (Bentuk Sopan)" },
+            { front: "見ます", back: "mimasu — Melihat (Bentuk Sopan)" }
+        ];
+
+
+
+        let currentCardIndex = 0;
+
+        // Function to update flashcard content
+        function updateFlashcard() {
+            const card = flashcards[currentCardIndex];
+            flashcardFrontText.textContent = card.front;
+            flashcardBackText.textContent = card.back;
+
+            // Reset to front position
+            flashcard.classList.remove('flipped');
+
+            // Update counter
+            cardCounter.textContent = `Kartu ${currentCardIndex + 1} dari ${flashcards.length}`;
+        }
+
+        // Function to flip the card
+        function flipCard() {
+            flashcard.classList.toggle('flipped');
+        }
+
+        // Event listeners for buttons
+        flipCardBtn.addEventListener('click', flipCard);
+
+        prevCardBtn.addEventListener('click', () => {
+            currentCardIndex = (currentCardIndex - 1 + flashcards.length) % flashcards.length;
+            updateFlashcard();
+        });
+
+        nextCardBtn.addEventListener('click', () => {
+            currentCardIndex = (currentCardIndex + 1) % flashcards.length;
+            updateFlashcard();
+        });
+
+        // Initialize first card
+        updateFlashcard();
+
+        // Audio Player Functionality
+        const playPauseBtn = document.getElementById('play-pause');
+        const playIcon = document.getElementById('play-icon');
+        const progressBar = document.getElementById('progress-bar');
+        const currentTimeEl = document.getElementById('current-time');
+        const durationEl = document.getElementById('duration');
+        const audioSamples = document.querySelectorAll('.audio-sample');
+        const audioTitle = document.getElementById('audio-title');
+
+        let isPlaying = false;
+        let progressInterval;
+
+        function updateProgress() {
+            // Simulate progress for demo
+            let progress = parseInt(progressBar.style.width) || 0;
+            if (progress < 100) {
+                progress += 1;
+                progressBar.style.width = progress + '%';
+                
+                // Update time display
+                const currentSeconds = Math.floor(progress * 0.3);
+                currentTimeEl.textContent = `0:${currentSeconds.toString().padStart(2, '0')}`;
+            } else {
+                clearInterval(progressInterval);
+                isPlaying = false;
+                playIcon.classList.remove('fa-pause');
+                playIcon.classList.add('fa-play');
+            }
+        }
+
+        playPauseBtn.addEventListener('click', () => {
+            isPlaying = !isPlaying;
+            
+            if (isPlaying) {
+                playIcon.classList.remove('fa-play');
+                playIcon.classList.add('fa-pause');
+                progressInterval = setInterval(updateProgress, 300);
+            } else {
+                playIcon.classList.remove('fa-pause');
+                playIcon.classList.add('fa-play');
+                clearInterval(progressInterval);
+            }
+        });
+
+        // Audio sample selection
+        audioSamples.forEach(sample => {
+            sample.addEventListener('click', () => {
+                // Remove active class from all samples
+                audioSamples.forEach(s => s.classList.remove('active'));
+                // Add active class to clicked sample
+                sample.classList.add('active');
+                
+                // Update audio title
+                const audioType = sample.getAttribute('data-audio');
+                const titles = {
+                    'perkenalan': 'Perkenalan Diri',
+                    'makanan': 'Pesan Makanan',
+                    'perjalanan': 'Tanya Jalan',
+                    'belanja': 'Belanja'
+                };
+                audioTitle.textContent = titles[audioType];
+                
+                // Reset progress
+                progressBar.style.width = '0%';
+                currentTimeEl.textContent = '0:00';
+                clearInterval(progressInterval);
+                isPlaying = false;
+                playIcon.classList.remove('fa-pause');
+                playIcon.classList.add('fa-play');
+            });
+        });
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    // Close mobile menu if open
+                    navMenu.classList.remove('active');
+                    mobileMenuToggle.querySelector('i').classList.remove('fa-times');
+                    mobileMenuToggle.querySelector('i').classList.add('fa-bars');
+
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>
+`
