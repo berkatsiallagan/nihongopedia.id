@@ -921,9 +921,12 @@ footer {
     }
 
     .chapter-meta {
+        display: flex;
         flex-direction: column;
         gap: 15px;
-    }
+        align-items: center;      /* horizontal center */
+        justify-content: center;  /* vertical center */
+    }    
 
     .breadcrumb-list {
         overflow-x: auto;
