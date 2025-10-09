@@ -1,0 +1,532 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="/06_gambar/nihongopedia.PNG" type="image/png">
+    <title>Bab 3 - Minna no Nihongo 1 - Nihongopedia</title>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="/00_assets/css/minna-no-nihongo-1.css">
+</head>
+
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <div class="header-container">
+                <div class="logo">
+                    <div class="logo-icon">
+                        <div class="logo-image" style="background-image: url('/06_gambar/nihongopedia.PNG');"></div>
+                    </div>
+                    <div class="logo-text">Nihongopedia</div>
+                </div>
+
+                <ul class="nav-menu">
+                    <li><a href="/01_beranda" class="nav-link">Beranda</a></li>
+                    <li><a href="/02_belajar" class="nav-link">Belajar</a></li>
+                    <li><a href="/03_buku" class="nav-link">Buku</a></li>
+                    <li><a href="/04_materi" class="nav-link">Materi</a></li>
+                    <li><a href="/05_donasi" class="nav-link">Donasi</a></li>
+                </ul>
+
+                <div class="header-actions">
+                    <button class="theme-toggle" id="theme-toggle">
+                        <i class="fas fa-moon"></i>
+                    </button>
+                    <button class="mobile-menu-toggle" id="mobile-menu-toggle">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Breadcrumb -->
+    <nav class="breadcrumb">
+        <div class="container">
+            <ul class="breadcrumb-list">
+                <li class="breadcrumb-item">
+                    <a href="/01_beranda">
+                        <i class="fas fa-home"></i>
+                        Beranda
+                    </a>
+                </li>
+                <li class="breadcrumb-item">
+                    <a href="/03_buku">Buku</a>
+                </li>
+                <li class="breadcrumb-item">
+                    <a href="/03_buku/minna-no-nihongo-1">Minna 1</a>
+                </li>
+                <li class="breadcrumb-item active">
+                    <span>Bab 3</span>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="chapter-header">
+                <div class="chapter-badge">Bab 3</div>
+                <h1 class="chapter-title">Kata Tunjuk Tempat dan Partikel "de"</h1>
+                <p class="chapter-subtitle">Belajar kata tunjuk tempat (koko, soko, asoko) dan penggunaan partikel "de" untuk menunjukkan tempat aktivitas</p>
+                <div class="chapter-meta">
+                    <div class="meta-item">
+                        <i class="fas fa-clock"></i>
+                        <span>50 menit</span>
+                    </div>
+                    <div class="meta-item">
+                        <i class="fas fa-book"></i>
+                        <span>7 Materi</span>
+                    </div>
+                    <div class="meta-item">
+                        <i class="fas fa-signal"></i>
+                        <span>Tingkat: Pemula</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Chapter Navigation -->
+    <section class="chapter-nav">
+        <div class="container">
+            <div class="nav-container">
+                <a href="#" class="btn btn-outline" style="margin-right: 10px;">
+                    <i class="fas fa-download"></i> Unduh Materi
+                </a>
+                <div>
+                    <a href="#practice" class="btn btn-primary">
+                        <i class="fas fa-play"></i> Latihan
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Vocabulary Section -->
+    <section class="section vocabulary-section" id="vocabulary">
+        <div class="container">
+            <h2 class="section-title">
+                <i class="fas fa-book"></i>
+                Kosakata
+            </h2>
+            <p style="color: var(--text-secondary); margin-bottom: 30px;">
+                Pelajari kosakata baru tentang tempat dan aktivitas yang akan digunakan dalam bab ini.
+            </p>
+
+            <div class="vocabulary-grid">
+                <div class="vocab-card">
+                    <div class="vocab-japanese">ここ</div>
+                    <div class="vocab-reading">koko</div>
+                    <div class="vocab-meaning">Di sini (tempat dekat pembicara)</div>
+                    <div class="vocab-example">Digunakan untuk tempat yang dekat dengan pembicara</div>
+                </div>
+
+                <div class="vocab-card">
+                    <div class="vocab-japanese">そこ</div>
+                    <div class="vocab-reading">soko</div>
+                    <div class="vocab-meaning">Di sana (tempat dekat lawan bicara)</div>
+                    <div class="vocab-example">Digunakan untuk tempat yang dekat dengan lawan bicara</div>
+                </div>
+
+                <div class="vocab-card">
+                    <div class="vocab-japanese">あそこ</div>
+                    <div class="vocab-reading">asoko</div>
+                    <div class="vocab-meaning">Di sana (tempat jauh dari keduanya)</div>
+                    <div class="vocab-example">Digunakan untuk tempat yang jauh dari pembicara dan lawan bicara</div>
+                </div>
+
+                <div class="vocab-card">
+                    <div class="vocab-japanese">きょうしつ</div>
+                    <div class="vocab-reading">kyoushitsu</div>
+                    <div class="vocab-meaning">Ruang kelas</div>
+                    <div class="vocab-example">Tempat untuk belajar</div>
+                </div>
+
+                <div class="vocab-card">
+                    <div class="vocab-japanese">しょくどう</div>
+                    <div class="vocab-reading">shokudou</div>
+                    <div class="vocab-meaning">Kantin</div>
+                    <div class="vocab-example">Tempat untuk makan</div>
+                </div>
+
+                <div class="vocab-card">
+                    <div class="vocab-japanese">としょかん</div>
+                    <div class="vocab-reading">toshokan</div>
+                    <div class="vocab-meaning">Perpustakaan</div>
+                    <div class="vocab-example">Tempat untuk membaca dan meminjam buku</div>
+                </div>
+
+                <div class="vocab-card">
+                    <div class="vocab-japanese">で</div>
+                    <div class="vocab-reading">de</div>
+                    <div class="vocab-meaning">Partikel tempat aktivitas</div>
+                    <div class="vocab-example">Menunjukkan tempat di mana suatu aktivitas dilakukan</div>
+                </div>
+
+                <div class="vocab-card">
+                    <div class="vocab-japanese">べんきょうします</div>
+                    <div class="vocab-reading">benkyou shimasu</div>
+                    <div class="vocab-meaning">Belajar</div>
+                    <div class="vocab-example">Kata kerja untuk aktivitas belajar</div>
+                </div>
+
+                <div class="vocab-card">
+                    <div class="vocab-japanese">たべます</div>
+                    <div class="vocab-reading">tabemasu</div>
+                    <div class="vocab-meaning">Makan</div>
+                    <div class="vocab-example">Kata kerja untuk aktivitas makan</div>
+                </div>
+
+                <div class="vocab-card">
+                    <div class="vocab-japanese">よみます</div>
+                    <div class="vocab-reading">yomimasu</div>
+                    <div class="vocab-meaning">Membaca</div>
+                    <div class="vocab-example">Kata kerja untuk aktivitas membaca</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Grammar Section -->
+    <section class="section grammar-section" id="grammar">
+        <div class="container">
+            <h2 class="section-title">
+                <i class="fas fa-language"></i>
+                Tata Bahasa
+            </h2>
+
+            <div class="grammar-item">
+                <h3 class="grammar-pattern">Kata Tunjuk Tempat: ここ・そこ・あそこ</h3>
+                <p class="grammar-explanation">
+                    Kata tunjuk tempat digunakan untuk menunjukkan lokasi berdasarkan jarak dari pembicara dan lawan bicara, sama seperti kata tunjuk benda.
+                </p>
+                <div class="grammar-examples">
+                    <div class="example-item">
+                        <div class="example-japanese">ここ は きょうしつ です。</div>
+                        <div class="example-reading">Koko wa kyoushitsu desu.</div>
+                        <div class="example-meaning">Di sini adalah ruang kelas (tempat pembicara berada).</div>
+                    </div>
+                    <div class="example-item">
+                        <div class="example-japanese">そこ は しょくどう です。</div>
+                        <div class="example-reading">Soko wa shokudou desu.</div>
+                        <div class="example-meaning">Di sana adalah kantin (tempat lawan bicara berada).</div>
+                    </div>
+                    <div class="example-item">
+                        <div class="example-japanese">あそこ は としょかん です。</div>
+                        <div class="example-reading">Asoko wa toshokan desu.</div>
+                        <div class="example-meaning">Di sana adalah perpustakaan (tempat jauh dari keduanya).</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="grammar-item">
+                <h3 class="grammar-pattern">Partikel で (de) untuk Tempat Aktivitas</h3>
+                <p class="grammar-explanation">
+                    Partikel "de" digunakan untuk menunjukkan tempat di mana suatu aktivitas dilakukan. Partikel ini diletakkan setelah kata tempat.
+                </p>
+                <div class="grammar-examples">
+                    <div class="example-item">
+                        <div class="example-japanese">きょうしつ で べんきょうします。</div>
+                        <div class="example-reading">Kyoushitsu de benkyou shimasu.</div>
+                        <div class="example-meaning">Saya belajar di ruang kelas.</div>
+                    </div>
+                    <div class="example-item">
+                        <div class="example-japanese">しょくどう で たべます。</div>
+                        <div class="example-reading">Shokudou de tabemasu.</div>
+                        <div class="example-meaning">Saya makan di kantin.</div>
+                    </div>
+                    <div class="example-item">
+                        <div class="example-japanese">としょかん で ほん を よみます。</div>
+                        <div class="example-reading">Toshokan de hon o yomimasu.</div>
+                        <div class="example-meaning">Saya membaca buku di perpustakaan.</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="grammar-item">
+                <h3 class="grammar-pattern">Pola Kalimat dengan Kata Kerja</h3>
+                <p class="grammar-explanation">
+                    Dalam bab ini kita mulai menggunakan kata kerja. Pola kalimatnya adalah: [Subjek] wa [Tempat] de [Kata Kerja]. Partikel "o" digunakan untuk menandai objek langsung.
+                </p>
+                <div class="grammar-examples">
+                    <div class="example-item">
+                        <div class="example-japanese">わたし は きょうしつ で べんきょうします。</div>
+                        <div class="example-reading">Watashi wa kyoushitsu de benkyou shimasu.</div>
+                        <div class="example-meaning">Saya belajar di ruang kelas.</div>
+                    </div>
+                    <div class="example-item">
+                        <div class="example-japanese">がくせい は としょかん で ほん を よみます。</div>
+                        <div class="example-reading">Gakusei wa toshokan de hon o yomimasu.</div>
+                        <div class="example-meaning">Pelajar membaca buku di perpustakaan.</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Conversation Section -->
+    <section class="section conversation-section" id="conversation">
+        <div class="container">
+            <h2 class="section-title">
+                <i class="fas fa-comments"></i>
+                Percakapan
+            </h2>
+
+            <div class="conversation-card">
+                <div class="dialogue-item">
+                    <div class="speaker">
+                        <i class="fas fa-user"></i>
+                        Yamada
+                    </div>
+                    <div class="dialogue-text">すみません、しょくどう は どこ ですか。</div>
+                    <div class="dialogue-reading">Sumimasen, shokudou wa doko desu ka?</div>
+                    <div class="dialogue-meaning">Permisi, kantin di mana?</div>
+                </div>
+
+                <div class="dialogue-item">
+                    <div class="speaker">
+                        <i class="fas fa-user"></i>
+                        Tanaka
+                    </div>
+                    <div class="dialogue-text">しょくどう は あそこ です。</div>
+                    <div class="dialogue-reading">Shokudou wa asoko desu.</div>
+                    <div class="dialogue-meaning">Kantin ada di sana.</div>
+                </div>
+
+                <div class="dialogue-item">
+                    <div class="speaker">
+                        <i class="fas fa-user"></i>
+                        Yamada
+                    </div>
+                    <div class="dialogue-text">たなかさん は どこ で べんきょうします か。</div>
+                    <div class="dialogue-reading">Tanaka-san wa doko de benkyou shimasu ka?</div>
+                    <div class="dialogue-meaning">Tanaka belajar di mana?</div>
+                </div>
+
+                <div class="dialogue-item">
+                    <div class="speaker">
+                        <i class="fas fa-user"></i>
+                        Tanaka
+                    </div>
+                    <div class="dialogue-text">わたし は きょうしつ で べんきょうします。</div>
+                    <div class="dialogue-reading">Watashi wa kyoushitsu de benkyou shimasu.</div>
+                    <div class="dialogue-meaning">Saya belajar di ruang kelas.</div>
+                </div>
+
+                <div class="dialogue-item">
+                    <div class="speaker">
+                        <i class="fas fa-user"></i>
+                        Yamada
+                    </div>
+                    <div class="dialogue-text">としょかん で なに を します か。</div>
+                    <div class="dialogue-reading">Toshokan de nani o shimasu ka?</div>
+                    <div class="dialogue-meaning">Apa yang Anda lakukan di perpustakaan?</div>
+                </div>
+
+                <div class="dialogue-item">
+                    <div class="speaker">
+                        <i class="fas fa-user"></i>
+                        Tanaka
+                    </div>
+                    <div class="dialogue-text">としょかん で ほん を よみます。</div>
+                    <div class="dialogue-reading">Toshokan de hon o yomimasu.</div>
+                    <div class="dialogue-meaning">Saya membaca buku di perpustakaan.</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Practice Section -->
+    <section class="section practice-section" id="practice">
+        <div class="container">
+            <h2 class="section-title">
+                <i class="fas fa-pencil-alt"></i>
+                Latihan
+            </h2>
+
+            <div class="practice-card">
+                <h3 class="practice-question">1. Bagaimana mengatakan "Saya belajar di ruang kelas" dalam bahasa Jepang?</h3>
+                <div class="practice-options">
+                    <div class="practice-option">わたし は きょうしつ です。</div>
+                    <div class="practice-option" data-correct="true">わたし は きょうしつ で べんきょうします。</div>
+                    <div class="practice-option">きょうしつ で わたし です。</div>
+                    <div class="practice-option">きょうしつ は べんきょうします。</div>
+                </div>
+                <div class="practice-feedback"></div>
+            </div>
+
+            <div class="practice-card">
+                <h3 class="practice-question">2. Manakah partikel yang tepat untuk menunjukkan tempat aktivitas?</h3>
+                <div class="practice-options">
+                    <div class="practice-option">は (wa)</div>
+                    <div class="practice-option">の (no)</div>
+                    <div class="practice-option" data-correct="true">で (de)</div>
+                    <div class="practice-option">を (o)</div>
+                </div>
+                <div class="practice-feedback"></div>
+            </div>
+
+            <div class="practice-card">
+                <h3 class="practice-question">3. Pilih kalimat yang tepat: Anda ingin mengatakan "Saya membaca buku di perpustakaan"</h3>
+                <div class="practice-options">
+                    <div class="practice-option">としょかん は ほん を よみます。</div>
+                    <div class="practice-option">ほん で としょかん を よみます。</div>
+                    <div class="practice-option" data-correct="true">としょかん で ほん を よみます。</div>
+                    <div class="practice-option">よみます で としょかん を ほん。</div>
+                </div>
+                <div class="practice-feedback"></div>
+            </div>
+
+            <div class="practice-card">
+                <h3 class="practice-question">4. Kata mana yang digunakan untuk menanyakan "di mana"?</h3>
+                <div class="practice-options">
+                    <div class="practice-option">だれ (dare)</div>
+                    <div class="practice-option">なん (nan)</div>
+                    <div class="practice-option" data-correct="true">どこ (doko)</div>
+                    <div class="practice-option">いつ (itsu)</div>
+                </div>
+                <div class="practice-feedback"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Resources Section -->
+    <section class="section resources-section" id="resources">
+        <div class="container">
+            <h2 class="section-title">
+                <i class="fas fa-link"></i>
+                Sumber Belajar
+            </h2>
+
+            <div class="resources-grid">
+                <div class="resource-card">
+                    <div class="resource-icon">
+                        <i class="fas fa-file-pdf"></i>
+                    </div>
+                    <h3 class="resource-title">PDF Materi</h3>
+                    <p class="resource-description">Unduh materi bab 3 dalam format PDF untuk belajar offline</p>
+                    <a href="#" class="btn btn-secondary">Unduh</a>
+                </div>
+
+                <div class="resource-card">
+                    <div class="resource-icon">
+                        <i class="fas fa-headphones"></i>
+                    </div>
+                    <h3 class="resource-title">Audio Percakapan</h3>
+                    <p class="resource-description">Dengarkan pengucapan kosakata dan percakapan dengan audio</p>
+                    <a href="#" class="btn btn-secondary">Dengarkan</a>
+                </div>
+
+                <div class="resource-card">
+                    <div class="resource-icon">
+                        <i class="fas fa-video"></i>
+                    </div>
+                    <h3 class="resource-title">Video Penjelasan</h3>
+                    <p class="resource-description">Tonton video penjelasan tata bahasa dan contoh penggunaan</p>
+                    <a href="#" class="btn btn-secondary">Tonton</a>
+                </div>
+            </div>
+            <div class="nav-container">
+                <a href="/03_buku/minna-no-nihongo-1/bab-2" class="btn btn-outline" style="margin-right: 10px;">
+                    <i class="fas fa-arrow-left"></i> Bab 2
+                </a>
+                <div>
+                    <a href="/03_buku/minna-no-nihongo-1/bab-4" class="btn btn-primary">
+                        Bab 4 <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>Nihongopedia</h3>
+                    <p style="color: var(--text-secondary); margin-bottom: 20px;">
+                        Platform belajar bahasa Jepang terbaik untuk pemula hingga mahir.
+                    </p>
+                    <div class="social-links">
+                        <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+
+                <div class="footer-column">
+                    <h3>Menu</h3>
+                    <ul class="footer-links">
+                        <li><a href="/01_beranda">Beranda</a></li>
+                        <li><a href="/02_belajar">Belajar</a></li>
+                        <li><a href="/03_buku">Buku</a></li>
+                        <li><a href="/04_materi">Materi</a></li>
+                        <li><a href="/05_donasi">Donasi</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-column">
+                    <h3>Bab 3</h3>
+                    <ul class="footer-links">
+                        <li><a href="#vocabulary">Kosakata</a></li>
+                        <li><a href="#grammar">Tata Bahasa</a></li>
+                        <li><a href="#conversation">Percakapan</a></li>
+                        <li><a href="#practice">Latihan</a></li>
+                        <li><a href="#resources">Sumber Belajar</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-column">
+                    <h3>Kontak & Donasi</h3>
+                    <ul class="footer-links">
+                        <li><i class="fas fa-envelope"></i> nihongopedia123@gmail.com</li>
+                        <li><i class="fas fa-heart"></i> <a href="/05_donasi">Dukung Kami</a></li>
+                        <li><i class="fas fa-map-marker-alt"></i> Indonesia</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2024 Nihongopedia. All rights reserved. - Platform Belajar Bahasa Jepang Gratis</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Go to Top Button -->
+    <button class="go-to-top-btn" id="goToTopBtn">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <script src="/00_assets/js/minna-no-nihongo-1.js"></script>
+    <script>
+        // Go to Top Functionality
+        const goToTopBtn = document.getElementById('go-to-top');
+
+        // Show/hide button based on scroll position
+        window.addEventListener('scroll', function() {
+            if (window.pageYOffset > 300) {
+                goToTopBtn.classList.add('show');
+            } else {
+                goToTopBtn.classList.remove('show');
+            }
+        });
+
+        // Smooth scroll to top
+        goToTopBtn.addEventListener('click', function() {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+    </script>
+</body>
+
+</html>
