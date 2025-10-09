@@ -874,14 +874,6 @@ footer {
         display: block;
     }
 
-    .chapter-meta {
-        display: flex;
-        flex-direction: column;
-        gap: 15px;
-        align-items: center;      /* horizontal center */
-        justify-content: center;  /* vertical center */
-    } 
-    
     .chapter-title {
         font-size: 28px;
     }
@@ -927,14 +919,6 @@ footer {
     .practice-options {
         grid-template-columns: 1fr;
     }
-
-    .chapter-meta {
-        display: flex;
-        flex-direction: column;
-        gap: 15px;
-        align-items: center;      /* horizontal center */
-        justify-content: center;  /* vertical center */
-    }    
 
     .breadcrumb-list {
         overflow-x: auto;
