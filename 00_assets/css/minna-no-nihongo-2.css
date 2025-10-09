@@ -1,5 +1,5 @@
 :root {
-    /* Light Theme */
+    /* Light Theme - Minna no Nihongo 2 */
     --primary: #DC143C;
     --secondary: #FFFFFF;
     --accent: #C70039;
@@ -15,7 +15,7 @@
 }
 
 [data-theme="dark"] {
-    /* Dark Theme */
+    /* Dark Theme - Minna no Nihongo 2 */
     --primary: #DC143C;
     --secondary: #1a1a1a;
     --accent: #FF6B8B;
@@ -158,6 +158,19 @@ header {
     cursor: pointer;
 }
 
+/* Level Badge */
+.level-badge {
+    display: inline-block;
+    background-color: var(--level-badge);
+    color: white;
+    padding: 4px 12px;
+    border-radius: 12px;
+    font-size: 12px;
+    font-weight: 600;
+    margin-left: 10px;
+    vertical-align: middle;
+}
+
 /* Breadcrumb Styles */
 .breadcrumb {
     background-color: var(--bg-secondary);
@@ -294,7 +307,7 @@ header {
 .btn-primary:hover {
     background-color: var(--accent);
     transform: translateY(-2px);
-    box-shadow: 0 5px 15px rgba(220, 20, 60, 0.3);
+    box-shadow: 0 5px 15px rgba(46, 139, 87, 0.3);
 }
 
 .btn-secondary {
@@ -357,6 +370,7 @@ header {
     padding: 25px;
     box-shadow: 0 5px 15px var(--shadow);
     transition: transform 0.3s;
+    position: relative;
 }
 
 .vocab-card:hover {
@@ -389,6 +403,18 @@ header {
     font-style: italic;
     border-left: 3px solid var(--primary);
     padding-left: 15px;
+}
+
+.vocab-level {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background-color: var(--level-badge);
+    color: white;
+    padding: 2px 8px;
+    border-radius: 4px;
+    font-size: 10px;
+    font-weight: 600;
 }
 
 /* Grammar Section */
@@ -500,140 +526,9 @@ header {
     font-style: italic;
 }
 
-/* Reference Section */
-.reference-section {
-    background-color: var(--bg-primary);
-    padding: 60px 0;
-}
-
-.reference-content {
-    margin-bottom: 40px;
-}
-
-.reference-content h3 {
-    color: var(--text-primary);
-    font-size: 1.5rem;
-    font-weight: 600;
-    margin-bottom: 20px;
-    border-left: 4px solid var(--primary-color);
-}
-
-.reference-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-    gap: 15px;
-    margin-top: 20px;
-}
-
-.reference-item {
-    background: var(--bg-secondary);
-    padding: 15px;
-    border-radius: 8px;
-    text-align: center;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
-    border: 1px solid var(--border-color);
-}
-
-.reference-item:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-}
-
-.reference-japanese {
-    font-size: 1.2rem;
-    font-weight: 600;
-    color: var(--text-primary);
-    margin-bottom: 5px;
-}
-
-.reference-reading {
-    font-size: 0.9rem;
-    color: var(--text-secondary);
-    font-style: italic;
-}
-
-/* Info Box Styles */
-.info-box {
-    background: var(--bg-secondary);
-    border-radius: 12px;
-    padding: 20px;
-    margin-bottom: 20px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-    border: 1px solid var(--border-color);
-}
-
-.info-title {
-    display: flex;
-    align-items: center;
-    margin-bottom: 15px;
-    color: var(--primary-color);
-    font-weight: 600;
-    font-size: 1.1rem;
-}
-
-.info-title i {
-    margin-right: 10px;
-    font-size: 1.2rem;
-}
-
-.info-content {
-    padding-left: 10px;
-}
-
-.info-japanese {
-    font-size: 1.1rem;
-    font-weight: 500;
-    color: var(--text-primary);
-    margin-bottom: 5px;
-}
-
-.info-reading {
-    font-size: 0.95rem;
-    color: var(--text-secondary);
-    font-style: italic;
-    margin-bottom: 5px;
-}
-
-.info-meaning {
-    font-size: 0.95rem;
-    color: var(--text-secondary);
-    line-height: 1.5;
-}
-
-/* Responsive Design */
-@media (max-width: 768px) {
-    .reference-grid {
-        grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
-        gap: 10px;
-    }
-    
-    .reference-item {
-        padding: 12px 8px;
-    }
-    
-    .reference-japanese {
-        font-size: 1.1rem;
-    }
-    
-    .info-box {
-        padding: 15px;
-    }
-}
-
-@media (max-width: 480px) {
-    .reference-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
-    
-    .reference-section {
-        padding: 40px 0;
-    }
-}
-
 /* Practice Section */
 .practice-section {
-    background-color: var(--bg-secondary);
+    background-color: var(--bg-primary);
 }
 
 .practice-card {
@@ -699,7 +594,7 @@ header {
 
 /* Resources Section */
 .resources-section {
-    background-color: var(--bg-primary);
+    background-color: var(--bg-secondary);
     text-align: center;
 }
 
@@ -726,7 +621,7 @@ header {
 .resource-icon {
     width: 60px;
     height: 60px;
-    background-color: rgba(220, 20, 60, 0.1);
+    background-color: rgba(46, 139, 87, 0.1);
     border-radius: 50%;
     display: flex;
     align-items: center;

@@ -1,0 +1,1787 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="/06_gambar/nihongopedia.PNG" type="image/png">
+    <title>Minna no Nihongo 2 - Nihongopedia</title>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            /* Light Theme */
+            --primary: #DC143C;
+            --secondary: #FFFFFF;
+            --accent: #C70039;
+            --text-primary: #333333;
+            --text-secondary: #666666;
+            --bg-primary: #FFFFFF;
+            --bg-secondary: #F8F8F8;
+            --bg-card: #FFFFFF;
+            --border: #E0E0E0;
+            --shadow: rgba(0, 0, 0, 0.1);
+            --success: #28a745;
+            --warning: #ffc107;
+        }
+
+        [data-theme="dark"] {
+            /* Dark Theme */
+            --primary: #DC143C;
+            --secondary: #1a1a1a;
+            --accent: #FF6B8B;
+            --text-primary: #FFFFFF;
+            --text-secondary: #CCCCCC;
+            --bg-primary: #121212;
+            --bg-secondary: #1E1E1E;
+            --bg-card: #252525;
+            --border: #444444;
+            --shadow: rgba(0, 0, 0, 0.3);
+            --success: #34D399;
+            --warning: #FBBF24;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            transition: background-color 0.3s, color 0.3s, border-color 0.3s;
+        }
+
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: var(--bg-primary);
+            color: var(--text-primary);
+            line-height: 1.6;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header Styles */
+        header {
+            background-color: var(--bg-primary);
+            box-shadow: 0 2px 10px var(--shadow);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 0;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo-icon {
+            color: var(--primary);
+            font-size: 24px;
+        }
+
+        .logo-text {
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--primary);
+        }
+
+        .logo-image {
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            gap: 30px;
+        }
+
+        .nav-link {
+            text-decoration: none;
+            color: var(--text-primary);
+            font-weight: 500;
+            position: relative;
+            padding: 5px 0;
+        }
+
+        .nav-link:hover {
+            color: var(--primary);
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: var(--primary);
+            transition: width 0.3s;
+        }
+
+        .nav-link:hover::after {
+            width: 100%;
+        }
+
+        .header-actions {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .theme-toggle {
+            background: none;
+            border: none;
+            color: var(--text-primary);
+            cursor: pointer;
+            font-size: 20px;
+            padding: 5px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .theme-toggle:hover {
+            background-color: var(--bg-secondary);
+        }
+
+        .mobile-menu-toggle {
+            display: none;
+            background: none;
+            border: none;
+            color: var(--text-primary);
+            font-size: 24px;
+            cursor: pointer;
+        }
+
+        /* Breadcrumb Styles */
+        .breadcrumb {
+            background-color: var(--bg-secondary);
+            padding: 15px 0;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .breadcrumb-list {
+            display: flex;
+            align-items: center;
+            list-style: none;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+
+        .breadcrumb-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 14px;
+        }
+
+        .breadcrumb-item:not(:last-child)::after {
+            content: '/';
+            color: var(--text-secondary);
+            margin-left: 10px;
+        }
+
+        .breadcrumb-item a {
+            text-decoration: none;
+            color: var(--text-secondary);
+            transition: color 0.3s;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .breadcrumb-item a:hover {
+            color: var(--primary);
+        }
+
+        .breadcrumb-item.active span {
+            color: var(--primary);
+            font-weight: 600;
+        }
+
+        .breadcrumb-item .fas.fa-home {
+            font-size: 12px;
+        }
+
+        /* Hero Section */
+        .hero {
+            padding: 60px 0;
+            background: linear-gradient(135deg, var(--bg-primary) 0%, var(--bg-secondary) 100%);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 50%;
+            height: 100%;
+            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="none"><path d="M0,0 L100,0 L100,100 Z" fill="%23DC143C" opacity="0.05"/></svg>') no-repeat;
+            background-size: cover;
+        }
+
+        .hero-content {
+            display: flex;
+            align-items: center;
+            gap: 40px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .book-cover {
+            flex: 0 0 300px;
+            text-align: center;
+        }
+
+        .book-cover-img {
+            width: 100%;
+            max-width: 250px;
+            height: 350px;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--accent) 100%);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: 700;
+            font-size: 24px;
+            text-align: center;
+            padding: 20px;
+            box-shadow: 0 10px 30px var(--shadow);
+            margin: 0 auto;
+        }
+
+        .hero-text {
+            flex: 1;
+        }
+
+        .hero-title {
+            font-size: 48px;
+            font-weight: 700;
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+
+        .hero-title span {
+            color: var(--primary);
+        }
+
+        .hero-description {
+            font-size: 18px;
+            color: var(--text-secondary);
+            margin-bottom: 30px;
+            max-width: 600px;
+        }
+
+        /* CTA Buttons */
+        .cta-buttons {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 12px 24px;
+            border-radius: 8px;
+            font-weight: 600;
+            text-decoration: none;
+            cursor: pointer;
+            transition: all 0.3s;
+            border: none;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+        }
+
+        .btn-primary {
+            background-color: var(--primary);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background-color: var(--accent);
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(220, 20, 60, 0.3);
+        }
+
+        .btn-secondary {
+            background-color: transparent;
+            color: var(--primary);
+            border: 2px solid var(--primary);
+        }
+
+        .btn-secondary:hover {
+            background-color: var(--primary);
+            color: white;
+            transform: translateY(-2px);
+        }
+
+        .btn-outline {
+            background-color: transparent;
+            color: var(--text-primary);
+            border: 2px solid var(--border);
+        }
+
+        .btn-outline:hover {
+            background-color: var(--bg-secondary);
+            border-color: var(--primary);
+        }
+
+        /* Section Styles */
+        .section {
+            padding: 80px 0;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 36px;
+            font-weight: 700;
+            margin-bottom: 50px;
+            color: var(--text-primary);
+        }
+
+        .section-title span {
+            color: var(--primary);
+        }
+
+        /* Book Info Section */
+        .book-info-section {
+            background-color: var(--bg-secondary);
+        }
+
+        .book-stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+            margin-bottom: 50px;
+        }
+
+        .book-stat {
+            background-color: var(--bg-card);
+            border-radius: 10px;
+            padding: 30px;
+            text-align: center;
+            box-shadow: 0 5px 15px var(--shadow);
+        }
+
+        .stat-number {
+            font-size: 48px;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 10px;
+        }
+
+        .stat-label {
+            color: var(--text-secondary);
+            font-size: 16px;
+        }
+
+        .book-details {
+            background-color: var(--bg-card);
+            border-radius: 15px;
+            padding: 40px;
+            box-shadow: 0 10px 30px var(--shadow);
+        }
+
+        .detail-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-bottom: 30px;
+        }
+
+        .detail-item {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .detail-label {
+            font-weight: 600;
+            color: var(--text-secondary);
+            font-size: 14px;
+        }
+
+        .detail-value {
+            font-size: 16px;
+            color: var(--text-primary);
+        }
+
+        /* Chapters Section */
+        .chapters-section {
+            background-color: var(--bg-primary);
+        }
+
+        .chapters-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .chapter-card {
+            background-color: var(--bg-card);
+            border-radius: 10px;
+            padding: 30px;
+            box-shadow: 0 5px 15px var(--shadow);
+            transition: transform 0.3s;
+            text-decoration: none;
+            color: inherit;
+            display: block;
+        }
+
+        .chapter-card:hover {
+            transform: translateY(-5px);
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .chapter-header {
+            display: flex;
+            justify-content: between;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .chapter-number {
+            width: 50px;
+            height: 50px;
+            background-color: var(--primary);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 18px;
+        }
+
+        .chapter-difficulty {
+            padding: 5px 12px;
+            background-color: var(--bg-secondary);
+            border-radius: 15px;
+            font-size: 12px;
+            font-weight: 600;
+        }
+
+        .chapter-difficulty.easy {
+            color: var(--success);
+            background-color: rgba(40, 167, 69, 0.1);
+        }
+
+        .chapter-difficulty.medium {
+            color: var(--warning);
+            background-color: rgba(255, 193, 7, 0.1);
+        }
+
+        .chapter-difficulty.hard {
+            color: #dc3545;
+            background-color: rgba(220, 53, 69, 0.1);
+        }
+
+        .chapter-title {
+            font-size: 20px;
+            font-weight: 600;
+            margin-bottom: 15px;
+            color: var(--text-primary);
+        }
+
+        .chapter-topics {
+            list-style: none;
+            margin-bottom: 20px;
+        }
+
+        .chapter-topics li {
+            padding: 5px 0;
+            color: var(--text-secondary);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .chapter-topics li i {
+            color: var(--success);
+            font-size: 12px;
+        }
+
+        .chapter-stats {
+            display: flex;
+            justify-content: space-between;
+            color: var(--text-secondary);
+            font-size: 14px;
+            border-top: 1px solid var(--border);
+            padding-top: 15px;
+        }
+
+        /* Resources Section */
+        .resources-section {
+            background-color: var(--bg-secondary);
+        }
+
+        .resources-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .resource-card {
+            background-color: var(--bg-card);
+            border-radius: 10px;
+            padding: 30px;
+            box-shadow: 0 5px 15px var(--shadow);
+            text-align: center;
+            transition: transform 0.3s;
+        }
+
+        .resource-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .resource-icon {
+            width: 60px;
+            height: 60px;
+            background-color: rgba(220, 20, 60, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+            color: var(--primary);
+            font-size: 24px;
+        }
+
+        .resource-title {
+            font-size: 20px;
+            font-weight: 600;
+            margin-bottom: 15px;
+            color: var(--text-primary);
+        }
+
+        .resource-description {
+            color: var(--text-secondary);
+            margin-bottom: 20px;
+        }
+
+        /* Study Plan Section */
+        .study-plan-section {
+            text-align: center;
+        }
+
+        .study-timeline {
+            max-width: 800px;
+            margin: 0 auto 50px;
+            position: relative;
+        }
+
+        .study-timeline::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 4px;
+            height: 100%;
+            background-color: var(--primary);
+            opacity: 0.3;
+        }
+
+        .timeline-item {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 40px;
+            position: relative;
+        }
+
+        .timeline-item:nth-child(odd) {
+            flex-direction: row;
+        }
+
+        .timeline-item:nth-child(even) {
+            flex-direction: row-reverse;
+        }
+
+        .timeline-content {
+            flex: 1;
+            padding: 20px;
+            background-color: var(--bg-card);
+            border-radius: 10px;
+            box-shadow: 0 5px 15px var(--shadow);
+        }
+
+        .timeline-week {
+            width: 80px;
+            height: 80px;
+            background-color: var(--primary);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 18px;
+            margin: 0 30px;
+            position: relative;
+            z-index: 2;
+            flex-shrink: 0;
+        }
+
+        .timeline-title {
+            font-size: 18px;
+            font-weight: 600;
+            margin-bottom: 10px;
+            color: var(--text-primary);
+        }
+
+        .timeline-desc {
+            color: var(--text-secondary);
+            font-size: 14px;
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--bg-secondary);
+            padding: 60px 0 30px;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-column h3 {
+            font-size: 18px;
+            font-weight: 600;
+            margin-bottom: 20px;
+            color: var(--text-primary);
+        }
+
+        .footer-links {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 10px;
+        }
+
+        .footer-links a {
+            text-decoration: none;
+            color: var(--text-secondary);
+            transition: color 0.3s;
+        }
+
+        .footer-links a:hover {
+            color: var(--primary);
+        }
+
+        .social-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .social-link {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background-color: var(--bg-card);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--text-primary);
+            text-decoration: none;
+            transition: all 0.3s;
+        }
+
+        .social-link:hover {
+            background-color: var(--primary);
+            color: white;
+            transform: translateY(-3px);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid var(--border);
+            color: var(--text-secondary);
+            font-size: 14px;
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 992px) {
+            .hero-content {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .book-cover {
+                flex: 0 0 auto;
+                margin-bottom: 30px;
+            }
+
+            .hero-title {
+                font-size: 36px;
+            }
+
+            .hero::before {
+                width: 100%;
+                opacity: 0.1;
+            }
+
+            .study-timeline::before {
+                left: 30px;
+            }
+
+            .timeline-item {
+                flex-direction: row !important;
+                justify-content: flex-start;
+            }
+
+            .timeline-week {
+                margin: 0 20px 0 0;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .nav-menu {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                background-color: var(--bg-primary);
+                flex-direction: column;
+                padding: 20px;
+                box-shadow: 0 5px 10px var(--shadow);
+                gap: 15px;
+            }
+
+            .nav-menu.active {
+                display: flex;
+            }
+
+            .mobile-menu-toggle {
+                display: block;
+            }
+
+            .section-title {
+                font-size: 28px;
+            }
+
+            .hero-title {
+                font-size: 32px;
+            }
+
+            .cta-buttons {
+                justify-content: center;
+            }
+
+            .book-stats {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .chapters-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .breadcrumb {
+                padding: 10px 0;
+            }
+            
+            .breadcrumb-list {
+                gap: 5px;
+            }
+            
+            .breadcrumb-item {
+                font-size: 12px;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .resources-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .book-stats {
+                grid-template-columns: 1fr;
+            }
+
+            .detail-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .timeline-content {
+                padding: 15px;
+            }
+
+            .breadcrumb-list {
+                overflow-x: auto;
+                white-space: nowrap;
+                flex-wrap: nowrap;
+                padding-bottom: 5px;
+                -webkit-overflow-scrolling: touch;
+            }
+            
+            .breadcrumb-item {
+                flex-shrink: 0;
+            }
+        }
+
+        /* TV Screen Optimization */
+        @media (min-width: 1920px) {
+            .container {
+                max-width: 1600px;
+            }
+
+            .hero-title {
+                font-size: 64px;
+            }
+
+            .section-title {
+                font-size: 48px;
+            }
+
+            .book-cover-img {
+                max-width: 300px;
+                height: 420px;
+                font-size: 28px;
+            }
+
+            .btn {
+                padding: 18px 32px;
+                font-size: 18px;
+            }
+
+            .stat-number {
+                font-size: 64px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <div class="header-container">
+                <div class="logo">
+                    <div class="logo-icon">
+                        <div class="logo-image" style="background-image: url('/06_gambar/nihongopedia.PNG');"></div>
+                    </div>
+                    <div class="logo-text">Nihongopedia</div>
+                </div>
+
+                <ul class="nav-menu">
+                    <li><a href="/01_beranda" class="nav-link">Beranda</a></li>
+                    <li><a href="/02_belajar" class="nav-link">Belajar</a></li>
+                    <li><a href="/03_buku" class="nav-link">Buku</a></li>
+                    <li><a href="/04_materi" class="nav-link">Materi</a></li>
+                    <li><a href="/05_donasi" class="nav-link">Donasi</a></li>
+                </ul>
+
+                <div class="header-actions">
+                    <button class="theme-toggle" id="theme-toggle">
+                        <i class="fas fa-moon"></i>
+                    </button>
+                    <button class="mobile-menu-toggle" id="mobile-menu-toggle">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Breadcrumb -->
+    <nav class="breadcrumb">
+        <div class="container">
+            <ul class="breadcrumb-list">
+                <li class="breadcrumb-item">
+                    <a href="/01_beranda">
+                        <i class="fas fa-home"></i>
+                        Beranda
+                    </a>
+                </li>
+                <li class="breadcrumb-item">
+                    <a href="/03_buku">Buku</a>
+                </li>
+                <li class="breadcrumb-item">
+                    <a href="/03_buku/minna-no-nihongo-1">Minna 1</a>
+                </li>
+                <li class="breadcrumb-item active">
+                    <span>Minna 2</span>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="container">
+            <div class="hero-content">
+                <div class="book-cover">
+                    <div class="book-cover-img">
+                        Minna no Nihongo 初級 II
+                    </div>
+                </div>
+                <div class="hero-text">
+                    <h1 class="hero-title">Minna no Nihongo <span>Seri 2</span></h1>
+                    <p class="hero-description">
+                        Lanjutan dari Seri 1 untuk tingkat menengah. Pelajari tata bahasa lebih kompleks, 
+                        ekspresi sehari-hari, dan persiapan JLPT N4 dengan metode terstruktur yang sama.
+                    </p>
+                    <div class="cta-buttons">
+                        <a href="#chapters" class="btn btn-primary">
+                            <i class="fas fa-play"></i> Mulai Belajar
+                        </a>
+                        <a href="#resources" class="btn btn-secondary">
+                            <i class="fas fa-download"></i> Download Materi
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Book Info Section -->
+    <section class="section book-info-section" id="info">
+        <div class="container">
+            <h2 class="section-title">Informasi <span>Buku</span></h2>
+            
+            <div class="book-stats">
+                <div class="book-stat">
+                    <div class="stat-number">25</div>
+                    <div class="stat-label">Bab Pembelajaran</div>
+                </div>
+                <div class="book-stat">
+                    <div class="stat-number">120+</div>
+                    <div class="stat-label">Materi Pelajaran</div>
+                </div>
+                <div class="book-stat">
+                    <div class="stat-number">N4</div>
+                    <div class="stat-label">Level JLPT</div>
+                </div>
+                <div class="book-stat">
+                    <div class="stat-number">6</div>
+                    <div class="stat-label">Bulan Belajar</div>
+                </div>
+            </div>
+
+            <div class="book-details">
+                <div class="detail-grid">
+                    <div class="detail-item">
+                        <span class="detail-label">Penerbit</span>
+                        <span class="detail-value">3A Corporation</span>
+                    </div>
+                    <div class="detail-item">
+                        <span class="detail-label">Tahun Terbit</span>
+                        <span class="detail-value">1998 (Edisi Revisi)</span>
+                    </div>
+                    <div class="detail-item">
+                        <span class="detail-label">Jumlah Halaman</span>
+                        <span class="detail-value">268 halaman</span>
+                    </div>
+                    <div class="detail-item">
+                        <span class="detail-label">Bahasa</span>
+                        <span class="detail-value">Jepang dengan terjemahan</span>
+                    </div>
+                    <div class="detail-item">
+                        <span class="detail-label">Level</span>
+                        <span class="detail-value">Menengah (JLPT N4)</span>
+                    </div>
+                    <div class="detail-item">
+                        <span class="detail-label">Komponen</span>
+                        <span class="detail-value">Buku utama + terjemahan + audio</span>
+                    </div>
+                </div>
+                
+                <div class="detail-item">
+                    <span class="detail-label">Deskripsi</span>
+                    <p class="detail-value" style="line-height: 1.8;">
+                        Minna no Nihongo Seri 2 melanjutkan pembelajaran dari Seri 1 dengan fokus pada 
+                        pengembangan kemampuan bahasa Jepang tingkat menengah. Buku ini memperkenalkan 
+                        tata bahasa yang lebih kompleks, kosakata lanjutan, dan ekspresi sehari-hari 
+                        yang diperlukan untuk komunikasi yang lebih lancar. Cocok untuk persiapan JLPT N4.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Chapters Section -->
+    <section class="section chapters-section" id="chapters">
+        <div class="container">
+            <h2 class="section-title">Daftar <span>Bab</span></h2>
+            <p style="text-align: center; color: var(--text-secondary); margin-bottom: 50px; max-width: 800px; margin-left: auto; margin-right: auto;">
+                Jelajahi semua 25 bab pembelajaran Minna no Nihongo Seri 2. Setiap bab berisi materi tata bahasa, kosakata, dan latihan lanjutan.
+            </p>
+
+            <div class="chapters-grid">
+                <!-- Bab 26-30: Review dan Penguatan -->
+                <a href="bab-26" class="chapter-card">
+                    <div class="chapter-header">
+                        <div class="chapter-number">26</div>
+                        <div class="chapter-difficulty medium">Menengah</div>
+                    </div>
+                    <h3 class="chapter-title">Review Bentuk Te</h3>
+                    <ul class="chapter-topics">
+                        <li><i class="fas fa-check"></i> Review bentuk te</li>
+                        <li><i class="fas fa-check"></i> Ekspresi permintaan</li>
+                        <li><i class="fas fa-check"></i> Kalimat berurutan</li>
+                    </ul>
+                    <div class="chapter-stats">
+                        <span>6 Materi</span>
+                        <span>45 menit</span>
+                    </div>
+                </a>
+
+                <a href="bab-27" class="chapter-card">
+                    <div class="chapter-header">
+                        <div class="chapter-number">27</div>
+                        <div class="chapter-difficulty medium">Menengah</div>
+                    </div>
+                    <h3 class="chapter-title">Bentuk Nai</h3>
+                    <ul class="chapter-topics">
+                        <li><i class="fas fa-check"></i> Bentuk nai kata kerja</li>
+                        <li><i class="fas fa-check"></i> Larangan dan saran</li>
+                        <li><i class="fas fa-check"></i> Ekspresi kemungkinan</li>
+                    </ul>
+                    <div class="chapter-stats">
+                        <span>7 Materi</span>
+                        <span>50 menit</span>
+                    </div>
+                </a>
+
+                <a href="bab-28" class="chapter-card">
+                    <div class="chapter-header">
+                        <div class="chapter-number">28</div>
+                        <div class="chapter-difficulty medium">Menengah</div>
+                    </div>
+                    <h3 class="chapter-title">Bentuk Ta</h3>
+                    <ul class="chapter-topics">
+                        <li><i class="fas fa-check"></i> Pengalaman dengan koto ga aru</li>
+                        <li><i class="fas fa-check"></i> Pernyataan setelah melakukan</li>
+                        <li><i class="fas fa-check"></i> Ekspresi perubahan</li>
+                    </ul>
+                    <div class="chapter-stats">
+                        <span>6 Materi</span>
+                        <span>55 menit</span>
+                    </div>
+                </a>
+
+                <a href="bab-29" class="chapter-card">
+                    <div class="chapter-header">
+                        <div class="chapter-number">29</div>
+                        <div class="chapter-difficulty medium">Menengah</div>
+                    </div>
+                    <h3 class="chapter-title">Bentuk Potensial</h3>
+                    <ul class="chapter-topics">
+                        <li><i class="fas fa-check"></i> Bentuk potensial kata kerja</li>
+                        <li><i class="fas fa-check"></i> Menyatakan kemampuan</li>
+                        <li><i class="fas fa-check"></i> Ekspresi kemungkinan</li>
+                    </ul>
+                    <div class="chapter-stats">
+                        <span>7 Materi</span>
+                        <span>60 menit</span>
+                    </div>
+                </a>
+
+                <a href="bab-30" class="chapter-card">
+                    <div class="chapter-header">
+                        <div class="chapter-number">30</div>
+                        <div class="chapter-difficulty medium">Menengah</div>
+                    </div>
+                    <h3 class="chapter-title">Bentuk Pasif</h3>
+                    <ul class="chapter-topics">
+                        <li><i class="fas fa-check"></i> Kalimat pasif sederhana</li>
+                        <li><i class="fas fa-check"></i> Penderitaan pasif</li>
+                        <li><i class="fas fa-check"></i> Konjugasi pasif</li>
+                    </ul>
+                    <div class="chapter-stats">
+                        <span>8 Materi</span>
+                        <span>65 menit</span>
+                    </div>
+                </a>
+
+                <!-- Bab 31-35: Tata Bahasa Lanjut -->
+                <a href="bab-31" class="chapter-card">
+                    <div class="chapter-header">
+                        <div class="chapter-number">31</div>
+                        <div class="chapter-difficulty hard">Sulit</div>
+                    </div>
+                    <h3 class="chapter-title">Bentuk Kausatif</h3>
+                    <ul class="chapter-topics">
+                        <li><i class="fas fa-check"></i> Kalimat kausatif</li>
+                        <li><i class="fas fa-check"></i> Menyuruh dan mengizinkan</li>
+                        <li><i class="fas fa-check"></i> Konjugasi kausatif</li>
+                    </ul>
+                    <div class="chapter-stats">
+                        <span>8 Materi</span>
+                        <span>70 menit</span>
+                    </div>
+                </a>
+
+                <a href="bab-32" class="chapter-card">
+                    <div class="chapter-header">
+                        <div class="chapter-number">32</div>
+                        <div class="chapter-difficulty hard">Sulit</div>
+                    </div>
+                    <h3 class="chapter-title">Bentuk Honorifik</h3>
+                    <ul class="chapter-topics">
+                        <li><i class="fas fa-check"></i> Bahasa sopan (keigo)</li>
+                        <li><i class="fas fa-check"></i> Sonkeigo</li>
+                        <li><i class="fas fa-check"></i> Kenjougo</li>
+                    </ul>
+                    <div class="chapter-stats">
+                        <span>9 Materi</span>
+                        <span>75 menit</span>
+                    </div>
+                </a>
+
+                <a href="bab-33" class="chapter-card">
+                    <div class="chapter-header">
+                        <div class="chapter-number">33</div>
+                        <div class="chapter-difficulty hard">Sulit</div>
+                    </div>
+                    <h3 class="chapter-title">Kondisional Ba dan Tara</h3>
+                    <ul class="chapter-topics">
+                        <li><i class="fas fa-check"></i> Bentuk ba</li>
+                        <li><i class="fas fa-check"></i> Bentuk tara</li>
+                        <li><i class="fas fa-check"></i> Kalimat pengandaian</li>
+                    </ul>
+                    <div class="chapter-stats">
+                        <span>7 Materi</span>
+                        <span>65 menit</span>
+                    </div>
+                </a>
+
+                <a href="bab-34" class="chapter-card">
+                    <div class="chapter-header">
+                        <div class="chapter-number">34</div>
+                        <div class="chapter-difficulty hard">Sulit</div>
+                    </div>
+                    <h3 class="chapter-title">Bentuk Kausatif-Pasif</h3>
+                    <ul class="chapter-topics">
+                        <li><i class="fas fa-check"></i> Kalimat kausatif-pasif</li>
+                        <li><i class="fas fa-check"></i> Ekspresi dipaksa</li>
+                        <li><i class="fas fa-check"></i> Konjugasi kompleks</li>
+                    </ul>
+                    <div class="chapter-stats">
+                        <span>8 Materi</span>
+                        <span>70 menit</span>
+                    </div>
+                </a>
+
+                <a href="bab-35" class="chapter-card">
+                    <div class="chapter-header">
+                        <div class="chapter-number">35</div>
+                        <div class="chapter-difficulty hard">Sulit</div>
+                    </div>
+                    <h3 class="chapter-title">Review Bab 26-34</h3>
+                    <ul class="chapter-topics">
+                        <li><i class="fas fa-check"></i> Review semua bentuk kata kerja</li>
+                        <li><i class="fas fa-check"></i> Latihan terpadu</li>
+                        <li><i class="fas fa-check"></i> Persiapan ujian tengah</li>
+                    </ul>
+                    <div class="chapter-stats">
+                        <span>10 Materi</span>
+                        <span>80 menit</span>
+                    </div>
+                </a>
+
+                <!-- Bab 36-40: Ekspresi Kompleks -->
+                <a href="bab-36" class="chapter-card">
+                    <div class="chapter-header">
+                        <div class="chapter-number">36</div>
+                        <div class="chapter-difficulty hard">Sulit</div>
+                    </div>
+                    <h3 class="chapter-title">Ekspresi Perbandingan</h3>
+                    <ul class="chapter-topics">
+                        <li><i class="fas fa-check"></i> Perbandingan tingkat</li>
+                        <li><i class="fas fa-check"></i> Ekspresi "semakin"</li>
+                        <li><i class="fas fa-check"></i> Perbandingan berganda</li>
+                    </ul>
+                    <div class="chapter-stats">
+                        <span>7 Materi</span>
+                        <span>65 menit</span>
+                    </div>
+                </a>
+
+                <a href="bab-37" class="chapter-card">
+                    <div class="chapter-header">
+                        <div class="chapter-number">37</div>
+                        <div class="chapter-difficulty hard">Sulit</div>
+                    </div>
+                    <h3 class="chapter-title">Ekspresi Sebab-Akibat</h3>
+                    <ul class="chapter-topics">
+                        <li><i class="fas fa-check"></i> Node dan kara</li>
+                        <li><i class="fas fa-check"></i> Ekspresi akibat</li>
+                        <li><i class="fas fa-check"></i> Kalimat sebab-akibat kompleks</li>
+                    </ul>
+                    <div class="chapter-stats">
+                        <span>8 Materi</span>
+                        <span>70 menit</span>
+                    </div>
+                </a>
+
+                <a href="bab-38" class="chapter-card">
+                    <div class="chapter-header">
+                        <div class="chapter-number">38</div>
+                        <div class="chapter-difficulty hard">Sulit</div>
+                    </div>
+                    <h3 class="chapter-title">Ekspresi Kondisi</h3>
+                    <ul class="chapter-topics">
+                        <li><i class="fas fa-check"></i> To, ba, tara, nara</li>
+                        <li><i class="fas fa-check"></i> Perbedaan penggunaan</li>
+                        <li><i class="fas fa-check"></i> Kalimat bersyarat</li>
+                    </ul>
+                    <div class="chapter-stats">
+                        <span>9 Materi</span>
+                        <span>75 menit</span>
+                    </div>
+                </a>
+
+                <a href="bab-39" class="chapter-card">
+                    <div class="chapter-header">
+                        <div class="chapter-number">39</div>
+                        <div class="chapter-difficulty hard">Sulit</div>
+                    </div>
+                    <h3 class="chapter-title">Ekspresi Waktu</h3>
+                    <ul class="chapter-topics">
+                        <li><i class="fas fa-check"></i> Aida ni dan uchi ni</li>
+                        <li><i class="fas fa-check"></i> Tokoro dan bakari</li>
+                        <li><i class="fas fa-check"></i> Ekspresi temporal kompleks</li>
+                    </ul>
+                    <div class="chapter-stats">
+                        <span>7 Materi</span>
+                        <span>70 menit</span>
+                    </div>
+                </a>
+
+                <a href="bab-40" class="chapter-card">
+                    <div class="chapter-header">
+                        <div class="chapter-number">40</div>
+                        <div class="chapter-difficulty hard">Sulit</div>
+                    </div>
+                    <h3 class="chapter-title">Review Ekspresi Kompleks</h3>
+                    <ul class="chapter-topics">
+                        <li><i class="fas fa-check"></i> Review semua ekspresi</li>
+                        <li><i class="fas fa-check"></i> Latihan penerapan</li>
+                        <li><i class="fas fa-check"></i> Percakapan kompleks</li>
+                    </ul>
+                    <div class="chapter-stats">
+                        <span>10 Materi</span>
+                        <span>80 menit</span>
+                    </div>
+                </a>
+
+                <!-- Bab 41-45: Percakapan Lanjutan -->
+                <a href="bab-41" class="chapter-card">
+                    <div class="chapter-header">
+                        <div class="chapter-number">41</div>
+                        <div class="chapter-difficulty hard">Sulit</div>
+                    </div>
+                    <h3 class="chapter-title">Percakapan Formal</h3>
+                    <ul class="chapter-topics">
+                        <li><i class="fas fa-check"></i> Bahasa bisnis</li>
+                        <li><i class="fas fa-check"></i> Presentasi sederhana</li>
+                        <li><i class="fas fa-check"></i> Rapat formal</li>
+                    </ul>
+                    <div class="chapter-stats">
+                        <span>8 Materi</span>
+                        <span>75 menit</span>
+                    </div>
+                </a>
+
+                <a href="bab-42" class="chapter-card">
+                    <div class="chapter-header">
+                        <div class="chapter-number">42</div>
+                        <div class="chapter-difficulty hard">Sulit</div>
+                    </div>
+                    <h3 class="chapter-title">Diskusi dan Debat</h3>
+                    <ul class="chapter-topics">
+                        <li><i class="fas fa-check"></i> Menyampaikan pendapat</li>
+                        <li><i class="fas fa-check"></i> Menyetujui dan menolak</li>
+                        <li><i class="fas fa-check"></i> Diskusi kelompok</li>
+                    </ul>
+                    <div class="chapter-stats">
+                        <span>9 Materi</span>
+                        <span>80 menit</span>
+                    </div>
+                </a>
+
+                <a href="bab-43" class="chapter-card">
+                    <div class="chapter-header">
+                        <div class="chapter-number">43</div>
+                        <div class="chapter-difficulty hard">Sulit</div>
+                    </div>
+                    <h3 class="chapter-title">Presentasi dan Laporan</h3>
+                    <ul class="chapter-topics">
+                        <li><i class="fas fa-check"></i> Struktur presentasi</li>
+                        <li><i class="fas fa-check"></i> Bahasa laporan</li>
+                        <li><i class="fas fa-check"></i> Menyimpulkan informasi</li>
+                    </ul>
+                    <div class="chapter-stats">
+                        <span>8 Materi</span>
+                        <span>75 menit</span>
+                    </div>
+                </a>
+
+                <a href="bab-44" class="chapter-card">
+                    <div class="chapter-header">
+                        <div class="chapter-number">44</div>
+                        <div class="chapter-difficulty hard">Sulit</div>
+                    </div>
+                    <h3 class="chapter-title">Negosiasi dan Persuasi</h3>
+                    <ul class="chapter-topics">
+                        <li><i class="fas fa-check"></i> Bahasa negosiasi</li>
+                        <li><i class="fas fa-check"></i> Meyakinkan orang lain</li>
+                        <li><i class="fas fa-check"></i> Kompromi dan kesepakatan</li>
+                    </ul>
+                    <div class="chapter-stats">
+                        <span>7 Materi</span>
+                        <span>70 menit</span>
+                    </div>
+                </a>
+
+                <a href="bab-45" class="chapter-card">
+                    <div class="chapter-header">
+                        <div class="chapter-number">45</div>
+                        <div class="chapter-difficulty hard">Sulit</div>
+                    </div>
+                    <h3 class="chapter-title">Review Percakapan Lanjutan</h3>
+                    <ul class="chapter-topics">
+                        <li><i class="fas fa-check"></i> Review semua situasi</li>
+                        <li><i class="fas fa-check"></i> Simulasi percakapan</li>
+                        <li><i class="fas fa-check"></i> Ujian lisan</li>
+                    </ul>
+                    <div class="chapter-stats">
+                        <span>10 Materi</span>
+                        <span>85 menit</span>
+                    </div>
+                </a>
+
+                <!-- Bab 46-50: Persiapan JLPT N4 -->
+                <a href="bab-46" class="chapter-card">
+                    <div class="chapter-header">
+                        <div class="chapter-number">46</div>
+                        <div class="chapter-difficulty hard">Sulit</div>
+                    </div>
+                    <h3 class="chapter-title">Persiapan JLPT N4: Tata Bahasa</h3>
+                    <ul class="chapter-topics">
+                        <li><i class="fas fa-check"></i> Review tata bahasa N4</li>
+                        <li><i class="fas fa-check"></i> Pola kalimat penting</li>
+                        <li><i class="fas fa-check"></i> Latihan soal tata bahasa</li>
+                    </ul>
+                    <div class="chapter-stats">
+                        <span>9 Materi</span>
+                        <span>80 menit</span>
+                    </div>
+                </a>
+
+                <a href="bab-47" class="chapter-card">
+                    <div class="chapter-header">
+                        <div class="chapter-number">47</div>
+                        <div class="chapter-difficulty hard">Sulit</div>
+                    </div>
+                    <h3 class="chapter-title">Persiapan JLPT N4: Kosakata</h3>
+                    <ul class="chapter-topics">
+                        <li><i class="fas fa-check"></i> Kosakata penting N4</li>
+                        <li><i class="fas fa-check"></i> Kanji level N4</li>
+                        <li><i class="fas fa-check"></i> Latihan kosakata</li>
+                    </ul>
+                    <div class="chapter-stats">
+                        <span>8 Materi</span>
+                        <span>75 menit</span>
+                    </div>
+                </a>
+
+                <a href="bab-48" class="chapter-card">
+                    <div class="chapter-header">
+                        <div class="chapter-number">48</div>
+                        <div class="chapter-difficulty hard">Sulit</div>
+                    </div>
+                    <h3 class="chapter-title">Persiapan JLPT N4: Membaca</h3>
+                    <ul class="chapter-topics">
+                        <li><i class="fas fa-check"></i> Teknik membaca cepat</li>
+                        <li><i class="fas fa-check"></i> Memahami konteks</li>
+                        <li><i class="fas fa-check"></i> Latihan membaca N4</li>
+                    </ul>
+                    <div class="chapter-stats">
+                        <span>9 Materi</span>
+                        <span>80 menit</span>
+                    </div>
+                </a>
+
+                <a href="bab-49" class="chapter-card">
+                    <div class="chapter-header">
+                        <div class="chapter-number">49</div>
+                        <div class="chapter-difficulty hard">Sulit</div>
+                    </div>
+                    <h3 class="chapter-title">Persiapan JLPT N4: Mendengarkan</h3>
+                    <ul class="chapter-topics">
+                        <li><i class="fas fa-check"></i> Teknik mendengarkan</li>
+                        <li><i class="fas fa-check"></i> Memahami percakapan cepat</li>
+                        <li><i class="fas fa-check"></i> Latihan listening N4</li>
+                    </ul>
+                    <div class="chapter-stats">
+                        <span>8 Materi</span>
+                        <span>75 menit</span>
+                    </div>
+                </a>
+
+                <a href="bab-50" class="chapter-card">
+                    <div class="chapter-header">
+                        <div class="chapter-number">50</div>
+                        <div class="chapter-difficulty hard">Sulit</div>
+                    </div>
+                    <h3 class="chapter-title">Simulasi JLPT N4 Lengkap</h3>
+                    <ul class="chapter-topics">
+                        <li><i class="fas fa-check"></i> Simulasi ujian lengkap</li>
+                        <li><i class="fas fa-check"></i> Pembahasan soal</li>
+                        <li><i class="fas fa-check"></i> Tips menghadapi JLPT N4</li>
+                    </ul>
+                    <div class="chapter-stats">
+                        <span>10 Materi</span>
+                        <span>90 menit</span>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Resources Section -->
+    <section class="section resources-section" id="resources">
+        <div class="container">
+            <h2 class="section-title">Sumber <span>Belajar</span></h2>
+            <p style="text-align: center; color: var(--text-secondary); margin-bottom: 50px; max-width: 800px; margin-left: auto; margin-right: auto;">
+                Akses berbagai materi pendukung untuk memperdalam pemahaman Anda tentang Minna no Nihongo Seri 2.
+            </p>
+
+            <div class="resources-grid">
+                <div class="resource-card">
+                    <div class="resource-icon">
+                        <i class="fas fa-file-pdf"></i>
+                    </div>
+                    <h3 class="resource-title">PDF Buku</h3>
+                    <p class="resource-description">
+                        Download buku utama Minna no Nihongo Seri 2 dalam format PDF untuk belajar di mana saja.
+                    </p>
+                    <a href="#" class="btn btn-primary">
+                        <i class="fas fa-download"></i> Download
+                    </a>
+                </div>
+
+                <div class="resource-card">
+                    <div class="resource-icon">
+                        <i class="fas fa-headphones"></i>
+                    </div>
+                    <h3 class="resource-title">Audio</h3>
+                    <p class="resource-description">
+                        File audio untuk latihan mendengarkan dan pengucapan yang benar dari setiap pelajaran.
+                    </p>
+                    <a href="#" class="btn btn-primary">
+                        <i class="fas fa-download"></i> Download
+                    </a>
+                </div>
+
+                <div class="resource-card">
+                    <div class="resource-icon">
+                        <i class="fas fa-book-open"></i>
+                    </div>
+                    <h3 class="resource-title">Terjemahan</h3>
+                    <p class="resource-description">
+                        Buku terjemahan bahasa Indonesia untuk memahami penjelasan tata bahasa dan kosakata.
+                    </p>
+                    <a href="#" class="btn btn-primary">
+                        <i class="fas fa-download"></i> Download
+                    </a>
+                </div>
+
+                <div class="resource-card">
+                    <div class="resource-icon">
+                        <i class="fas fa-clipboard-list"></i>
+                    </div>
+                    <h3 class="resource-title">Latihan</h3>
+                    <p class="resource-description">
+                        Kumpulan soal latihan dan kunci jawaban untuk menguji pemahaman setiap bab.
+                    </p>
+                    <a href="#" class="btn btn-primary">
+                        <i class="fas fa-download"></i> Download
+                    </a>
+                </div>
+
+                <div class="resource-card">
+                    <div class="resource-icon">
+                        <i class="fas fa-video"></i>
+                    </div>
+                    <h3 class="resource-title">Video Pembelajaran</h3>
+                    <p class="resource-description">
+                        Video penjelasan tata bahasa dan contoh percakapan untuk setiap bab.
+                    </p>
+                    <a href="#" class="btn btn-primary">
+                        <i class="fas fa-play"></i> Tonton
+                    </a>
+                </div>
+
+                <div class="resource-card">
+                    <div class="resource-icon">
+                        <i class="fas fa-file-alt"></i>
+                    </div>
+                    <h3 class="resource-title">Ringkasan</h3>
+                    <p class="resource-description">
+                        Ringkasan tata bahasa dan kosakata penting dari setiap bab untuk review cepat.
+                    </p>
+                    <a href="#" class="btn btn-primary">
+                        <i class="fas fa-download"></i> Download
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Study Plan Section -->
+    <section class="section study-plan-section" id="study-plan">
+        <div class="container">
+            <h2 class="section-title">Rencana <span>Belajar</span></h2>
+            <p style="text-align: center; color: var(--text-secondary); margin-bottom: 50px; max-width: 800px; margin-left: auto; margin-right: auto;">
+                Ikuti rencana belajar terstruktur selama 6 bulan untuk menyelesaikan Minna no Nihongo Seri 2 dengan efektif.
+            </p>
+
+            <div class="study-timeline">
+                <div class="timeline-item">
+                    <div class="timeline-week">Minggu 1-4</div>
+                    <div class="timeline-content">
+                        <h3 class="timeline-title">Bab 26-30: Review dan Penguatan</h3>
+                        <p class="timeline-desc">
+                            Review bentuk te, nai, dan ta. Pelajari bentuk potensial dan pasif sederhana.
+                            Fokus pada penguatan dasar dari Seri 1.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-week">Minggu 5-8</div>
+                    <div class="timeline-content">
+                        <h3 class="timeline-title">Bab 31-35: Tata Bahasa Lanjut</h3>
+                        <p class="timeline-desc">
+                            Pelajari bentuk kausatif, honorifik, dan kondisional. 
+                            Review semua bentuk kata kerja yang telah dipelajari.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-week">Minggu 9-12</div>
+                    <div class="timeline-content">
+                        <h3 class="timeline-title">Bab 36-40: Ekspresi Kompleks</h3>
+                        <p class="timeline-desc">
+                            Pelajari ekspresi perbandingan, sebab-akibat, dan kondisi.
+                            Tingkatkan kemampuan membaca dan menulis.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-week">Minggu 13-16</div>
+                    <div class="timeline-content">
+                        <h3 class="timeline-title">Bab 41-45: Percakapan Lanjutan</h3>
+                        <p class="timeline-desc">
+                            Fokus pada percakapan sehari-hari yang lebih kompleks.
+                            Latihan mendengarkan dan berbicara dengan topik beragam.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-week">Minggu 17-20</div>
+                    <div class="timeline-content">
+                        <h3 class="timeline-title">Bab 46-50: Persiapan JLPT N4</h3>
+                        <p class="timeline-desc">
+                            Review semua materi dan fokus pada persiapan ujian JLPT N4.
+                            Latihan soal dan simulasi ujian.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="cta-buttons" style="justify-content: center;">
+                <a href="#" class="btn btn-primary">
+                    <i class="fas fa-calendar-alt"></i> Unduh Rencana Belajar
+                </a>
+                <a href="#" class="btn btn-secondary">
+                    <i class="fas fa-question-circle"></i> Butuh Bantuan?
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>Nihongopedia</h3>
+                    <p style="color: var(--text-secondary); margin-bottom: 20px;">
+                        Platform belajar bahasa Jepang terbaik untuk pemula hingga mahir.
+                    </p>
+                    <div class="social-links">
+                        <a href="#" class="social-link">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#" class="social-link">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="#" class="social-link">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="#" class="social-link">
+                            <i class="fab fa-youtube"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="footer-column">
+                    <h3>Belajar</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">Minna no Nihongo 1</a></li>
+                        <li><a href="#">Minna no Nihongo 2</a></li>
+                        <li><a href="#">JLPT N5</a></li>
+                        <li><a href="#">JLPT N4</a></li>
+                        <li><a href="#">Kanji</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-column">
+                    <h3>Resources</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">Download Materi</a></li>
+                        <li><a href="#">Kamus</a></li>
+                        <li><a href="#">Blog</a></li>
+                        <li><a href="#">Forum</a></li>
+                        <li><a href="#">FAQ</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-column">
+                    <h3>Kontak</h3>
+                    <ul class="footer-links">
+                        <li><a href="#"><i class="fas fa-envelope"></i> info@nihongopedia.com</a></li>
+                        <li><a href="#"><i class="fas fa-phone"></i> +62 21 1234 5678</a></li>
+                        <li><a href="#"><i class="fas fa-map-marker-alt"></i> Jakarta, Indonesia</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2023 Nihongopedia. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Theme Toggle
+        const themeToggle = document.getElementById('theme-toggle');
+        const themeIcon = themeToggle.querySelector('i');
+
+        // Check for saved theme or prefer-color-scheme
+        const currentTheme = localStorage.getItem('theme') || 
+            (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+        
+        if (currentTheme === 'dark') {
+            document.documentElement.setAttribute('data-theme', 'dark');
+            themeIcon.classList.remove('fa-moon');
+            themeIcon.classList.add('fa-sun');
+        }
+
+        themeToggle.addEventListener('click', () => {
+            const currentTheme = document.documentElement.getAttribute('data-theme');
+            
+            if (currentTheme === 'dark') {
+                document.documentElement.setAttribute('data-theme', 'light');
+                themeIcon.classList.remove('fa-sun');
+                themeIcon.classList.add('fa-moon');
+                localStorage.setItem('theme', 'light');
+            } else {
+                document.documentElement.setAttribute('data-theme', 'dark');
+                themeIcon.classList.remove('fa-moon');
+                themeIcon.classList.add('fa-sun');
+                localStorage.setItem('theme', 'dark');
+            }
+        });
+
+        // Mobile Menu Toggle
+        const mobileMenuToggle = document.getElementById('mobile-menu-toggle');
+        const navMenu = document.querySelector('.nav-menu');
+
+        mobileMenuToggle.addEventListener('click', () => {
+            navMenu.classList.toggle('active');
+            const icon = mobileMenuToggle.querySelector('i');
+            if (navMenu.classList.contains('active')) {
+                icon.classList.remove('fa-bars');
+                icon.classList.add('fa-times');
+            } else {
+                icon.classList.remove('fa-times');
+                icon.classList.add('fa-bars');
+            }
+        });
+
+        // Close mobile menu when clicking outside
+        document.addEventListener('click', (e) => {
+            if (!navMenu.contains(e.target) && !mobileMenuToggle.contains(e.target)) {
+                navMenu.classList.remove('active');
+                const icon = mobileMenuToggle.querySelector('i');
+                icon.classList.remove('fa-times');
+                icon.classList.add('fa-bars');
+            }
+        });
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 100,
+                        behavior: 'smooth'
+                    });
+                    
+                    // Close mobile menu if open
+                    if (navMenu.classList.contains('active')) {
+                        navMenu.classList.remove('active');
+                        const icon = mobileMenuToggle.querySelector('i');
+                        icon.classList.remove('fa-times');
+                        icon.classList.add('fa-bars');
+                    }
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>

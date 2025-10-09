@@ -46,49 +46,52 @@ mobileMenuToggle.addEventListener('click', () => {
     }
 });
 
-// Practice Questions Functionality
-const practiceOptions = document.querySelectorAll('.practice-option');
-const checkAnswersBtn = document.getElementById('check-answers');
+    // Practice Questions Functionality
+    const practiceOptions = document.querySelectorAll('.practice-option');
+    const checkAnswersBtn = document.getElementById('check-answers');
 
-let selectedAnswers = {};
+    let selectedAnswers = {};
 
-practiceOptions.forEach(option => {
-    option.addEventListener('click', function() {
-        const question = this.closest('.practice-card');
-        const questionNumber = Array.from(document.querySelectorAll('.practice-card')).indexOf(question) + 1;
+    practiceOptions.forEach(option => {
+        option.addEventListener('click', function() {
+            const question = this.closest('.practice-card');
+            const questionNumber = Array.from(document.querySelectorAll('.practice-card')).indexOf(question) + 1;
+            
+            // Remove selected class from all options in this question
+            question.querySelectorAll('.practice-option').forEach(opt => {
+                opt.classList.remove('selected');
+            });
+            
+            // Add selected class to clicked option
+            this.classList.add('selected');
+            
+            // Store the selected answer
+            selectedAnswers[questionNumber] = this.getAttribute('data-correct') === 'true';
+        });
+    });
+
+    checkAnswersBtn.addEventListener('click', () => {
+        const questions = document.querySelectorAll('.practice-card');
         
-        // Remove selected class from all options in this question
-        question.querySelectorAll('.practice-option').forEach(opt => {
-            opt.classList.remove('selected');
+        questions.forEach((question, index) => {
+            const questionNumber = index + 1;
+            const feedback = question.querySelector('.practice-feedback');
+            
+            if (selectedAnswers[questionNumber] === true) {
+                feedback.className = 'practice-feedback correct';
+                feedback.innerHTML = '<i class="fas fa-check"></i> Jawaban Anda benar!';
+            } else if (selectedAnswers[questionNumber] === false) {
+                feedback.className = 'practice-feedback incorrect';
+                feedback.innerHTML = '<i class="fas fa-times"></i> Jawaban Anda salah. Coba lagi!';
+            } else {
+                feedback.className = 'practice-feedback incorrect';
+                feedback.innerHTML = '<i class="fas fa-exclamation-circle"></i> Silakan pilih jawaban terlebih dahulu.';
+            }
         });
         
-        // Add selected class to clicked option
-        this.classList.add('selected');
-        
-        // Store the selected answer
-        selectedAnswers[questionNumber] = this.getAttribute('data-correct') === 'true';
+        const target = document.querySelector('#practice');
+            if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
     });
-});
-
-checkAnswersBtn.addEventListener('click', () => {
-    const questions = document.querySelectorAll('.practice-card');
-    
-    questions.forEach((question, index) => {
-        const questionNumber = index + 1;
-        const feedback = question.querySelector('.practice-feedback');
-        
-        if (selectedAnswers[questionNumber] === true) {
-            feedback.className = 'practice-feedback correct';
-            feedback.innerHTML = '<i class="fas fa-check"></i> Jawaban Anda benar!';
-        } else if (selectedAnswers[questionNumber] === false) {
-            feedback.className = 'practice-feedback incorrect';
-            feedback.innerHTML = '<i class="fas fa-times"></i> Jawaban Anda salah. Coba lagi!';
-        } else {
-            feedback.className = 'practice-feedback incorrect';
-            feedback.innerHTML = '<i class="fas fa-exclamation-circle"></i> Silakan pilih jawaban terlebih dahulu.';
-        }
-    });
-});
 
 // Smooth scrolling for anchor links
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
