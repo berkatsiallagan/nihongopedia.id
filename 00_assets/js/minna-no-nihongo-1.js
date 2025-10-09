@@ -113,11 +113,10 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     });
 });
 
-// Go to Top Functionality
-const goToTopBtn = document.getElementById('go-to-top');
+// Go to Top Button
+const goToTopBtn = document.getElementById('goToTopBtn');
 
-// Show/hide button based on scroll position
-window.addEventListener('scroll', function() {
+window.addEventListener('scroll', () => {
     if (window.pageYOffset > 300) {
         goToTopBtn.classList.add('show');
     } else {
@@ -125,10 +124,23 @@ window.addEventListener('scroll', function() {
     }
 });
 
-// Smooth scroll to top
-goToTopBtn.addEventListener('click', function() {
+goToTopBtn.addEventListener('click', () => {
     window.scrollTo({
         top: 0,
         behavior: 'smooth'
+    });
+});
+
+// Smooth scrolling for anchor links
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+            target.scrollIntoView({
+                behavior: 'smooth',
+                block: 'start'
+            });
+        }
     });
 });
