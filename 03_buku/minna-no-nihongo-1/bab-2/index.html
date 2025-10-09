@@ -701,6 +701,37 @@
             font-size: 14px;
         }
 
+        /* Go to Top Button */
+        .go-to-top-btn {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 50px;
+            height: 50px;
+            background-color: var(--primary);
+            color: white;
+            border: none;
+            border-radius: 50%;
+            cursor: pointer;
+            display: none;
+            align-items: center;
+            justify-content: center;
+            font-size: 18px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+            transition: all 0.3s ease;
+            z-index: 1000;
+        }
+
+        .go-to-top-btn:hover {
+            background-color: var(--accent);
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .go-to-top-btn.show {
+            display: flex;
+        }
+
         /* Responsive Styles */
         @media (max-width: 768px) {
             .nav-menu {
@@ -733,7 +764,6 @@
             }
 
             .nav-container {
-                flex-direction: column;
                 gap: 10px;
             }
 
@@ -747,6 +777,14 @@
             
             .breadcrumb-item {
                 font-size: 12px;
+            }
+
+            .go-to-top-btn {
+                bottom: 20px;
+                right: 20px;
+                width: 45px;
+                height: 45px;
+                font-size: 16px;
             }
         }
 
@@ -768,13 +806,16 @@
                 gap: 15px;
             }
 
-            .breadcrumb-item:not(:first-child):not(:last-child) {
-                display: none;
+            .breadcrumb-list {
+                overflow-x: auto;
+                white-space: nowrap;
+                flex-wrap: nowrap;
+                padding-bottom: 5px;
+                -webkit-overflow-scrolling: touch;
             }
             
-            .breadcrumb-item:first-child,
-            .breadcrumb-item:last-child {
-                display: flex;
+            .breadcrumb-item {
+                flex-shrink: 0;
             }
         }
     </style>
@@ -864,15 +905,12 @@
     <section class="chapter-nav">
         <div class="container">
             <div class="nav-container">
-                <a href="/03_buku/minna-no-nihongo-1/bab-1/" class="btn btn-outline">
-                    <i class="fas fa-arrow-left"></i> Bab 1 - Perkenalan Diri
+                <a href="#" class="btn btn-outline" style="margin-right: 10px;">
+                    <i class="fas fa-download"></i> Unduh Materi
                 </a>
                 <div>
-                    <a href="#" class="btn btn-outline" style="margin-right: 10px;">
-                        <i class="fas fa-download"></i> Download Materi
-                    </a>
                     <a href="#practice" class="btn btn-primary">
-                        <i class="fas fa-play"></i> Mulai Latihan
+                        <i class="fas fa-play"></i> Latihan
                     </a>
                 </div>
             </div>
@@ -1115,38 +1153,29 @@
                     <div class="practice-option">それは ほん です。</div>
                     <div class="practice-option">あれは ほん です。</div>
                 </div>
-                <div class="practice-feedback" id="feedback1"></div>
+                <div class="practice-feedback"></div>
             </div>
 
             <div class="practice-card">
-                <h3 class="practice-question">2. Kata tunjuk mana yang digunakan untuk benda yang dekat dengan lawan bicara?</h3>
+                <h3 class="practice-question">2. Manakah yang benar untuk menanyakan "Tas siapa itu?" (jauh dari pembicara dan lawan bicara)?</h3>
                 <div class="practice-options">
-                    <div class="practice-option">これ (kore)</div>
-                    <div class="practice-option" data-correct="true">それ (sore)</div>
-                    <div class="practice-option">あれ (are)</div>
-                    <div class="practice-option">どの (dono)</div>
-                </div>
-                <div class="practice-feedback" id="feedback2"></div>
-            </div>
-
-            <div class="practice-card">
-                <h3 class="practice-question">3. Bagaimana mengatakan "Tas siapa itu?" dalam bahasa Jepang?</h3>
-                <div class="practice-options">
-                    <div class="practice-option">これは かばん ですか。</div>
-                    <div class="practice-option">それは かばん です。</div>
+                    <div class="practice-option">これは だれの かばん ですか。</div>
+                    <div class="practice-option">それは だれの かばん ですか。</div>
                     <div class="practice-option" data-correct="true">あれは だれの かばん ですか。</div>
-                    <div class="practice-option">あれは かばん です。</div>
+                    <div class="practice-option">かばんは だれ ですか。</div>
                 </div>
-                <div class="practice-feedback" id="feedback3"></div>
+                <div class="practice-feedback"></div>
             </div>
 
-            <div style="text-align: center; margin-top: 30px;">
-                <button class="btn btn-primary" id="check-answers">
-                    <i class="fas fa-check"></i> Periksa Jawaban
-                </button>
-                <button class="btn btn-outline" id="reset-practice" style="margin-left: 10px;">
-                    <i class="fas fa-redo"></i> Ulangi Latihan
-                </button>
+            <div class="practice-card">
+                <h3 class="practice-question">3. Pilih kalimat yang tepat untuk situasi: Anda memegang sebuah kamus dan bertanya kepada teman apa itu.</h3>
+                <div class="practice-options">
+                    <div class="practice-option" data-correct="true">これは なん ですか。</div>
+                    <div class="practice-option">それは なん ですか。</div>
+                    <div class="practice-option">あれは なん ですか。</div>
+                    <div class="practice-option">だれの ですか。</div>
+                </div>
+                <div class="practice-feedback"></div>
             </div>
         </div>
     </section>
@@ -1155,21 +1184,18 @@
     <section class="section resources-section" id="resources">
         <div class="container">
             <h2 class="section-title">
-                <i class="fas fa-tools"></i>
+                <i class="fas fa-link"></i>
                 Sumber Belajar
             </h2>
-            <p style="color: var(--text-secondary); margin-bottom: 40px;">
-                Manfaatkan sumber belajar tambahan untuk memperdalam pemahaman Anda.
-            </p>
 
             <div class="resources-grid">
                 <div class="resource-card">
                     <div class="resource-icon">
                         <i class="fas fa-file-pdf"></i>
                     </div>
-                    <h3 class="resource-title">Lembar Kerja PDF</h3>
-                    <p class="resource-description">Unduh lembar kerja untuk berlatih kosakata dan tata bahasa Bab 2.</p>
-                    <a href="#" class="btn btn-outline">Download</a>
+                    <h3 class="resource-title">PDF Materi</h3>
+                    <p class="resource-description">Unduh materi bab 2 dalam format PDF untuk belajar offline</p>
+                    <a href="#" class="btn btn-secondary">Unduh</a>
                 </div>
 
                 <div class="resource-card">
@@ -1177,8 +1203,8 @@
                         <i class="fas fa-headphones"></i>
                     </div>
                     <h3 class="resource-title">Audio Percakapan</h3>
-                    <p class="resource-description">Dengarkan pengucapan native speaker untuk percakapan dalam bab ini.</p>
-                    <a href="#" class="btn btn-outline">Dengarkan</a>
+                    <p class="resource-description">Dengarkan pengucapan kosakata dan percakapan dengan audio</p>
+                    <a href="#" class="btn btn-secondary">Dengarkan</a>
                 </div>
 
                 <div class="resource-card">
@@ -1186,17 +1212,18 @@
                         <i class="fas fa-video"></i>
                     </div>
                     <h3 class="resource-title">Video Penjelasan</h3>
-                    <p class="resource-description">Tonton video penjelasan tentang kata tunjuk dan partikel "no".</p>
-                    <a href="#" class="btn btn-outline">Tonton</a>
+                    <p class="resource-description">Tonton video penjelasan tata bahasa dan contoh penggunaan</p>
+                    <a href="#" class="btn btn-secondary">Tonton</a>
                 </div>
-
-                <div class="resource-card">
-                    <div class="resource-icon">
-                        <i class="fas fa-gamepad"></i>
-                    </div>
-                    <h3 class="resource-title">Kuis Interaktif</h3>
-                    <p class="resource-description">Uji pemahaman Anda dengan kuis interaktif tentang Bab 2.</p>
-                    <a href="#" class="btn btn-outline">Mulai Kuis</a>
+            </div>
+            <div class="nav-container">
+                <a href="/03_buku/minna-no-nihongo-1/bab-1" class="btn btn-outline" style="margin-right: 10px;">
+                    <i class="fas fa-arrow-left"></i> Bab 1
+                </a>
+                <div>
+                    <a href="/03_buku/minna-no-nihongo-1/bab-3" class="btn btn-primary">
+                        Bab 3 <i class="fas fa-arrow-right"></i>
+                    </a>
                 </div>
             </div>
         </div>
@@ -1220,71 +1247,75 @@
                 </div>
 
                 <div class="footer-column">
-                    <h3>Belajar</h3>
+                    <h3>Menu</h3>
                     <ul class="footer-links">
-                        <li><a href="#">Kursus Bahasa Jepang</a></li>
-                        <li><a href="#">Minna no Nihongo</a></li>
-                        <li><a href="#">JLPT Preparation</a></li>
-                        <li><a href="#">Kanji Mastery</a></li>
-                        <li><a href="#">Grammar Guide</a></li>
+                        <li><a href="/01_beranda">Beranda</a></li>
+                        <li><a href="/02_belajar">Belajar</a></li>
+                        <li><a href="/03_buku">Buku</a></li>
+                        <li><a href="/04_materi">Materi</a></li>
+                        <li><a href="/05_donasi">Donasi</a></li>
                     </ul>
                 </div>
 
                 <div class="footer-column">
-                    <h3>Resources</h3>
+                    <h3>Bab 2</h3>
                     <ul class="footer-links">
-                        <li><a href="#">Blog</a></li>
-                        <li><a href="#">Kamus Jepang-Indonesia</a></li>
-                        <li><a href="#">Worksheet Downloads</a></li>
-                        <li><a href="#">Audio Lessons</a></li>
-                        <li><a href="#">Community Forum</a></li>
+                        <li><a href="#vocabulary">Kosakata</a></li>
+                        <li><a href="#grammar">Tata Bahasa</a></li>
+                        <li><a href="#conversation">Percakapan</a></li>
+                        <li><a href="#practice">Latihan</a></li>
+                        <li><a href="#resources">Sumber Belajar</a></li>
                     </ul>
                 </div>
 
                 <div class="footer-column">
-                    <h3>Kontak</h3>
+                    <h3>Kontak & Donasi</h3>
                     <ul class="footer-links">
-                        <li><a href="#"><i class="fas fa-envelope"></i> hello@nihongopedia.com</a></li>
-                        <li><a href="#"><i class="fas fa-phone"></i> +62 21 1234 5678</a></li>
-                        <li><a href="#"><i class="fas fa-map-marker-alt"></i> Jakarta, Indonesia</a></li>
+                        <li><i class="fas fa-envelope"></i> nihongopedia123@gmail.com</li>
+                        <li><i class="fas fa-heart"></i> <a href="/05_donasi">Dukung Kami</a></li>
+                        <li><i class="fas fa-map-marker-alt"></i> Indonesia</li>
                     </ul>
                 </div>
             </div>
 
             <div class="footer-bottom">
-                <p>&copy; 2023 Nihongopedia. All rights reserved.</p>
+                <p>&copy; 2024 Nihongopedia. All rights reserved. - Platform Belajar Bahasa Jepang Gratis</p>
             </div>
         </div>
     </footer>
+
+    <!-- Go to Top Button -->
+    <button class="go-to-top-btn" id="goToTopBtn">
+        <i class="fas fa-arrow-up"></i>
+    </button>
 
     <script>
         // Theme Toggle
         const themeToggle = document.getElementById('theme-toggle');
         const themeIcon = themeToggle.querySelector('i');
 
-        // Check for saved theme or prefer color scheme
-        const savedTheme = localStorage.getItem('theme') || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
-        document.documentElement.setAttribute('data-theme', savedTheme);
-        updateThemeIcon(savedTheme);
+        // Check for saved theme or prefered color scheme
+        const currentTheme = localStorage.getItem('theme') || 'light';
+        if (currentTheme === 'dark') {
+            document.documentElement.setAttribute('data-theme', 'dark');
+            themeIcon.classList.remove('fa-moon');
+            themeIcon.classList.add('fa-sun');
+        }
 
         themeToggle.addEventListener('click', () => {
             const currentTheme = document.documentElement.getAttribute('data-theme');
-            const newTheme = currentTheme === 'light' ? 'dark' : 'light';
-            
-            document.documentElement.setAttribute('data-theme', newTheme);
-            localStorage.setItem('theme', newTheme);
-            updateThemeIcon(newTheme);
-        });
-
-        function updateThemeIcon(theme) {
-            if (theme === 'dark') {
-                themeIcon.classList.remove('fa-moon');
-                themeIcon.classList.add('fa-sun');
-            } else {
+            if (currentTheme === 'dark') {
+                document.documentElement.setAttribute('data-theme', 'light');
                 themeIcon.classList.remove('fa-sun');
                 themeIcon.classList.add('fa-moon');
+                localStorage.setItem('theme', 'light');
+            } else {
+                document.documentElement.setAttribute('data-theme', 'dark');
+                themeIcon.classList.remove('fa-moon');
+                themeIcon.classList.add('fa-sun');
+                localStorage.setItem('theme', 'dark');
             }
-        }
+        });
 
         // Mobile Menu Toggle
         const mobileMenuToggle = document.getElementById('mobile-menu-toggle');
@@ -1292,58 +1323,68 @@
 
         mobileMenuToggle.addEventListener('click', () => {
             navMenu.classList.toggle('active');
+            const icon = mobileMenuToggle.querySelector('i');
+            if (navMenu.classList.contains('active')) {
+                icon.classList.remove('fa-bars');
+                icon.classList.add('fa-times');
+            } else {
+                icon.classList.remove('fa-times');
+                icon.classList.add('fa-bars');
+            }
         });
 
-        // Practice Section Logic
-        const practiceOptions = document.querySelectorAll('.practice-option');
-        const checkAnswersBtn = document.getElementById('check-answers');
-        const resetPracticeBtn = document.getElementById('reset-practice');
-
-        practiceOptions.forEach(option => {
+        // Practice Questions
+        document.querySelectorAll('.practice-option').forEach(option => {
             option.addEventListener('click', function() {
-                // Remove selected class from all options in this question
-                const parentOptions = this.parentElement.querySelectorAll('.practice-option');
-                parentOptions.forEach(opt => opt.classList.remove('selected'));
+                const parentCard = this.closest('.practice-card');
+                const feedback = parentCard.querySelector('.practice-feedback');
+                
+                // Remove selected class from all options in this card
+                parentCard.querySelectorAll('.practice-option').forEach(opt => {
+                    opt.classList.remove('selected');
+                });
                 
                 // Add selected class to clicked option
                 this.classList.add('selected');
-            });
-        });
-
-        checkAnswersBtn.addEventListener('click', function() {
-            // Get all practice cards
-            const practiceCards = document.querySelectorAll('.practice-card');
-            
-            practiceCards.forEach((card, index) => {
-                const selectedOption = card.querySelector('.practice-option.selected');
-                const feedback = document.getElementById(`feedback${index + 1}`);
                 
-                if (selectedOption) {
-                    if (selectedOption.hasAttribute('data-correct')) {
-                        feedback.textContent = 'Jawaban Anda benar!';
-                        feedback.className = 'practice-feedback correct';
-                    } else {
-                        feedback.textContent = 'Jawaban Anda salah. Silakan coba lagi.';
-                        feedback.className = 'practice-feedback incorrect';
-                    }
+                // Show feedback
+                if (this.dataset.correct === 'true') {
+                    feedback.textContent = 'Jawaban benar! Penjelasan: ' + getExplanation(this);
+                    feedback.className = 'practice-feedback correct';
                 } else {
-                    feedback.textContent = 'Silakan pilih jawaban terlebih dahulu.';
+                    feedback.textContent = 'Jawaban salah. Coba lagi!';
                     feedback.className = 'practice-feedback incorrect';
                 }
             });
         });
 
-        resetPracticeBtn.addEventListener('click', function() {
-            // Reset all selected options
-            practiceOptions.forEach(option => {
-                option.classList.remove('selected');
-            });
-            
-            // Hide all feedback
-            const feedbacks = document.querySelectorAll('.practice-feedback');
-            feedbacks.forEach(feedback => {
-                feedback.className = 'practice-feedback';
-                feedback.style.display = 'none';
+        function getExplanation(option) {
+            const question = option.closest('.practice-card').querySelector('.practice-question').textContent;
+            if (question.includes('1.')) {
+                return 'Untuk mengatakan "buku saya", kita menggunakan "watashi no hon".';
+            } else if (question.includes('2.')) {
+                return 'Untuk benda yang jauh dari pembicara dan lawan bicara, gunakan "are".';
+            } else if (question.includes('3.')) {
+                return 'Untuk benda yang dekat dengan pembicara, gunakan "kore".';
+            }
+            return '';
+        }
+
+        // Go to Top Button
+        const goToTopBtn = document.getElementById('goToTopBtn');
+
+        window.addEventListener('scroll', () => {
+            if (window.pageYOffset > 300) {
+                goToTopBtn.classList.add('show');
+            } else {
+                goToTopBtn.classList.remove('show');
+            }
+        });
+
+        goToTopBtn.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
             });
         });
 
@@ -1351,19 +1392,12 @@
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
-                
-                const targetId = this.getAttribute('href');
-                if (targetId === '#') return;
-                
-                const targetElement = document.querySelector(targetId);
-                if (targetElement) {
-                    window.scrollTo({
-                        top: targetElement.offsetTop - 100,
-                        behavior: 'smooth'
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
                     });
-                    
-                    // Close mobile menu if open
-                    navMenu.classList.remove('active');
                 }
             });
         });
