@@ -1,0 +1,1462 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="/06_gambar/nihongopedia.PNG" type="image/png">
+    <title>Bab 3 - Minna no Nihongo 1 - Nihongopedia</title>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            /* Light Theme */
+            --primary: #DC143C;
+            --secondary: #FFFFFF;
+            --accent: #C70039;
+            --text-primary: #333333;
+            --text-secondary: #666666;
+            --bg-primary: #FFFFFF;
+            --bg-secondary: #F8F8F8;
+            --bg-card: #FFFFFF;
+            --border: #E0E0E0;
+            --shadow: rgba(0, 0, 0, 0.1);
+            --success: #28a745;
+            --warning: #ffc107;
+        }
+
+        [data-theme="dark"] {
+            /* Dark Theme */
+            --primary: #DC143C;
+            --secondary: #1a1a1a;
+            --accent: #FF6B8B;
+            --text-primary: #FFFFFF;
+            --text-secondary: #CCCCCC;
+            --bg-primary: #121212;
+            --bg-secondary: #1E1E1E;
+            --bg-card: #252525;
+            --border: #444444;
+            --shadow: rgba(0, 0, 0, 0.3);
+            --success: #34D399;
+            --warning: #FBBF24;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            transition: background-color 0.3s, color 0.3s, border-color 0.3s;
+        }
+
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: var(--bg-primary);
+            color: var(--text-primary);
+            line-height: 1.6;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header Styles */
+        header {
+            background-color: var(--bg-primary);
+            box-shadow: 0 2px 10px var(--shadow);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 0;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo-icon {
+            color: var(--primary);
+            font-size: 24px;
+        }
+
+        .logo-text {
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--primary);
+        }
+
+        .logo-image {
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            gap: 30px;
+        }
+
+        .nav-link {
+            text-decoration: none;
+            color: var(--text-primary);
+            font-weight: 500;
+            position: relative;
+            padding: 5px 0;
+        }
+
+        .nav-link:hover {
+            color: var(--primary);
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: var(--primary);
+            transition: width 0.3s;
+        }
+
+        .nav-link:hover::after {
+            width: 100%;
+        }
+
+        .header-actions {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .theme-toggle {
+            background: none;
+            border: none;
+            color: var(--text-primary);
+            cursor: pointer;
+            font-size: 20px;
+            padding: 5px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .theme-toggle:hover {
+            background-color: var(--bg-secondary);
+        }
+
+        .mobile-menu-toggle {
+            display: none;
+            background: none;
+            border: none;
+            color: var(--text-primary);
+            font-size: 24px;
+            cursor: pointer;
+        }
+
+        /* Breadcrumb Styles */
+        .breadcrumb {
+            background-color: var(--bg-secondary);
+            padding: 15px 0;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .breadcrumb-list {
+            display: flex;
+            align-items: center;
+            list-style: none;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+
+        .breadcrumb-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 14px;
+        }
+
+        .breadcrumb-item:not(:last-child)::after {
+            content: '/';
+            color: var(--text-secondary);
+            margin-left: 10px;
+        }
+
+        .breadcrumb-item a {
+            text-decoration: none;
+            color: var(--text-secondary);
+            transition: color 0.3s;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .breadcrumb-item a:hover {
+            color: var(--primary);
+        }
+
+        .breadcrumb-item.active span {
+            color: var(--primary);
+            font-weight: 600;
+        }
+
+        .breadcrumb-item .fas.fa-home {
+            font-size: 12px;
+        }
+
+        /* Hero Section */
+        .hero {
+            padding: 40px 0;
+            background: linear-gradient(135deg, var(--bg-primary) 0%, var(--bg-secondary) 100%);
+        }
+
+        .chapter-header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .chapter-badge {
+            display: inline-block;
+            background-color: var(--primary);
+            color: white;
+            padding: 8px 20px;
+            border-radius: 20px;
+            font-weight: 600;
+            margin-bottom: 15px;
+        }
+
+        .chapter-title {
+            font-size: 36px;
+            font-weight: 700;
+            margin-bottom: 15px;
+            color: var(--text-primary);
+        }
+
+        .chapter-subtitle {
+            font-size: 18px;
+            color: var(--text-secondary);
+            margin-bottom: 25px;
+        }
+
+        .chapter-meta {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+        }
+
+        .meta-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            color: var(--text-secondary);
+            font-size: 14px;
+        }
+
+        /* Navigation */
+        .chapter-nav {
+            background-color: var(--bg-card);
+            padding: 20px 0;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 12px 24px;
+            border-radius: 8px;
+            font-weight: 600;
+            text-decoration: none;
+            cursor: pointer;
+            transition: all 0.3s;
+            border: none;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+        }
+
+        .btn-primary {
+            background-color: var(--primary);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background-color: var(--accent);
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(220, 20, 60, 0.3);
+        }
+
+        .btn-secondary {
+            background-color: transparent;
+            color: var(--primary);
+            border: 2px solid var(--primary);
+        }
+
+        .btn-secondary:hover {
+            background-color: var(--primary);
+            color: white;
+            transform: translateY(-2px);
+        }
+
+        .btn-outline {
+            background-color: transparent;
+            color: var(--text-primary);
+            border: 2px solid var(--border);
+        }
+
+        .btn-outline:hover {
+            background-color: var(--bg-secondary);
+            border-color: var(--primary);
+        }
+
+        /* Section Styles */
+        .section {
+            padding: 60px 0;
+        }
+
+        .section-title {
+            font-size: 28px;
+            font-weight: 700;
+            margin-bottom: 30px;
+            color: var(--text-primary);
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .section-title i {
+            color: var(--primary);
+        }
+
+        /* Vocabulary Section */
+        .vocabulary-section {
+            background-color: var(--bg-secondary);
+        }
+
+        .vocabulary-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            margin-bottom: 40px;
+        }
+
+        .vocab-card {
+            background-color: var(--bg-card);
+            border-radius: 10px;
+            padding: 25px;
+            box-shadow: 0 5px 15px var(--shadow);
+            transition: transform 0.3s;
+        }
+
+        .vocab-card:hover {
+            transform: translateY(-3px);
+        }
+
+        .vocab-japanese {
+            font-size: 24px;
+            font-weight: 700;
+            margin-bottom: 10px;
+            color: var(--primary);
+        }
+
+        .vocab-reading {
+            font-size: 16px;
+            color: var(--text-secondary);
+            margin-bottom: 15px;
+            font-family: monospace;
+        }
+
+        .vocab-meaning {
+            font-size: 16px;
+            color: var(--text-primary);
+            margin-bottom: 15px;
+        }
+
+        .vocab-example {
+            font-size: 14px;
+            color: var(--text-secondary);
+            font-style: italic;
+            border-left: 3px solid var(--primary);
+            padding-left: 15px;
+        }
+
+        /* Grammar Section */
+        .grammar-section {
+            background-color: var(--bg-primary);
+        }
+
+        .grammar-item {
+            background-color: var(--bg-card);
+            border-radius: 10px;
+            padding: 30px;
+            margin-bottom: 30px;
+            box-shadow: 0 5px 15px var(--shadow);
+        }
+
+        .grammar-pattern {
+            font-size: 20px;
+            font-weight: 600;
+            margin-bottom: 15px;
+            color: var(--primary);
+        }
+
+        .grammar-explanation {
+            color: var(--text-secondary);
+            margin-bottom: 20px;
+            line-height: 1.8;
+        }
+
+        .grammar-examples {
+            background-color: var(--bg-secondary);
+            border-radius: 8px;
+            padding: 20px;
+        }
+
+        .example-item {
+            margin-bottom: 15px;
+            padding-bottom: 15px;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .example-item:last-child {
+            margin-bottom: 0;
+            padding-bottom: 0;
+            border-bottom: none;
+        }
+
+        .example-japanese {
+            font-size: 16px;
+            margin-bottom: 5px;
+        }
+
+        .example-reading {
+            font-size: 14px;
+            color: var(--text-secondary);
+            margin-bottom: 5px;
+            font-family: monospace;
+        }
+
+        .example-meaning {
+            font-size: 14px;
+            color: var(--text-secondary);
+        }
+
+        /* Conversation Section */
+        .conversation-section {
+            background-color: var(--bg-secondary);
+        }
+
+        .conversation-card {
+            background-color: var(--bg-card);
+            border-radius: 10px;
+            padding: 30px;
+            box-shadow: 0 5px 15px var(--shadow);
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .dialogue-item {
+            margin-bottom: 25px;
+            padding: 20px;
+            background-color: var(--bg-secondary);
+            border-radius: 8px;
+        }
+
+        .speaker {
+            font-weight: 600;
+            color: var(--primary);
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .dialogue-text {
+            margin-bottom: 10px;
+            line-height: 1.6;
+        }
+
+        .dialogue-reading {
+            font-size: 14px;
+            color: var(--text-secondary);
+            font-family: monospace;
+            margin-bottom: 10px;
+        }
+
+        .dialogue-meaning {
+            font-size: 14px;
+            color: var(--text-secondary);
+            font-style: italic;
+        }
+
+        /* Practice Section */
+        .practice-section {
+            background-color: var(--bg-primary);
+        }
+
+        .practice-card {
+            background-color: var(--bg-card);
+            border-radius: 10px;
+            padding: 30px;
+            box-shadow: 0 5px 15px var(--shadow);
+            margin-bottom: 30px;
+        }
+
+        .practice-question {
+            font-size: 18px;
+            margin-bottom: 20px;
+            color: var(--text-primary);
+        }
+
+        .practice-options {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+
+        .practice-option {
+            padding: 15px;
+            border: 2px solid var(--border);
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s;
+            text-align: center;
+        }
+
+        .practice-option:hover {
+            border-color: var(--primary);
+        }
+
+        .practice-option.selected {
+            background-color: var(--primary);
+            color: white;
+            border-color: var(--primary);
+        }
+
+        .practice-feedback {
+            padding: 15px;
+            border-radius: 8px;
+            margin-top: 15px;
+            display: none;
+        }
+
+        .practice-feedback.correct {
+            background-color: rgba(40, 167, 69, 0.1);
+            color: var(--success);
+            border: 1px solid var(--success);
+            display: block;
+        }
+
+        .practice-feedback.incorrect {
+            background-color: rgba(220, 20, 60, 0.1);
+            color: var(--primary);
+            border: 1px solid var(--primary);
+            display: block;
+        }
+
+        /* Resources Section */
+        .resources-section {
+            background-color: var(--bg-secondary);
+            text-align: center;
+        }
+
+        .resources-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+
+        .resource-card {
+            background-color: var(--bg-card);
+            border-radius: 10px;
+            padding: 30px;
+            box-shadow: 0 5px 15px var(--shadow);
+            text-align: center;
+            transition: transform 0.3s;
+        }
+
+        .resource-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .resource-icon {
+            width: 60px;
+            height: 60px;
+            background-color: rgba(220, 20, 60, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+            color: var(--primary);
+            font-size: 24px;
+        }
+
+        .resource-title {
+            font-size: 18px;
+            font-weight: 600;
+            margin-bottom: 15px;
+            color: var(--text-primary);
+        }
+
+        .resource-description {
+            color: var(--text-secondary);
+            margin-bottom: 20px;
+            font-size: 14px;
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--bg-secondary);
+            padding: 60px 0 30px;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-column h3 {
+            font-size: 18px;
+            font-weight: 600;
+            margin-bottom: 20px;
+            color: var(--text-primary);
+        }
+
+        .footer-links {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 10px;
+        }
+
+        .footer-links a {
+            text-decoration: none;
+            color: var(--text-secondary);
+            transition: color 0.3s;
+        }
+
+        .footer-links a:hover {
+            color: var(--primary);
+        }
+
+        .social-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .social-link {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background-color: var(--bg-card);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--text-primary);
+            text-decoration: none;
+            transition: all 0.3s;
+        }
+
+        .social-link:hover {
+            background-color: var(--primary);
+            color: white;
+            transform: translateY(-3px);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid var(--border);
+            color: var(--text-secondary);
+            font-size: 14px;
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 768px) {
+            .nav-menu {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                background-color: var(--bg-primary);
+                flex-direction: column;
+                padding: 20px;
+                box-shadow: 0 5px 10px var(--shadow);
+                gap: 15px;
+            }
+
+            .nav-menu.active {
+                display: flex;
+            }
+
+            .mobile-menu-toggle {
+                display: block;
+            }
+
+            .chapter-title {
+                font-size: 28px;
+            }
+
+            .section-title {
+                font-size: 24px;
+            }
+
+            .nav-container {
+                flex-direction: column;
+                gap: 10px;
+            }
+
+            .breadcrumb {
+                padding: 10px 0;
+            }
+            
+            .breadcrumb-list {
+                gap: 5px;
+            }
+            
+            .breadcrumb-item {
+                font-size: 12px;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .vocabulary-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .resources-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .practice-options {
+                grid-template-columns: 1fr;
+            }
+
+            .chapter-meta {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            .breadcrumb-item:not(:first-child):not(:last-child) {
+                display: none;
+            }
+            
+            .breadcrumb-item:first-child,
+            .breadcrumb-item:last-child {
+                display: flex;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <div class="header-container">
+                <div class="logo">
+                    <div class="logo-icon">
+                        <div class="logo-image" style="background-image: url('/06_gambar/nihongopedia.PNG');"></div>
+                    </div>
+                    <div class="logo-text">Nihongopedia</div>
+                </div>
+
+                <ul class="nav-menu">
+                    <li><a href="/01_beranda" class="nav-link">Beranda</a></li>
+                    <li><a href="/02_belajar" class="nav-link">Belajar</a></li>
+                    <li><a href="/03_buku" class="nav-link">Buku</a></li>
+                    <li><a href="/04_materi" class="nav-link">Materi</a></li>
+                    <li><a href="/05_donasi" class="nav-link">Donasi</a></li>
+                </ul>
+
+                <div class="header-actions">
+                    <button class="theme-toggle" id="theme-toggle">
+                        <i class="fas fa-moon"></i>
+                    </button>
+                    <button class="mobile-menu-toggle" id="mobile-menu-toggle">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Breadcrumb -->
+    <nav class="breadcrumb">
+        <div class="container">
+            <ul class="breadcrumb-list">
+                <li class="breadcrumb-item">
+                    <a href="/01_beranda">
+                        <i class="fas fa-home"></i>
+                        Beranda
+                    </a>
+                </li>
+                <li class="breadcrumb-item">
+                    <a href="/03_buku">Buku</a>
+                </li>
+                <li class="breadcrumb-item">
+                    <a href="/03_buku/minna-no-nihongo-1">Minna 1</a>
+                </li>
+                <li class="breadcrumb-item active">
+                    <span>Bab 3</span>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="chapter-header">
+                <div class="chapter-badge">Bab 3</div>
+                <h1 class="chapter-title">Lokasi dan Tempat</h1>
+                <p class="chapter-subtitle">Belajar menanyakan dan menunjukkan lokasi tempat serta penggunaan partikel "de" dan "ni"</p>
+                <div class="chapter-meta">
+                    <div class="meta-item">
+                        <i class="fas fa-clock"></i>
+                        <span>50 menit</span>
+                    </div>
+                    <div class="meta-item">
+                        <i class="fas fa-book"></i>
+                        <span>7 Materi</span>
+                    </div>
+                    <div class="meta-item">
+                        <i class="fas fa-signal"></i>
+                        <span>Tingkat: Pemula</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Chapter Navigation -->
+    <section class="chapter-nav">
+        <div class="container">
+            <div class="nav-container">
+                <a href="/03_buku/minna-no-nihongo-1/bab-2/" class="btn btn-outline">
+                    <i class="fas fa-arrow-left"></i> Bab 2 - Kata Tunjuk dan Partikel "no"
+                </a>
+                <div>
+                    <a href="#" class="btn btn-outline" style="margin-right: 10px;">
+                        <i class="fas fa-download"></i> Download Materi
+                    </a>
+                    <a href="#practice" class="btn btn-primary">
+                        <i class="fas fa-play"></i> Mulai Latihan
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Vocabulary Section -->
+    <section class="section vocabulary-section" id="vocabulary">
+        <div class="container">
+            <h2 class="section-title">
+                <i class="fas fa-book"></i>
+                Kosakata
+            </h2>
+            <p style="color: var(--text-secondary); margin-bottom: 30px;">
+                Pelajari kosakata baru yang akan digunakan dalam bab ini.
+            </p>
+
+            <div class="vocabulary-grid">
+                <div class="vocab-card">
+                    <div class="vocab-japanese">ここ</div>
+                    <div class="vocab-reading">koko</div>
+                    <div class="vocab-meaning">Di sini (tempat dekat pembicara)</div>
+                    <div class="vocab-example">Digunakan untuk tempat yang dekat dengan pembicara</div>
+                </div>
+
+                <div class="vocab-card">
+                    <div class="vocab-japanese">そこ</div>
+                    <div class="vocab-reading">soko</div>
+                    <div class="vocab-meaning">Di sana (tempat dekat lawan bicara)</div>
+                    <div class="vocab-example">Digunakan untuk tempat yang dekat dengan lawan bicara</div>
+                </div>
+
+                <div class="vocab-card">
+                    <div class="vocab-japanese">あそこ</div>
+                    <div class="vocab-reading">asoko</div>
+                    <div class="vocab-meaning">Di sana (tempat jauh dari keduanya)</div>
+                    <div class="vocab-example">Digunakan untuk tempat yang jauh dari pembicara dan lawan bicara</div>
+                </div>
+
+                <div class="vocab-card">
+                    <div class="vocab-japanese">どこ</div>
+                    <div class="vocab-reading">doko</div>
+                    <div class="vocab-meaning">Di mana</div>
+                    <div class="vocab-example">Kata tanya untuk menanyakan tempat</div>
+                </div>
+
+                <div class="vocab-card">
+                    <div class="vocab-japanese">きょうしつ</div>
+                    <div class="vocab-reading">kyoushitsu</div>
+                    <div class="vocab-meaning">Ruang kelas</div>
+                    <div class="vocab-example">Tempat untuk belajar</div>
+                </div>
+
+                <div class="vocab-card">
+                    <div class="vocab-japanese">しょくどう</div>
+                    <div class="vocab-reading">shokudou</div>
+                    <div class="vocab-meaning">Kantin</div>
+                    <div class="vocab-example">Tempat untuk makan</div>
+                </div>
+
+                <div class="vocab-card">
+                    <div class="vocab-japanese">じむしょ</div>
+                    <div class="vocab-reading">jimusho</div>
+                    <div class="vocab-meaning">Kantor</div>
+                    <div class="vocab-example">Tempat untuk bekerja</div>
+                </div>
+
+                <div class="vocab-card">
+                    <div class="vocab-japanese">で</div>
+                    <div class="vocab-reading">de</div>
+                    <div class="vocab-meaning">Partikel tempat kegiatan</div>
+                    <div class="vocab-example">Menunjukkan tempat di mana suatu kegiatan dilakukan</div>
+                </div>
+
+                <div class="vocab-card">
+                    <div class="vocab-japanese">に</div>
+                    <div class="vocab-reading">ni</div>
+                    <div class="vocab-meaning">Partikel arah/tujuan</div>
+                    <div class="vocab-example">Menunjukkan arah atau tujuan pergerakan</div>
+                </div>
+
+                <div class="vocab-card">
+                    <div class="vocab-japanese">あります</div>
+                    <div class="vocab-reading">arimasu</div>
+                    <div class="vocab-meaning">Ada (untuk benda mati)</div>
+                    <div class="vocab-example">Digunakan untuk menyatakan keberadaan benda mati</div>
+                </div>
+
+                <div class="vocab-card">
+                    <div class="vocab-japanese">います</div>
+                    <div class="vocab-reading">imasu</div>
+                    <div class="vocab-meaning">Ada (untuk makhluk hidup)</div>
+                    <div class="vocab-example">Digunakan untuk menyatakan keberadaan makhluk hidup</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Grammar Section -->
+    <section class="section grammar-section" id="grammar">
+        <div class="container">
+            <h2 class="section-title">
+                <i class="fas fa-language"></i>
+                Tata Bahasa
+            </h2>
+
+            <div class="grammar-item">
+                <h3 class="grammar-pattern">Kata Tunjuk Tempat: ここ・そこ・あそこ・どこ</h3>
+                <p class="grammar-explanation">
+                    Dalam bahasa Jepang, kata tunjuk tempat dibedakan berdasarkan jarak dari pembicara dan lawan bicara, mirip dengan kata tunjuk benda.
+                </p>
+                <div class="grammar-examples">
+                    <div class="example-item">
+                        <div class="example-japanese">ここ は きょうしつ です。</div>
+                        <div class="example-reading">Koko wa kyoushitsu desu.</div>
+                        <div class="example-meaning">Di sini adalah ruang kelas (dekat dengan pembicara).</div>
+                    </div>
+                    <div class="example-item">
+                        <div class="example-japanese">そこ は しょくどう です。</div>
+                        <div class="example-reading">Soko wa shokudou desu.</div>
+                        <div class="example-meaning">Di sana adalah kantin (dekat dengan lawan bicara).</div>
+                    </div>
+                    <div class="example-item">
+                        <div class="example-japanese">あそこ は じむしょ です。</div>
+                        <div class="example-reading">Asoko wa jimusho desu.</div>
+                        <div class="example-meaning">Di sana adalah kantor (jauh dari keduanya).</div>
+                    </div>
+                    <div class="example-item">
+                        <div class="example-japanese">トイレ は どこ ですか。</div>
+                        <div class="example-reading">Toire wa doko desu ka?</div>
+                        <div class="example-meaning">Di mana toiletnya?</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="grammar-item">
+                <h3 class="grammar-pattern">Partikel で (de) untuk Tempat Kegiatan</h3>
+                <p class="grammar-explanation">
+                    Partikel "de" digunakan untuk menunjukkan tempat di mana suatu kegiatan dilakukan.
+                </p>
+                <div class="grammar-examples">
+                    <div class="example-item">
+                        <div class="example-japanese">きょうしつ で べんきょう します。</div>
+                        <div class="example-reading">Kyoushitsu de benkyou shimasu.</div>
+                        <div class="example-meaning">Saya belajar di ruang kelas.</div>
+                    </div>
+                    <div class="example-item">
+                        <div class="example-japanese">しょくどう で ごはん を たべます。</div>
+                        <div class="example-reading">Shokudou de gohan o tabemasu.</div>
+                        <div class="example-meaning">Saya makan nasi di kantin.</div>
+                    </div>
+                    <div class="example-item">
+                        <div class="example-japanese">としょかん で ほん を よみます。</div>
+                        <div class="example-reading">Toshokan de hon o yomimasu.</div>
+                        <div class="example-meaning">Saya membaca buku di perpustakaan.</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="grammar-item">
+                <h3 class="grammar-pattern">Partikel に (ni) untuk Arah/Tujuan</h3>
+                <p class="grammar-explanation">
+                    Partikel "ni" digunakan untuk menunjukkan arah atau tujuan pergerakan.
+                </p>
+                <div class="grammar-examples">
+                    <div class="example-item">
+                        <div class="example-japanese">がっこう に いきます。</div>
+                        <div class="example-reading">Gakkou ni ikimasu.</div>
+                        <div class="example-meaning">Saya pergi ke sekolah.</div>
+                    </div>
+                    <div class="example-item">
+                        <div class="example-japanese">うち に かえります。</div>
+                        <div class="example-reading">Uchi ni kaerimasu.</div>
+                        <div class="example-meaning">Saya pulang ke rumah.</div>
+                    </div>
+                    <div class="example-item">
+                        <div class="example-japanese">にほん に きます。</div>
+                        <div class="example-reading">Nihon ni kimasu.</div>
+                        <div class="example-meaning">Saya datang ke Jepang.</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="grammar-item">
+                <h3 class="grammar-pattern">Keberadaan: あります dan います</h3>
+                <p class="grammar-explanation">
+                    Dalam bahasa Jepang, ada dua kata kerja untuk menyatakan keberadaan: "arimasu" untuk benda mati dan "imasu" untuk makhluk hidup.
+                </p>
+                <div class="grammar-examples">
+                    <div class="example-item">
+                        <div class="example-japanese">つくえ の うえ に ほん が あります。</div>
+                        <div class="example-reading">Tsukue no ue ni hon ga arimasu.</div>
+                        <div class="example-meaning">Ada buku di atas meja.</div>
+                    </div>
+                    <div class="example-item">
+                        <div class="example-japanese">きょうしつ に せんせい が います。</div>
+                        <div class="example-reading">Kyoushitsu ni sensei ga imasu.</div>
+                        <div class="example-meaning">Ada guru di ruang kelas.</div>
+                    </div>
+                    <div class="example-item">
+                        <div class="example-japanese">いえ に いぬ が います。</div>
+                        <div class="example-reading">Ie ni inu ga imasu.</div>
+                        <div class="example-meaning">Ada anjing di rumah.</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Conversation Section -->
+    <section class="section conversation-section" id="conversation">
+        <div class="container">
+            <h2 class="section-title">
+                <i class="fas fa-comments"></i>
+                Percakapan
+            </h2>
+
+            <div class="conversation-card">
+                <div class="dialogue-item">
+                    <div class="speaker">
+                        <i class="fas fa-user"></i>
+                        Yamada
+                    </div>
+                    <div class="dialogue-text">すみません、トイレは どこ ですか。</div>
+                    <div class="dialogue-reading">Sumimasen, toire wa doko desu ka?</div>
+                    <div class="dialogue-meaning">Permisi, di mana toiletnya?</div>
+                </div>
+
+                <div class="dialogue-item">
+                    <div class="speaker">
+                        <i class="fas fa-user"></i>
+                        Tanaka
+                    </div>
+                    <div class="dialogue-text">あそこ です。</div>
+                    <div class="dialogue-reading">Asoko desu.</div>
+                    <div class="dialogue-meaning">Di sana.</div>
+                </div>
+
+                <div class="dialogue-item">
+                    <div class="speaker">
+                        <i class="fas fa-user"></i>
+                        Yamada
+                    </div>
+                    <div class="dialogue-text">あの へや は なん ですか。</div>
+                    <div class="dialogue-reading">Ano heya wa nan desu ka?</div>
+                    <div class="dialogue-meaning">Ruangan itu apa?</div>
+                </div>
+
+                <div class="dialogue-item">
+                    <div class="speaker">
+                        <i class="fas fa-user"></i>
+                        Tanaka
+                    </div>
+                    <div class="dialogue-text">きょうしつ です。</div>
+                    <div class="dialogue-reading">Kyoushitsu desu.</div>
+                    <div class="dialogue-meaning">Ruang kelas.</div>
+                </div>
+
+                <div class="dialogue-item">
+                    <div class="speaker">
+                        <i class="fas fa-user"></i>
+                        Yamada
+                    </div>
+                    <div class="dialogue-text">しょくどう は どこ ですか。</div>
+                    <div class="dialogue-reading">Shokudou wa doko desu ka?</div>
+                    <div class="dialogue-meaning">Di mana kantinnya?</div>
+                </div>
+
+                <div class="dialogue-item">
+                    <div class="speaker">
+                        <i class="fas fa-user"></i>
+                        Tanaka
+                    </div>
+                    <div class="dialogue-text">しょくどう は 1かい です。</div>
+                    <div class="dialogue-reading">Shokudou wa ikkai desu.</div>
+                    <div class="dialogue-meaning">Kantin ada di lantai 1.</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Practice Section -->
+    <section class="section practice-section" id="practice">
+        <div class="container">
+            <h2 class="section-title">
+                <i class="fas fa-pencil-alt"></i>
+                Latihan
+            </h2>
+
+            <div class="practice-card">
+                <div class="practice-question">
+                    1. きょうしつ (    ) べんきょう します。
+                </div>
+                <div class="practice-options">
+                    <div class="practice-option" data-correct="true">で</div>
+                    <div class="practice-option" data-correct="false">に</div>
+                    <div class="practice-option" data-correct="false">は</div>
+                    <div class="practice-option" data-correct="false">が</div>
+                </div>
+                <div class="practice-feedback">
+                    Jawaban yang benar adalah "で" karena menunjukkan tempat kegiatan.
+                </div>
+            </div>
+
+            <div class="practice-card">
+                <div class="practice-question">
+                    2. がっこう (    ) いきます。
+                </div>
+                <div class="practice-options">
+                    <div class="practice-option" data-correct="false">で</div>
+                    <div class="practice-option" data-correct="true">に</div>
+                    <div class="practice-option" data-correct="false">は</div>
+                    <div class="practice-option" data-correct="false">が</div>
+                </div>
+                <div class="practice-feedback">
+                    Jawaban yang benar adalah "に" karena menunjukkan arah/tujuan pergerakan.
+                </div>
+            </div>
+
+            <div class="practice-card">
+                <div class="practice-question">
+                    3. つくえ の うえ (    ) ほん が あります。
+                </div>
+                <div class="practice-options">
+                    <div class="practice-option" data-correct="false">で</div>
+                    <div class="practice-option" data-correct="true">に</div>
+                    <div class="practice-option" data-correct="false">は</div>
+                    <div class="practice-option" data-correct="false">が</div>
+                </div>
+                <div class="practice-feedback">
+                    Jawaban yang benar adalah "に" karena menunjukkan lokasi keberadaan benda mati.
+                </div>
+            </div>
+
+            <div class="practice-card">
+                <div class="practice-question">
+                    4. きょうしつ (    ) せんせい が います。
+                </div>
+                <div class="practice-options">
+                    <div class="practice-option" data-correct="false">で</div>
+                    <div class="practice-option" data-correct="true">に</div>
+                    <div class="practice-option" data-correct="false">は</div>
+                    <div class="practice-option" data-correct="false">が</div>
+                </div>
+                <div class="practice-feedback">
+                    Jawaban yang benar adalah "に" karena menunjukkan lokasi keberadaan makhluk hidup.
+                </div>
+            </div>
+
+            <div class="practice-card">
+                <div class="practice-question">
+                    5. トイレ (    ) どこ ですか。
+                </div>
+                <div class="practice-options">
+                    <div class="practice-option" data-correct="false">で</div>
+                    <div class="practice-option" data-correct="false">に</div>
+                    <div class="practice-option" data-correct="true">は</div>
+                    <div class="practice-option" data-correct="false">が</div>
+                </div>
+                <div class="practice-feedback">
+                    Jawaban yang benar adalah "は" karena partikel topik digunakan sebelum kata tanya "doko".
+                </div>
+            </div>
+
+            <div style="text-align: center; margin-top: 30px;">
+                <button class="btn btn-primary" id="check-answers">
+                    <i class="fas fa-check"></i> Periksa Jawaban
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Resources Section -->
+    <section class="section resources-section">
+        <div class="container">
+            <h2 class="section-title">
+                <i class="fas fa-bookmark"></i>
+                Materi Tambahan
+            </h2>
+
+            <div class="resources-grid">
+                <div class="resource-card">
+                    <div class="resource-icon">
+                        <i class="fas fa-file-pdf"></i>
+                    </div>
+                    <h3 class="resource-title">PDF Materi Bab 3</h3>
+                    <p class="resource-description">Download ringkasan materi Bab 3 dalam format PDF untuk belajar offline.</p>
+                    <a href="#" class="btn btn-outline">
+                        <i class="fas fa-download"></i> Download
+                    </a>
+                </div>
+
+                <div class="resource-card">
+                    <div class="resource-icon">
+                        <i class="fas fa-headphones"></i>
+                    </div>
+                    <h3 class="resource-title">Audio Percakapan</h3>
+                    <p class="resource-description">Dengarkan percakapan asli dalam bahasa Jepang untuk melatih pendengaran.</p>
+                    <a href="#" class="btn btn-outline">
+                        <i class="fas fa-play"></i> Dengarkan
+                    </a>
+                </div>
+
+                <div class="resource-card">
+                    <div class="resource-icon">
+                        <i class="fas fa-video"></i>
+                    </div>
+                    <h3 class="resource-title">Video Pembelajaran</h3>
+                    <p class="resource-description">Tonton video penjelasan materi Bab 3 dengan penjelasan visual.</p>
+                    <a href="#" class="btn btn-outline">
+                        <i class="fas fa-play-circle"></i> Tonton
+                    </a>
+                </div>
+
+                <div class="resource-card">
+                    <div class="resource-icon">
+                        <i class="fas fa-tasks"></i>
+                    </div>
+                    <h3 class="resource-title">Latihan Tambahan</h3>
+                    <p class="resource-description">Kerjakan lebih banyak latihan untuk menguasai materi Bab 3.</p>
+                    <a href="#" class="btn btn-outline">
+                        <i class="fas fa-pencil-alt"></i> Kerjakan
+                    </a>
+                </div>
+            </div>
+
+            <div style="text-align: center; margin-top: 40px;">
+                <a href="/03_buku/minna-no-nihongo-1/bab-4/" class="btn btn-primary">
+                    Lanjut ke Bab 4 <i class="fas fa-arrow-right"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>Nihongopedia</h3>
+                    <p style="color: var(--text-secondary); margin-bottom: 20px;">
+                        Platform belajar bahasa Jepang terbaik untuk pemula dan pelajar tingkat lanjut.
+                    </p>
+                    <div class="social-links">
+                        <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+
+                <div class="footer-column">
+                    <h3>Belajar</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">Hiragana & Katakana</a></li>
+                        <li><a href="#">Kosakata</a></li>
+                        <li><a href="#">Tata Bahasa</a></li>
+                        <li><a href="#">Kanji</a></li>
+                        <li><a href="#">Percakapan</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-column">
+                    <h3>Buku</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">Minna no Nihongo 1</a></li>
+                        <li><a href="#">Minna no Nihongo 2</a></li>
+                        <li><a href="#">JLPT N5</a></li>
+                        <li><a href="#">JLPT N4</a></li>
+                        <li><a href="#">JLPT N3</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-column">
+                    <h3>Bantuan</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">FAQ</a></li>
+                        <li><a href="#">Kontak</a></li>
+                        <li><a href="#">Kebijakan Privasi</a></li>
+                        <li><a href="#">Syarat & Ketentuan</a></li>
+                        <li><a href="#">Donasi</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2023 Nihongopedia. Hak cipta dilindungi undang-undang.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Theme Toggle
+        const themeToggle = document.getElementById('theme-toggle');
+        const themeIcon = themeToggle.querySelector('i');
+
+        // Check for saved theme or prefer color scheme
+        const currentTheme = localStorage.getItem('theme') || 'light';
+        if (currentTheme === 'dark') {
+            document.body.setAttribute('data-theme', 'dark');
+            themeIcon.classList.remove('fa-moon');
+            themeIcon.classList.add('fa-sun');
+        }
+
+        themeToggle.addEventListener('click', () => {
+            if (document.body.getAttribute('data-theme') === 'dark') {
+                document.body.removeAttribute('data-theme');
+                localStorage.setItem('theme', 'light');
+                themeIcon.classList.remove('fa-sun');
+                themeIcon.classList.add('fa-moon');
+            } else {
+                document.body.setAttribute('data-theme', 'dark');
+                localStorage.setItem('theme', 'dark');
+                themeIcon.classList.remove('fa-moon');
+                themeIcon.classList.add('fa-sun');
+            }
+        });
+
+        // Mobile Menu Toggle
+        const mobileMenuToggle = document.getElementById('mobile-menu-toggle');
+        const navMenu = document.querySelector('.nav-menu');
+
+        mobileMenuToggle.addEventListener('click', () => {
+            navMenu.classList.toggle('active');
+        });
+
+        // Practice Section
+        const practiceOptions = document.querySelectorAll('.practice-option');
+        const checkAnswersBtn = document.getElementById('check-answers');
+
+        practiceOptions.forEach(option => {
+            option.addEventListener('click', () => {
+                // Remove selected class from all options in the same question
+                const parentCard = option.closest('.practice-card');
+                const allOptions = parentCard.querySelectorAll('.practice-option');
+                allOptions.forEach(opt => opt.classList.remove('selected'));
+                
+                // Add selected class to clicked option
+                option.classList.add('selected');
+            });
+        });
+
+        checkAnswersBtn.addEventListener('click', () => {
+            const practiceCards = document.querySelectorAll('.practice-card');
+            
+            practiceCards.forEach(card => {
+                const selectedOption = card.querySelector('.practice-option.selected');
+                const feedback = card.querySelector('.practice-feedback');
+                
+                if (selectedOption) {
+                    const isCorrect = selectedOption.getAttribute('data-correct') === 'true';
+                    
+                    if (isCorrect) {
+                        feedback.classList.add('correct');
+                        feedback.classList.remove('incorrect');
+                    } else {
+                        feedback.classList.add('incorrect');
+                        feedback.classList.remove('correct');
+                    }
+                }
+            });
+        });
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 100,
+                        behavior: 'smooth'
+                    });
+                    
+                    // Close mobile menu if open
+                    navMenu.classList.remove('active');
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>
