@@ -830,13 +830,16 @@
                 padding: 15px;
             }
 
-            .breadcrumb-item:not(:first-child):not(:last-child) {
-                display: none;
+            .breadcrumb-list {
+                overflow-x: auto;
+                white-space: nowrap;
+                flex-wrap: nowrap;
+                padding-bottom: 5px;
+                -webkit-overflow-scrolling: touch;
             }
             
-            .breadcrumb-item:first-child,
-            .breadcrumb-item:last-child {
-                display: flex;
+            .breadcrumb-item {
+                flex-shrink: 0;
             }
         }
 
