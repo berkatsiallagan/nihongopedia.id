@@ -1,0 +1,684 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="/06_gambar/nihongopedia.PNG" type="image/png">
+    <title>Bab 9 - Minna no Nihongo 1 - Nihongopedia</title>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="/00_assets/css/minna-no-nihongo-1.css">
+</head>
+
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <div class="header-container">
+                <div class="logo">
+                    <div class="logo-icon">
+                        <div class="logo-image" style="background-image: url('/06_gambar/nihongopedia.PNG');"></div>
+                    </div>
+                    <div class="logo-text">Nihongopedia</div>
+                </div>
+
+                <ul class="nav-menu">
+                    <li><a href="/01_beranda" class="nav-link">Beranda</a></li>
+                    <li><a href="/02_belajar" class="nav-link">Belajar</a></li>
+                    <li><a href="/03_buku" class="nav-link">Buku</a></li>
+                    <li><a href="/04_materi" class="nav-link">Materi</a></li>
+                    <li><a href="/05_donasi" class="nav-link">Donasi</a></li>
+                </ul>
+
+                <div class="header-actions">
+                    <button class="theme-toggle" id="theme-toggle">
+                        <i class="fas fa-moon"></i>
+                    </button>
+                    <button class="mobile-menu-toggle" id="mobile-menu-toggle">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Breadcrumb -->
+    <nav class="breadcrumb">
+        <div class="container">
+            <ul class="breadcrumb-list">
+                <li class="breadcrumb-item">
+                    <a href="/01_beranda">
+                        <i class="fas fa-home"></i>
+                        Beranda
+                    </a>
+                </li>
+                <li class="breadcrumb-item">
+                    <a href="/03_buku">Buku</a>
+                </li>
+                <li class="breadcrumb-item">
+                    <a href="/03_buku/minna-no-nihongo-1">Minna 1</a>
+                </li>
+                <li class="breadcrumb-item active">
+                    <span>Bab 9</span>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="chapter-header">
+                <div class="chapter-badge">Bab 9</div>
+                <h1 class="chapter-title">Kata Sifat (I-Adjective & Na-Adjective)</h1>
+                <p class="chapter-subtitle">Belajar menggunakan kata sifat untuk mendeskripsikan benda dan orang</p>
+                <div class="chapter-meta">
+                    <div class="meta-item">
+                        <i class="fas fa-clock"></i>
+                        <span>60 menit</span>
+                    </div>
+                    <div class="meta-item">
+                        <i class="fas fa-book"></i>
+                        <span>10 Materi</span>
+                    </div>
+                    <div class="meta-item">
+                        <i class="fas fa-signal"></i>
+                        <span>Tingkat: Pemula</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Chapter Navigation -->
+    <section class="chapter-nav">
+        <div class="container">
+            <div class="nav-container">
+                <a href="#" class="btn btn-outline" style="margin-right: 10px;">
+                    <i class="fas fa-download"></i> Unduh Materi
+                </a>
+                <div>
+                    <a href="#practice" class="btn btn-primary">
+                        <i class="fas fa-play"></i> Latihan
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Vocabulary Section -->
+    <section class="section vocabulary-section" id="vocabulary">
+        <div class="container">
+            <h2 class="section-title">
+                <i class="fas fa-book"></i>
+                Kosakata
+            </h2>
+            <p style="color: var(--text-secondary); margin-bottom: 30px;">
+                Pelajari kosakata baru yang akan digunakan dalam bab ini.
+            </p>
+
+            <div class="vocabulary-grid">
+                <!-- Kelompok 1: Kata Benda -->
+                <div class="vocab-card">
+                    <div class="vocab-japanese">ほん</div>
+                    <div class="vocab-reading">hon</div>
+                    <div class="vocab-meaning">Buku</div>
+                    <div class="vocab-example">Bacaan</div>
+                </div>
+
+                <div class="vocab-card">
+                    <div class="vocab-japanese">ざっし</div>
+                    <div class="vocab-reading">zasshi</div>
+                    <div class="vocab-meaning">Majalah</div>
+                    <div class="vocab-example">Terbitan berkala</div>
+                </div>
+
+                <div class="vocab-card">
+                    <div class="vocab-japanese">じしょ</div>
+                    <div class="vocab-reading">jisho</div>
+                    <div class="vocab-meaning">Kamus</div>
+                    <div class="vocab-example">Buku referensi kata</div>
+                </div>
+
+                <div class="vocab-card">
+                    <div class="vocab-japanese">しんぶん</div>
+                    <div class="vocab-reading">shinbun</div>
+                    <div class="vocab-meaning">Koran</div>
+                    <div class="vocab-example">Surat kabar harian</div>
+                </div>
+
+                <div class="vocab-card">
+                    <div class="vocab-japanese">ノート</div>
+                    <div class="vocab-reading">nooto</div>
+                    <div class="vocab-meaning">Buku catatan</div>
+                    <div class="vocab-example">Untuk menulis</div>
+                </div>
+
+                <div class="vocab-card">
+                    <div class="vocab-japanese">てがみ</div>
+                    <div class="vocab-reading">tegami</div>
+                    <div class="vocab-meaning">Surat</div>
+                    <div class="vocab-example">Pesan tertulis</div>
+                </div>
+
+                <!-- Kelompok 2: Kata Sifat (I-Adjective) -->
+                <div class="vocab-card">
+                    <div class="vocab-japanese">おおきい</div>
+                    <div class="vocab-reading">ookii</div>
+                    <div class="vocab-meaning">Besar</div>
+                    <div class="vocab-example">I-Adjective</div>
+                </div>
+
+                <div class="vocab-card">
+                    <div class="vocab-japanese">ちいさい</div>
+                    <div class="vocab-reading">chiisai</div>
+                    <div class="vocab-meaning">Kecil</div>
+                    <div class="vocab-example">I-Adjective</div>
+                </div>
+
+                <div class="vocab-card">
+                    <div class="vocab-japanese">たかい</div>
+                    <div class="vocab-reading">takai</div>
+                    <div class="vocab-meaning">Mahal/Tinggi</div>
+                    <div class="vocab-example">I-Adjective</div>
+                </div>
+
+                <div class="vocab-card">
+                    <div class="vocab-japanese">やすい</div>
+                    <div class="vocab-reading">yasui</div>
+                    <div class="vocab-meaning">Murah</div>
+                    <div class="vocab-example">I-Adjective</div>
+                </div>
+
+                <div class="vocab-card">
+                    <div class="vocab-japanese">あたらしい</div>
+                    <div class="vocab-reading">atarashii</div>
+                    <div class="vocab-meaning">Baru</div>
+                    <div class="vocab-example">I-Adjective</div>
+                </div>
+
+                <div class="vocab-card">
+                    <div class="vocab-japanese">ふるい</div>
+                    <div class="vocab-reading">furui</div>
+                    <div class="vocab-meaning">Lama/Tua</div>
+                    <div class="vocab-example">I-Adjective</div>
+                </div>
+
+                <div class="vocab-card">
+                    <div class="vocab-japanese">いい</div>
+                    <div class="vocab-reading">ii</div>
+                    <div class="vocab-meaning">Bagus/Baik</div>
+                    <div class="vocab-example">I-Adjective</div>
+                </div>
+
+                <!-- Kelompok 3: Kata Sifat (Na-Adjective) -->
+                <div class="vocab-card">
+                    <div class="vocab-japanese">きれいな</div>
+                    <div class="vocab-reading">kirei na</div>
+                    <div class="vocab-meaning">Cantik/Bersih</div>
+                    <div class="vocab-example">Na-Adjective</div>
+                </div>
+
+                <div class="vocab-card">
+                    <div class="vocab-japanese">しずかな</div>
+                    <div class="vocab-reading">shizuka na</div>
+                    <div class="vocab-meaning">Tenang</div>
+                    <div class="vocab-example">Na-Adjective</div>
+                </div>
+
+                <div class="vocab-card">
+                    <div class="vocab-japanese">にぎやかな</div>
+                    <div class="vocab-reading">nigiyaka na</div>
+                    <div class="vocab-meaning">Ramai</div>
+                    <div class="vocab-example">Na-Adjective</div>
+                </div>
+
+                <div class="vocab-card">
+                    <div class="vocab-japanese">ゆうめいな</div>
+                    <div class="vocab-reading">yuumei na</div>
+                    <div class="vocab-meaning">Terkenal</div>
+                    <div class="vocab-example">Na-Adjective</div>
+                </div>
+
+                <!-- Kelompok 4: Ekspresi/Partikel -->
+                <div class="vocab-card">
+                    <div class="vocab-japanese">そして</div>
+                    <div class="vocab-reading">soshite</div>
+                    <div class="vocab-meaning">Dan</div>
+                    <div class="vocab-example">Konjungsi</div>
+                </div>
+
+                <div class="vocab-card">
+                    <div class="vocab-japanese">ですが</div>
+                    <div class="vocab-reading">desu ga</div>
+                    <div class="vocab-meaning">Tetapi</div>
+                    <div class="vocab-example">Konjungsi</div>
+                </div>
+
+                <div class="vocab-card">
+                    <div class="vocab-japanese">とても</div>
+                    <div class="vocab-reading">totemo</div>
+                    <div class="vocab-meaning">Sangat</div>
+                    <div class="vocab-example">Adverbia</div>
+                </div>
+
+                <div class="vocab-card">
+                    <div class="vocab-japanese">あまり</div>
+                    <div class="vocab-reading">amari</div>
+                    <div class="vocab-meaning">Tidak terlalu</div>
+                    <div class="vocab-example">Adverbia negatif</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Grammar Section -->
+    <section class="section grammar-section" id="grammar">
+        <div class="container">
+            <h2 class="section-title">
+                <i class="fas fa-language"></i>
+                Tata Bahasa
+            </h2>
+
+            <div class="grammar-item">
+                <h3 class="grammar-pattern">I-Adjective (形容詞 - Keiyoushi)</h3>
+                <p class="grammar-explanation">
+                    I-Adjective adalah kata sifat yang berakhiran dengan huruf い (i). Kata sifat ini dapat langsung digunakan sebelum kata benda tanpa partikel tambahan.
+                </p>
+                <div class="grammar-examples">
+                    <div class="example-item">
+                        <div class="example-japanese">おおきい ほん</div>
+                        <div class="example-reading">Ookii hon</div>
+                        <div class="example-meaning">Buku yang besar</div>
+                    </div>
+                    <div class="example-item">
+                        <div class="example-japanese">あたらしい くるま</div>
+                        <div class="example-reading">Atarashii kuruma</div>
+                        <div class="example-meaning">Mobil baru</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="grammar-item">
+                <h3 class="grammar-pattern">Na-Adjective (形容動詞 - Keiyoudoushi)</h3>
+                <p class="grammar-explanation">
+                    Na-Adjective adalah kata sifat yang memerlukan partikel な (na) ketika digunakan sebelum kata benda. Saat berdiri sendiri, kata sifat ini diakhiri dengan です (desu).
+                </p>
+                <div class="grammar-examples">
+                    <div class="example-item">
+                        <div class="example-japanese">きれいな へや</div>
+                        <div class="example-reading">Kirei na heya</div>
+                        <div class="example-meaning">Kamar yang cantik/bersih</div>
+                    </div>
+                    <div class="example-item">
+                        <div class="example-japanese">しずかな ところ</div>
+                        <div class="example-reading">Shizuka na tokoro</div>
+                        <div class="example-meaning">Tempat yang tenang</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="grammar-item">
+                <h3 class="grammar-pattern">Kalimat dengan Kata Sifat (Bentuk Positif)</h3>
+                <p class="grammar-explanation">
+                    Kata sifat dapat digunakan sebagai predikat dalam kalimat. I-Adjective langsung diikuti oleh です, sedangkan Na-Adjective memerlukan な sebelum です.
+                </p>
+                <div class="grammar-examples">
+                    <div class="example-item">
+                        <div class="example-japanese">この ほんは おおきいです。</div>
+                        <div class="example-reading">Kono hon wa ookii desu.</div>
+                        <div class="example-meaning">Buku ini besar.</div>
+                    </div>
+                    <div class="example-item">
+                        <div class="example-japanese">この へやは きれいです。</div>
+                        <div class="example-reading">Kono heya wa kirei desu.</div>
+                        <div class="example-meaning">Kamar ini cantik/bersih.</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="grammar-item">
+                <h3 class="grammar-pattern">Kalimat dengan Kata Sifat (Bentuk Negatif)</h3>
+                <p class="grammar-explanation">
+                    Untuk membuat kalimat negatif dengan kata sifat, I-Adjective mengubah akhiran い menjadi くないです, sedangkan Na-Adjective menggunakan じゃありません atau ではありません.
+                </p>
+                <div class="grammar-examples">
+                    <div class="example-item">
+                        <div class="example-japanese">この ほんは おおきくないです。</div>
+                        <div class="example-reading">Kono hon wa ookiku nai desu.</div>
+                        <div class="example-meaning">Buku ini tidak besar.</div>
+                    </div>
+                    <div class="example-item">
+                        <div class="example-japanese">この へやは きれいじゃありません。</div>
+                        <div class="example-reading">Kono heya wa kirei ja arimasen.</div>
+                        <div class="example-meaning">Kamar ini tidak cantik/bersih.</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="grammar-item">
+                <h3 class="grammar-pattern">Penggunaan とても (totemo) dan あまり (amari)</h3>
+                <p class="grammar-explanation">
+                    とても (totemo) berarti "sangat" dan digunakan dengan kalimat positif. あまり (amari) berarti "tidak terlalu" dan digunakan dengan kalimat negatif.
+                </p>
+                <div class="grammar-examples">
+                    <div class="example-item">
+                        <div class="example-japanese">この えいがは とても おもしろいです。</div>
+                        <div class="example-reading">Kono eiga wa totemo omoshiroi desu.</div>
+                        <div class="example-meaning">Film ini sangat menarik.</div>
+                    </div>
+                    <div class="example-item">
+                        <div class="example-japanese">この ほんは あまり おもしろくないです。</div>
+                        <div class="example-reading">Kono hon wa amari omoshiroku nai desu.</div>
+                        <div class="example-meaning">Buku ini tidak terlalu menarik.</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Conversation Section -->
+    <section class="section conversation-section" id="conversation">
+        <div class="container">
+            <h2 class="section-title">
+                <i class="fas fa-comments"></i>
+                Percakapan
+            </h2>
+
+            <div class="conversation-card">
+                <div class="dialogue-item">
+                    <div class="speaker">
+                        <i class="fas fa-user"></i>
+                        Yamada
+                    </div>
+                    <div class="dialogue-text">これは なんの ほんですか。</div>
+                    <div class="dialogue-reading">Kore wa nan no hon desu ka?</div>
+                    <div class="dialogue-meaning">Ini buku tentang apa?</div>
+                </div>
+
+                <div class="dialogue-item">
+                    <div class="speaker">
+                        <i class="fas fa-user"></i>
+                        Tanaka
+                    </div>
+                    <div class="dialogue-text">にほんごの ほんです。そして これは にほんごの じしょです。</div>
+                    <div class="dialogue-reading">Nihongo no hon desu. Soshite kore wa nihongo no jisho desu.</div>
+                    <div class="dialogue-meaning">Ini buku bahasa Jepang. Dan ini kamus bahasa Jepang.</div>
+                </div>
+
+                <div class="dialogue-item">
+                    <div class="speaker">
+                        <i class="fas fa-user"></i>
+                        Yamada
+                    </div>
+                    <div class="dialogue-text">その じしょは おおきいですか。</div>
+                    <div class="dialogue-reading">Sono jisho wa ookii desu ka?</div>
+                    <div class="dialogue-meaning">Apakah kamus itu besar?</div>
+                </div>
+
+                <div class="dialogue-item">
+                    <div class="speaker">
+                        <i class="fas fa-user"></i>
+                        Tanaka
+                    </div>
+                    <div class="dialogue-text">いいえ、おおきくないです。ちいさいです。</div>
+                    <div class="dialogue-reading">Iie, ookiku nai desu. Chiisai desu.</div>
+                    <div class="dialogue-meaning">Tidak, tidak besar. Kecil.</div>
+                </div>
+
+                <div class="dialogue-item">
+                    <div class="speaker">
+                        <i class="fas fa-user"></i>
+                        Yamada
+                    </div>
+                    <div class="dialogue-text">その ほんは あたらしいですか。</div>
+                    <div class="dialogue-reading">Sono hon wa atarashii desu ka?</div>
+                    <div class="dialogue-meaning">Apakah buku itu baru?</div>
+                </div>
+
+                <div class="dialogue-item">
+                    <div class="speaker">
+                        <i class="fas fa-user"></i>
+                        Tanaka
+                    </div>
+                    <div class="dialogue-text">はい、あたらしいです。そして やすいです。</div>
+                    <div class="dialogue-reading">Hai, atarashii desu. Soshite yasui desu.</div>
+                    <div class="dialogue-meaning">Ya, baru. Dan murah.</div>
+                </div>
+
+                <div class="dialogue-item">
+                    <div class="speaker">
+                        <i class="fas fa-user"></i>
+                        Yamada
+                    </div>
+                    <div class="dialogue-text">あの ホテルは どうですか。</div>
+                    <div class="dialogue-reading">Ano hoteru wa dou desu ka?</div>
+                    <div class="dialogue-meaning">Bagaimana hotel itu?</div>
+                </div>
+
+                <div class="dialogue-item">
+                    <div class="speaker">
+                        <i class="fas fa-user"></i>
+                        Tanaka
+                    </div>
+                    <div class="dialogue-text">あの ホテルは きれいですが、たかいです。</div>
+                    <div class="dialogue-reading">Ano hoteru wa kirei desu ga, takai desu.</div>
+                    <div class="dialogue-meaning">Hotel itu cantik/bersih, tetapi mahal.</div>
+                </div>
+
+                <div class="dialogue-item">
+                    <div class="speaker">
+                        <i class="fas fa-user"></i>
+                        Yamada
+                    </div>
+                    <div class="dialogue-text">この レストランは にぎやかですか。</div>
+                    <div class="dialogue-reading">Kono resutoran wa nigiyaka desu ka?</div>
+                    <div class="dialogue-meaning">Apakah restoran ini ramai?</div>
+                </div>
+
+                <div class="dialogue-item">
+                    <div class="speaker">
+                        <i class="fas fa-user"></i>
+                        Tanaka
+                    </div>
+                    <div class="dialogue-text">いいえ、あまり にぎやかじゃありません。しずかです。</div>
+                    <div class="dialogue-reading">Iie, amari nigiyaka ja arimasen. Shizuka desu.</div>
+                    <div class="dialogue-meaning">Tidak, tidak terlalu ramai. Tenang.</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Practice Section -->
+    <section class="section practice-section" id="practice">
+        <div class="container">
+            <h2 class="section-title">
+                <i class="fas fa-pencil-alt"></i>
+                Latihan
+            </h2>
+
+            <div class="practice-card">
+                <h3 class="practice-question">1. Manakah yang merupakan I-Adjective?</h3>
+                <div class="practice-options">
+                    <div class="practice-option">きれいな</div>
+                    <div class="practice-option" data-correct="true">おおきい</div>
+                    <div class="practice-option">しずかな</div>
+                    <div class="practice-option">にぎやかな</div>
+                </div>
+                <div class="practice-feedback" id="feedback1"></div>
+            </div>
+
+            <div class="practice-card">
+                <h3 class="practice-question">2. Bagaimana mengatakan "Buku yang besar" dalam bahasa Jepang?</h3>
+                <div class="practice-options">
+                    <div class="practice-option">おおきいな ほん</div>
+                    <div class="practice-option" data-correct="true">おおきい ほん</div>
+                    <div class="practice-option">おおきく ほん</div>
+                    <div class="practice-option">おおきな ほん</div>
+                </div>
+                <div class="practice-feedback" id="feedback2"></div>
+            </div>
+
+            <div class="practice-card">
+                <h3 class="practice-question">3. Bagaimana mengatakan "Kamar yang cantik" dalam bahasa Jepang?</h3>
+                <div class="practice-options">
+                    <div class="practice-option">きれい へや</div>
+                    <div class="practice-option" data-correct="true">きれいな へや</div>
+                    <div class="practice-option">きれいく へや</div>
+                    <div class="practice-option">きれいの へや</div>
+                </div>
+                <div class="practice-feedback" id="feedback3"></div>
+            </div>
+
+            <div class="practice-card">
+                <h3 class="practice-question">4. Bagaimana mengatakan "Buku ini tidak mahal" dalam bahasa Jepang?</h3>
+                <div class="practice-options">
+                    <div class="practice-option">この ほんは たかくないです。</div>
+                    <div class="practice-option" data-correct="true">この ほんは たかくないです。</div>
+                    <div class="practice-option">この ほんは たかいじゃありません。</div>
+                    <div class="practice-option">この ほんは たかくありません。</div>
+                </div>
+                <div class="practice-feedback" id="feedback4"></div>
+            </div>
+
+            <div class="practice-card">
+                <h3 class="practice-question">5. Bagaimana mengatakan "Tempat ini tidak terlalu tenang" dalam bahasa Jepang?</h3>
+                <div class="practice-options">
+                    <div class="practice-option">この ところは とても しずかです。</div>
+                    <div class="practice-option">この ところは しずかです。</div>
+                    <div class="practice-option" data-correct="true">この ところは あまり しずかじゃありません。</div>
+                    <div class="practice-option">この ところは しずかくないです。</div>
+                </div>
+                <div class="practice-feedback" id="feedback5"></div>
+            </div>
+
+            <div style="text-align: center; margin-top: 30px;">
+                <button class="btn btn-primary" id="check-answers">
+                    <i class="fas fa-check"></i> Periksa Jawaban
+                </button>
+                <button class="btn btn-outline" id="reset-practice" style="margin-left: 10px;">
+                    <i class="fas fa-redo"></i> Ulangi Latihan
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Resources Section -->
+    <section class="section resources-section" id="resources">
+        <div class="container">
+            <h2 class="section-title">
+                <i class="fas fa-tools"></i>
+                Sumber Belajar
+            </h2>
+            <p style="color: var(--text-secondary); margin-bottom: 40px;">
+                Manfaatkan sumber belajar tambahan untuk memperdalam pemahaman Anda.
+            </p>
+
+            <div class="resources-grid">
+                <div class="resource-card">
+                    <div class="resource-icon">
+                        <i class="fas fa-file-pdf"></i>
+                    </div>
+                    <h3 class="resource-title">Lembar Kerja PDF</h3>
+                    <p class="resource-description">Unduh lembar kerja untuk berlatih I-Adjective dan Na-Adjective Bab 9.</p>
+                    <a href="#" class="btn btn-outline">Download</a>
+                </div>
+
+                <div class="resource-card">
+                    <div class="resource-icon">
+                        <i class="fas fa-headphones"></i>
+                    </div>
+                    <h3 class="resource-title">Audio Percakapan</h3>
+                    <p class="resource-description">Dengarkan pengucapan native speaker untuk percakapan dalam bab ini.</p>
+                    <a href="#" class="btn btn-outline">Dengarkan</a>
+                </div>
+
+                <div class="resource-card">
+                    <div class="resource-icon">
+                        <i class="fas fa-video"></i>
+                    </div>
+                    <h3 class="resource-title">Video Penjelasan</h3>
+                    <p class="resource-description">Tonton video penjelasan tentang perbedaan I-Adjective dan Na-Adjective.</p>
+                    <a href="#" class="btn btn-outline">Tonton</a>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="nav-container">
+                <a href="/03_buku/minna-no-nihongo-1/bab-8/" class="btn btn-outline" style="margin-right: 10px;">
+                    <i class="fas fa-arrow-left"></i> Bab 8
+                </a>
+                <div>
+                    <a href="/03_buku/minna-no-nihongo-1/bab-10/" class="btn btn-primary">
+                        Bab 10 <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>Nihongopedia</h3>
+                    <p style="color: var(--text-secondary); margin-bottom: 20px;">
+                        Platform pembelajaran bahasa Jepang gratis dan lengkap untuk semua level.
+                    </p>
+                    <div class="social-links">
+                        <a href="https://instagram.com/nihongopedia.jpg" class="social-link"><i class="fab fa-instagram"></i></a>
+                        <a href="https://youtube.com/@nihongopedia" class="social-link"><i class="fab fa-youtube"></i></a>
+                        <a href="https://tiktok.com/@nihongopedia" class="social-link"><i class="fab fa-tiktok"></i></a>
+                    </div>
+                </div>
+
+                <div class="footer-column">
+                    <h3>Menu</h3>
+                    <ul class="footer-links">
+                        <li><a href="/01_beranda">Beranda</a></li>
+                        <li><a href="/02_belajar">Belajar</a></li>
+                        <li><a href="/03_buku">Buku</a></li>
+                        <li><a href="/04_materi">Materi</a></li>
+                        <li><a href="/05_donasi">Donasi</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-column">
+                    <h3>Bab 9</h3>
+                    <ul class="footer-links">
+                        <li><a href="#vocabulary">Kosakata</a></li>
+                        <li><a href="#grammar">Tata Bahasa</a></li>
+                        <li><a href="#conversation">Percakapan</a></li>
+                        <li><a href="#practice">Latihan</a></li>
+                        <li><a href="#resources">Sumber Belajar</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-column">
+                    <h3>Kontak & Donasi</h3>
+                    <ul class="footer-links">
+                        <li><i class="fas fa-envelope"></i> nihongopedia123@gmail.com</li>
+                        <li><i class="fas fa-heart"></i> <a href="/05_donasi">Dukung Kami</a></li>
+                        <li><i class="fas fa-map-marker-alt"></i> Indonesia</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2024 Nihongopedia. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Go to Top Button -->
+    <button id="go-to-top" class="go-to-top-btn">
+        <i class="fas fa-chevron-up"></i>
+    </button>
+
+    <script src="/00_assets/js/minna-no-nihongo-1.js"></script>
+</body>
+
+</html>

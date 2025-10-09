@@ -1,0 +1,721 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="/06_gambar/nihongopedia.PNG" type="image/png">
+    <title>Bab 14 - Minna no Nihongo 1 - Nihongopedia</title>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="/00_assets/css/minna-no-nihongo-1.css">
+</head>
+
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <div class="header-container">
+                <div class="logo">
+                    <div class="logo-icon">
+                        <div class="logo-image" style="background-image: url('/06_gambar/nihongopedia.PNG');"></div>
+                    </div>
+                    <div class="logo-text">Nihongopedia</div>
+                </div>
+
+                <ul class="nav-menu">
+                    <li><a href="/01_beranda" class="nav-link">Beranda</a></li>
+                    <li><a href="/02_belajar" class="nav-link">Belajar</a></li>
+                    <li><a href="/03_buku" class="nav-link">Buku</a></li>
+                    <li><a href="/04_materi" class="nav-link">Materi</a></li>
+                    <li><a href="/05_donasi" class="nav-link">Donasi</a></li>
+                </ul>
+
+                <div class="header-actions">
+                    <button class="theme-toggle" id="theme-toggle">
+                        <i class="fas fa-moon"></i>
+                    </button>
+                    <button class="mobile-menu-toggle" id="mobile-menu-toggle">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Breadcrumb -->
+    <nav class="breadcrumb">
+        <div class="container">
+            <ul class="breadcrumb-list">
+                <li class="breadcrumb-item">
+                    <a href="/01_beranda">
+                        <i class="fas fa-home"></i>
+                        Beranda
+                    </a>
+                </li>
+                <li class="breadcrumb-item">
+                    <a href="/03_buku">Buku</a>
+                </li>
+                <li class="breadcrumb-item">
+                    <a href="/03_buku/minna-no-nihongo-1">Minna 1</a>
+                </li>
+                <li class="breadcrumb-item active">
+                    <span>Bab 14</span>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="chapter-header">
+                <div class="chapter-badge">Bab 14</div>
+                <h1 class="chapter-title">Vて-form (Bentuk Te)</h1>
+                <p class="chapter-subtitle">Belajar kata kerja bentuk -te untuk menyatakan permintaan dan kegiatan berurutan</p>
+                <div class="chapter-meta">
+                    <div class="meta-item">
+                        <i class="fas fa-clock"></i>
+                        <span>60 menit</span>
+                    </div>
+                    <div class="meta-item">
+                        <i class="fas fa-book"></i>
+                        <span>10 Materi</span>
+                    </div>
+                    <div class="meta-item">
+                        <i class="fas fa-signal"></i>
+                        <span>Tingkat: Pemula</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Chapter Navigation -->
+    <section class="chapter-nav">
+        <div class="container">
+            <div class="nav-container">
+                <a href="#" class="btn btn-outline" style="margin-right: 10px;">
+                    <i class="fas fa-download"></i> Unduh Materi
+                </a>
+                <div>
+                    <a href="#practice" class="btn btn-primary">
+                        <i class="fas fa-play"></i> Latihan
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Vocabulary Section -->
+    <section class="section vocabulary-section" id="vocabulary">
+        <div class="container">
+            <h2 class="section-title">
+                <i class="fas fa-book"></i>
+                Kosakata
+            </h2>
+            <p style="color: var(--text-secondary); margin-bottom: 30px;">
+                Pelajari kosakata baru yang akan digunakan dalam bab ini.
+            </p>
+
+            <div class="vocabulary-grid">
+                <div class="vocab-card">
+                    <div class="vocab-japanese">つかいます</div>
+                    <div class="vocab-reading">tsukaimasu</div>
+                    <div class="vocab-meaning">Menggunakan</div>
+                    <div class="vocab-example">パソコンをつかいます (menggunakan komputer)</div>
+                </div>
+
+                <div class="vocab-card">
+                    <div class="vocab-japanese">てつだいます</div>
+                    <div class="vocab-reading">tetsudaimasu</div>
+                    <div class="vocab-meaning">Membantu</div>
+                    <div class="vocab-example">母をてつだいます (membantu ibu)</div>
+                </div>
+
+                <div class="vocab-card">
+                    <div class="vocab-japanese">よびます</div>
+                    <div class="vocab-reading">yobimasu</div>
+                    <div class="vocab-meaning">Memanggil</div>
+                    <div class="vocab-example">友達をよびます (memanggil teman)</div>
+                </div>
+
+                <div class="vocab-card">
+                    <div class="vocab-japanese">けします</div>
+                    <div class="vocab-reading">keshimasu</div>
+                    <div class="vocab-meaning">Mematikan</div>
+                    <div class="vocab-example">電気をけします (mematikan lampu)</div>
+                </div>
+
+                <div class="vocab-card">
+                    <div class="vocab-japanese">いれます</div>
+                    <div class="vocab-reading">iremasu</div>
+                    <div class="vocab-meaning">Memasukkan</div>
+                    <div class="vocab-example">コーヒーにさとうをいれます (memasukkan gula ke kopi)</div>
+                </div>
+
+                <div class="vocab-card">
+                    <div class="vocab-japanese">しめます</div>
+                    <div class="vocab-reading">shimemasu</div>
+                    <div class="vocab-meaning">Menutup</div>
+                    <div class="vocab-example">ドアをしめます (menutup pintu)</div>
+                </div>
+
+                <div class="vocab-card">
+                    <div class="vocab-japanese">おします</div>
+                    <div class="vocab-reading">oshimasu</div>
+                    <div class="vocab-meaning">Menekan</div>
+                    <div class="vocab-example">ボタンをおします (menekan tombol)</div>
+                </div>
+
+                <div class="vocab-card">
+                    <div class="vocab-japanese">わすれます</div>
+                    <div class="vocab-reading">wasuremasu</div>
+                    <div class="vocab-meaning">Melupakan</div>
+                    <div class="vocab-example">かぎをわすれます (melupakan kunci)</div>
+                </div>
+
+                <div class="vocab-card">
+                    <div class="vocab-japanese">て</div>
+                    <div class="vocab-reading">te</div>
+                    <div class="vocab-meaning">Tangan</div>
+                    <div class="vocab-example">Bagian tubuh</div>
+                </div>
+
+                <div class="vocab-card">
+                    <div class="vocab-japanese">はな</div>
+                    <div class="vocab-reading">hana</div>
+                    <div class="vocab-meaning">Hidung</div>
+                    <div class="vocab-example">Bagian tubuh</div>
+                </div>
+
+                <div class="vocab-card">
+                    <div class="vocab-japanese">め</div>
+                    <div class="vocab-reading">me</div>
+                    <div class="vocab-meaning">Mata</div>
+                    <div class="vocab-example">Bagian tubuh</div>
+                </div>
+
+                <div class="vocab-card">
+                    <div class="vocab-japanese">みみ</div>
+                    <div class="vocab-reading">mimi</div>
+                    <div class="vocab-meaning">Telinga</div>
+                    <div class="vocab-example">Bagian tubuh</div>
+                </div>
+
+                <div class="vocab-card">
+                    <div class="vocab-japanese">くち</div>
+                    <div class="vocab-reading">kuchi</div>
+                    <div class="vocab-meaning">Mulut</div>
+                    <div class="vocab-example">Bagian tubuh</div>
+                </div>
+
+                <div class="vocab-card">
+                    <div class="vocab-japanese">あたま</div>
+                    <div class="vocab-reading">atama</div>
+                    <div class="vocab-meaning">Kepala</div>
+                    <div class="vocab-example">Bagian tubuh</div>
+                </div>
+
+                <div class="vocab-card">
+                    <div class="vocab-japanese">おなか</div>
+                    <div class="vocab-reading">onaka</div>
+                    <div class="vocab-meaning">Perut</div>
+                    <div class="vocab-example">Bagian tubuh</div>
+                </div>
+
+                <div class="vocab-card">
+                    <div class="vocab-japanese">あし</div>
+                    <div class="vocab-reading">ashi</div>
+                    <div class="vocab-meaning">Kaki</div>
+                    <div class="vocab-example">Bagian tubuh</div>
+                </div>
+
+                <div class="vocab-card">
+                    <div class="vocab-japanese">かお</div>
+                    <div class="vocab-reading">kao</div>
+                    <div class="vocab-meaning">Wajah</div>
+                    <div class="vocab-example">Bagian tubuh</div>
+                </div>
+
+                <div class="vocab-card">
+                    <div class="vocab-japanese">からだ</div>
+                    <div class="vocab-reading">karada</div>
+                    <div class="vocab-meaning">Tubuh</div>
+                    <div class="vocab-example">Bagian tubuh</div>
+                </div>
+
+                <div class="vocab-card">
+                    <div class="vocab-japanese">もう</div>
+                    <div class="vocab-reading">mou</div>
+                    <div class="vocab-meaning">Sudah</div>
+                    <div class="vocab-example">Sudah selesai</div>
+                </div>
+
+                <div class="vocab-card">
+                    <div class="vocab-japanese">まだ</div>
+                    <div class="vocab-reading">mada</div>
+                    <div class="vocab-meaning">Masih</div>
+                    <div class="vocab-example">Belum selesai</div>
+                </div>
+
+                <div class="vocab-card">
+                    <div class="vocab-japanese">これから</div>
+                    <div class="vocab-reading">korekara</div>
+                    <div class="vocab-meaning">Mulai sekarang</div>
+                    <div class="vocab-example">Dari sekarang</div>
+                </div>
+
+                <div class="vocab-card">
+                    <div class="vocab-japanese">すてき</div>
+                    <div class="vocab-reading">suteki</div>
+                    <div class="vocab-meaning">Bagus</div>
+                    <div class="vocab-example">Cantik/Indah</div>
+                </div>
+
+                <div class="vocab-card">
+                    <div class="vocab-japanese">つけます</div>
+                    <div class="vocab-reading">tsukemasu</div>
+                    <div class="vocab-meaning">Menyalakan</div>
+                    <div class="vocab-example">テレビをつけます (menyalakan TV)</div>
+                </div>
+
+                <div class="vocab-card">
+                    <div class="vocab-japanese">あけます</div>
+                    <div class="vocab-reading">akemasu</div>
+                    <div class="vocab-meaning">Membuka</div>
+                    <div class="vocab-example">まどをあけます (membuka jendela)</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Grammar Section -->
+    <section class="section grammar-section" id="grammar">
+        <div class="container">
+            <h2 class="section-title">
+                <i class="fas fa-language"></i>
+                Tata Bahasa
+            </h2>
+
+            <div class="grammar-item">
+                <h3 class="grammar-pattern">Bentuk -te (Vて)</h3>
+                <p class="grammar-explanation">
+                    Bentuk -te digunakan untuk membuat permintaan sopan, menyatakan kegiatan berurutan, dan berbagai fungsi lainnya. Pembentukan bentuk -te tergantung pada kelompok kata kerja.
+                </p>
+                <div class="grammar-examples">
+                    <div class="example-item">
+                        <div class="example-japanese">グループ1: かきます → かいて</div>
+                        <div class="example-reading">Gurūpu 1: kakimasu → kaite</div>
+                        <div class="example-meaning">Grup 1: menulis → menulis (bentuk te)</div>
+                    </div>
+                    <div class="example-item">
+                        <div class="example-japanese">グループ2: たべます → たべて</div>
+                        <div class="example-reading">Gurūpu 2: tabemasu → tabete</div>
+                        <div class="example-meaning">Grup 2: makan → makan (bentuk te)</div>
+                    </div>
+                    <div class="example-item">
+                        <div class="example-japanese">グループ3: きます → きて</div>
+                        <div class="example-reading">Gurūpu 3: kimasu → kite</div>
+                        <div class="example-meaning">Grup 3: datang → datang (bentuk te)</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="grammar-item">
+                <h3 class="grammar-pattern">Vて ください (Permintaan Sopan)</h3>
+                <p class="grammar-explanation">
+                    Digunakan untuk meminta seseorang melakukan sesuatu dengan sopan. Bentuk ini setara dengan "tolong..." dalam bahasa Indonesia.
+                </p>
+                <div class="grammar-examples">
+                    <div class="example-item">
+                        <div class="example-japanese">まどを あけて ください。</div>
+                        <div class="example-reading">Mado o akete kudasai.</div>
+                        <div class="example-meaning">Tolong buka jendelanya.</div>
+                    </div>
+                    <div class="example-item">
+                        <div class="example-japanese">ここに すわって ください。</div>
+                        <div class="example-reading">Koko ni suwatte kudasai.</div>
+                        <div class="example-meaning">Tolong duduk di sini.</div>
+                    </div>
+                    <div class="example-item">
+                        <div class="example-japanese">でんわばんごうを おしえて ください。</div>
+                        <div class="example-reading">Denwa bangō o oshiete kudasai.</div>
+                        <div class="example-meaning">Tolong beritahu saya nomor teleponnya.</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="grammar-item">
+                <h3 class="grammar-pattern">Vて います (Keadaan Berlangsung)</h3>
+                <p class="grammar-explanation">
+                    Digunakan untuk menyatakan kegiatan yang sedang berlangsung atau keadaan yang sedang terjadi.
+                </p>
+                <div class="grammar-examples">
+                    <div class="example-item">
+                        <div class="example-japanese">いま なにを していますか。</div>
+                        <div class="example-reading">Ima nani o shite imasu ka?</div>
+                        <div class="example-meaning">Sekarang sedang apa?</div>
+                    </div>
+                    <div class="example-item">
+                        <div class="example-japanese">べんきょうしています。</div>
+                        <div class="example-reading">Benkyō shite imasu.</div>
+                        <div class="example-meaning">Sedang belajar.</div>
+                    </div>
+                    <div class="example-item">
+                        <div class="example-japanese">あめが ふっています。</div>
+                        <div class="example-reading">Ame ga futte imasu.</div>
+                        <div class="example-meaning">Hujan sedang turun.</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="grammar-item">
+                <h3 class="grammar-pattern">V1て、V2て、V3 (Kegiatan Berurutan)</h3>
+                <p class="grammar-explanation">
+                    Digunakan untuk menyatakan beberapa kegiatan yang dilakukan secara berurutan.
+                </p>
+                <div class="grammar-examples">
+                    <div class="example-item">
+                        <div class="example-japanese">きのう デパートへ いって、かいものを しました。</div>
+                        <div class="example-reading">Kinō depāto e itte, kaimono o shimashita.</div>
+                        <div class="example-meaning">Kemarin pergi ke department store dan berbelanja.</div>
+                    </div>
+                    <div class="example-item">
+                        <div class="example-japanese">あさ おきて、はを みがいて、あさごはんを たべます。</div>
+                        <div class="example-reading">Asa okite, ha o migaite, asagohan o tabemasu.</div>
+                        <div class="example-meaning">Pagi bangun, gosok gigi, dan makan sarapan.</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="grammar-item">
+                <h3 class="grammar-pattern">もう Vました (Sudah Selesai)</h3>
+                <p class="grammar-explanation">
+                    Digunakan untuk menyatakan bahwa suatu kegiatan sudah selesai dilakukan.
+                </p>
+                <div class="grammar-examples">
+                    <div class="example-item">
+                        <div class="example-japanese">もう ばんごはんを たべましたか。</div>
+                        <div class="example-reading">Mō bangohan o tabemashita ka?</div>
+                        <div class="example-meaning">Apakah sudah makan malam?</div>
+                    </div>
+                    <div class="example-item">
+                        <div class="example-japanese">はい、もう たべました。</div>
+                        <div class="example-reading">Hai, mō tabemashita.</div>
+                        <div class="example-meaning">Ya, sudah makan.</div>
+                    </div>
+                    <div class="example-item">
+                        <div class="example-japanese">いいえ、まだです。</div>
+                        <div class="example-reading">Iie, mada desu.</div>
+                        <div class="example-meaning">Tidak, belum.</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Conversation Section -->
+    <section class="section conversation-section" id="conversation">
+        <div class="container">
+            <h2 class="section-title">
+                <i class="fas fa-comments"></i>
+                Percakapan
+            </h2>
+
+            <div class="conversation-card">
+                <div class="dialogue-item">
+                    <div class="speaker">
+                        <i class="fas fa-user"></i>
+                        Yamada
+                    </div>
+                    <div class="dialogue-text">すみません、でんわを かしてください。</div>
+                    <div class="dialogue-reading">Sumimasen, denwa o kashite kudasai.</div>
+                    <div class="dialogue-meaning">Maaf, tolong pinjamkan teleponnya.</div>
+                </div>
+
+                <div class="dialogue-item">
+                    <div class="speaker">
+                        <i class="fas fa-user"></i>
+                        Tanaka
+                    </div>
+                    <div class="dialogue-text">はい、どうぞ。</div>
+                    <div class="dialogue-reading">Hai, dōzo.</div>
+                    <div class="dialogue-meaning">Ya, silakan.</div>
+                </div>
+
+                <div class="dialogue-item">
+                    <div class="speaker">
+                        <i class="fas fa-user"></i>
+                        Yamada
+                    </div>
+                    <div class="dialogue-text">あのう、でんわばんごうを おしえて ください。</div>
+                    <div class="dialogue-reading">Anō, denwa bangō o oshiete kudasai.</div>
+                    <div class="dialogue-meaning">Ehm, tolong beritahu nomor teleponnya.</div>
+                </div>
+
+                <div class="dialogue-item">
+                    <div class="speaker">
+                        <i class="fas fa-user"></i>
+                        Tanaka
+                    </div>
+                    <div class="dialogue-text">03-1234-5678です。</div>
+                    <div class="dialogue-reading">Zero-san-no-ichi-ni-san-yon-no-go-roku-nana-hachi desu.</div>
+                    <div class="dialogue-meaning">03-1234-5678.</div>
+                </div>
+
+                <div class="dialogue-item">
+                    <div class="speaker">
+                        <i class="fas fa-user"></i>
+                        Yamada
+                    </div>
+                    <div class="dialogue-text">もう かきましたか。</div>
+                    <div class="dialogue-reading">Mō kakimashita ka?</div>
+                    <div class="dialogue-meaning">Apakah sudah menulis?</div>
+                </div>
+
+                <div class="dialogue-item">
+                    <div class="speaker">
+                        <i class="fas fa-user"></i>
+                        Tanaka
+                    </div>
+                    <div class="dialogue-text">いいえ、まだです。ちょっと まって ください。</div>
+                    <div class="dialogue-reading">Iie, mada desu. Chotto matte kudasai.</div>
+                    <div class="dialogue-meaning">Tidak, belum. Tolong tunggu sebentar.</div>
+                </div>
+
+                <div class="dialogue-item">
+                    <div class="speaker">
+                        <i class="fas fa-user"></i>
+                        Yamada
+                    </div>
+                    <div class="dialogue-text">いま なにを していますか。</div>
+                    <div class="dialogue-reading">Ima nani o shite imasu ka?</div>
+                    <div class="dialogue-meaning">Sekarang sedang apa?</div>
+                </div>
+
+                <div class="dialogue-item">
+                    <div class="speaker">
+                        <i class="fas fa-user"></i>
+                        Tanaka
+                    </div>
+                    <div class="dialogue-text">てがみを かいて います。</div>
+                    <div class="dialogue-reading">Tegami o kaite imasu.</div>
+                    <div class="dialogue-meaning">Sedang menulis surat.</div>
+                </div>
+
+                <div class="dialogue-item">
+                    <div class="speaker">
+                        <i class="fas fa-user"></i>
+                        Yamada
+                    </div>
+                    <div class="dialogue-text">きのう なにを しましたか。</div>
+                    <div class="dialogue-reading">Kinō nani o shimashita ka?</div>
+                    <div class="dialogue-meaning">Kemarin melakukan apa?</div>
+                </div>
+
+                <div class="dialogue-item">
+                    <div class="speaker">
+                        <i class="fas fa-user"></i>
+                        Tanaka
+                    </div>
+                    <div class="dialogue-text">としょかんへ いって、ほんを かいました。</div>
+                    <div class="dialogue-reading">Toshokan e itte, hon o kaimashita.</div>
+                    <div class="dialogue-meaning">Pergi ke perpustakaan dan membeli buku.</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Practice Section -->
+    <section class="section practice-section" id="practice">
+        <div class="container">
+            <h2 class="section-title">
+                <i class="fas fa-pencil-alt"></i>
+                Latihan
+            </h2>
+
+            <div class="practice-card">
+                <h3 class="practice-question">1. Bagaimana mengatakan "Tolong buka jendelanya" dalam bahasa Jepang?</h3>
+                <div class="practice-options">
+                    <div class="practice-option">まどを あけます。</div>
+                    <div class="practice-option" data-correct="true">まどを あけて ください。</div>
+                    <div class="practice-option">まどを あけました。</div>
+                    <div class="practice-option">まどを あけています。</div>
+                </div>
+                <div class="practice-feedback" id="feedback1"></div>
+            </div>
+
+            <div class="practice-card">
+                <h3 class="practice-question">2. Bagaimana mengubah kata kerja かきます (menulis) ke bentuk -te?</h3>
+                <div class="practice-options">
+                    <div class="practice-option">かきて</div>
+                    <div class="practice-option" data-correct="true">かいて</div>
+                    <div class="practice-option">かくて</div>
+                    <div class="practice-option">かいてて</div>
+                </div>
+                <div class="practice-feedback" id="feedback2"></div>
+            </div>
+
+            <div class="practice-card">
+                <h3 class="practice-question">3. Bagaimana mengatakan "Saya sedang membaca buku" dalam bahasa Jepang?</h3>
+                <div class="practice-options">
+                    <div class="practice-option">ほんを よみます。</div>
+                    <div class="practice-option">ほんを よみました。</div>
+                    <div class="practice-option" data-correct="true">ほんを よんで います。</div>
+                    <div class="practice-option">ほんを よんで ください。</div>
+                </div>
+                <div class="practice-feedback" id="feedback3"></div>
+            </div>
+
+            <div class="practice-card">
+                <h3 class="practice-question">4. Bagaimana mengatakan "Kemarin saya pergi ke toko dan membeli makanan" dalam bahasa Jepang?</h3>
+                <div class="practice-options">
+                    <div class="practice-option">きのう みせへ いきました、たべものを かいました。</div>
+                    <div class="practice-option" data-correct="true">きのう みせへ いって、たべものを かいました。</div>
+                    <div class="practice-option">きのう みせへ いきます、たべものを かいます。</div>
+                    <div class="practice-option">きのう みせへ いきて、たべものを かいて。</div>
+                </div>
+                <div class="practice-feedback" id="feedback4"></div>
+            </div>
+
+            <div class="practice-card">
+                <h3 class="practice-question">5. Bagaimana menanyakan "Apakah sudah makan siang?" dalam bahasa Jepang?</h3>
+                <div class="practice-options">
+                    <div class="practice-option">ひるごはんを たべますか。</div>
+                    <div class="practice-option" data-correct="true">もう ひるごはんを たべましたか。</div>
+                    <div class="practice-option">ひるごはんを たべて いますか。</div>
+                    <div class="practice-option">ひるごはんを たべて ください。</div>
+                </div>
+                <div class="practice-feedback" id="feedback5"></div>
+            </div>
+
+            <div style="text-align: center; margin-top: 30px;">
+                <button class="btn btn-primary" id="check-answers">
+                    <i class="fas fa-check"></i> Periksa Jawaban
+                </button>
+                <button class="btn btn-outline" id="reset-practice" style="margin-left: 10px;">
+                    <i class="fas fa-redo"></i> Ulangi Latihan
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Resources Section -->
+    <section class="section resources-section" id="resources">
+        <div class="container">
+            <h2 class="section-title">
+                <i class="fas fa-tools"></i>
+                Sumber Belajar
+            </h2>
+            <p style="color: var(--text-secondary); margin-bottom: 40px;">
+                Manfaatkan sumber belajar tambahan untuk memperdalam pemahaman Anda.
+            </p>
+
+            <div class="resources-grid">
+                <div class="resource-card">
+                    <div class="resource-icon">
+                        <i class="fas fa-file-pdf"></i>
+                    </div>
+                    <h3 class="resource-title">Lembar Kerja PDF</h3>
+                    <p class="resource-description">Unduh lembar kerja untuk berlatih bentuk -te dan pola kalimat Bab 14.</p>
+                    <a href="#" class="btn btn-outline">Download</a>
+                </div>
+
+                <div class="resource-card">
+                    <div class="resource-icon">
+                        <i class="fas fa-headphones"></i>
+                    </div>
+                    <h3 class="resource-title">Audio Percakapan</h3>
+                    <p class="resource-description">Dengarkan pengucapan native speaker untuk percakapan dalam bab ini.</p>
+                    <a href="#" class="btn btn-outline">Dengarkan</a>
+                </div>
+
+                <div class="resource-card">
+                    <div class="resource-icon">
+                        <i class="fas fa-video"></i>
+                    </div>
+                    <h3 class="resource-title">Video Penjelasan</h3>
+                    <p class="resource-description">Tonton video penjelasan tentang bentuk -te dan penggunaannya.</p>
+                    <a href="#" class="btn btn-outline">Tonton</a>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="nav-container">
+                <a href="/03_buku/minna-no-nihongo-1/bab-13/" class="btn btn-outline" style="margin-right: 10px;">
+                    <i class="fas fa-arrow-left"></i> Bab 13
+                </a>
+                <div>
+                    <a href="/03_buku/minna-no-nihongo-1/bab-15/" class="btn btn-primary">
+                        Bab 15 <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>Nihongopedia</h3>
+                    <p style="color: var(--text-secondary); margin-bottom: 20px;">
+                        Platform pembelajaran bahasa Jepang gratis dan lengkap untuk semua level.
+                    </p>
+                    <div class="social-links">
+                        <a href="https://instagram.com/nihongopedia.jpg" class="social-link"><i class="fab fa-instagram"></i></a>
+                        <a href="https://youtube.com/@nihongopedia" class="social-link"><i class="fab fa-youtube"></i></a>
+                        <a href="https://tiktok.com/@nihongopedia" class="social-link"><i class="fab fa-tiktok"></i></a>
+                    </div>
+                </div>
+
+                <div class="footer-column">
+                    <h3>Menu</h3>
+                    <ul class="footer-links">
+                        <li><a href="/01_beranda">Beranda</a></li>
+                        <li><a href="/02_belajar">Belajar</a></li>
+                        <li><a href="/03_buku">Buku</a></li>
+                        <li><a href="/04_materi">Materi</a></li>
+                        <li><a href="/05_donasi">Donasi</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-column">
+                    <h3>Bab 14</h3>
+                    <ul class="footer-links">
+                        <li><a href="#vocabulary">Kosakata</a></li>
+                        <li><a href="#grammar">Tata Bahasa</a></li>
+                        <li><a href="#conversation">Percakapan</a></li>
+                        <li><a href="#practice">Latihan</a></li>
+                        <li><a href="#resources">Sumber Belajar</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-column">
+                    <h3>Kontak & Donasi</h3>
+                    <ul class="footer-links">
+                        <li><i class="fas fa-envelope"></i> nihongopedia123@gmail.com</li>
+                        <li><i class="fas fa-heart"></i> <a href="/05_donasi">Dukung Kami</a></li>
+                        <li><i class="fas fa-map-marker-alt"></i> Indonesia</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2024 Nihongopedia. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Go to Top Button -->
+    <button id="go-to-top" class="go-to-top-btn">
+        <i class="fas fa-chevron-up"></i>
+    </button>
+
+    <script src="/00_assets/js/minna-no-nihongo-1.js"></script>
+</body>
+
+</html>

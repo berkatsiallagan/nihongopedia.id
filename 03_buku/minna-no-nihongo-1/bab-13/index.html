@@ -1,0 +1,686 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="/06_gambar/nihongopedia.PNG" type="image/png">
+    <title>Bab 13 - Minna no Nihongo 1 - Nihongopedia</title>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="/00_assets/css/minna-no-nihongo-1.css">
+</head>
+
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <div class="header-container">
+                <div class="logo">
+                    <div class="logo-icon">
+                        <div class="logo-image" style="background-image: url('/06_gambar/nihongopedia.PNG');"></div>
+                    </div>
+                    <div class="logo-text">Nihongopedia</div>
+                </div>
+
+                <ul class="nav-menu">
+                    <li><a href="/01_beranda" class="nav-link">Beranda</a></li>
+                    <li><a href="/02_belajar" class="nav-link">Belajar</a></li>
+                    <li><a href="/03_buku" class="nav-link">Buku</a></li>
+                    <li><a href="/04_materi" class="nav-link">Materi</a></li>
+                    <li><a href="/05_donasi" class="nav-link">Donasi</a></li>
+                </ul>
+
+                <div class="header-actions">
+                    <button class="theme-toggle" id="theme-toggle">
+                        <i class="fas fa-moon"></i>
+                    </button>
+                    <button class="mobile-menu-toggle" id="mobile-menu-toggle">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Breadcrumb -->
+    <nav class="breadcrumb">
+        <div class="container">
+            <ul class="breadcrumb-list">
+                <li class="breadcrumb-item">
+                    <a href="/01_beranda">
+                        <i class="fas fa-home"></i>
+                        Beranda
+                    </a>
+                </li>
+                <li class="breadcrumb-item">
+                    <a href="/03_buku">Buku</a>
+                </li>
+                <li class="breadcrumb-item">
+                    <a href="/03_buku/minna-no-nihongo-1">Minna 1</a>
+                </li>
+                <li class="breadcrumb-item active">
+                    <span>Bab 13</span>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="chapter-header">
+                <div class="chapter-badge">Bab 13</div>
+                <h1 class="chapter-title">Keinginan dan Kemampuan</h1>
+                <p class="chapter-subtitle">Belajar menyatakan keinginan dan kemampuan melakukan sesuatu</p>
+                <div class="chapter-meta">
+                    <div class="meta-item">
+                        <i class="fas fa-clock"></i>
+                        <span>70 menit</span>
+                    </div>
+                    <div class="meta-item">
+                        <i class="fas fa-book"></i>
+                        <span>12 Materi</span>
+                    </div>
+                    <div class="meta-item">
+                        <i class="fas fa-signal"></i>
+                        <span>Tingkat: Pemula</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Chapter Navigation -->
+    <section class="chapter-nav">
+        <div class="container">
+            <div class="nav-container">
+                <a href="#" class="btn btn-outline" style="margin-right: 10px;">
+                    <i class="fas fa-download"></i> Unduh Materi
+                </a>
+                <div>
+                    <a href="#practice" class="btn btn-primary">
+                        <i class="fas fa-play"></i> Latihan
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Vocabulary Section -->
+    <section class="section vocabulary-section" id="vocabulary">
+        <div class="container">
+            <h2 class="section-title">
+                <i class="fas fa-book"></i>
+                Kosakata
+            </h2>
+            <p style="color: var(--text-secondary); margin-bottom: 30px;">
+                Pelajari kosakata baru yang akan digunakan dalam bab ini.
+            </p>
+
+            <div class="vocabulary-grid">
+                <div class="vocab-card">
+                    <div class="vocab-japanese">ほしい</div>
+                    <div class="vocab-reading">hoshii</div>
+                    <div class="vocab-meaning">Ingin (benda)</div>
+                    <div class="vocab-example">あたらしい かばんが ほしいです (saya ingin tas baru)</div>
+                </div>
+
+                <div class="vocab-card">
+                    <div class="vocab-japanese">～たい</div>
+                    <div class="vocab-reading">~tai</div>
+                    <div class="vocab-meaning">Ingin (melakukan)</div>
+                    <div class="vocab-example">にほんへ いきたいです (saya ingin pergi ke Jepang)</div>
+                </div>
+
+                <div class="vocab-card">
+                    <div class="vocab-japanese">できます</div>
+                    <div class="vocab-reading">dekimasu</div>
+                    <div class="vocab-meaning">Bisa/Dapat</div>
+                    <div class="vocab-example">にほんごが できます (saya bisa bahasa Jepang)</div>
+                </div>
+
+                <div class="vocab-card">
+                    <div class="vocab-japanese">よめます</div>
+                    <div class="vocab-reading">yomemasu</div>
+                    <div class="vocab-meaning">Bisa membaca</div>
+                    <div class="vocab-example">かんじが よめます (saya bisa membaca kanji)</div>
+                </div>
+
+                <div class="vocab-card">
+                    <div class="vocab-japanese">かけます</div>
+                    <div class="vocab-reading">kakemasu</div>
+                    <div class="vocab-meaning">Bisa menulis</div>
+                    <div class="vocab-example">ひらがなが かけます (saya bisa menulis hiragana)</div>
+                </div>
+
+                <div class="vocab-card">
+                    <div class="vocab-japanese">はなせます</div>
+                    <div class="vocab-reading">hanasemasu</div>
+                    <div class="vocab-meaning">Bisa berbicara</div>
+                    <div class="vocab-example">えいごが はなせます (saya bisa berbicara bahasa Inggris)</div>
+                </div>
+
+                <div class="vocab-card">
+                    <div class="vocab-japanese">つくります</div>
+                    <div class="vocab-reading">tsukurimasu</div>
+                    <div class="vocab-meaning">Membuat</div>
+                    <div class="vocab-example">ケーキを つくります (saya membuat kue)</div>
+                </div>
+
+                <div class="vocab-card">
+                    <div class="vocab-japanese">うります</div>
+                    <div class="vocab-reading">urimasu</div>
+                    <div class="vocab-meaning">Menjual</div>
+                    <div class="vocab-example">ほんを うります (saya menjual buku)</div>
+                </div>
+
+                <div class="vocab-card">
+                    <div class="vocab-japanese">しります</div>
+                    <div class="vocab-reading">shirimasu</div>
+                    <div class="vocab-meaning">Tahu</div>
+                    <div class="vocab-example">その ひとの なまえを しります (saya tahu nama orang itu)</div>
+                </div>
+
+                <div class="vocab-card">
+                    <div class="vocab-japanese">すみます</div>
+                    <div class="vocab-reading">sumimasu</div>
+                    <div class="vocab-meaning">Tinggal</div>
+                    <div class="vocab-example">アパートに すみます (saya tinggal di apartemen)</div>
+                </div>
+
+                <div class="vocab-card">
+                    <div class="vocab-japanese">けっこんします</div>
+                    <div class="vocab-reading">kekkon shimasu</div>
+                    <div class="vocab-meaning">Menikah</div>
+                    <div class="vocab-example">らいねん けっこんします (saya menikah tahun depan)</div>
+                </div>
+
+                <div class="vocab-card">
+                    <div class="vocab-japanese">しごと</div>
+                    <div class="vocab-reading">shigoto</div>
+                    <div class="vocab-meaning">Pekerjaan</div>
+                    <div class="vocab-example">いい しごと (pekerjaan yang bagus)</div>
+                </div>
+
+                <div class="vocab-card">
+                    <div class="vocab-japanese">つぎ</div>
+                    <div class="vocab-reading">tsugi</div>
+                    <div class="vocab-meaning">Berikutnya</div>
+                    <div class="vocab-example">つぎの えき (stasiun berikutnya)</div>
+                </div>
+
+                <div class="vocab-card">
+                    <div class="vocab-japanese">どちら</div>
+                    <div class="vocab-reading">dochira</div>
+                    <div class="vocab-meaning">Mana (formal)</div>
+                    <div class="vocab-example">どちらが いいですか (mana yang bagus?)</div>
+                </div>
+
+                <div class="vocab-card">
+                    <div class="vocab-japanese">ぜんぶ</div>
+                    <div class="vocab-reading">zenbu</div>
+                    <div class="vocab-meaning">Semua</div>
+                    <div class="vocab-example">ぜんぶ ください (semuanya, tolong)</div>
+                </div>
+
+                <div class="vocab-card">
+                    <div class="vocab-japanese">みんな</div>
+                    <div class="vocab-reading">minna</div>
+                    <div class="vocab-meaning">Semua orang</div>
+                    <div class="vocab-example">みんな きました (semua orang datang)</div>
+                </div>
+
+                <div class="vocab-card">
+                    <div class="vocab-japanese">いちばん</div>
+                    <div class="vocab-reading">ichiban</div>
+                    <div class="vocab-meaning">Paling/Nomor satu</div>
+                    <div class="vocab-example">いちばん すきな たべもの (makanan paling disukai)</div>
+                </div>
+
+                <div class="vocab-card">
+                    <div class="vocab-japanese">なぜ</div>
+                    <div class="vocab-reading">naze</div>
+                    <div class="vocab-meaning">Mengapa (formal)</div>
+                    <div class="vocab-example">なぜ ですか (mengapa?)</div>
+                </div>
+
+                <div class="vocab-card">
+                    <div class="vocab-japanese">どうして</div>
+                    <div class="vocab-reading">doushite</div>
+                    <div class="vocab-meaning">Mengapa</div>
+                    <div class="vocab-example">どうして きましたか (mengapa Anda datang?)</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Grammar Section -->
+    <section class="section grammar-section" id="grammar">
+        <div class="container">
+            <h2 class="section-title">
+                <i class="fas fa-language"></i>
+                Tata Bahasa
+            </h2>
+
+            <div class="grammar-item">
+                <h3 class="grammar-pattern">ほしい (hoshii) - Ingin memiliki benda</h3>
+                <p class="grammar-explanation">
+                    ほしい digunakan untuk menyatakan keinginan memiliki sesuatu. Partikel が digunakan sebelum ほしい.
+                </p>
+                <div class="grammar-examples">
+                    <div class="example-item">
+                        <div class="example-japanese">あたらしい パソコンが ほしいです。</div>
+                        <div class="example-reading">Atarashii pasokon ga hoshii desu.</div>
+                        <div class="example-meaning">Saya ingin komputer baru.</div>
+                    </div>
+                    <div class="example-item">
+                        <div class="example-japanese">じかんが ほしいです。</div>
+                        <div class="example-reading">Jikan ga hoshii desu.</div>
+                        <div class="example-meaning">Saya ingin waktu.</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="grammar-item">
+                <h3 class="grammar-pattern">～たい (~tai) - Ingin melakukan sesuatu</h3>
+                <p class="grammar-explanation">
+                    ～たい digunakan untuk menyatakan keinginan melakukan sesuatu. Dibentuk dengan mengganti ～ます dengan ～たい. Partikel が atau を bisa digunakan.
+                </p>
+                <div class="grammar-examples">
+                    <div class="example-item">
+                        <div class="example-japanese">にほんへ いきたいです。</div>
+                        <div class="example-reading">Nihon e ikitai desu.</div>
+                        <div class="example-meaning">Saya ingin pergi ke Jepang.</div>
+                    </div>
+                    <div class="example-item">
+                        <div class="example-japanese">コーヒーが のみたいです。</div>
+                        <div class="example-reading">Koohii ga nomitai desu.</div>
+                        <div class="example-meaning">Saya ingin minum kopi.</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="grammar-item">
+                <h3 class="grammar-pattern">Bentuk Potensial - Kemampuan</h3>
+                <p class="grammar-explanation">
+                    Bentuk potensial digunakan untuk menyatakan kemampuan melakukan sesuatu. Dibentuk dengan mengubah kata kerja kelompok 1: -u → -eru, kelompok 2: -ru → -rareru, kelompok 3: きます → こられます、します → できます.
+                </p>
+                <div class="grammar-examples">
+                    <div class="example-item">
+                        <div class="example-japanese">にほんごが はなせます。</div>
+                        <div class="example-reading">Nihongo ga hanasemasu.</div>
+                        <div class="example-meaning">Saya bisa berbicara bahasa Jepang.</div>
+                    </div>
+                    <div class="example-item">
+                        <div class="example-japanese">かんじが よめます。</div>
+                        <div class="example-reading">Kanji ga yomemasu.</div>
+                        <div class="example-meaning">Saya bisa membaca kanji.</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="grammar-item">
+                <h3 class="grammar-pattern">どうして (doushite) - Mengapa</h3>
+                <p class="grammar-explanation">
+                    どうして digunakan untuk menanyakan alasan. Jawabannya menggunakan から (kara).
+                </p>
+                <div class="grammar-examples">
+                    <div class="example-item">
+                        <div class="example-japanese">どうして にほんごを べんきょうしますか。</div>
+                        <div class="example-reading">Doushite nihongo o benkyou shimasu ka?</div>
+                        <div class="example-meaning">Mengapa Anda belajar bahasa Jepang?</div>
+                    </div>
+                    <div class="example-item">
+                        <div class="example-japanese">にほんへ いきたいからです。</div>
+                        <div class="example-reading">Nihon e ikitai kara desu.</div>
+                        <div class="example-meaning">Karena saya ingin pergi ke Jepang.</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="grammar-item">
+                <h3 class="grammar-pattern">どちら/どっち (dochira/dotchi) - Mana</h3>
+                <p class="grammar-explanation">
+                    どちら (formal) atau どっち (casual) digunakan untuk memilih antara dua pilihan.
+                </p>
+                <div class="grammar-examples">
+                    <div class="example-item">
+                        <div class="example-japanese">コーヒーと おちゃ、どちらが いいですか。</div>
+                        <div class="example-reading">Koohii to ocha, dochira ga ii desu ka?</div>
+                        <div class="example-meaning">Kopi dan teh, mana yang bagus?</div>
+                    </div>
+                    <div class="example-item">
+                        <div class="example-japanese">コーヒーの ほうが いいです。</div>
+                        <div class="example-reading">Koohii no hou ga ii desu.</div>
+                        <div class="example-meaning">Kopi lebih baik.</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Conversation Section -->
+    <section class="section conversation-section" id="conversation">
+        <div class="container">
+            <h2 class="section-title">
+                <i class="fas fa-comments"></i>
+                Percakapan
+            </h2>
+
+            <div class="conversation-card">
+                <div class="dialogue-item">
+                    <div class="speaker">
+                        <i class="fas fa-user"></i>
+                        Yamada
+                    </div>
+                    <div class="dialogue-text">たんじょうびに なにが ほしいですか。</div>
+                    <div class="dialogue-reading">Tanjoubi ni nani ga hoshii desu ka?</div>
+                    <div class="dialogue-meaning">Anda ingin apa untuk ulang tahun?</div>
+                </div>
+
+                <div class="dialogue-item">
+                    <div class="speaker">
+                        <i class="fas fa-user"></i>
+                        Tanaka
+                    </div>
+                    <div class="dialogue-text">あたらしい カメラが ほしいです。</div>
+                    <div class="dialogue-reading">Atarashii kamera ga hoshii desu.</div>
+                    <div class="dialogue-meaning">Saya ingin kamera baru.</div>
+                </div>
+
+                <div class="dialogue-item">
+                    <div class="speaker">
+                        <i class="fas fa-user"></i>
+                        Yamada
+                    </div>
+                    <div class="dialogue-text">しごとが おわってから、なにを したいですか。</div>
+                    <div class="dialogue-reading">Shigoto ga owatte kara, nani o shitai desu ka?</div>
+                    <div class="dialogue-meaning">Setelah pekerjaan selesai, apa yang ingin Anda lakukan?</div>
+                </div>
+
+                <div class="dialogue-item">
+                    <div class="speaker">
+                        <i class="fas fa-user"></i>
+                        Tanaka
+                    </div>
+                    <div class="dialogue-text">えいがを みたいです。</div>
+                    <div class="dialogue-reading">Eiga o mitai desu.</div>
+                    <div class="dialogue-meaning">Saya ingin menonton film.</div>
+                </div>
+
+                <div class="dialogue-item">
+                    <div class="speaker">
+                        <i class="fas fa-user"></i>
+                        Yamada
+                    </div>
+                    <div class="dialogue-text">どんな えいがが みたいですか。</div>
+                    <div class="dialogue-reading">Donna eiga ga mitai desu ka?</div>
+                    <div class="dialogue-meaning">Film seperti apa yang ingin Anda tonton?</div>
+                </div>
+
+                <div class="dialogue-item">
+                    <div class="speaker">
+                        <i class="fas fa-user"></i>
+                        Tanaka
+                    </div>
+                    <div class="dialogue-text">アクションえいがが みたいです。</div>
+                    <div class="dialogue-reading">Akushon eiga ga mitai desu.</div>
+                    <div class="dialogue-meaning">Saya ingin menonton film action.</div>
+                </div>
+
+                <div class="dialogue-item">
+                    <div class="speaker">
+                        <i class="fas fa-user"></i>
+                        Yamada
+                    </div>
+                    <div class="dialogue-text">にほんごが はなせますか。</div>
+                    <div class="dialogue-reading">Nihongo ga hanasemasu ka?</div>
+                    <div class="dialogue-meaning">Apakah Anda bisa berbicara bahasa Jepang?</div>
+                </div>
+
+                <div class="dialogue-item">
+                    <div class="speaker">
+                        <i class="fas fa-user"></i>
+                        Tanaka
+                    </div>
+                    <div class="dialogue-text">はい、すこし はなせます。</div>
+                    <div class="dialogue-reading">Hai, sukoshi hanasemasu.</div>
+                    <div class="dialogue-meaning">Ya, saya bisa berbicara sedikit.</div>
+                </div>
+
+                <div class="dialogue-item">
+                    <div class="speaker">
+                        <i class="fas fa-user"></i>
+                        Yamada
+                    </div>
+                    <div class="dialogue-text">かんじも よめますか。</div>
+                    <div class="dialogue-reading">Kanji mo yomemasu ka?</div>
+                    <div class="dialogue-meaning">Apakah Anda juga bisa membaca kanji?</div>
+                </div>
+
+                <div class="dialogue-item">
+                    <div class="speaker">
+                        <i class="fas fa-user"></i>
+                        Tanaka
+                    </div>
+                    <div class="dialogue-text">いいえ、かんじは あまり よめません。</div>
+                    <div class="dialogue-reading">Iie, kanji wa amari yomemasen.</div>
+                    <div class="dialogue-meaning">Tidak, saya tidak terlalu bisa membaca kanji.</div>
+                </div>
+
+                <div class="dialogue-item">
+                    <div class="speaker">
+                        <i class="fas fa-user"></i>
+                        Yamada
+                    </div>
+                    <div class="dialogue-text">どうして にほんごを べんきょうしていますか。</div>
+                    <div class="dialogue-reading">Doushite nihongo o benkyou shiteimasu ka?</div>
+                    <div class="dialogue-meaning">Mengapa Anda belajar bahasa Jepang?</div>
+                </div>
+
+                <div class="dialogue-item">
+                    <div class="speaker">
+                        <i class="fas fa-user"></i>
+                        Tanaka
+                    </div>
+                    <div class="dialogue-text">にほんの かいしゃで はたらきたいからです。</div>
+                    <div class="dialogue-reading">Nihon no kaisha de hatarakitai kara desu.</div>
+                    <div class="dialogue-meaning">Karena saya ingin bekerja di perusahaan Jepang.</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Practice Section -->
+    <section class="section practice-section" id="practice">
+        <div class="container">
+            <h2 class="section-title">
+                <i class="fas fa-pencil-alt"></i>
+                Latihan
+            </h2>
+
+            <div class="practice-card">
+                <h3 class="practice-question">1. Bagaimana mengatakan "Saya ingin buku baru" dalam bahasa Jepang?</h3>
+                <div class="practice-options">
+                    <div class="practice-option">あたらしい ほんを ほしいです。</div>
+                    <div class="practice-option" data-correct="true">あたらしい ほんが ほしいです。</div>
+                    <div class="practice-option">あたらしい ほんに ほしいです。</div>
+                    <div class="practice-option">あたらしい ほんと ほしいです。</div>
+                </div>
+                <div class="practice-feedback" id="feedback1"></div>
+            </div>
+
+            <div class="practice-card">
+                <h3 class="practice-question">2. Bagaimana mengatakan "Saya ingin pergi ke Jepang" dalam bahasa Jepang?</h3>
+                <div class="practice-options">
+                    <div class="practice-option">にほんへ いきます。</div>
+                    <div class="practice-option" data-correct="true">にほんへ いきたいです。</div>
+                    <div class="practice-option">にほんへ いってです。</div>
+                    <div class="practice-option">にほんへ いきです。</div>
+                </div>
+                <div class="practice-feedback" id="feedback2"></div>
+            </div>
+
+            <div class="practice-card">
+                <h3 class="practice-question">3. Bagaimana mengatakan "Saya bisa berbicara bahasa Jepang" dalam bahasa Jepang?</h3>
+                <div class="practice-options">
+                    <div class="practice-option">にほんごを はなします。</div>
+                    <div class="practice-option" data-correct="true">にほんごが はなせます。</div>
+                    <div class="practice-option">にほんごに はなします。</div>
+                    <div class="practice-option">にほんごで はなします。</div>
+                </div>
+                <div class="practice-feedback" id="feedback3"></div>
+            </div>
+
+            <div class="practice-card">
+                <h3 class="practice-question">4. Bagaimana menanyakan "Mengapa Anda belajar bahasa Jepang?" dalam bahasa Jepang?</h3>
+                <div class="practice-options">
+                    <div class="practice-option">なにで にほんごを べんきょうしますか。</div>
+                    <div class="practice-option">どこで にほんごを べんきょうしますか。</div>
+                    <div class="practice-option" data-correct="true">どうして にほんごを べんきょうしますか。</div>
+                    <div class="practice-option">いつ にほんごを べんきょうしますか。</div>
+                </div>
+                <div class="practice-feedback" id="feedback4"></div>
+            </div>
+
+            <div class="practice-card">
+                <h3 class="practice-question">5. Bagaimana mengatakan "Kopi dan teh, mana yang Anda inginkan?" dalam bahasa Jepang?</h3>
+                <div class="practice-options">
+                    <div class="practice-option">コーヒーと おちゃ、なにが いいですか。</div>
+                    <div class="practice-option" data-correct="true">コーヒーと おちゃ、どちらが いいですか。</div>
+                    <div class="practice-option">コーヒーと おちゃ、どこが いいですか。</div>
+                    <div class="practice-option">コーヒーと おちゃ、いつが いいですか。</div>
+                </div>
+                <div class="practice-feedback" id="feedback5"></div>
+            </div>
+
+            <div style="text-align: center; margin-top: 30px;">
+                <button class="btn btn-primary" id="check-answers">
+                    <i class="fas fa-check"></i> Periksa Jawaban
+                </button>
+                <button class="btn btn-outline" id="reset-practice" style="margin-left: 10px;">
+                    <i class="fas fa-redo"></i> Ulangi Latihan
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Resources Section -->
+    <section class="section resources-section" id="resources">
+        <div class="container">
+            <h2 class="section-title">
+                <i class="fas fa-tools"></i>
+                Sumber Belajar
+            </h2>
+            <p style="color: var(--text-secondary); margin-bottom: 40px;">
+                Manfaatkan sumber belajar tambahan untuk memperdalam pemahaman Anda.
+            </p>
+
+            <div class="resources-grid">
+                <div class="resource-card">
+                    <div class="resource-icon">
+                        <i class="fas fa-file-pdf"></i>
+                    </div>
+                    <h3 class="resource-title">Lembar Kerja PDF</h3>
+                    <p class="resource-description">Unduh lembar kerja untuk berlatih bentuk keinginan dan kemampuan Bab 13.</p>
+                    <a href="#" class="btn btn-outline">Download</a>
+                </div>
+
+                <div class="resource-card">
+                    <div class="resource-icon">
+                        <i class="fas fa-headphones"></i>
+                    </div>
+                    <h3 class="resource-title">Audio Percakapan</h3>
+                    <p class="resource-description">Dengarkan pengucapan native speaker untuk percakapan dalam bab ini.</p>
+                    <a href="#" class="btn btn-outline">Dengarkan</a>
+                </div>
+
+                <div class="resource-card">
+                    <div class="resource-icon">
+                        <i class="fas fa-video"></i>
+                    </div>
+                    <h3 class="resource-title">Video Penjelasan</h3>
+                    <p class="resource-description">Tonton video penjelasan tentang perbedaan ほしい dan ～たい serta bentuk kemampuan.</p>
+                    <a href="#" class="btn btn-outline">Tonton</a>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="nav-container">
+                <a href="/03_buku/minna-no-nihongo-1/bab-12/" class="btn btn-outline" style="margin-right: 10px;">
+                    <i class="fas fa-arrow-left"></i> Bab 12
+                </a>
+                <div>
+                    <a href="/03_buku/minna-no-nihongo-1/bab-14/" class="btn btn-primary">
+                        Bab 14 <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>Nihongopedia</h3>
+                    <p style="color: var(--text-secondary); margin-bottom: 20px;">
+                        Platform pembelajaran bahasa Jepang gratis dan lengkap untuk semua level.
+                    </p>
+                    <div class="social-links">
+                        <a href="https://instagram.com/nihongopedia.jpg" class="social-link"><i class="fab fa-instagram"></i></a>
+                        <a href="https://youtube.com/@nihongopedia" class="social-link"><i class="fab fa-youtube"></i></a>
+                        <a href="https://tiktok.com/@nihongopedia" class="social-link"><i class="fab fa-tiktok"></i></a>
+                    </div>
+                </div>
+
+                <div class="footer-column">
+                    <h3>Menu</h3>
+                    <ul class="footer-links">
+                        <li><a href="/01_beranda">Beranda</a></li>
+                        <li><a href="/02_belajar">Belajar</a></li>
+                        <li><a href="/03_buku">Buku</a></li>
+                        <li><a href="/04_materi">Materi</a></li>
+                        <li><a href="/05_donasi">Donasi</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-column">
+                    <h3>Bab 13</h3>
+                    <ul class="footer-links">
+                        <li><a href="#vocabulary">Kosakata</a></li>
+                        <li><a href="#grammar">Tata Bahasa</a></li>
+                        <li><a href="#conversation">Percakapan</a></li>
+                        <li><a href="#practice">Latihan</a></li>
+                        <li><a href="#resources">Sumber Belajar</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-column">
+                    <h3>Kontak & Donasi</h3>
+                    <ul class="footer-links">
+                        <li><i class="fas fa-envelope"></i> nihongopedia123@gmail.com</li>
+                        <li><i class="fas fa-heart"></i> <a href="/05_donasi">Dukung Kami</a></li>
+                        <li><i class="fas fa-map-marker-alt"></i> Indonesia</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2024 Nihongopedia. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Go to Top Button -->
+    <button id="go-to-top" class="go-to-top-btn">
+        <i class="fas fa-chevron-up"></i>
+    </button>
+
+    <script src="/00_assets/js/minna-no-nihongo-1.js"></script>
+</body>
+
+</html>
