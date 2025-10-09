@@ -344,29 +344,38 @@
                     <div class="practice-option">それは ほん です。</div>
                     <div class="practice-option">あれは ほん です。</div>
                 </div>
-                <div class="practice-feedback"></div>
+                <div class="practice-feedback" id="feedback1"></div>
             </div>
 
             <div class="practice-card">
-                <h3 class="practice-question">2. Manakah yang benar untuk menanyakan "Tas siapa itu?" (jauh dari pembicara dan lawan bicara)?</h3>
+                <h3 class="practice-question">2. Kata tunjuk mana yang digunakan untuk benda yang dekat dengan lawan bicara?</h3>
                 <div class="practice-options">
-                    <div class="practice-option">これは だれの かばん ですか。</div>
-                    <div class="practice-option">それは だれの かばん ですか。</div>
+                    <div class="practice-option">これ (kore)</div>
+                    <div class="practice-option" data-correct="true">それ (sore)</div>
+                    <div class="practice-option">あれ (are)</div>
+                    <div class="practice-option">どの (dono)</div>
+                </div>
+                <div class="practice-feedback" id="feedback2"></div>
+            </div>
+
+            <div class="practice-card">
+                <h3 class="practice-question">3. Bagaimana mengatakan "Tas siapa itu?" dalam bahasa Jepang?</h3>
+                <div class="practice-options">
+                    <div class="practice-option">これは かばん ですか。</div>
+                    <div class="practice-option">それは かばん です。</div>
                     <div class="practice-option" data-correct="true">あれは だれの かばん ですか。</div>
-                    <div class="practice-option">かばんは だれ ですか。</div>
+                    <div class="practice-option">あれは かばん です。</div>
                 </div>
-                <div class="practice-feedback"></div>
+                <div class="practice-feedback" id="feedback3"></div>
             </div>
 
-            <div class="practice-card">
-                <h3 class="practice-question">3. Pilih kalimat yang tepat untuk situasi: Anda memegang sebuah kamus dan bertanya kepada teman apa itu.</h3>
-                <div class="practice-options">
-                    <div class="practice-option" data-correct="true">これは なん ですか。</div>
-                    <div class="practice-option">それは なん ですか。</div>
-                    <div class="practice-option">あれは なん ですか。</div>
-                    <div class="practice-option">だれの ですか。</div>
-                </div>
-                <div class="practice-feedback"></div>
+            <div style="text-align: center; margin-top: 30px;">
+                <button class="btn btn-primary" id="check-answers">
+                    <i class="fas fa-check"></i> Periksa Jawaban
+                </button>
+                <button class="btn btn-outline" id="reset-practice" style="margin-left: 10px;">
+                    <i class="fas fa-redo"></i> Ulangi Latihan
+                </button>
             </div>
         </div>
     </section>
@@ -375,18 +384,21 @@
     <section class="section resources-section" id="resources">
         <div class="container">
             <h2 class="section-title">
-                <i class="fas fa-link"></i>
+                <i class="fas fa-tools"></i>
                 Sumber Belajar
             </h2>
+            <p style="color: var(--text-secondary); margin-bottom: 40px;">
+                Manfaatkan sumber belajar tambahan untuk memperdalam pemahaman Anda.
+            </p>
 
             <div class="resources-grid">
                 <div class="resource-card">
                     <div class="resource-icon">
                         <i class="fas fa-file-pdf"></i>
                     </div>
-                    <h3 class="resource-title">PDF Materi</h3>
-                    <p class="resource-description">Unduh materi bab 2 dalam format PDF untuk belajar offline</p>
-                    <a href="#" class="btn btn-secondary">Unduh</a>
+                    <h3 class="resource-title">Lembar Kerja PDF</h3>
+                    <p class="resource-description">Unduh lembar kerja untuk berlatih kosakata dan tata bahasa Bab 2.</p>
+                    <a href="#" class="btn btn-outline">Download</a>
                 </div>
 
                 <div class="resource-card">
@@ -394,8 +406,8 @@
                         <i class="fas fa-headphones"></i>
                     </div>
                     <h3 class="resource-title">Audio Percakapan</h3>
-                    <p class="resource-description">Dengarkan pengucapan kosakata dan percakapan dengan audio</p>
-                    <a href="#" class="btn btn-secondary">Dengarkan</a>
+                    <p class="resource-description">Dengarkan pengucapan native speaker untuk percakapan dalam bab ini.</p>
+                    <a href="#" class="btn btn-outline">Dengarkan</a>
                 </div>
 
                 <div class="resource-card">
@@ -403,16 +415,18 @@
                         <i class="fas fa-video"></i>
                     </div>
                     <h3 class="resource-title">Video Penjelasan</h3>
-                    <p class="resource-description">Tonton video penjelasan tata bahasa dan contoh penggunaan</p>
-                    <a href="#" class="btn btn-secondary">Tonton</a>
+                    <p class="resource-description">Tonton video penjelasan tentang kata tunjuk dan partikel "no".</p>
+                    <a href="#" class="btn btn-outline">Tonton</a>
                 </div>
             </div>
+        </div>
+        <div class="container">
             <div class="nav-container">
-                <a href="/03_buku/minna-no-nihongo-1/bab-1" class="btn btn-outline" style="margin-right: 10px;">
+                <a href="/03_buku/minna-no-nihongo-1/bab-1/" class="btn btn-outline" style="margin-right: 10px;">
                     <i class="fas fa-arrow-left"></i> Bab 1
                 </a>
                 <div>
-                    <a href="/03_buku/minna-no-nihongo-1/bab-3" class="btn btn-primary">
+                    <a href="/03_buku/minna-no-nihongo-1/bab-3/" class="btn btn-primary">
                         Bab 3 <i class="fas fa-arrow-right"></i>
                     </a>
                 </div>
@@ -469,14 +483,14 @@
             </div>
 
             <div class="footer-bottom">
-                <p>&copy; 2024 Nihongopedia. All rights reserved. - Platform Belajar Bahasa Jepang Gratis</p>
+                <p>&copy; 2024 Nihongopedia. All rights reserved.</p>
             </div>
         </div>
     </footer>
 
     <!-- Go to Top Button -->
-    <button class="go-to-top-btn" id="goToTopBtn">
-        <i class="fas fa-arrow-up"></i>
+    <button id="go-to-top" class="go-to-top-btn">
+        <i class="fas fa-chevron-up"></i>
     </button>
 
     <script src="/00_assets/js/minna-no-nihongo-1.js"></script>
