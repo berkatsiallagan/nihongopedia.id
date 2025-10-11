@@ -363,7 +363,7 @@ header {
     transform: translateY(-3px);
 }
 
-.vocab-japanese {
+.vocab-kanji {
     font-size: 24px;
     font-weight: 700;
     margin-bottom: 10px;
@@ -383,7 +383,7 @@ header {
     margin-bottom: 15px;
 }
 
-.vocab-example {
+.vocab-indonesia {
     font-size: 14px;
     color: var(--text-secondary);
     font-style: italic;
@@ -599,6 +599,7 @@ header {
     font-size: 0.95rem;
     color: var(--text-secondary);
     line-height: 1.5;
+    margin-bottom: 10px;
 }
 
 /* Responsive Design */

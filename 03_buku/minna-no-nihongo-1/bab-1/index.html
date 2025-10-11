@@ -1,15 +1,934 @@
 <!DOCTYPE html>
 <html lang="id">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Pelajari Bab 1 - Perkenalan Diri dari buku Minna no Nihongo 1. Materi lengkap dengan kosakata, tata bahasa, percakapan, latihan, dan sumber belajar tambahan.">
+    <meta name="keywords" content="Minna no Nihongo, Bab 1, Perkenalan Diri, Kosakata, Tata Bahasa, Percakapan, Latihan, Sumber Belajar, Nihongopedia">
+    <meta name="author" content="Nihongopedia">
+    <meta property="og:title" content="Bab 1 - Perkenalan Diri - Minna no Nihongo 1 - Nihongopedia">
+    <meta property="og:description" content="Pelajari Bab 1 - Perkenalan Diri dari buku Minna no Nihongo 1. Materi lengkap dengan kosakata, tata bahasa, percakapan, latihan, dan sumber belajar tambahan.">
+    <meta property="og:image" content="/06_gambar/nihongopedia.PNG">
+    <meta property="og:url" content="https://nihongopedia.id/03_buku/minna-no-nihongo-1/bab-1">
+    <meta property="og:type" content="website">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Bab 1 - Perkenalan Diri - Minna no Nihongo 1 - Nihongopedia">
+    <meta name="twitter:description" content="Pelajari Bab 1 - Perkenalan Diri dari buku Minna no Nihongo 1. Materi lengkap dengan kosakata, tata bahasa, percakapan, latihan, dan sumber belajar tambahan.">
+    <meta name="twitter:image" content="/06_gambar/nihongopedia.PNG">
+    <link rel="stylesheet" href="/00_assets/css/minna-no-nihongo-1.css">
     <link rel="icon" href="/06_gambar/nihongopedia.PNG" type="image/png">
-    <title>Bab 1 - Minna no Nihongo 1 - Nihongopedia</title>
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap"
         rel="stylesheet">
+    <title>Bab 1 - Perkenalan Diri - Minna no Nihongo 1 - Nihongopedia</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="/00_assets/css/minna-no-nihongo-1.css">
+
+    <!-- ROOT CSS -->
+    <style>
+        :root {
+            /* Light Theme */
+            --primary: #DC143C;
+            --secondary: #FFFFFF;
+            --accent: #C70039;
+            --text-primary: #333333;
+            --text-secondary: #666666;
+            --bg-primary: #FFFFFF;
+            --bg-secondary: #F8F8F8;
+            --bg-card: #FFFFFF;
+            --border: #E0E0E0;
+            --shadow: rgba(0, 0, 0, 0.1);
+            --success: #28a745;
+            --warning: #ffc107;
+        }
+
+        [data-theme="dark"] {
+            /* Dark Theme */
+            --primary: #DC143C;
+            --secondary: #1a1a1a;
+            --accent: #FF6B8B;
+            --text-primary: #FFFFFF;
+            --text-secondary: #CCCCCC;
+            --bg-primary: #121212;
+            --bg-secondary: #1E1E1E;
+            --bg-card: #252525;
+            --border: #444444;
+            --shadow: rgba(0, 0, 0, 0.3);
+            --success: #34D399;
+            --warning: #FBBF24;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            transition: background-color 0.3s, color 0.3s, border-color 0.3s;
+        }
+
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: var(--bg-primary);
+            color: var(--text-primary);
+            line-height: 1.6;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header Styles */
+        header {
+            background-color: var(--bg-primary);
+            box-shadow: 0 2px 10px var(--shadow);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 0;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo-icon {
+            color: var(--primary);
+            font-size: 24px;
+        }
+
+        .logo-text {
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--primary);
+        }
+
+        .logo-image {
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            gap: 30px;
+        }
+
+        .nav-link {
+            text-decoration: none;
+            color: var(--text-primary);
+            font-weight: 500;
+            position: relative;
+            padding: 5px 0;
+        }
+
+        .nav-link:hover {
+            color: var(--primary);
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: var(--primary);
+            transition: width 0.3s;
+        }
+
+        .nav-link:hover::after {
+            width: 100%;
+        }
+
+        .header-actions {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .theme-toggle {
+            background: none;
+            border: none;
+            color: var(--text-primary);
+            cursor: pointer;
+            font-size: 20px;
+            padding: 5px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .theme-toggle:hover {
+            background-color: var(--bg-secondary);
+        }
+
+        .mobile-menu-toggle {
+            display: none;
+            background: none;
+            border: none;
+            color: var(--text-primary);
+            font-size: 24px;
+            cursor: pointer;
+        }
+
+        /* Breadcrumb Styles */
+        .breadcrumb {
+            background-color: var(--bg-secondary);
+            padding: 15px 0;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .breadcrumb-list {
+            display: flex;
+            align-items: center;
+            list-style: none;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+
+        .breadcrumb-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 14px;
+        }
+
+        .breadcrumb-item:not(:last-child)::after {
+            content: '/';
+            color: var(--text-secondary);
+            margin-left: 10px;
+        }
+
+        .breadcrumb-item a {
+            text-decoration: none;
+            color: var(--text-secondary);
+            transition: color 0.3s;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .breadcrumb-item a:hover {
+            color: var(--primary);
+        }
+
+        .breadcrumb-item.active span {
+            color: var(--primary);
+            font-weight: 600;
+        }
+
+        .breadcrumb-item .fas.fa-home {
+            font-size: 12px;
+        }
+
+        /* Hero Section */
+        .hero {
+            padding: 40px 0;
+            background: linear-gradient(135deg, var(--bg-primary) 0%, var(--bg-secondary) 100%);
+        }
+
+        .chapter-header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .chapter-badge {
+            display: inline-block;
+            background-color: var(--primary);
+            color: white;
+            padding: 8px 20px;
+            border-radius: 20px;
+            font-weight: 600;
+            margin-bottom: 15px;
+        }
+
+        .chapter-title {
+            font-size: 36px;
+            font-weight: 700;
+            margin-bottom: 15px;
+            color: var(--text-primary);
+        }
+
+        .chapter-subtitle {
+            font-size: 18px;
+            color: var(--text-secondary);
+            margin-bottom: 25px;
+        }
+
+        .chapter-meta {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+        }
+
+        .meta-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            color: var(--text-secondary);
+            font-size: 14px;
+        }
+
+        /* Navigation */
+        .chapter-nav {
+            background-color: var(--bg-card);
+            padding: 20px 0;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 12px 24px;
+            border-radius: 8px;
+            font-weight: 600;
+            text-decoration: none;
+            cursor: pointer;
+            transition: all 0.3s;
+            border: none;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+        }
+
+        .btn-primary {
+            background-color: var(--primary);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background-color: var(--accent);
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(220, 20, 60, 0.3);
+        }
+
+        .btn-secondary {
+            background-color: transparent;
+            color: var(--primary);
+            border: 2px solid var(--primary);
+        }
+
+        .btn-secondary:hover {
+            background-color: var(--primary);
+            color: white;
+            transform: translateY(-2px);
+        }
+
+        .btn-outline {
+            background-color: transparent;
+            color: var(--text-primary);
+            border: 2px solid var(--border);
+        }
+
+        .btn-outline:hover {
+            background-color: var(--bg-secondary);
+            border-color: var(--primary);
+        }
+
+        /* Section Styles */
+        .section {
+            padding: 60px 0;
+        }
+
+        .section-title {
+            font-size: 28px;
+            font-weight: 700;
+            margin-bottom: 30px;
+            color: var(--text-primary);
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .section-title i {
+            color: var(--primary);
+        }
+
+        /* Vocabulary Section */
+        .vocabulary-section {
+            background-color: var(--bg-secondary);
+        }
+
+        .vocabulary-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            margin-bottom: 40px;
+        }
+
+        .vocab-card {
+            background-color: var(--bg-card);
+            border-radius: 10px;
+            padding: 25px;
+            box-shadow: 0 5px 15px var(--shadow);
+            transition: transform 0.3s;
+        }
+
+        .vocab-card:hover {
+            transform: translateY(-3px);
+        }
+
+        .vocab-japanese {
+            font-size: 24px;
+            font-weight: 700;
+            margin-bottom: 10px;
+            color: var(--primary);
+        }
+
+        .vocab-reading {
+            font-size: 16px;
+            color: var(--text-secondary);
+            margin-bottom: 15px;
+            font-family: monospace;
+        }
+
+        .vocab-meaning {
+            font-size: 16px;
+            color: var(--text-primary);
+            margin-bottom: 15px;
+        }
+
+        .vocab-id {
+            font-size: 14px;
+            color: var(--text-secondary);
+            font-style: italic;
+            border-left: 3px solid var(--primary);
+            padding-left: 15px;
+        }
+
+        /* Grammar Section */
+        .grammar-section {
+            background-color: var(--bg-primary);
+        }
+
+        .grammar-item {
+            background-color: var(--bg-card);
+            border-radius: 10px;
+            padding: 30px;
+            margin-bottom: 30px;
+            box-shadow: 0 5px 15px var(--shadow);
+        }
+
+        .grammar-pattern {
+            font-size: 20px;
+            font-weight: 600;
+            margin-bottom: 15px;
+            color: var(--primary);
+        }
+
+        .grammar-explanation {
+            color: var(--text-secondary);
+            margin-bottom: 20px;
+            line-height: 1.8;
+        }
+
+        .grammar-examples {
+            background-color: var(--bg-secondary);
+            border-radius: 8px;
+            padding: 20px;
+        }
+
+        .example-item {
+            margin-bottom: 15px;
+            padding-bottom: 15px;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .example-item:last-child {
+            margin-bottom: 0;
+            padding-bottom: 0;
+            border-bottom: none;
+        }
+
+        .example-japanese {
+            font-size: 16px;
+            margin-bottom: 5px;
+        }
+
+        .example-reading {
+            font-size: 14px;
+            color: var(--text-secondary);
+            margin-bottom: 5px;
+            font-family: monospace;
+        }
+
+        .example-meaning {
+            font-size: 14px;
+            color: var(--text-secondary);
+        }
+
+        /* Conversation Section */
+        .conversation-section {
+            background-color: var(--bg-secondary);
+        }
+
+        .conversation-card {
+            background-color: var(--bg-card);
+            border-radius: 10px;
+            padding: 30px;
+            box-shadow: 0 5px 15px var(--shadow);
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .dialogue-item {
+            margin-bottom: 25px;
+            padding: 20px;
+            background-color: var(--bg-secondary);
+            border-radius: 8px;
+        }
+
+        .speaker {
+            font-weight: 600;
+            color: var(--primary);
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .dialogue-text {
+            margin-bottom: 10px;
+            line-height: 1.6;
+        }
+
+        .dialogue-reading {
+            font-size: 14px;
+            color: var(--text-secondary);
+            font-family: monospace;
+            margin-bottom: 10px;
+        }
+
+        .dialogue-meaning {
+            font-size: 14px;
+            color: var(--text-secondary);
+            font-style: italic;
+        }
+
+        /* Reference Section */
+        .reference-section {
+            background-color: var(--bg-primary);
+            padding: 60px 0;
+        }
+
+        .reference-content {
+            margin-bottom: 40px;
+        }
+
+        .reference-content h3 {
+            color: var(--text-primary);
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 20px;
+            border-left: 4px solid var(--primary);
+        }
+
+        .reference-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .reference-item {
+            background: var(--bg-secondary);
+            padding: 15px;
+            border-radius: 8px;
+            text-align: center;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+            border: 1px solid var(--border);
+        }
+
+        .reference-item:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+        }
+
+        .reference-japanese {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: var(--text-primary);
+            margin-bottom: 5px;
+        }
+
+        .reference-reading {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            font-style: italic;
+        }
+
+        /* Info Box Styles */
+        .info-box {
+            background: var(--bg-secondary);
+            border-radius: 12px;
+            padding: 20px;
+            margin-bottom: 20px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+            border: 1px solid var(--border);
+        }
+
+        .info-title {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+            color: var(--primary);
+            font-weight: 600;
+            font-size: 1.1rem;
+        }
+
+        .info-title i {
+            margin-right: 10px;
+            font-size: 1.2rem;
+        }
+
+        .info-content {
+            padding-left: 10px;
+        }
+
+        .info-japanese {
+            font-size: 1.1rem;
+            font-weight: 500;
+            color: var(--text-primary);
+            margin-bottom: 5px;
+        }
+
+        .info-reading {
+            font-size: 0.95rem;
+            color: var(--text-secondary);
+            font-style: italic;
+            margin-bottom: 5px;
+        }
+
+        .info-meaning {
+            font-size: 0.95rem;
+            color: var(--text-secondary);
+            line-height: 1.5;
+        }
+
+        /* Practice Section */
+        .practice-section {
+            background-color: var(--bg-secondary);
+        }
+
+        .practice-card {
+            background-color: var(--bg-card);
+            border-radius: 10px;
+            padding: 30px;
+            box-shadow: 0 5px 15px var(--shadow);
+            margin-bottom: 30px;
+        }
+
+        .practice-question {
+            font-size: 18px;
+            margin-bottom: 20px;
+            color: var(--text-primary);
+        }
+
+        .practice-options {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+
+        .practice-option {
+            padding: 15px;
+            border: 2px solid var(--border);
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s;
+            text-align: center;
+        }
+
+        .practice-option:hover {
+            border-color: var(--primary);
+        }
+
+        .practice-option.selected {
+            background-color: var(--primary);
+            color: white;
+            border-color: var(--primary);
+        }
+
+        .practice-feedback {
+            padding: 15px;
+            border-radius: 8px;
+            margin-top: 15px;
+            display: none;
+        }
+
+        .practice-feedback.correct {
+            background-color: rgba(40, 167, 69, 0.1);
+            color: var(--success);
+            border: 1px solid var(--success);
+            display: block;
+        }
+
+        .practice-feedback.incorrect {
+            background-color: rgba(220, 20, 60, 0.1);
+            color: var(--primary);
+            border: 1px solid var(--primary);
+            display: block;
+        }
+
+        /* Resources Section */
+        .resources-section {
+            background-color: var(--bg-primary);
+            text-align: center;
+        }
+
+        .resources-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+
+        .resource-card {
+            background-color: var(--bg-card);
+            border-radius: 10px;
+            padding: 30px;
+            box-shadow: 0 5px 15px var(--shadow);
+            text-align: center;
+            transition: transform 0.3s;
+        }
+
+        .resource-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .resource-icon {
+            width: 60px;
+            height: 60px;
+            background-color: rgba(220, 20, 60, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+            color: var(--primary);
+            font-size: 24px;
+        }
+
+        .resource-title {
+            font-size: 18px;
+            font-weight: 600;
+            margin-bottom: 15px;
+            color: var(--text-primary);
+        }
+
+        .resource-description {
+            color: var(--text-secondary);
+            margin-bottom: 20px;
+            font-size: 14px;
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--bg-secondary);
+            padding: 60px 0 30px;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-column h3 {
+            font-size: 18px;
+            font-weight: 600;
+            margin-bottom: 20px;
+            color: var(--text-primary);
+        }
+
+        .footer-links {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 10px;
+        }
+
+        .footer-links a {
+            text-decoration: none;
+            color: var(--text-secondary);
+            transition: color 0.3s;
+        }
+
+        .footer-links a:hover {
+            color: var(--primary);
+        }
+
+        .social-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .social-link {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background-color: var(--bg-card);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--text-primary);
+            text-decoration: none;
+            transition: all 0.3s;
+        }
+
+        .social-link:hover {
+            background-color: var(--primary);
+            color: white;
+            transform: translateY(-3px);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid var(--border);
+            color: var(--text-secondary);
+            font-size: 14px;
+        }
+
+        /* Go to Top Button */
+        .go-to-top-btn {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 50px;
+            height: 50px;
+            background-color: var(--primary);
+            color: white;
+            border: none;
+            border-radius: 50%;
+            cursor: pointer;
+            display: none;
+            align-items: center;
+            justify-content: center;
+            font-size: 18px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+            transition: all 0.3s ease;
+            z-index: 1000;
+        }
+
+        .go-to-top-btn:hover {
+            background-color: var(--accent);
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .go-to-top-btn.show {
+            display: flex;
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 768px) {
+            .nav-menu {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                background-color: var(--bg-primary);
+                flex-direction: column;
+                padding: 20px;
+                box-shadow: 0 5px 10px var(--shadow);
+                gap: 15px;
+            }
+
+            .nav-menu.active {
+                display: flex;
+            }
+
+            .mobile-menu-toggle {
+                display: block;
+            }
+
+            .chapter-title {
+                font-size: 28px;
+            }
+
+            .section-title {
+                font-size: 24px;
+            }
+
+            .nav-container {
+                gap: 10px;
+            }
+
+            .breadcrumb {
+                padding: 10px 0;
+            }
+            
+            .breadcrumb-list {
+                gap: 5px;
+            }
+            
+            .breadcrumb-item {
+                font-size: 12px;
+            }
+
+            .go-to-top-btn {
+                bottom: 20px;
+                right: 20px;
+                width: 45px;
+                height: 45px;
+                font-size: 16px;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .vocabulary-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .resources-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .practice-options {
+                grid-template-columns: 1fr;
+            }
+
+            .breadcrumb-list {
+                overflow-x: auto;
+                white-space: nowrap;
+                flex-wrap: nowrap;
+                padding-bottom: 5px;
+                -webkit-overflow-scrolling: touch;
+            }
+            
+            .breadcrumb-item {
+                flex-shrink: 0;
+            }
+        }
+    </style>
 </head>
 
 <body>
@@ -19,7 +938,7 @@
             <div class="header-container">
                 <div class="logo">
                     <div class="logo-icon">
-                        <div class="logo-image" style="background-image: url('/06_gambar/nihongopedia.PNG');"></div>
+                        <div class="logo-image" style="background-image: url('/06_gambar/nihongopedia.png');"></div>
                     </div>
                     <div class="logo-text">Nihongopedia</div>
                 </div>
@@ -43,6 +962,25 @@
             </div>
         </div>
     </header>
+    <!-- Header JS -->
+    <script>
+        // Mobile Menu Toggle
+        const mobileMenuToggle = document.getElementById('mobile-menu-toggle');
+        const navMenu = document.querySelector('.nav-menu');
+
+        mobileMenuToggle.addEventListener('click', () => {
+            navMenu.classList.toggle('active');
+            const icon = mobileMenuToggle.querySelector('i');
+            if (navMenu.classList.contains('active')) {
+                icon.classList.remove('fa-bars');
+                icon.classList.add('fa-times');
+            } else {
+                icon.classList.remove('fa-times');
+                icon.classList.add('fa-bars');
+            }
+        });
+    </script>
+    <!-- Header Section End -->
 
     <!-- Breadcrumb -->
     <nav class="breadcrumb">
@@ -66,6 +1004,11 @@
             </ul>
         </div>
     </nav>
+    <!-- Breadcrumb JS -->
+    <script>
+        // Breadcrumb JS (if needed)
+    </script>
+    <!-- Breadcrumb Section End -->
 
     <!-- Hero Section -->
     <section class="hero">
@@ -73,11 +1016,11 @@
             <div class="chapter-header">
                 <div class="chapter-badge">Bab 1</div>
                 <h1 class="chapter-title">Perkenalan Diri</h1>
-                <p class="chapter-subtitle">Belajar salam dasar dan cara memperkenalkan diri dalam bahasa Jepang</p>
+                <p class="chapter-subtitle">Belajar memperkenalkan diri dan menanyakan identitas orang lain</p>
                 <div class="chapter-meta">
                     <div class="meta-item">
                         <i class="fas fa-clock"></i>
-                        <span>30 menit</span>
+                        <span>45 Menit</span>
                     </div>
                     <div class="meta-item">
                         <i class="fas fa-book"></i>
@@ -85,18 +1028,23 @@
                     </div>
                     <div class="meta-item">
                         <i class="fas fa-signal"></i>
-                        <span>Tingkat: Pemula</span>
+                        <span>Tingkat: Mudah</span>
                     </div>
                 </div>
             </div>
         </div>
     </section>
+    <!-- Hero JS -->
+    <script>
+        // Hero JS (if needed)
+    </script>
+    <!-- Hero Section End -->
 
     <!-- Chapter Navigation -->
     <section class="chapter-nav">
         <div class="container">
             <div class="nav-container">
-                <a href="Minna-1_bab-1.pdf" download="Minna-1_bab-1.pdf" class="btn btn-outline" style="margin-right: 10px;">
+                <a href="#resources" class="btn btn-outline" style="margin-right: 10px;">
                     <i class="fas fa-download"></i> Unduh Materi
                 </a>
                 <div>
@@ -107,730 +1055,586 @@
             </div>
         </div>
     </section>
+    <!-- Chapter Navigation JS -->
+    <script>
+        // Chapter Navigation JS (if needed)
+    </script>
+    <!-- Chapter Navigation End -->
 
     <!-- Vocabulary Section -->
-    <section class="section vocabulary-section" id="vocabulary">
-        <div class="container">
-            <h2 class="section-title">
-                <i class="fas fa-book"></i>
-                Kosakata
-            </h2>
-            <p style="color: var(--text-secondary); margin-bottom: 30px;">
-                Pelajari kosakata dasar yang akan digunakan dalam bab ini.
-            </p>
+    <!-- Vocabulary Section -->
+<section class="section vocabulary-section" id="vocabulary">
+    <div class="container">
+        <h2 class="section-title">
+            <i class="fas fa-book"></i>
+            I. Kosakata
+        </h2>
+        <p style="color: var(--text-secondary); margin-bottom: 30px;">
+            Pelajari kosakata dasar yang akan digunakan dalam bab ini.
+        </p>
 
-            <div class="vocabulary-grid">
-                <div class="vocab-card">
-                    <div class="vocab-japanese">わたし</div>
-                    <div class="vocab-reading">watashi</div>
-                    <div class="vocab-meaning">Saya</div>
-                    <div class="vocab-example">Kata ganti orang pertama yang netral</div>
-                </div>
-
-                <div class="vocab-card">
-                    <div class="vocab-japanese">あなた</div>
-                    <div class="vocab-reading">anata</div>
-                    <div class="vocab-meaning">Anda</div>
-                    <div class="vocab-example">Kata ganti orang kedua</div>
-                </div>
-
-                <div class="vocab-card">
-                    <div class="vocab-japanese">あの ひと</div>
-                    <div class="vocab-reading">ano hito</div>
-                    <div class="vocab-meaning">Orang itu</div>
-                    <div class="vocab-example">Digunakan untuk menyebut orang ketiga</div>
-                </div>
-
-                <div class="vocab-card">
-                    <div class="vocab-japanese">あの かた</div>
-                    <div class="vocab-reading">ano kata</div>
-                    <div class="vocab-meaning">Beliau</div>
-                    <div class="vocab-example">Bentuk sopan dari あのひと</div>
-                </div>
-
-                <div class="vocab-card">
-                    <div class="vocab-japanese">～さん</div>
-                    <div class="vocab-reading">～san</div>
-                    <div class="vocab-meaning">Sdr. ～, Bapak ～, Ibu ～</div>
-                    <div class="vocab-example">Akhiran sopan untuk nama orang</div>
-                </div>
-
-                <div class="vocab-card">
-                    <div class="vocab-japanese">～ちゃん</div>
-                    <div class="vocab-reading">～chan</div>
-                    <div class="vocab-meaning">Akhiran untuk anak kecil</div>
-                    <div class="vocab-example">Digunakan untuk nama anak-anak</div>
-                </div>
-
-                <div class="vocab-card">
-                    <div class="vocab-japanese">～じん</div>
-                    <div class="vocab-reading">～jin</div>
-                    <div class="vocab-meaning">Orang ～ (warga negara)</div>
-                    <div class="vocab-example">Contoh: にほんじん (orang Jepang)</div>
-                </div>
-
-                <div class="vocab-card">
-                    <div class="vocab-japanese">せんせい</div>
-                    <div class="vocab-reading">sensei</div>
-                    <div class="vocab-meaning">Guru, dosen</div>
-                    <div class="vocab-example">Juga digunakan untuk dokter dan profesional lain</div>
-                </div>
-
-                <div class="vocab-card">
-                    <div class="vocab-japanese">きょうし</div>
-                    <div class="vocab-reading">kyōshi</div>
-                    <div class="vocab-meaning">Guru, dosen</div>
-                    <div class="vocab-example">Sebutan formal untuk pengajar</div>
-                </div>
-
-                <div class="vocab-card">
-                    <div class="vocab-japanese">がくせい</div>
-                    <div class="vocab-reading">gakusei</div>
-                    <div class="vocab-meaning">Mahasiswa</div>
-                    <div class="vocab-example">Orang yang sedang belajar di perguruan tinggi</div>
-                </div>
-
-                <div class="vocab-card">
-                    <div class="vocab-japanese">かいしゃいん</div>
-                    <div class="vocab-reading">kaishain</div>
-                    <div class="vocab-meaning">Karyawan perusahaan</div>
-                    <div class="vocab-example">Pegawai yang bekerja di perusahaan</div>
-                </div>
-
-                <div class="vocab-card">
-                    <div class="vocab-japanese">しゃいん</div>
-                    <div class="vocab-reading">shain</div>
-                    <div class="vocab-meaning">Karyawan perusahaan</div>
-                    <div class="vocab-example">Bentuk singkat dari かいしゃいん</div>
-                </div>
-
-                <div class="vocab-card">
-                    <div class="vocab-japanese">ぎんこういん</div>
-                    <div class="vocab-reading">ginkōin</div>
-                    <div class="vocab-meaning">Pegawai bank</div>
-                    <div class="vocab-example">Orang yang bekerja di bank</div>
-                </div>
-
-                <div class="vocab-card">
-                    <div class="vocab-japanese">いしゃ</div>
-                    <div class="vocab-reading">isha</div>
-                    <div class="vocab-meaning">Dokter</div>
-                    <div class="vocab-example">Profesi di bidang medis</div>
-                </div>
-
-                <div class="vocab-card">
-                    <div class="vocab-japanese">けんきゅうしゃ</div>
-                    <div class="vocab-reading">kenkyūsha</div>
-                    <div class="vocab-meaning">Peneliti</div>
-                    <div class="vocab-example">Orang yang melakukan penelitian</div>
-                </div>
-
-                <div class="vocab-card">
-                    <div class="vocab-japanese">だいがく</div>
-                    <div class="vocab-reading">daigaku</div>
-                    <div class="vocab-meaning">Universitas</div>
-                    <div class="vocab-example">Perguruan tinggi</div>
-                </div>
-
-                <div class="vocab-card">
-                    <div class="vocab-japanese">びょういん</div>
-                    <div class="vocab-reading">byōin</div>
-                    <div class="vocab-meaning">Rumah sakit</div>
-                    <div class="vocab-example">Tempat perawatan medis</div>
-                </div>
-
-                <div class="vocab-card">
-                    <div class="vocab-japanese">だれ</div>
-                    <div class="vocab-reading">dare</div>
-                    <div class="vocab-meaning">Siapa</div>
-                    <div class="vocab-example">Kata tanya untuk menanyakan orang</div>
-                </div>
-
-                <div class="vocab-card">
-                    <div class="vocab-japanese">どなた</div>
-                    <div class="vocab-reading">donata</div>
-                    <div class="vocab-meaning">Siapa (sopan)</div>
-                    <div class="vocab-example">Bentuk sopan dari だれ</div>
-                </div>
-
-                <div class="vocab-card">
-                    <div class="vocab-japanese">～さい</div>
-                    <div class="vocab-reading">～sai</div>
-                    <div class="vocab-meaning">～tahun (umur)</div>
-                    <div class="vocab-example">Contoh: にじゅうさい (20 tahun)</div>
-                </div>
-
-                <div class="vocab-card">
-                    <div class="vocab-japanese">なんさい</div>
-                    <div class="vocab-reading">nansai</div>
-                    <div class="vocab-meaning">Umur berapa</div>
-                    <div class="vocab-example">Pertanyaan untuk menanyakan usia</div>
-                </div>
-
-                <div class="vocab-card">
-                    <div class="vocab-japanese">おいくつ</div>
-                    <div class="vocab-reading">oikutsu</div>
-                    <div class="vocab-meaning">Umur berapa (sopan)</div>
-                    <div class="vocab-example">Bentuk sopan dari なんさい</div>
-                </div>
-
-                <div class="vocab-card">
-                    <div class="vocab-japanese">はい</div>
-                    <div class="vocab-reading">hai</div>
-                    <div class="vocab-meaning">Ya</div>
-                    <div class="vocab-example">Kata untuk menyetujui atau membenarkan</div>
-                </div>
-
-                <div class="vocab-card">
-                    <div class="vocab-japanese">いいえ</div>
-                    <div class="vocab-reading">iie</div>
-                    <div class="vocab-meaning">Tidak, bukan</div>
-                    <div class="vocab-example">Kata untuk menyangkal atau menolak</div>
-                </div>
-
-                <div class="vocab-card">
-                    <div class="vocab-japanese">はじめまして</div>
-                    <div class="vocab-reading">hajimemashite</div>
-                    <div class="vocab-meaning">Salam kenal</div>
-                    <div class="vocab-example">Ucapan saat pertama kali bertemu</div>
-                </div>
-
-                <div class="vocab-card">
-                    <div class="vocab-japanese">～から きました</div>
-                    <div class="vocab-reading">～kara kimashita</div>
-                    <div class="vocab-meaning">Datang dari ～</div>
-                    <div class="vocab-example">Menyatakan asal negara/tempat</div>
-                </div>
-
-                <div class="vocab-card">
-                    <div class="vocab-japanese">どうぞ よろしく おねがいします</div>
-                    <div class="vocab-reading">dōzo yoroshiku onegaishimasu</div>
-                    <div class="vocab-meaning">Mohon bantuannya</div>
-                    <div class="vocab-example">Ucapan meminta perkenan dan bantuan</div>
-                </div>
-
-                <div class="vocab-card">
-                    <div class="vocab-japanese">しつれいですが</div>
-                    <div class="vocab-reading">shitsurei desu ga</div>
-                    <div class="vocab-meaning">Permisi, maaf</div>
-                    <div class="vocab-example">Ucapan pembuka sebelum bertanya</div>
-                </div>
-
-                <div class="vocab-card">
-                    <div class="vocab-japanese">おなまえは？</div>
-                    <div class="vocab-reading">onamae wa?</div>
-                    <div class="vocab-meaning">Siapa namanya?</div>
-                    <div class="vocab-example">Pertanyaan menanyakan nama</div>
-                </div>
-
-                <div class="vocab-card">
-                    <div class="vocab-japanese">こちらは ～さんです</div>
-                    <div class="vocab-reading">kochira wa ～san desu</div>
-                    <div class="vocab-meaning">Ini Bapak/Ibu/Sdr. ～</div>
-                    <div class="vocab-example">Kalimat untuk memperkenalkan orang</div>
-                </div>
+        <div class="vocabulary-grid">
+            <div class="vocab-card">
+                <div class="vocab-kanji">私</div>
+                <div class="vocab-reading">わたし</div>
+                <div class="vocab-meaning">watashi</div>
+                <div class="vocab-indonesia">saya</div>
+            </div>
+            <div class="vocab-card">
+                <div class="vocab-kanji">私たち</div>
+                <div class="vocab-reading">わたしたち</div>
+                <div class="vocab-meaning">watashitachi</div>
+                <div class="vocab-indonesia">kami</div>
+            </div>
+            <div class="vocab-card">
+                <div class="vocab-kanji">あなた</div>
+                <div class="vocab-reading"></div>
+                <div class="vocab-meaning">anata</div>
+                <div class="vocab-indonesia">anda</div>
+            </div>
+            <div class="vocab-card">
+                <div class="vocab-kanji">あの人</div>
+                <div class="vocab-reading">あのひと</div>
+                <div class="vocab-meaning">ano hito</div>
+                <div class="vocab-indonesia">orang itu</div>
+            </div>
+            <div class="vocab-card">
+                <div class="vocab-kanji">皆さん</div>
+                <div class="vocab-reading">みなさん</div>
+                <div class="vocab-meaning">minasan</div>
+                <div class="vocab-indonesia">semuanya</div>
+            </div>
+            <div class="vocab-card">
+                <div class="vocab-kanji">先生</div>
+                <div class="vocab-reading">せんせい</div>
+                <div class="vocab-meaning">sensei</div>
+                <div class="vocab-indonesia">guru</div>
+            </div>
+            <div class="vocab-card">
+                <div class="vocab-kanji">学生</div>
+                <div class="vocab-reading">がくせい</div>
+                <div class="vocab-meaning">gakusei</div>
+                <div class="vocab-indonesia">mahasiswa</div>
+            </div>
+            <div class="vocab-card">
+                <div class="vocab-kanji">会社員</div>
+                <div class="vocab-reading">かいしゃいん</div>
+                <div class="vocab-meaning">kaishain</div>
+                <div class="vocab-indonesia">karyawan perusahaan</div>
+            </div>
+            <div class="vocab-card">
+                <div class="vocab-kanji">医者</div>
+                <div class="vocab-reading">いしゃ</div>
+                <div class="vocab-meaning">isha</div>
+                <div class="vocab-indonesia">dokter</div>
+            </div>
+            <div class="vocab-card">
+                <div class="vocab-kanji">大学</div>
+                <div class="vocab-reading">だいがく</div>
+                <div class="vocab-meaning">daigaku</div>
+                <div class="vocab-indonesia">universitas</div>
             </div>
         </div>
-    </section>
+    </div>
+</section>
+    <!-- Vocabulary JS -->
+    <script>
+        // Vocabulary JS (if needed)
+    </script>
+    <!-- Vocabulary Section End -->
 
     <!-- Grammar Section -->
-    <section class="section grammar-section" id="grammar">
-        <div class="container">
-            <h2 class="section-title">
-                <i class="fas fa-language"></i>
-                Tata Bahasa
-            </h2>
+    <!-- Grammar Section -->
+<section class="section grammar-section" id="grammar">
+    <div class="container">
+        <h2 class="section-title">
+            <i class="fas fa-language"></i>
+            II. Tata Bahasa
+        </h2>
 
-            <div class="grammar-item">
-                <h3 class="grammar-pattern">Kata Benda₁ は Kata Benda₂ です</h3>
-                <p class="grammar-explanation">
-                    Pola kalimat dasar untuk memperkenalkan diri atau menyatakan identitas. 
-                    Partikel "wa" (ditulis dengan hiragana は) berfungsi sebagai penanda topik kalimat.
-                    "です" menyatakan penilaian dan kesopanan.
-                </p>
-                <div class="grammar-examples">
-                    <div class="example-item">
-                        <div class="example-japanese">わたしは マイク・ミラーです。</div>
-                        <div class="example-reading">Watashi wa Maiku Mirā desu.</div>
-                        <div class="example-meaning">Saya Mike Miller.</div>
-                    </div>
+        <div class="grammar-item">
+            <h3 class="grammar-pattern">[N₁ は N₂ です]</h3>
+            <p class="grammar-explanation">
+                Pola kalimat untuk menyatakan identitas atau status. Partikel は (dibaca 'wa') menandai topik kalimat, sedangkan です menunjukkan predikat yang sopan.
+            </p>
+            <div class="grammar-examples">
+                <div class="example-item">
+                    <div class="example-japanese">私はマイク・ミラーです。</div>
+                    <div class="example-reading">Watashi wa Maiku Mirā desu.</div>
+                    <div class="example-meaning">Saya adalah Mike Miller.</div>
                 </div>
-            </div>
-
-            <div class="grammar-item">
-                <h3 class="grammar-pattern">Kata Benda₁ は Kata Benda₂ じゃ（では）ありません</h3>
-                <p class="grammar-explanation">
-                    Bentuk negatif dari "です". Digunakan untuk menyangkal atau menyatakan bahwa sesuatu bukanlah hal tertentu.
-                </p>
-                <div class="grammar-examples">
-                    <div class="example-item">
-                        <div class="example-japanese">サントスさんは 学生じゃ ありません。</div>
-                        <div class="example-reading">Santosu-san wa gakusei ja arimasen.</div>
-                        <div class="example-meaning">Sdr. Santos bukan mahasiswa.</div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="grammar-item">
-                <h3 class="grammar-pattern">Kata Benda₁ は Kata Benda₂ ですか</h3>
-                <p class="grammar-explanation">
-                    Pola kalimat tanya. Partikel "ka" diletakkan di akhir kalimat untuk membuat kalimat tanya.
-                </p>
-                <div class="grammar-examples">
-                    <div class="example-item">
-                        <div class="example-japanese">ミラーさんは 会社員ですか。</div>
-                        <div class="example-reading">Mirā-san wa kaishain desu ka?</div>
-                        <div class="example-meaning">Apakah Sdr. Miller pegawai perusahaan?</div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="grammar-item">
-                <h3 class="grammar-pattern">Kata Benda も</h3>
-                <p class="grammar-explanation">
-                    Partikel "mo" berarti "juga". Digunakan untuk menyatakan bahwa hal yang sama berlaku untuk subjek lain.
-                </p>
-                <div class="grammar-examples">
-                    <div class="example-item">
-                        <div class="example-japanese">サントスさんも 会社員です。</div>
-                        <div class="example-reading">Santosu-san mo kaishain desu.</div>
-                        <div class="example-meaning">Sdr. Santos juga pegawai perusahaan.</div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="grammar-item">
-                <h3 class="grammar-pattern">Kata Benda₁ の Kata Benda₂</h3>
-                <p class="grammar-explanation">
-                    Partikel "no" menyatakan kepemilikan atau hubungan antara dua kata benda.
-                </p>
-                <div class="grammar-examples">
-                    <div class="example-item">
-                        <div class="example-japanese">ミラーさんは IMCの 社員です。</div>
-                        <div class="example-reading">Mirā-san wa IMC no shain desu.</div>
-                        <div class="example-meaning">Sdr. Miller adalah karyawan IMC.</div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="grammar-item">
-                <h3 class="grammar-pattern">～さん</h3>
-                <p class="grammar-explanation">
-                    Akhiran sopan untuk nama orang. Tidak digunakan untuk diri sendiri. 
-                    "～ちゃん" digunakan untuk anak kecil.
-                </p>
-                <div class="grammar-examples">
-                    <div class="example-item">
-                        <div class="example-japanese">あの 方は ミラーさんです。</div>
-                        <div class="example-reading">Ano kata wa Mirā-san desu.</div>
-                        <div class="example-meaning">Beliau adalah Sdr. Miller.</div>
-                    </div>
+                <div class="example-item">
+                    <div class="example-japanese">私はエンジニアです。</div>
+                    <div class="example-reading">Watashi wa enjinia desu.</div>
+                    <div class="example-meaning">Saya adalah engineer.</div>
                 </div>
             </div>
         </div>
-    </section>
+
+        <div class="grammar-item">
+            <h3 class="grammar-pattern">[N₁ は N₂ じゃありません]</h3>
+            <p class="grammar-explanation">
+                Bentuk negatif dari です. Digunakan dalam percakapan sehari-hari. Untuk situasi formal, gunakan では ありません.
+            </p>
+            <div class="grammar-examples">
+                <div class="example-item">
+                    <div class="example-japanese">サントスさんは学生じゃありません。</div>
+                    <div class="example-reading">Santosu-san wa gakusei ja arimasen.</div>
+                    <div class="example-meaning">Tuan Santos bukan mahasiswa.</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="grammar-item">
+            <h3 class="grammar-pattern">[S か]</h3>
+            <p class="grammar-explanation">
+                Partikel か digunakan untuk membuat kalimat tanya. Intonasi naik di akhir kalimat. Urutan kata tidak berubah.
+            </p>
+            <div class="grammar-examples">
+                <div class="example-item">
+                    <div class="example-japanese">ミラーさんはアメリカ人ですか。</div>
+                    <div class="example-reading">Mirā-san wa Amerikajin desu ka?</div>
+                    <div class="example-meaning">Apakah Tuan Miller orang Amerika?</div>
+                </div>
+                <div class="example-item">
+                    <div class="example-japanese">あの方はどなたですか。</div>
+                    <div class="example-reading">Ano kata wa donata desu ka?</div>
+                    <div class="example-meaning">Siapakah orang itu?</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="grammar-item">
+            <h3 class="grammar-pattern">[N も]</h3>
+            <p class="grammar-explanation">
+                Partikel も berarti 'juga'. Digunakan ketika pernyataan tentang topik sama dengan topik sebelumnya.
+            </p>
+            <div class="grammar-examples">
+                <div class="example-item">
+                    <div class="example-japanese">ミラーさんは会社員です。アプタさんも会社員です。</div>
+                    <div class="example-reading">Mirā-san wa kaishain desu. Aputa-san mo kaishain desu.</div>
+                    <div class="example-meaning">Tuan Miller adalah karyawan. Tuan Gupta juga karyawan.</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="grammar-item">
+            <h3 class="grammar-pattern">[N₁ の N₂]</h3>
+            <p class="grammar-explanation">
+                Partikel の menghubungkan dua kata benda. N₁ memodifikasi N₂, menunjukkan kepemilikan atau afiliasi.
+            </p>
+            <div class="grammar-examples">
+                <div class="example-item">
+                    <div class="example-japanese">ミラーさんはIMCの社員です。</div>
+                    <div class="example-reading">Mirā-san wa IMC no shain desu.</div>
+                    <div class="example-meaning">Tuan Miller adalah karyawan IMC.</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+    <!-- Grammar JS -->
+    <script>
+        // Grammar JS (if needed)
+    </script>
+    <!-- Grammar Section End -->
 
     <!-- Conversation Section -->
-    <section class="section conversation-section" id="conversation">
-        <div class="container">
-            <h2 class="section-title">
-                <i class="fas fa-comments"></i>
-                Percakapan
-            </h2>
+    <!-- Conversation Section -->
+<section class="section conversation-section" id="conversation">
+    <div class="container">
+        <h2 class="section-title">
+            <i class="fas fa-comments"></i>
+            III. Percakapan
+        </h2>
 
-            <div class="conversation-card">
-                <div class="dialogue-item">
-                    <div class="speaker">
-                        <i class="fas fa-user"></i>
-                        佐藤 (Satō)
-                    </div>
-                    <div class="dialogue-text">おはよう ございます。</div>
-                    <div class="dialogue-reading">Ohayō gozaimasu.</div>
-                    <div class="dialogue-meaning">Selamat pagi.</div>
+        <div class="conversation-card">
+            <div class="dialogue-item">
+                <div class="speaker">
+                    <i class="fas fa-user"></i>
+                    <span>Yamada</span>
                 </div>
-
-                <div class="dialogue-item">
-                    <div class="speaker">
-                        <i class="fas fa-user"></i>
-                        山田 (Yamada)
-                    </div>
-                    <div class="dialogue-text">おはよう ございます。佐藤さん、こちらは マイク・ミラーさんです。</div>
-                    <div class="dialogue-reading">Ohayō gozaimasu. Satō-san, kochira wa Maiku Mirā-san desu.</div>
-                    <div class="dialogue-meaning">Selamat pagi. Sdr. Sato, ini Bapak Mike Miller.</div>
-                </div>
-
-                <div class="dialogue-item">
-                    <div class="speaker">
-                        <i class="fas fa-user"></i>
-                        ミラー (Miller)
-                    </div>
-                    <div class="dialogue-text">はじめまして。マイク・ミラーです。アメリカから 来ました。どうぞ よろしく お願いします。</div>
-                    <div class="dialogue-reading">Hajimemashite. Maiku Mirā desu. Amerika kara kimashita. Dōzo yoroshiku onegaishimasu.</div>
-                    <div class="dialogue-meaning">Salam kenal. Saya Mike Miller. Saya dari Amerika. Mohon bantuannya.</div>
-                </div>
-
-                <div class="dialogue-item">
-                    <div class="speaker">
-                        <i class="fas fa-user"></i>
-                        佐藤 (Satō)
-                    </div>
-                    <div class="dialogue-text">佐藤けい子です。どうぞ よろしく お願いします。</div>
-                    <div class="dialogue-reading">Satō Keiko desu. Dōzo yoroshiku onegaishimasu.</div>
-                    <div class="dialogue-meaning">Saya Sato Keiko. Mohon bantuannya juga.</div>
-                </div>
+                <div class="dialogue-text">佐藤さん、こちらはマイク・ミラーさんです。</div>
+                <div class="dialogue-reading">Satō-san, kochira wa Maiku Mirā-san desu.</div>
+                <div class="dialogue-meaning">Nona Sato, ini adalah Tuan Mike Miller.</div>
             </div>
 
-            <h3 style="margin-top: 40px; margin-bottom: 20px;">Contoh Kalimat Lain</h3>
-            
-            <div class="conversation-card">
-                <div class="dialogue-item">
-                    <div class="speaker">
-                        <i class="fas fa-user"></i>
-                        A
-                    </div>
-                    <div class="dialogue-text">あなたは マイク・ミラーさんですか。</div>
-                    <div class="dialogue-reading">Anata wa Maiku Mirā-san desu ka?</div>
-                    <div class="dialogue-meaning">Apakah Anda Mike Miller?</div>
+            <div class="dialogue-item">
+                <div class="speaker">
+                    <i class="fas fa-user"></i>
+                    <span>Miller</span>
                 </div>
+                <div class="dialogue-text">初めまして。マイク・ミラーです。アメリカから来ました。どうぞよろしくお願いします。</div>
+                <div class="dialogue-reading">Hajimemashite. Maiku Mirā desu. Amerika kara kimashita. Dōzo yoroshiku onegaishimasu.</div>
+                <div class="dialogue-meaning">Senang bertemu dengan Anda. Saya Mike Miller. Saya dari Amerika. Senang berkenalan dengan Anda.</div>
+            </div>
 
-                <div class="dialogue-item">
-                    <div class="speaker">
-                        <i class="fas fa-user"></i>
-                        B
-                    </div>
-                    <div class="dialogue-text">はい、マイク・ミラーです。</div>
-                    <div class="dialogue-reading">Hai, Maiku Mirā desu.</div>
-                    <div class="dialogue-meaning">Ya, saya Mike Miller.</div>
+            <div class="dialogue-item">
+                <div class="speaker">
+                    <i class="fas fa-user"></i>
+                    <span>Sato</span>
                 </div>
-
-                <div class="dialogue-item">
-                    <div class="speaker">
-                        <i class="fas fa-user"></i>
-                        A
-                    </div>
-                    <div class="dialogue-text">ミラーさんは 学生ですか。</div>
-                    <div class="dialogue-reading">Mirā-san wa gakusei desu ka?</div>
-                    <div class="dialogue-meaning">Apakah Sdr. Miller mahasiswa?</div>
-                </div>
-
-                <div class="dialogue-item">
-                    <div class="speaker">
-                        <i class="fas fa-user"></i>
-                        B
-                    </div>
-                    <div class="dialogue-text">いいえ、学生じゃ ありません。</div>
-                    <div class="dialogue-reading">Iie, gakusei ja arimasen.</div>
-                    <div class="dialogue-meaning">Tidak, bukan mahasiswa.</div>
-                </div>
-
-                <div class="dialogue-item">
-                    <div class="speaker">
-                        <i class="fas fa-user"></i>
-                        A
-                    </div>
-                    <div class="dialogue-text">ワンさんは 銀行員ですか。</div>
-                    <div class="dialogue-reading">Wan-san wa ginkōin desu ka?</div>
-                    <div class="dialogue-meaning">Apakah Sdr. Wang pegawai bank?</div>
-                </div>
-
-                <div class="dialogue-item">
-                    <div class="speaker">
-                        <i class="fas fa-user"></i>
-                        B
-                    </div>
-                    <div class="dialogue-text">いいえ、銀行員じゃ ありません。医者です。</div>
-                    <div class="dialogue-reading">Iie, ginkōin ja arimasen. Isha desu.</div>
-                    <div class="dialogue-meaning">Tidak, bukan pegawai bank. Dokter.</div>
-                </div>
-
-                <div class="dialogue-item">
-                    <div class="speaker">
-                        <i class="fas fa-user"></i>
-                        A
-                    </div>
-                    <div class="dialogue-text">あの 方は どなたですか。</div>
-                    <div class="dialogue-reading">Ano kata wa donata desu ka?</div>
-                    <div class="dialogue-meaning">Siapakah beliau itu?</div>
-                </div>
-
-                <div class="dialogue-item">
-                    <div class="speaker">
-                        <i class="fas fa-user"></i>
-                        B
-                    </div>
-                    <div class="dialogue-text">ワットさんです。さくら大学の 先生です。</div>
-                    <div class="dialogue-reading">Watto-san desu. Sakura Daigaku no sensei desu.</div>
-                    <div class="dialogue-meaning">Beliau Sdr. Watt. Dosen Universitas Sakura.</div>
-                </div>
-
-                <div class="dialogue-item">
-                    <div class="speaker">
-                        <i class="fas fa-user"></i>
-                        A
-                    </div>
-                    <div class="dialogue-text">グプタさんは 会社員ですか。</div>
-                    <div class="dialogue-reading">Guputa-san wa kaishain desu ka?</div>
-                    <div class="dialogue-meaning">Apakah Sdr. Gupta pegawai perusahaan?</div>
-                </div>
-
-                <div class="dialogue-item">
-                    <div class="speaker">
-                        <i class="fas fa-user"></i>
-                        B
-                    </div>
-                    <div class="dialogue-text">はい、会社員です。</div>
-                    <div class="dialogue-reading">Hai, kaishain desu.</div>
-                    <div class="dialogue-meaning">Ya, pegawai perusahaan.</div>
-                </div>
-
-                <div class="dialogue-item">
-                    <div class="speaker">
-                        <i class="fas fa-user"></i>
-                        A
-                    </div>
-                    <div class="dialogue-text">カリナさんも 会社員ですか。</div>
-                    <div class="dialogue-reading">Karina-san mo kaishain desu ka?</div>
-                    <div class="dialogue-meaning">Apakah Sdri. Karina juga pegawai perusahaan?</div>
-                </div>
-
-                <div class="dialogue-item">
-                    <div class="speaker">
-                        <i class="fas fa-user"></i>
-                        B
-                    </div>
-                    <div class="dialogue-text">いいえ、カリナさんは 学生です。</div>
-                    <div class="dialogue-reading">Iie, Karina-san wa gakusei desu.</div>
-                    <div class="dialogue-meaning">Tidak, Sdri. Karina adalah mahasiswa.</div>
-                </div>
-
-                <div class="dialogue-item">
-                    <div class="speaker">
-                        <i class="fas fa-user"></i>
-                        A
-                    </div>
-                    <div class="dialogue-text">テレサちゃんは 何歳ですか。</div>
-                    <div class="dialogue-reading">Teresa-chan wa nansai desu ka?</div>
-                    <div class="dialogue-meaning">Berapa umur Teresa?</div>
-                </div>
-
-                <div class="dialogue-item">
-                    <div class="speaker">
-                        <i class="fas fa-user"></i>
-                        B
-                    </div>
-                    <div class="dialogue-text">９歳です。</div>
-                    <div class="dialogue-reading">Kyūsai desu.</div>
-                    <div class="dialogue-meaning">9 tahun.</div>
-                </div>
+                <div class="dialogue-text">佐藤恵子です。どうぞよろしくお願いします。</div>
+                <div class="dialogue-reading">Satō Keiko desu. Dōzo yoroshiku onegaishimasu.</div>
+                <div class="dialogue-meaning">Saya Sato Keiko. Senang berkenalan dengan Anda.</div>
             </div>
         </div>
-    </section>
+
+        <h3 style="margin-top: 40px; margin-bottom: 20px;">Contoh Kalimat Lain</h3>
+        
+        <div class="conversation-card">
+            <div class="dialogue-item">
+                <div class="speaker">
+                    <i class="fas fa-user"></i>
+                    <span>A</span>
+                </div>
+                <div class="dialogue-text">ミラーさんは学生ですか。</div>
+                <div class="dialogue-reading">Mirā-san wa gakusei desu ka?</div>
+                <div class="dialogue-meaning">Apakah Tuan Miller mahasiswa?</div>
+            </div>
+
+            <div class="dialogue-item">
+                <div class="speaker">
+                    <i class="fas fa-user"></i>
+                    <span>B</span>
+                </div>
+                <div class="dialogue-text">いいえ、学生じゃありません。会社員です。</div>
+                <div class="dialogue-reading">Iie, gakusei ja arimasen. Kaishain desu.</div>
+                <div class="dialogue-meaning">Tidak, bukan mahasiswa. Saya karyawan.</div>
+            </div>
+
+            <div class="dialogue-item">
+                <div class="speaker">
+                    <i class="fas fa-user"></i>
+                    <span>A</span>
+                </div>
+                <div class="dialogue-text">ワンさんはエンジニアですか。</div>
+                <div class="dialogue-reading">Wan-san wa enjinia desu ka?</div>
+                <div class="dialogue-meaning">Apakah Tuan Wang engineer?</div>
+            </div>
+
+            <div class="dialogue-item">
+                <div class="speaker">
+                    <i class="fas fa-user"></i>
+                    <span>B</span>
+                </div>
+                <div class="dialogue-text">いいえ、ワンさんはエンジニアじゃありません。医者です。</div>
+                <div class="dialogue-reading">Iie, Wan-san wa enjinia ja arimasen. Isha desu.</div>
+                <div class="dialogue-meaning">Tidak, Tuan Wang bukan engineer. Dia dokter.</div>
+            </div>
+        </div>
+    </div>
+</section>
+    <!-- Conversation JS -->
+    <script>
+        // Conversation JS (if needed)
+    </script>
+    <!-- Conversation Section End -->
 
     <!-- Reference Section -->
-    <section class="section reference-section" id="reference">
-        <div class="container">
-            <h2 class="section-title">
-                <i class="fas fa-globe"></i>
-                Referensi Negara dan Bahasa
-            </h2>
+    <!-- Reference Section -->
+<section class="section reference-section" id="reference">
+    <div class="container">
+        <h2 class="section-title">
+            <i class="fas fa-globe"></i>
+            IV. Referensi Budaya dan Informasi
+        </h2>
 
-            <div class="vocabulary-grid">
-                <div class="vocab-card">
-                    <div class="vocab-japanese">アメリカ</div>
-                    <div class="vocab-reading">Amerika</div>
-                    <div class="vocab-meaning">Amerika Serikat</div>
-                    <div class="vocab-example">アメリカ人 (orang Amerika), 英語 (bahasa Inggris)</div>
+        <div class="reference-content">
+            <h3 style="margin-bottom: 20px;">Negara, Orang, dan Bahasa</h3>
+            <p style="margin-bottom: 20px;">Berikut adalah nama negara, sebutan untuk orangnya, dan bahasa yang digunakan:</p>
+            
+            <div class="reference-grid">
+                <div class="reference-item">
+                    <div class="reference-japanese">アメリカ</div>
+                    <div class="reference-reading">Amerika</div>
+                    <div class="reference-meaning">Amerika Serikat</div>
                 </div>
-
-                <div class="vocab-card">
-                    <div class="vocab-japanese">イギリス</div>
-                    <div class="vocab-reading">Igirisu</div>
-                    <div class="vocab-meaning">Inggris</div>
-                    <div class="vocab-example">イギリス人 (orang Inggris), 英語 (bahasa Inggris)</div>
+                <div class="reference-item">
+                    <div class="reference-japanese">アメリカ人</div>
+                    <div class="reference-reading">Amerikajin</div>
+                    <div class="reference-meaning">orang Amerika</div>
                 </div>
-
-                <div class="vocab-card">
-                    <div class="vocab-japanese">インド</div>
-                    <div class="vocab-reading">Indo</div>
-                    <div class="vocab-meaning">India</div>
-                    <div class="vocab-example">インド人 (orang India), ヒンディー語 (bahasa Hindi)</div>
+                <div class="reference-item">
+                    <div class="reference-japanese">英語</div>
+                    <div class="reference-reading">Eigo</div>
+                    <div class="reference-meaning">bahasa Inggris</div>
                 </div>
-
-                <div class="vocab-card">
-                    <div class="vocab-japanese">インドネシア</div>
-                    <div class="vocab-reading">Indoneshia</div>
-                    <div class="vocab-meaning">Indonesia</div>
-                    <div class="vocab-example">インドネシア人 (orang Indonesia), インドネシア語 (bahasa Indonesia)</div>
+                <div class="reference-item">
+                    <div class="reference-japanese">日本</div>
+                    <div class="reference-reading">Nihon</div>
+                    <div class="reference-meaning">Jepang</div>
                 </div>
-
-                <div class="vocab-card">
-                    <div class="vocab-japanese">韓国</div>
-                    <div class="vocab-reading">Kankoku</div>
-                    <div class="vocab-meaning">Korea Selatan</div>
-                    <div class="vocab-example">韓国人 (orang Korea), 韓国語 (bahasa Korea)</div>
+                <div class="reference-item">
+                    <div class="reference-japanese">日本人</div>
+                    <div class="reference-reading">Nihonjin</div>
+                    <div class="reference-meaning">orang Jepang</div>
                 </div>
-
-                <div class="vocab-card">
-                    <div class="vocab-japanese">タイ</div>
-                    <div class="vocab-reading">Tai</div>
-                    <div class="vocab-meaning">Thailand</div>
-                    <div class="vocab-example">タイ人 (orang Thailand), タイ語 (bahasa Thailand)</div>
+                <div class="reference-item">
+                    <div class="reference-japanese">日本語</div>
+                    <div class="reference-reading">Nihongo</div>
+                    <div class="reference-meaning">bahasa Jepang</div>
                 </div>
-
-                <div class="vocab-card">
-                    <div class="vocab-japanese">中国</div>
-                    <div class="vocab-reading">Chūgoku</div>
-                    <div class="vocab-meaning">Cina</div>
-                    <div class="vocab-example">中国人 (orang Cina), 中国語 (bahasa Mandarin)</div>
+                <div class="reference-item">
+                    <div class="reference-japanese">中国</div>
+                    <div class="reference-reading">Chūgoku</div>
+                    <div class="reference-meaning">China</div>
                 </div>
-
-                <div class="vocab-card">
-                    <div class="vocab-japanese">ドイツ</div>
-                    <div class="vocab-reading">Doitsu</div>
-                    <div class="vocab-meaning">Jerman</div>
-                    <div class="vocab-example">ドイツ人 (orang Jerman), ドイツ語 (bahasa Jerman)</div>
+                <div class="reference-item">
+                    <div class="reference-japanese">中国人</div>
+                    <div class="reference-reading">Chūgokujin</div>
+                    <div class="reference-meaning">orang China</div>
                 </div>
-
-                <div class="vocab-card">
-                    <div class="vocab-japanese">日本</div>
-                    <div class="vocab-reading">Nihon/Nippon</div>
-                    <div class="vocab-meaning">Jepang</div>
-                    <div class="vocab-example">日本人 (orang Jepang), 日本語 (bahasa Jepang)</div>
-                </div>
-
-                <div class="vocab-card">
-                    <div class="vocab-japanese">ブラジル</div>
-                    <div class="vocab-reading">Burajiru</div>
-                    <div class="vocab-meaning">Brasil</div>
-                    <div class="vocab-example">ブラジル人 (orang Brasil), ポルトガル語 (bahasa Portugis)</div>
-                </div>
-            </div>
-
-            <h3 style="margin-top: 40px; margin-bottom: 20px;">Lembaga dan Perusahaan Fiksi</h3>
-
-            <div class="vocabulary-grid">
-                <div class="vocab-card">
-                    <div class="vocab-japanese">IMC</div>
-                    <div class="vocab-reading">IMC</div>
-                    <div class="vocab-meaning">Perusahaan fiksi</div>
-                    <div class="vocab-example">IMCの 社員 (karyawan IMC)</div>
-                </div>
-
-                <div class="vocab-card">
-                    <div class="vocab-japanese">パワー電気</div>
-                    <div class="vocab-reading">Pawā Denki</div>
-                    <div class="vocab-meaning">Perusahaan listrik fiksi</div>
-                    <div class="vocab-example">パワー電気の 社員 (karyawan Pawā Denki)</div>
-                </div>
-
-                <div class="vocab-card">
-                    <div class="vocab-japanese">ブラジルエアー</div>
-                    <div class="vocab-reading">Burajiru Eā</div>
-                    <div class="vocab-meaning">Maskapai fiksi</div>
-                    <div class="vocab-example">ブラジルエアーの 社員 (karyawan Burajiru Eā)</div>
-                </div>
-
-                <div class="vocab-card">
-                    <div class="vocab-japanese">AKC</div>
-                    <div class="vocab-reading">AKC</div>
-                    <div class="vocab-meaning">Organisasi fiksi</div>
-                    <div class="vocab-example">AKCの 社員 (karyawan AKC)</div>
-                </div>
-
-                <div class="vocab-card">
-                    <div class="vocab-japanese">神戸病院</div>
-                    <div class="vocab-reading">Kōbe Byōin</div>
-                    <div class="vocab-meaning">Rumah sakit fiksi</div>
-                    <div class="vocab-example">神戸病院の 医者 (dokter di RS Kobe)</div>
-                </div>
-
-                <div class="vocab-card">
-                    <div class="vocab-japanese">さくら大学</div>
-                    <div class="vocab-reading">Sakura Daigaku</div>
-                    <div class="vocab-meaning">Universitas fiksi</div>
-                    <div class="vocab-example">さくら大学の 先生 (dosen Universitas Sakura)</div>
-                </div>
-
-                <div class="vocab-card">
-                    <div class="vocab-japanese">富士大学</div>
-                    <div class="vocab-reading">Fuji Daigaku</div>
-                    <div class="vocab-meaning">Universitas fiksi</div>
-                    <div class="vocab-example">富士大学の 学生 (mahasiswa Universitas Fuji)</div>
+                <div class="reference-item">
+                    <div class="reference-japanese">中国語</div>
+                    <div class="reference-reading">Chūgokugo</div>
+                    <div class="reference-meaning">bahasa China</div>
                 </div>
             </div>
         </div>
-    </section>
+
+        <div class="reference-content" style="margin-top: 40px;">
+            <h3 style="margin-bottom: 20px;">Penggunaan ~さん</h3>
+            
+            <div class="info-box">
+                <h4 class="info-japanese">～さん</h4>
+                <div class="info-reading">-san</div>
+                <p class="vocab-indonesia">Digunakan setelah nama orang untuk menunjukkan rasa hormat. Jangan digunakan dengan nama sendiri.</p>
+            </div>
+            
+            <div class="info-box">
+                <h4 class="info-japanese">～ちゃん</h4>
+                <div class="info-reading">-chan</div>
+                <p class="vocab-indonesia">Sering digunakan untuk nama anak-anak, terutama perempuan.</p>
+            </div>
+
+            <div class="info-box">
+                <h4 class="info-japanese">～くん</h4>
+                <div class="info-reading">-kun</div>
+                <p class="vocab-indonesia">Sering digunakan untuk nama anak laki-laki.</p>
+            </div>
+
+            <div class="info-box">
+                <h4 class="info-japanese">～じん</h4>
+                <div class="info-reading">-jin</div>
+                <p class="vocab-indonesia">Akhiran yang berarti "warga negara", contoh: アメリカじん (orang Amerika)</p>
+            </div>
+        </div>
+    </div>
+</section>
+    <!-- Reference JS -->
+    <script>
+        // Reference JS (if needed)
+    </script>
+    <!-- Reference Section End -->
 
     <!-- Practice Section -->
-    <section class="section practice-section" id="practice">
-        <div class="container">
-            <h2 class="section-title">
-                <i class="fas fa-pencil-alt"></i>
-                Latihan
-            </h2>
+    <!-- Practice Section -->
+<section class="section practice-section" id="practice">
+    <div class="container">
+        <h2 class="section-title">
+            <i class="fas fa-pencil-alt"></i>
+            V. Latihan
+        </h2>
 
-            <div class="practice-card">
-                <h3 class="practice-question">1. Bagaimana cara mengatakan "Saya adalah Yamada" dalam bahasa Jepang?</h3>
-                <div class="practice-options">
-                    <div class="practice-option" data-correct="true">わたしは やまだ です。</div>
-                    <div class="practice-option">やまだ は わたし です。</div>
-                    <div class="practice-option">やまだ です わたし は。</div>
-                    <div class="practice-option">わたし やまだ です は。</div>
-                </div>
-                <div class="practice-feedback" id="feedback1"></div>
+        <div class="practice-card">
+            <h3 class="practice-question">Apa arti dari "わたし"?</h3>
+            <div class="practice-options">
+                <div class="practice-option" data-correct="true">Saya</div>
+                <div class="practice-option">Anda</div>
+                <div class="practice-option">Dia</div>
+                <div class="practice-option">Mereka</div>
             </div>
-
-            <div class="practice-card">
-                <h3 class="practice-question">2. Partikel mana yang digunakan untuk menandai topik kalimat?</h3>
-                <div class="practice-options">
-                    <div class="practice-option">が (ga)</div>
-                    <div class="practice-option" data-correct="true">は (wa)</div>
-                    <div class="practice-option">を (o)</div>
-                    <div class="practice-option">で (de)</div>
-                </div>
-                <div class="practice-feedback" id="feedback2"></div>
-            </div>
-
-            <div class="practice-card">
-                <h3 class="practice-question">3. Apa arti dari "はじめまして"?</h3>
-                <div class="practice-options">
-                    <div class="practice-option">Selamat tinggal</div>
-                    <div class="practice-option">Terima kasih</div>
-                    <div class="practice-option" data-correct="true">Senang berkenalan</div>
-                    <div class="practice-option">Permisi</div>
-                </div>
-                <div class="practice-feedback" id="feedback3"></div>
-            </div>
-
-            <div class="practice-card">
-                <h3 class="practice-question">4. Bagaimana mengatakan "Saya bukan mahasiswa" dalam bahasa Jepang?</h3>
-                <div class="practice-options">
-                    <div class="practice-option">わたしは がくせい です。</div>
-                    <div class="practice-option" data-correct="true">わたしは がくせい じゃ ありません。</div>
-                    <div class="practice-option">わたしは がくせい ですか。</div>
-                    <div class="practice-option">わたしも がくせい です。</div>
-                </div>
-                <div class="practice-feedback" id="feedback4"></div>
-            </div>
-
-            <div class="practice-card">
-                <h3 class="practice-question">5. Manakah kalimat yang benar untuk menanyakan "Apakah Anda orang Jepang?"</h3>
-                <div class="practice-options">
-                    <div class="practice-option">あなたは にほんじん です。</div>
-                    <div class="practice-option" data-correct="true">あなたは にほんじん ですか。</div>
-                    <div class="practice-option">あなたは にほんじん じゃ ありません。</div>
-                    <div class="practice-option">あなたも にほんじん です。</div>
-                </div>
-                <div class="practice-feedback" id="feedback5"></div>
-            </div>
-
-            <div style="text-align: center; margin-top: 30px;">
-                <button class="btn btn-primary" id="check-answers">
-                    <i class="fas fa-check"></i> Periksa Jawaban
-                </button>
-            </div>
+            <div class="practice-feedback" id="feedback1"></div>
         </div>
-    </section>
+
+        <div class="practice-card">
+            <h3 class="practice-question">Bagaimana mengatakan "Saya adalah mahasiswa" dalam bahasa Jepang?</h3>
+            <div class="practice-options">
+                <div class="practice-option">私は先生です。</div>
+                <div class="practice-option" data-correct="true">私は学生です。</div>
+                <div class="practice-option">私は医者です。</div>
+                <div class="practice-option">私は会社員です。</div>
+            </div>
+            <div class="practice-feedback" id="feedback2"></div>
+        </div>
+
+        <div class="practice-card">
+            <h3 class="practice-question">Partikel mana yang digunakan untuk membuat kalimat tanya?</h3>
+            <div class="practice-options">
+                <div class="practice-option">は</div>
+                <div class="practice-option">も</div>
+                <div class="practice-option" data-correct="true">か</div>
+                <div class="practice-option">の</div>
+            </div>
+            <div class="practice-feedback" id="feedback3"></div>
+        </div>
+
+        <div class="practice-card">
+            <h3 class="practice-question">Bagaimana bentuk negatif dari "です"?</h3>
+            <div class="practice-options">
+                <div class="practice-option">ですません</div>
+                <div class="practice-option">じゃです</div>
+                <div class="practice-option">ありません</div>
+                <div class="practice-option" data-correct="true">じゃありません</div>
+            </div>
+            <div class="practice-feedback" id="feedback4"></div>
+        </div>
+
+        <div class="practice-card">
+            <h3 class="practice-question">Apa arti dari "がくせい"?</h3>
+            <div class="practice-options">
+                <div class="practice-option" data-correct="true">Mahasiswa</div>
+                <div class="practice-option">Guru</div>
+                <div class="practice-option">Dokter</div>
+                <div class="practice-option">Engineer</div>
+            </div>
+            <div class="practice-feedback" id="feedback5"></div>
+        </div>
+
+        <div class="practice-card">
+            <h3 class="practice-question">Bagaimana membaca partikel は dalam kalimat "私は学生です"?</h3>
+            <div class="practice-options">
+                <div class="practice-option">ha</div>
+                <div class="practice-option" data-correct="true">wa</div>
+                <div class="practice-option">ga</div>
+                <div class="practice-option">no</div>
+            </div>
+            <div class="practice-feedback" id="feedback6"></div>
+        </div>
+
+        <div class="practice-card">
+            <h3 class="practice-question">Apa arti dari "しつれいですが"?</h3>
+            <div class="practice-options">
+                <div class="practice-option">Selamat pagi</div>
+                <div class="practice-option">Terima kasih</div>
+                <div class="practice-option" data-correct="true">Permisi</div>
+                <div class="practice-option">Sampai jumpa</div>
+            </div>
+            <div class="practice-feedback" id="feedback7"></div>
+        </div>
+
+        <div class="practice-card">
+            <h3 class="practice-question">Partikel mana yang berarti "juga"?</h3>
+            <div class="practice-options">
+                <div class="practice-option">は</div>
+                <div class="practice-option" data-correct="true">も</div>
+                <div class="practice-option">か</div>
+                <div class="practice-option">の</div>
+            </div>
+            <div class="practice-feedback" id="feedback8"></div>
+        </div>
+
+        <div class="practice-card">
+            <h3 class="practice-question">Bagaimana mengatakan "Senang bertemu dengan Anda" dalam bahasa Jepang?</h3>
+            <div class="practice-options">
+                <div class="practice-option">ありがとう</div>
+                <div class="practice-option">さようなら</div>
+                <div class="practice-option" data-correct="true">はじめまして</div>
+                <div class="practice-option">おはよう</div>
+            </div>
+            <div class="practice-feedback" id="feedback9"></div>
+        </div>
+
+        <div class="practice-card">
+            <h3 class="practice-question">Apa arti dari "かいしゃいん"?</h3>
+            <div class="practice-options">
+                <div class="practice-option">Guru</div>
+                <div class="practice-option">Dokter</div>
+                <div class="practice-option">Mahasiswa</div>
+                <div class="practice-option" data-correct="true">Karyawan perusahaan</div>
+            </div>
+            <div class="practice-feedback" id="feedback10"></div>
+        </div>
+
+        <div style="text-align: center; margin-top: 30px;">
+            <button class="btn btn-primary" id="check-answers">
+                <i class="fas fa-check"></i> Periksa Jawaban
+            </button>
+            <button class="btn btn-outline" id="reset-practice" style="margin-left: 10px;">
+                <i class="fas fa-redo"></i> Ulangi Latihan
+            </button>
+        </div>
+    </div>
+</section>
+    <!-- Practice JS -->
+    <script>
+        // Practice Questions Functionality
+        const practiceOptions = document.querySelectorAll('.practice-option');
+        const checkAnswersBtn = document.getElementById('check-answers');
+        const resetPracticeBtn = document.getElementById('reset-practice');
+
+        let selectedAnswers = {};
+
+        practiceOptions.forEach(option => {
+            option.addEventListener('click', function() {
+                const question = this.closest('.practice-card');
+                const questionNumber = Array.from(document.querySelectorAll('.practice-card')).indexOf(question) + 1;
+                
+                // Remove selected class from all options in this question
+                question.querySelectorAll('.practice-option').forEach(opt => {
+                    opt.classList.remove('selected');
+                });
+                
+                // Add selected class to clicked option
+                this.classList.add('selected');
+                
+                // Store the selected answer
+                selectedAnswers[questionNumber] = this.getAttribute('data-correct') === 'true';
+            });
+        });
+
+        checkAnswersBtn.addEventListener('click', () => {
+            const questions = document.querySelectorAll('.practice-card');
+            
+            questions.forEach((question, index) => {
+                const questionNumber = index + 1;
+                const feedback = question.querySelector('.practice-feedback');
+                
+                if (selectedAnswers[questionNumber] === true) {
+                    feedback.className = 'practice-feedback correct';
+                    feedback.innerHTML = '<i class="fas fa-check"></i> Jawaban Anda benar!';
+                } else if (selectedAnswers[questionNumber] === false) {
+                    feedback.className = 'practice-feedback incorrect';
+                    feedback.innerHTML = '<i class="fas fa-times"></i> Jawaban Anda salah. Coba lagi!';
+                } else {
+                    feedback.className = 'practice-feedback incorrect';
+                    feedback.innerHTML = '<i class="fas fa-exclamation-circle"></i> Silakan pilih jawaban terlebih dahulu.';
+                }
+            });
+            
+            const target = document.querySelector('#practice');
+                if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        });
+
+        // Reset Practice Function
+        resetPracticeBtn.addEventListener('click', () => {
+            // Clear all selections
+            practiceOptions.forEach(option => {
+                option.classList.remove('selected');
+            });
+            
+            // Clear all feedback
+            const feedbacks = document.querySelectorAll('.practice-feedback');
+            feedbacks.forEach(feedback => {
+                feedback.innerHTML = '';
+                feedback.className = 'practice-feedback';
+            });
+            
+            // Reset selected answers
+            selectedAnswers = {};
+            
+            // Scroll to top of practice section
+            const target = document.querySelector('#practice');
+            if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            
+            // Show reset confirmation
+            setTimeout(() => {
+                alert('Latihan telah direset. Silakan coba lagi!');
+            }, 300);
+        });
+    </script>
+    <!-- Practice Section End -->
 
     <!-- Resources Section -->
     <section class="section resources-section" id="resources">
@@ -845,7 +1649,9 @@
                     <p class="resource-description">
                         Download ringkasan materi Bab 1 dalam format PDF.
                     </p>
-                    <a href="#" class="btn btn-outline">Download</a>
+                    <a href="Minna-1_bab-1.pdf"
+                        download="Minna-1_bab-1.pdf"
+                        class="btn btn-outline">Download</a>
                 </div>
 
                 <div class="resource-card">
@@ -863,27 +1669,31 @@
                     <div class="resource-icon">
                         <i class="fas fa-video"></i>
                     </div>
-                    <h3 class="resource-title">Video Penjelasan</h3>
+                    <h3 class="resource-title">Video Pembelajaran</h3>
                     <p class="resource-description">
-                        Tonton video penjelasan tata bahasa Bab 1.
+                        Tonton video penjelasan materi Bab 1.
                     </p>
                     <a href="#" class="btn btn-outline">Tonton</a>
                 </div>
             </div>
-            
             <!-- Navigation Container -->
             <div class="nav-container">
-                <a href="/03_buku/minna-no-nihongo-1/#chapters" class="btn btn-outline" style="margin-right: 10px;">
+                <a href="/03_buku/minna-no-nihongo-1/bab-#chapters" class="btn btn-outline" style="margin-right: 10px;">
                     <i class="fas fa-arrow-left"></i> Daftar Bab
                 </a>
                 <div>
-                    <a href="/03_buku/minna-no-nihongo-1/bab-2/" class="btn btn-primary">
+                    <a href="/03_buku/minna-no-nihongo-1/bab-2" class="btn btn-primary">
                         Bab 2 <i class="fas fa-arrow-right"></i>
                     </a>
                 </div>
             </div>
         </div>
     </section>
+    <!-- Resources JS -->
+    <script>
+        // Resources JS (if needed)
+    </script>
+    <!-- Resources Section End -->
 
     <!-- Footer -->
     <footer>
@@ -938,13 +1748,93 @@
             </div>
         </div>
     </footer>
+    <!-- Footer JS -->
+    <script>
+        // Footer JS (if needed)
+    </script>
+    <!-- Footer Section End -->
 
     <!-- Go to Top Button -->
-    <button id="go-to-top" class="go-to-top-btn">
+    <button class="go-to-top-btn" id="go-to-top-btn">
         <i class="fas fa-chevron-up"></i>
     </button>
+    <!-- Go to Top JS -->
+    <script>
+        // Go to Top Button
+        const goToTopBtn = document.getElementById('go-to-top-btn');
 
-    <script src="/00_assets/js/minna-no-nihongo-1.js"></script>
+        window.addEventListener('scroll', () => {
+            if (window.pageYOffset > 300) {
+                goToTopBtn.classList.add('show');
+            } else {
+                goToTopBtn.classList.remove('show');
+            }
+        });
+
+        goToTopBtn.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+    </script>
+    <!-- Go to Top Section End -->
+
+    <!-- Theme Toggle JS -->
+    <script>
+        // Theme Toggle Functionality
+        const themeToggle = document.getElementById('theme-toggle');
+        const themeIcon = themeToggle.querySelector('i');
+
+        // Check for saved theme preference or default to light theme
+        const currentTheme = localStorage.getItem('theme') || 'light';
+        document.documentElement.setAttribute('data-theme', currentTheme);
+
+        // Update icon based on current theme
+        if (currentTheme === 'dark') {
+            themeIcon.classList.remove('fa-moon');
+            themeIcon.classList.add('fa-sun');
+        }
+
+        themeToggle.addEventListener('click', () => {
+            const currentTheme = document.documentElement.getAttribute('data-theme');
+            const newTheme = currentTheme === 'light' ? 'dark' : 'light';
+            
+            document.documentElement.setAttribute('data-theme', newTheme);
+            localStorage.setItem('theme', newTheme);
+            
+            // Update icon
+            if (newTheme === 'dark') {
+                themeIcon.classList.remove('fa-moon');
+                themeIcon.classList.add('fa-sun');
+            } else {
+                themeIcon.classList.remove('fa-sun');
+                themeIcon.classList.add('fa-moon');
+            }
+        });
+    </script>
+    <!-- Theme Toggle Section End -->
+
+    <!-- Smooth Scroll JS -->
+    <script>
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                
+                const target = document.querySelector(targetId);
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+    </script>
+    <!-- Smooth Scroll Section End -->
 </body>
-
 </html>
